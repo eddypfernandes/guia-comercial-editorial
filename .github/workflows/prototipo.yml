@@ -45,6 +45,7 @@ jobs:
 
       - name: Triagem preliminar pelo Gemini (opcional)
         run: python prototipo/curar_com_gemini.py
+        continue-on-error: true
 
       - name: Verificar tecnicamente as fontes originais
         run: python prototipo/verificar_fontes.py
