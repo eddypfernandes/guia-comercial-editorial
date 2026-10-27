@@ -1,57 +1,47 @@
 # GUIA COMERCIAL — Agente Editorial
 
-Repositório exclusivo para o protótipo do agente editorial autônomo do GUIA COMERCIAL.
+Repositório exclusivo para o protótipo do agente editorial do GUIA COMERCIAL.
 
-## Objetivo
+## O que já funciona
 
-Preparar, por ciclos, conteúdos úteis e confiáveis para cinco pilares:
-- Pet
-- Lazer
-- Esportes
-- Saúde
-- Fitness
+O GitHub Actions executa a validação, os testes e uma coleta diária de sugestões de pauta via RSS para os cinco pilares: Pet, Lazer, Esportes, Saúde e Fitness.
 
-O agente deverá pesquisar, selecionar pautas, verificar informações, redigir matérias, gerar imagens quando aplicável, registrar fontes e validade, controlar duplicidade e preparar resultados para revisão visual.
+A coleta está configurada em `config/fontes.json` e usa pesquisas RSS do Google News com foco em Brasília/DF e Brasil. O relatório é produzido em JSON e guardado como artefato do GitHub Actions por 14 dias.
 
-## Estado atual
+**A coleta é descoberta, não verificação factual.** O sistema registra título, link do agregador, publicação de origem quando identificada, data publicada e horário de consulta. As pautas precisam ser abertas e verificadas na fonte original antes de qualquer redação ou publicação.
 
-**Protótipo de seleção local implementado; ainda não há coleta automática na internet, integração com Gemini, interface ASP Clássico ou publicação oficial.**
+## O que ainda não faz
 
-O código atual:
-- valida a configuração editorial;
-- valida os campos essenciais das pautas de entrada;
-- seleciona pautas por pontuação, validade e pilar;
-- identifica IDs, URLs e títulos duplicados;
-- limita a seleção a duas pautas por pilar sem preencher artificialmente;
-- gera relatório JSON para revisão;
-- executa testes automatizados no GitHub Actions.
+- Não confirma a veracidade das notícias nem lê integralmente todas as matérias.
+- Não redige artigos automaticamente.
+- Não gera imagens.
+- Não integra o Gemini.
+- Não publica no site.
+- Não altera os outros repositórios do usuário.
 
-## Como testar localmente
+## Como executar
 
-Requisito: Python 3.11 ou superior, sem bibliotecas adicionais.
+Na página [Actions do repositório](https://github.com/eddypfernandes/guia-comercial-editorial/actions), escolha **Ciclo editorial — descoberta de pautas** e clique em **Run workflow** para executar manualmente.
+
+Quando uma execução terminar, abra-a e baixe o artefato **descoberta-editorial**. O workflow também é agendado diariamente às 07h de Brasília (10:00 UTC).
+
+## Testes locais
+
+Requisito: Python 3.11 ou superior, sem dependências externas.
 
 ```bash
 python prototipo/validar_config.py
 python -m unittest prototipo/testar_prototipo.py -v
+python -m unittest prototipo/testar_coletor.py -v
 ```
-
-Para preparar um ciclo, consulte [o guia do protótipo](prototipo/README.md). O arquivo `prototipo/entrada/pautas.exemplo.json` é apenas um modelo estrutural, não uma notícia real.
 
 ## Princípios
 
-1. Não publicar automaticamente no site nesta fase.
-2. Não inventar fatos, fontes, citações, estabelecimentos ou dados locais.
-3. Guardar referências e datas de consulta das fontes usadas.
-4. Não produzir conteúdo só para preencher uma vaga.
-5. Manter no máximo dois conteúdos ativos por pilar, conforme a regra editorial definida.
-6. Expirar ou retirar conteúdo vencido de forma controlada.
-7. Manter metadados e arquivos de imagem separados.
-8. Não alterar os repositórios `radar-ticker`, `clima` ou `oportunidades`.
-9. Manter credenciais fora do código e do histórico Git.
-
-## Próximas etapas
-
-1. Verificar a execução dos testes no GitHub Actions.
-2. Integrar coleta de fontes permitidas e registro das evidências.
-3. Avaliar integração com Gemini depois de conferir o padrão usado nos repositórios existentes, sem modificá-los.
-4. Criar a revisão editorial e a pré-visualização; decidir persistência e interface ASP Clássico numa etapa posterior.
+1. Publicação oficial desativada durante o protótipo.
+2. Nenhum fato, citação, negócio local, preço ou horário pode ser inventado.
+3. Guardar fontes e datas de consulta.
+4. Não preencher metas com conteúdo fraco.
+5. Máximo de duas pautas selecionadas por pilar no ciclo de seleção.
+6. Tratar validade e duplicidade explicitamente.
+7. Manter credenciais fora do código e do histórico Git.
+8. Preservar os demais repositórios sem alterações.
