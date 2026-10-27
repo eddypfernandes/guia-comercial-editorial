@@ -1,6 +1,6 @@
 # Protótipo do ciclo editorial
 
-O fluxo automatizado descobre pautas por RSS, faz triagem opcional com Gemini, tenta extrair texto público das fontes originais e prepara rascunhos opcionais. Nada é publicado.
+O robô descobre pautas por RSS, faz triagem opcional com Gemini, tenta abrir as páginas originais e extrair texto público e gera matérias editoriais com título, linha fina, corpo e link para a fonte. Nada é publicado automaticamente no site nesta etapa.
 
 ## Requisitos
 
@@ -8,31 +8,33 @@ Python 3.12 ou superior. O protótipo usa apenas a biblioteca padrão do Python.
 
 ## Executar as etapas
 
-\`\`\`bash
+```bash
 python prototipo/validar_config.py
 python prototipo/coletar_fontes.py
 python prototipo/curar_com_gemini.py
 python prototipo/verificar_fontes.py
-python prototipo/redigir_rascunhos.py
-\`\`\`
+python prototipo/gerar_materias.py
+```
 
-Os arquivos gerados ficam em \`prototipo/saida/\`. A triagem e a redação exigem \`GEMINI_API_KEY\`; sem ela, essas etapas são ignoradas. O coletor e a verificação técnica podem funcionar sem Gemini.
+Os arquivos gerados ficam em `prototipo/saida/`. A triagem e a redação exigem `GEMINI_API_KEY`; sem ela, a coleta continua funcionando e a geração produz um relatório vazio com o motivo registrado.
 
-## O que cada etapa significa
+## Arquivos de saída
 
-- \`descoberta-fontes.json\`: sugestões do RSS, ainda não verificadas.
-- \`triagem-gemini.json\`: seleção preliminar de até duas pautas por pilar, não uma verificação factual.
-- \`fontes-verificadas.json\`: resultado técnico da tentativa de abrir o link e extrair texto da página; páginas bloqueadas ou com texto insuficiente ficam pendentes.
-- \`rascunhos-editoriais.json\`: rascunhos originais assistidos por IA com links para fontes e itens que precisam de conferência humana.
+- `descoberta-fontes.json`: sugestões encontradas via RSS.
+- `triagem-gemini.json`: seleção preliminar de pautas, quando o Gemini está disponível.
+- `fontes-verificadas.json`: tentativa técnica de abrir a página original e extrair texto.
+- `materias-editoriais.json`: matérias originais com título, linha fina, corpo e URL exata da fonte. Este é o artefato que será usado para testar a apresentação no HTML.
 
-A extração não confirma a veracidade das informações. Um rascunho nunca deve ser tratado como pronto para publicação: revise a fonte original, datas, contexto, fatos, direitos de uso e adequação editorial. Não há publicação automática.
+## Limites importantes
+
+O robô não inventa URLs e descarta respostas sem fonte correspondente ou com campos insuficientes. A extração técnica não confirma a veracidade das afirmações da página; por isso, cada matéria mantém um link para a fonte original e um aviso editorial. O arquivo de matérias é produzido como artefato do GitHub Actions, mas ainda não alimenta o site automaticamente. A publicação no site será uma integração separada.
 
 ## Testes
 
-\`\`\`bash
+```bash
 python -m unittest prototipo/testar_prototipo.py -v
 python -m unittest prototipo/testar_coletor.py -v
 python -m unittest prototipo/testar_gemini.py -v
 python -m unittest prototipo/testar_fontes.py -v
-python -m unittest prototipo/testar_rascunhos.py -v
-\`\`\`
+python -m unittest prototipo/testar_materias.py -v
+```
