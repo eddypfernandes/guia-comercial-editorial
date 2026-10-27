@@ -38,7 +38,6 @@ jobs:
           python -m unittest prototipo/testar_coletor.py -v
           python -m unittest prototipo/testar_gemini.py -v
           python -m unittest prototipo/testar_fontes.py -v
-          python -m unittest prototipo/testar_rascunhos.py -v
 
       - name: Coletar sugestões de pauta por RSS
         run: python prototipo/coletar_fontes.py
@@ -48,9 +47,6 @@ jobs:
 
       - name: Verificar tecnicamente as fontes originais
         run: python prototipo/verificar_fontes.py
-
-      - name: Preparar rascunhos editoriais (temporariamente desativado para teste)
-        run: echo "Etapa de rascunhos temporariamente desativada para testar as etapas posteriores."
 
       - name: Guardar relatório da descoberta
         uses: actions/upload-artifact@v4
@@ -65,15 +61,6 @@ jobs:
         with:
           name: fontes-verificadas
           path: prototipo/saida/fontes-verificadas.json
-          if-no-files-found: error
-          retention-days: 14
-
-      - name: Guardar rascunhos editoriais, se disponíveis
-        uses: actions/upload-artifact@v4
-        if: hashFiles('prototipo/saida/rascunhos-editoriais.json') != ''
-        with:
-          name: rascunhos-editoriais
-          path: prototipo/saida/rascunhos-editoriais.json
           if-no-files-found: error
           retention-days: 14
 
