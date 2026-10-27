@@ -22,7 +22,7 @@ No GitHub, abra [Actions](https://github.com/eddypfernandes/guia-comercial-edito
 
 ## Ativar o Gemini
 
-O workflow lê o segredo \`GEMINI_API_KEY\` e usa \`GEMINI_MODEL\` (padrão atual no workflow: \`gemini-3.6-flash\`). Para ativar, no repositório abra **Settings → Secrets and variables → Actions → New repository secret**, nomeie como \`GEMINI_API_KEY\` e cole a chave da API. Não coloque a chave no código nem a envie pelo chat.
+O workflow lê o segredo \`GEMINI_API_KEY\` e usa \`GEMINI_MODEL\` (padrão atual no workflow: \`gemini-3.8-flash\`). Para ativar, no repositório abra **Settings → Secrets and variables → Actions → New repository secret**, nomeie como \`GEMINI_API_KEY\` e cole a chave da API. Não coloque a chave no código nem a envie pelo chat.
 
 Sem a chave, o fluxo ainda coleta RSS, tenta extrair páginas e gera relatórios de status, mas não executa triagem por IA nem redige rascunhos.
 
