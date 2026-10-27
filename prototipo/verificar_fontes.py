@@ -67,7 +67,6 @@ class ArticleParser(HTMLParser):
         self.title_parts: list[str] = []
         self.description = ""
         self.text_parts: list[str] = []
-        self.links: list[str] = []
         self._in_title = False
         self._skip_depth = 0
         self._skip_tags = {"script", "style", "noscript", "svg", "nav", "footer", "header", "aside", "form"}
@@ -77,8 +76,6 @@ class ArticleParser(HTMLParser):
         attrs = dict(attrs)
         if tag == "title":
             self._in_title = True
-        if tag == "a" and not self._skip_depth and attrs.get("href"):
-            self.links.append(attrs["href"])
         if tag in self._skip_tags:
             self._skip_depth += 1
         if tag == "meta" and attrs.get("name", "").lower() in {"description", "og:description"}:
@@ -110,10 +107,6 @@ def extract_html(html: str) -> dict:
     parser = ArticleParser()
     parser.feed(html)
     text = " ".join(parser.text_parts)
-    # Algumas páginas do agregador mantêm o destino em dados JSON/script, não em <a>.
-    embedded = re.findall(r'https?://[^\s"\'<>\\]+|https?:\\/\\/[^\s"\'<>]+', html)
-    embedded = [value.replace("\\/", "/").replace("\\u0026", "&").rstrip(".,);}") for value in embedded]
-    links = list(dict.fromkeys(parser.links + embedded))
     # Evita repetições triviais e mantém o limite de conteúdo enviado ao modelo.
     text = " ".join(text.split())[:MAX_TEXT_CHARS]
     return {
@@ -121,7 +114,6 @@ def extract_html(html: str) -> dict:
         "descricao_pagina": parser.description,
         "texto_extraido": text,
         "caracteres_extraidos": len(text),
-        "links": links[:200],
     }
 
 
