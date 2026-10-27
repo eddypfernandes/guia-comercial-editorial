@@ -10,12 +10,14 @@ from verificar_fontes import extract_html, select_candidates, validate_public_ur
 class SourceVerificationTests(unittest.TestCase):
     def test_extracts_title_description_and_paragraphs(self):
         html = """<!doctype html><html><head><title>Notícia teste</title>
-        <meta name="description" content="Resumo de teste"></head><body>
+        <meta name="description" content="Resumo de teste">
+        <meta property="og:image" content="/img/noticia.jpg"></head><body>
         <nav>Menu ignorado</nav><p>Texto principal da matéria.</p>
         <script>código ignorado</script></body></html>"""
         result = extract_html(html)
         self.assertEqual(result["titulo_pagina"], "Notícia teste")
         self.assertEqual(result["descricao_pagina"], "Resumo de teste")
+        self.assertEqual(result["imagem_url"], "https://example.org/img/noticia.jpg")
         self.assertIn("Texto principal", result["texto_extraido"])
         self.assertNotIn("Menu ignorado", result["texto_extraido"])
         self.assertNotIn("código ignorado", result["texto_extraido"])
