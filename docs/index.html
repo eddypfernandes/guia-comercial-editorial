@@ -202,7 +202,7 @@
       const corpo = modalMateria.querySelector('#modalCorpo');
       corpo.replaceChildren();
       if (materia.linha_fina) corpo.appendChild(textoSeguro('p', 'lead', materia.linha_fina));
-      String(materia.corpo || '').split(/\\n\\s*\\n/).filter(Boolean).forEach(paragrafo => {
+      String(materia.corpo || '').split(/\n\s*\n/).filter(Boolean).forEach(paragrafo => {
         corpo.appendChild(textoSeguro('p', '', paragrafo));
       });
       if (materia.aviso_editorial) corpo.appendChild(textoSeguro('p', 'small texto-suave mt-4', materia.aviso_editorial));
@@ -242,6 +242,13 @@
         lista.appendChild(item);
       });
     }
+
+    modalMateria.addEventListener('show.bs.modal', function (event) {
+      const botao = event.relatedTarget;
+      if (botao && botao.hasAttribute('data-titulo')) {
+        modalMateria.querySelector('#modalTitulo').textContent = botao.getAttribute('data-titulo') || 'Matéria demonstrativa';
+      }
+    });
 
     async function carregarMaterias() {
       try {
