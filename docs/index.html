@@ -31,7 +31,7 @@
     .imagem-destaque { min-height: 220px; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; color: var(--gc-verde); overflow: hidden; }
     .imagem-destaque img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
     .imagem-mini img { width: 100%; height: 100%; object-fit: cover; border-radius: .75rem; }
-    .imagem-mini { width: 104px; min-width: 104px; height: 92px; border-radius: .75rem; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; color: var(--gc-verde); }
+    .imagem-mini { width: 100%; min-width: 0; height: 120px; border-radius: .75rem; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; color: var(--gc-verde); }
     .anuncio { border: 1px dashed #b7c3b8; background: #fff; border-radius: 1rem; min-height: 250px; }
     .rodape { background: var(--gc-rodape); color: #fff; }
     .link-leitura { color: var(--gc-verde); font-weight: 700; text-decoration: none; }
@@ -253,7 +253,8 @@
       lista.replaceChildren();
       materias.forEach((materia, indice) => {
         const item = textoSeguro('article', 'list-group-item p-3 p-md-4', '');
-        const linha = textoSeguro('div', 'd-flex gap-3 align-items-start', '');
+        const linha = textoSeguro('div', 'row g-3 align-items-start', '');
+        const colunaImagem = textoSeguro('div', 'col-4', '');
         const mini = textoSeguro('div', 'imagem-mini', '');
         if (imagemSegura(materia.imagem_url)) {
           const imagem = document.createElement('img');
@@ -266,7 +267,8 @@
         } else {
           mini.appendChild(textoSeguro('span', 'fw-bold', String(indice + 1).padStart(2, '0')));
         }
-        const conteudo = textoSeguro('div', 'flex-grow-1', '');
+        colunaImagem.appendChild(mini);
+        const conteudo = textoSeguro('div', 'col-8', '');
         conteudo.appendChild(textoSeguro('span', 'small texto-suave', materia.pilar || 'Notícia'));
         conteudo.appendChild(textoSeguro('h3', 'h5 fw-bold mt-1 mb-2', materia.titulo));
         conteudo.appendChild(textoSeguro('p', 'texto-suave mb-2', materia.linha_fina));
@@ -277,7 +279,7 @@
           bootstrap.Modal.getOrCreateInstance(modalMateria).show();
         });
         conteudo.appendChild(botao);
-        linha.append(mini, conteudo);
+        linha.append(colunaImagem, conteudo);
         item.appendChild(linha);
         lista.appendChild(item);
       });
