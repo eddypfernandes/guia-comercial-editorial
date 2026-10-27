@@ -1,0 +1,23 @@
+name: Verificação do protótipo
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar-estrutura:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Verificar arquivos essenciais
+        shell: bash
+        run: |
+          test -f README.md
+          test -f docs/arquitetura-inicial.md
+          test -f docs/decisoes.md
+          test -f config/editorial.json
+          echo "Estrutura inicial verificada."
