@@ -1,4 +1,4 @@
-name: Ciclo editorial — descoberta e triagem
+name: Ciclo editorial — descoberta e matérias
 
 on:
   workflow_dispatch:
@@ -38,6 +38,7 @@ jobs:
           python -m unittest prototipo/testar_coletor.py -v
           python -m unittest prototipo/testar_gemini.py -v
           python -m unittest prototipo/testar_fontes.py -v
+          python -m unittest prototipo/testar_materias.py -v
 
       - name: Coletar sugestões de pauta por RSS
         run: python prototipo/coletar_fontes.py
@@ -47,6 +48,9 @@ jobs:
 
       - name: Verificar tecnicamente as fontes originais
         run: python prototipo/verificar_fontes.py
+
+      - name: Redigir matérias para leitura
+        run: python prototipo/gerar_materias.py
 
       - name: Guardar relatório da descoberta
         uses: actions/upload-artifact@v4
@@ -70,5 +74,13 @@ jobs:
         with:
           name: triagem-gemini
           path: prototipo/saida/triagem-gemini.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Guardar matérias editoriais
+        uses: actions/upload-artifact@v4
+        with:
+          name: materias-editoriais
+          path: prototipo/saida/materias-editoriais.json
           if-no-files-found: error
           retention-days: 14
