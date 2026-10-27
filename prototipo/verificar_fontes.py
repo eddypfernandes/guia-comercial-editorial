@@ -205,6 +205,9 @@ def main() -> int:
         print(f"Candidatos analisados: {report['total_candidatos']}")
         print(f"Páginas com texto extraído: {report['total_com_texto_extraido']}")
         print(f"Pautas pendentes: {report['total_pendentes']}")
+        for record in records:
+            detail = record.get("erro", "texto extraído; revisão factual pendente")
+            print(f"[{record.get('status_verificacao')}] {record.get('titulo_pauta', '')[:100]} — {detail}")
         print(f"Relatório: {OUTPUT_PATH.relative_to(ROOT)}")
         print("A extração não certifica fatos e nenhuma matéria foi publicada.")
         return 0
