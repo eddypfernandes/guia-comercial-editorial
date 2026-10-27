@@ -54,7 +54,7 @@ REGRAS OBRIGATÓRIAS:
 - Cada matéria deve ter título, linha fina e corpo com parágrafos separados por duas quebras de linha.
 - Inclua a URL exata da página original como url_fonte. Não invente nem altere URLs.
 - Retorne somente JSON válido, sem Markdown, no formato:
-{"materias":[{"pilar":"pet","titulo":"...","linha_fina":"...","corpo":"Parágrafo 1.\n\nParágrafo 2.","url_fonte":"URL exata"}]}
+{{"materias":[{{"pilar":"pet","titulo":"...","linha_fina":"...","corpo":"Parágrafo 1.\\n\\nParágrafo 2.","url_fonte":"URL exata"}}]}}
 - No máximo uma matéria por fonte e até {MAX_ARTICLES} matérias no total.
 - O pilar deve ser o mesmo do material correspondente.
 
