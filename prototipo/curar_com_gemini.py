@@ -147,7 +147,7 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
             return json.loads(body.decode("utf-8"))
 
         except urllib.error.HTTPError as exc:
-            details = exc.read(2000).decode("utf-8", errors="replace").replace("\\n", " ").replace("\\r", " ")
+            details = exc.read(2000).decode("utf-8", errors="replace").replace("\n", " ").replace("\r", " ")
             last_error = RuntimeError(f"Gemini respondeu HTTP {exc.code}: {details[:1200]}")
             if exc.code not in retryable_statuses:
                 raise last_error from exc
