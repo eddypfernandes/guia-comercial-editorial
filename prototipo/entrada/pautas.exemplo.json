@@ -1,0 +1,12 @@
+[
+  {
+    "id": "exemplo-pet-001",
+    "titulo": "Exemplo de pauta sobre cuidados responsáveis com animais",
+    "pilar": "pet",
+    "url_fonte": "https://example.org/artigo-de-referencia",
+    "consultado_em": "2026-10-27",
+    "validade_ate": "2026-11-27",
+    "status": "em_analise",
+    "pontuacao": 75
+  }
+]
