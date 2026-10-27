@@ -1,0 +1,31 @@
+{
+  "provider": "Google News RSS",
+  "language": "pt-BR",
+  "region": "BR",
+  "edition": "BR:pt-419",
+  "max_items_per_pillar": 12,
+  "timeout_seconds": 20,
+  "max_response_bytes": 2000000,
+  "queries": [
+    {
+      "pillar": "pet",
+      "query": "(pets OR cães OR gatos OR veterinária) (Brasília OR "Distrito Federal" OR Brasil)"
+    },
+    {
+      "pillar": "lazer",
+      "query": "(lazer OR cultura OR turismo OR eventos) (Brasília OR "Distrito Federal")"
+    },
+    {
+      "pillar": "esportes",
+      "query": "(esportes OR corrida OR futebol OR atividade esportiva) (Brasília OR "Distrito Federal")"
+    },
+    {
+      "pillar": "saude",
+      "query": "(saúde OR prevenção OR vacinação OR bem-estar) (Brasília OR "Distrito Federal" OR Brasil)"
+    },
+    {
+      "pillar": "fitness",
+      "query": "(fitness OR academia OR exercício físico OR atividade física) (Brasília OR "Distrito Federal" OR Brasil)"
+    }
+  ]
+}
