@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -19,6 +20,8 @@ API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:gener
 DEFAULT_MODEL = "gemini-3.8-flash"
 MAX_CANDIDATES = 20
 REQUEST_TIMEOUT_SECONDS = 120
+MAX_GEMINI_ATTEMPTS = 3
+RETRY_DELAYS_SECONDS = (3, 8)
 MAX_RESPONSE_BYTES = 1_000_000
 
 
@@ -131,17 +134,35 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
         API_URL.format(model=model), data=payload, method="POST",
         headers={"x-goog-api-key": api_key, "Content-Type": "application/json"}
     )
-    try:
-        with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
-            body = response.read(MAX_RESPONSE_BYTES + 1)
-    except urllib.error.HTTPError as exc:
-        details = exc.read(2000).decode("utf-8", errors="replace").replace("\n", " ").replace("\r", " ")
-        raise RuntimeError(f"Gemini respondeu HTTP {exc.code}: {details[:1200]}") from exc
-    except (urllib.error.URLError, TimeoutError) as exc:
-        raise RuntimeError(f"Não foi possível acessar o Gemini: {type(exc).__name__}.") from exc
-    if len(body) > MAX_RESPONSE_BYTES:
-        raise RuntimeError("Resposta do Gemini excedeu o limite permitido.")
-    return json.loads(body.decode("utf-8"))
+
+    retryable_statuses = {408, 429, 500, 502, 503, 504}
+    last_error = None
+
+    for attempt in range(1, MAX_GEMINI_ATTEMPTS + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+                body = response.read(MAX_RESPONSE_BYTES + 1)
+            if len(body) > MAX_RESPONSE_BYTES:
+                raise RuntimeError("Resposta do Gemini excedeu o limite permitido.")
+            return json.loads(body.decode("utf-8"))
+
+        except urllib.error.HTTPError as exc:
+            details = exc.read(2000).decode("utf-8", errors="replace").replace("\\n", " ").replace("\\r", " ")
+            last_error = RuntimeError(f"Gemini respondeu HTTP {exc.code}: {details[:1200]}")
+            if exc.code not in retryable_statuses:
+                raise last_error from exc
+
+        except (urllib.error.URLError, TimeoutError) as exc:
+            last_error = RuntimeError(f"Não foi possível acessar o Gemini: {type(exc).__name__}.")
+        
+        if attempt < MAX_GEMINI_ATTEMPTS:
+            delay = RETRY_DELAYS_SECONDS[attempt - 1]
+            print(f"Gemini temporariamente indisponível; nova tentativa em {delay}s ({attempt + 1}/{MAX_GEMINI_ATTEMPTS}).")
+            time.sleep(delay)
+
+    raise RuntimeError(
+        f"Gemini não respondeu após {MAX_GEMINI_ATTEMPTS} tentativas. Último erro: {last_error}"
+    ) from last_error
 
 
 def main() -> int:
