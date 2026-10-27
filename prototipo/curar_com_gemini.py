@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT_PATH = ROOT / "prototipo" / "saida" / "descoberta-fontes.json"
 OUTPUT_PATH = ROOT / "prototipo" / "saida" / "triagem-gemini.json"
 API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-DEFAULT_MODEL = "gemini-3.6-flash"
+DEFAULT_MODEL = "gemini-3.8-flash"
 MAX_CANDIDATES = 60
 MAX_RESPONSE_BYTES = 1_000_000
 
