@@ -8,7 +8,7 @@ Protótipo do agente editorial do GUIA COMERCIAL, isolado dos demais repositóri
 - Descoberta de pautas por Google News RSS nos pilares Pet, Lazer, Esportes, Saúde e Fitness, com foco em Brasília/DF.
 - Triagem preliminar opcional pelo Gemini, limitada aos candidatos coletados.
 - Tentativa de abrir os links das matérias e extrair texto público da fonte original, com limites de tamanho e bloqueio de URLs locais/privadas.
-- Geração opcional de rascunhos editoriais pelo Gemini somente quando há texto extraído suficiente.
+- Geração opcional de rascunhos editoriais pelo Gemini somente quando há texto extraído suficiente; o verificador analisa uma pauta por pilar por ciclo.
 - Testes automatizados para configuração, coleta, triagem, extração e validação de rascunhos.
 - Artefatos do GitHub Actions retidos por 14 dias.
 
@@ -17,8 +17,8 @@ Protótipo do agente editorial do GUIA COMERCIAL, isolado dos demais repositóri
 No GitHub, abra [Actions](https://github.com/eddypfernandes/guia-comercial-editorial/actions), selecione **Ciclo editorial — descoberta e triagem**, abra uma execução e baixe:
 - **descoberta-editorial**: candidatos encontrados por RSS;
 - **triagem-gemini**: sugestões preliminares do Gemini, se a chave estiver configurada;
-- **fontes-verificadas**: status técnico da abertura de páginas e texto extraído;
-- **rascunhos-editoriais**: rascunhos produzidos pelo Gemini quando houver chave e fontes elegíveis.
+- **fontes-verificadas**: status técnico da resolução dos links e da extração de texto, com amostra de até uma pauta por pilar;
+- **rascunhos-editoriais**: até cinco rascunhos produzidos pelo Gemini quando houver chave e fontes elegíveis.
 
 ## Ativar o Gemini
 
