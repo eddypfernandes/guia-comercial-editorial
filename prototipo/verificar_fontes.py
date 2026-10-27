@@ -66,6 +66,7 @@ class ArticleParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.title_parts: list[str] = []
         self.description = ""
+        self.image_url = ""
         self.text_parts: list[str] = []
         self._in_title = False
         self._skip_depth = 0
@@ -82,6 +83,14 @@ class ArticleParser(HTMLParser):
             self.description = attrs.get("content", "").strip()[:1000]
         if tag == "meta" and attrs.get("property", "").lower() == "og:description":
             self.description = attrs.get("content", "").strip()[:1000]
+        if tag == "meta" and attrs.get("property", "").lower() == "og:image":
+            self.image_url = attrs.get("content", "").strip()[:2000]
+        if tag == "meta" and attrs.get("name", "").lower() in {"twitter:image", "twitter:image:src"}:
+            self.image_url = self.image_url or attrs.get("content", "").strip()[:2000]
+        if tag == "meta" and attrs.get("itemprop", "").lower() == "image":
+            self.image_url = self.image_url or attrs.get("content", "").strip()[:2000]
+        if tag == "link" and "image_src" in attrs.get("rel", "").lower().split():
+            self.image_url = self.image_url or attrs.get("href", "").strip()[:2000]
         if tag == "p" and not self._skip_depth:
             self._paragraph_depth += 1
 
@@ -103,15 +112,21 @@ class ArticleParser(HTMLParser):
             self.text_parts.append(value)
 
 
-def extract_html(html: str) -> dict:
+def extract_html(html: str, base_url: str = "") -> dict:
     parser = ArticleParser()
     parser.feed(html)
     text = " ".join(parser.text_parts)
     # Evita repetições triviais e mantém o limite de conteúdo enviado ao modelo.
     text = " ".join(text.split())[:MAX_TEXT_CHARS]
+    image_url = urllib.parse.urljoin(base_url, parser.image_url) if parser.image_url else ""
+    parsed_image = urllib.parse.urlsplit(image_url)
+    if (parsed_image.scheme.lower() != "https" or not parsed_image.hostname
+            or parsed_image.username or parsed_image.password):
+        image_url = ""
     return {
         "titulo_pagina": " ".join(parser.title_parts).strip()[:300],
         "descricao_pagina": parser.description,
+        "imagem_url": image_url,
         "texto_extraido": text,
         "caracteres_extraidos": len(text),
     }
@@ -237,13 +252,14 @@ def verify_item(item: dict, opener=None) -> dict:
     try:
         source_url = resolve_google_news_url(source_url, opener=opener)
         final_url, content_type, html = fetch_page(source_url, opener=opener)
-        extracted = extract_html(html)
+        extracted = extract_html(html, final_url)
         host_final = (urllib.parse.urlsplit(final_url).hostname or "").lower()
         record.update({
             "url_final": final_url,
             "content_type": content_type,
             "titulo_pagina": extracted["titulo_pagina"],
             "descricao_pagina": extracted["descricao_pagina"],
+            "imagem_url": extracted["imagem_url"],
             "texto_extraido": extracted["texto_extraido"],
             "caracteres_extraidos": extracted["caracteres_extraidos"],
             "duracao_segundos": round(time.monotonic() - started, 2),
