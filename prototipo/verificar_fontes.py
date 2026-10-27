@@ -26,7 +26,7 @@ USER_AGENT = "GuiaComercialEditorialPrototype/0.2 (+https://github.com/eddypfern
 MAX_BYTES = 2_000_000
 MAX_TEXT_CHARS = 12_000
 MIN_TEXT_CHARS = 500
-TIMEOUT = 18
+TIMEOUT = 8
 
 
 def validate_public_url(url: str) -> str:
@@ -214,17 +214,16 @@ def fetch_page(url: str, opener=None) -> tuple[str, str, str]:
 
 
 def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
-    if triage and isinstance(triage.get("itens"), list):
-        return triage["itens"][:10]
-    # Sem Gemini, manter amostra equilibrada: no máximo duas pautas por pilar.
-    selected, counts = [], {}
-    for item in discovery.get("itens", []):
+    candidates = triage.get("itens", []) if triage and isinstance(triage.get("itens"), list) else discovery.get("itens", [])
+    # Um candidato por pilar mantém o ciclo diário rápido e representativo.
+    selected, seen_pillars = [], set()
+    for item in candidates:
         pillar = item.get("pilar", "")
-        if counts.get(pillar, 0) >= 2:
+        if not pillar or pillar in seen_pillars:
             continue
         selected.append(item)
-        counts[pillar] = counts.get(pillar, 0) + 1
-        if len(selected) >= 10:
+        seen_pillars.add(pillar)
+        if len(selected) >= 5:
             break
     return selected
 
