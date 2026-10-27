@@ -8,7 +8,7 @@ sys.path.insert(0, str(ROOT / "prototipo"))
 
 from coletar_fontes import collect, make_feed_url, parse_feed
 
-SAMPLE_RSS = b"""<?xml version="1.0" encoding="UTF-8"?>
+SAMPLE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
 <title>Teste</title>
 <item>
@@ -18,7 +18,7 @@ SAMPLE_RSS = b"""<?xml version="1.0" encoding="UTF-8"?>
 <description>Resumo para teste, não é uma notícia factual.</description>
 <source url="https://example.org/noticia">Fonte de teste</source>
 </item>
-</channel></rss>"""
+</channel></rss>""".encode("utf-8")
 
 
 class CollectorTests(unittest.TestCase):
