@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import ipaddress
 import json
+import re
 import socket
 import sys
 import time
@@ -109,6 +110,10 @@ def extract_html(html: str) -> dict:
     parser = ArticleParser()
     parser.feed(html)
     text = " ".join(parser.text_parts)
+    # Algumas páginas do agregador mantêm o destino em dados JSON/script, não em <a>.
+    embedded = re.findall(r'https?://[^\s"\'<>\\]+|https?:\\/\\/[^\s"\'<>]+', html)
+    embedded = [value.replace("\\/", "/").replace("\\u0026", "&").rstrip(".,);}") for value in embedded]
+    links = list(dict.fromkeys(parser.links + embedded))
     # Evita repetições triviais e mantém o limite de conteúdo enviado ao modelo.
     text = " ".join(text.split())[:MAX_TEXT_CHARS]
     return {
@@ -116,7 +121,7 @@ def extract_html(html: str) -> dict:
         "descricao_pagina": parser.description,
         "texto_extraido": text,
         "caracteres_extraidos": len(text),
-        "links": parser.links[:100],
+        "links": links[:200],
     }
 
 
