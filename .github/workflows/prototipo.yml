@@ -37,6 +37,8 @@ jobs:
           python -m unittest prototipo/testar_prototipo.py -v
           python -m unittest prototipo/testar_coletor.py -v
           python -m unittest prototipo/testar_gemini.py -v
+          python -m unittest prototipo/testar_fontes.py -v
+          python -m unittest prototipo/testar_rascunhos.py -v
 
       - name: Coletar sugestões de pauta por RSS
         run: python prototipo/coletar_fontes.py
@@ -44,11 +46,34 @@ jobs:
       - name: Triagem preliminar pelo Gemini (opcional)
         run: python prototipo/curar_com_gemini.py
 
+      - name: Verificar tecnicamente as fontes originais
+        run: python prototipo/verificar_fontes.py
+
+      - name: Preparar rascunhos editoriais (opcional)
+        run: python prototipo/redigir_rascunhos.py
+
       - name: Guardar relatório da descoberta
         uses: actions/upload-artifact@v4
         with:
           name: descoberta-editorial
           path: prototipo/saida/descoberta-fontes.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Guardar relatório de fontes originais
+        uses: actions/upload-artifact@v4
+        with:
+          name: fontes-verificadas
+          path: prototipo/saida/fontes-verificadas.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Guardar rascunhos editoriais, se disponíveis
+        uses: actions/upload-artifact@v4
+        if: hashFiles('prototipo/saida/rascunhos-editoriais.json') != ''
+        with:
+          name: rascunhos-editoriais
+          path: prototipo/saida/rascunhos-editoriais.json
           if-no-files-found: error
           retention-days: 14
 
