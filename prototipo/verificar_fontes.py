@@ -144,7 +144,7 @@ def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
 
 def verify_item(item: dict, opener=None) -> dict:
     started = time.monotonic()
-    source_url = item.get("url_fonte_publicadora") or item.get("url_agregador", "")
+    source_url = item.get("url_agregador") or item.get("url_fonte_publicadora", "")
     record = {
         "pilar": item.get("pilar", ""),
         "titulo_pauta": item.get("titulo", ""),
