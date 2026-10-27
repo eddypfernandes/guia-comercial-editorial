@@ -30,9 +30,9 @@ class SourceVerificationTests(unittest.TestCase):
         counts = {}
         for item in selected:
             counts[item["pilar"]] = counts.get(item["pilar"], 0) + 1
-        self.assertEqual(len(selected), 10)
+        self.assertEqual(len(selected), 5)
         self.assertEqual(set(counts), {"pet", "lazer", "esportes", "saude", "fitness"})
-        self.assertTrue(all(count == 2 for count in counts.values()))
+        self.assertTrue(all(count == 1 for count in counts.values()))
 
     def test_rejects_non_https_and_local_hosts(self):
         for url in ("http://example.com", "https://localhost/article", "https://127.0.0.1/article", "https://user:pass@example.com"):
