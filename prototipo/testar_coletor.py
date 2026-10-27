@@ -44,7 +44,7 @@ class CollectorTests(unittest.TestCase):
             "edition": "BR:pt-419",
             "queries": [{"pillar": "pet", "query": "animais"}]
         }, opener=broken_opener)
-        self.assertEqual(report["total_items"], 0)
+        self.assertEqual(report["total_itens"], 0)
         self.assertEqual(report["feeds_com_sucesso"], 0)
         self.assertEqual(report["feeds"][0]["status"], "erro")
 
