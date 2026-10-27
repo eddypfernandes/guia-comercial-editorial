@@ -135,7 +135,8 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
         with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
             body = response.read(MAX_RESPONSE_BYTES + 1)
     except urllib.error.HTTPError as exc:
-        details = exc.read(2000).decode("utf-8", errors="replace").replace("\\n", " ")\n        raise RuntimeError(f"Gemini respondeu HTTP {exc.code}: {details[:1200]}") from exc
+        details = exc.read(2000).decode("utf-8", errors="replace").replace("\n", " ").replace("\r", " ")
+        raise RuntimeError(f"Gemini respondeu HTTP {exc.code}: {details[:1200]}") from exc
     except (urllib.error.URLError, TimeoutError) as exc:
         raise RuntimeError(f"Não foi possível acessar o Gemini: {type(exc).__name__}.") from exc
     if len(body) > MAX_RESPONSE_BYTES:
