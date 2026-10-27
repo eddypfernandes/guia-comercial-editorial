@@ -1,39 +1,38 @@
 # Protótipo do ciclo editorial
 
-Este protótipo valida a configuração e seleciona pautas previamente fornecidas em JSON. **Ainda não pesquisa a internet, não usa Gemini, não confirma a veracidade das fontes e não publica conteúdo.**
+O fluxo automatizado descobre pautas por RSS, faz triagem opcional com Gemini, tenta extrair texto público das fontes originais e prepara rascunhos opcionais. Nada é publicado.
 
 ## Requisitos
 
-Python 3.11 ou superior. O protótipo usa apenas a biblioteca padrão do Python.
+Python 3.12 ou superior. O protótipo usa apenas a biblioteca padrão do Python.
 
-## Validar a configuração
+## Executar as etapas
 
-Na raiz do repositório:
-
-```bash
+\`\`\`bash
 python prototipo/validar_config.py
-```
+python prototipo/coletar_fontes.py
+python prototipo/curar_com_gemini.py
+python prototipo/verificar_fontes.py
+python prototipo/redigir_rascunhos.py
+\`\`\`
 
-## Preparar um ciclo de teste
+Os arquivos gerados ficam em \`prototipo/saida/\`. A triagem e a redação exigem \`GEMINI_API_KEY\`; sem ela, essas etapas são ignoradas. O coletor e a verificação técnica podem funcionar sem Gemini.
 
-1. Copie `prototipo/entrada/pautas.exemplo.json` para `prototipo/entrada/pautas.json`.
-2. Substitua o exemplo por pautas reais coletadas e verificadas manualmente. Não use o exemplo como notícia factual.
-3. Execute:
+## O que cada etapa significa
 
-```bash
-python prototipo/ciclo_editorial.py
-```
+- \`descoberta-fontes.json\`: sugestões do RSS, ainda não verificadas.
+- \`triagem-gemini.json\`: seleção preliminar de até duas pautas por pilar, não uma verificação factual.
+- \`fontes-verificadas.json\`: resultado técnico da tentativa de abrir o link e extrair texto da página; páginas bloqueadas ou com texto insuficiente ficam pendentes.
+- \`rascunhos-editoriais.json\`: rascunhos originais assistidos por IA com links para fontes e itens que precisam de conferência humana.
 
-4. Consulte `prototipo/saida/relatorio-ciclo.json`.
-
-O seletor respeita a validade informada, rejeita entradas inválidas, reduz duplicidades de ID, URL e título e limita a seleção a duas pautas por pilar. A pontuação é um critério de ordenação, não uma prova de qualidade ou veracidade.
+A extração não confirma a veracidade das informações. Um rascunho nunca deve ser tratado como pronto para publicação: revise a fonte original, datas, contexto, fatos, direitos de uso e adequação editorial. Não há publicação automática.
 
 ## Testes
 
-```bash
+\`\`\`bash
 python -m unittest prototipo/testar_prototipo.py -v
-```
-
-## Próxima etapa
-
-Integrar uma coleta de fontes permitidas, guardar evidências e datas de consulta, e só então avaliar a integração com Gemini. Credenciais devem ficar em segredos protegidos, nunca nos arquivos versionados.
+python -m unittest prototipo/testar_coletor.py -v
+python -m unittest prototipo/testar_gemini.py -v
+python -m unittest prototipo/testar_fontes.py -v
+python -m unittest prototipo/testar_rascunhos.py -v
+\`\`\`
