@@ -17,7 +17,8 @@ INPUT_PATH = ROOT / "prototipo" / "saida" / "descoberta-fontes.json"
 OUTPUT_PATH = ROOT / "prototipo" / "saida" / "triagem-gemini.json"
 API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 DEFAULT_MODEL = "gemini-3.8-flash"
-MAX_CANDIDATES = 60
+MAX_CANDIDATES = 20
+REQUEST_TIMEOUT_SECONDS = 120
 MAX_RESPONSE_BYTES = 1_000_000
 
 
@@ -29,7 +30,7 @@ def build_prompt(items: list[dict], pillars: list[str]) -> str:
         "fonte_publicadora": item.get("fonte_publicadora", ""),
         "url_fonte_publicadora": item.get("url_fonte_publicadora", ""),
         "publicado_em": item.get("publicado_em", ""),
-        "descricao_rss": item.get("descricao_rss", "")[:1200]
+        "descricao_rss": item.get("descricao_rss", "")[:600]
     } for item in items[:MAX_CANDIDATES]]
     return f"""Você faz a triagem preliminar de pautas do Guia Comercial, com foco no Núcleo Bandeirante e regiões próximas de Brasília/DF.
 
@@ -131,10 +132,10 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
         headers={"x-goog-api-key": api_key, "Content-Type": "application/json"}
     )
     try:
-        with urllib.request.urlopen(request, timeout=60) as response:
+        with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
             body = response.read(MAX_RESPONSE_BYTES + 1)
     except urllib.error.HTTPError as exc:
-        raise RuntimeError(f"Gemini respondeu HTTP {exc.code}. Verifique modelo, cota e credencial.") from exc
+        details = exc.read(2000).decode("utf-8", errors="replace").replace("\\n", " ")\n        raise RuntimeError(f"Gemini respondeu HTTP {exc.code}: {details[:1200]}") from exc
     except (urllib.error.URLError, TimeoutError) as exc:
         raise RuntimeError(f"Não foi possível acessar o Gemini: {type(exc).__name__}.") from exc
     if len(body) > MAX_RESPONSE_BYTES:
