@@ -1,7 +1,9 @@
-name: Verificação do protótipo
+name: Ciclo editorial — descoberta de pautas
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 10 * * *"
   push:
     paths:
       - "config/**"
@@ -12,8 +14,9 @@ permissions:
   contents: read
 
 jobs:
-  verificar-prototipo:
+  validar-e-descobrir:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
@@ -27,4 +30,17 @@ jobs:
         run: python prototipo/validar_config.py
 
       - name: Executar testes automatizados
-        run: python -m unittest prototipo/testar_prototipo.py -v
+        run: |
+          python -m unittest prototipo/testar_prototipo.py -v
+          python -m unittest prototipo/testar_coletor.py -v
+
+      - name: Coletar sugestões de pauta por RSS
+        run: python prototipo/coletar_fontes.py
+
+      - name: Guardar relatório da descoberta
+        uses: actions/upload-artifact@v4
+        with:
+          name: descoberta-editorial
+          path: prototipo/saida/descoberta-fontes.json
+          if-no-files-found: error
+          retention-days: 14
