@@ -1,0 +1,21 @@
+{
+  "mode": "prototype",
+  "official_publication_enabled": false,
+  "pillars": [
+    "pet",
+    "lazer",
+    "esportes",
+    "saude",
+    "fitness"
+  ],
+  "target_active_contents_per_pillar": {
+    "minimum": 1,
+    "maximum": 2,
+    "do_not_fill_without_quality": true
+  },
+  "image_ai_disclosure": "Imagem criada por IA",
+  "local_focus": [
+    "Núcleo Bandeirante",
+    "regiões próximas de Brasília"
+  ]
+}
