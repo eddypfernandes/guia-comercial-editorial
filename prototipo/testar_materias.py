@@ -16,6 +16,7 @@ class ArticleValidationTests(unittest.TestCase):
             "titulo_pagina": "Notícia original",
             "publicado_em_rss": "2026-10-27",
             "texto_extraido": "Texto da fonte " * 50,
+            "imagem_url": "https://example.org/img/noticia.jpg",
             "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
         }]
         self.body = "Este é um texto editorial de teste, baseado no material fornecido pela fonte original. " * 5
@@ -26,6 +27,7 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertFalse(result["publicacao_oficial"])
         article = result["materias"][0]
         self.assertEqual(article["url_fonte"], "https://example.org/noticia")
+        self.assertEqual(article["imagem_url"], "https://example.org/img/noticia.jpg")
         self.assertEqual(article["status_editorial"], "rascunho_automatico_sem_ia_revisao_obrigatoria")
         self.assertIn("SEM REESCRITA POR IA", article["corpo"])
         self.assertIn("quota excedida", result["aviso"])
@@ -43,10 +45,12 @@ class ArticleValidationTests(unittest.TestCase):
             "linha_fina": "Resumo claro com contexto para o leitor local.",
             "corpo": self.body,
             "url_fonte": "https://example.org/noticia",
+            "imagem_url": "https://example.org/img/noticia.jpg",
         }]}
         result = validate_articles(data, self.source)
         self.assertEqual(result["total_materias_validas"], 1)
         self.assertEqual(result["materias"][0]["url_fonte"], "https://example.org/noticia")
+        self.assertEqual(result["materias"][0]["imagem_url"], "https://example.org/img/noticia.jpg")
         self.assertFalse(result["publicacao_oficial"])
 
     def test_rejects_unknown_source_wrong_pillar_and_short_text(self):
