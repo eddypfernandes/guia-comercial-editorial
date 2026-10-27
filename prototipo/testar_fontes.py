@@ -14,7 +14,7 @@ class SourceVerificationTests(unittest.TestCase):
         <meta property="og:image" content="/img/noticia.jpg"></head><body>
         <nav>Menu ignorado</nav><p>Texto principal da matéria.</p>
         <script>código ignorado</script></body></html>"""
-        result = extract_html(html)
+        result = extract_html(html, "https://example.org/noticia")
         self.assertEqual(result["titulo_pagina"], "Notícia teste")
         self.assertEqual(result["descricao_pagina"], "Resumo de teste")
         self.assertEqual(result["imagem_url"], "https://example.org/img/noticia.jpg")
