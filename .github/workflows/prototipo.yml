@@ -2,22 +2,29 @@ name: Verificação do protótipo
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "config/**"
+      - "prototipo/**"
+      - ".github/workflows/prototipo.yml"
 
 permissions:
   contents: read
 
 jobs:
-  verificar-estrutura:
+  verificar-prototipo:
     runs-on: ubuntu-latest
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
 
-      - name: Verificar arquivos essenciais
-        shell: bash
-        run: |
-          test -f README.md
-          test -f docs/arquitetura-inicial.md
-          test -f docs/decisoes.md
-          test -f config/editorial.json
-          echo "Estrutura inicial verificada."
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validar configuração editorial
+        run: python prototipo/validar_config.py
+
+      - name: Executar testes automatizados
+        run: python -m unittest prototipo/testar_prototipo.py -v
