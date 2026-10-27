@@ -174,6 +174,61 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
 
     raise RuntimeError(f"Gemini não respondeu após 3 tentativas. Último erro: {last_error}") from last_error
 
+def build_fallback_report(source_items: list[dict], reason: str) -> dict:
+    """Cria rascunhos sem IA usando apenas trechos da fonte original."""
+    eligible = [
+        item for item in source_items
+        if item.get("status_verificacao") == "pagina_original_extraida_revisao_factual_pendente"
+        and len(item.get("texto_extraido", "")) >= 500
+        and item.get("url_final")
+    ]
+
+    articles = []
+    for item in eligible[:MAX_ARTICLES]:
+        title = str(item.get("titulo_pagina") or item.get("titulo_pauta") or "").strip()
+        if len(title) < 12:
+            title = str(item.get("titulo_pauta") or "Rascunho editorial para revisão").strip()
+        title = title[:180]
+        description = str(item.get("descricao_pagina") or "").strip()
+        text = " ".join(str(item.get("texto_extraido", "")).split())
+        # Mantém o texto da fonte como excerto, sem fingir que houve reescrita ou checagem.
+        excerpt = text[:1800].rsplit(" ", 1)[0].strip()
+        summary = description if 20 <= len(description) <= 400 else (
+            "Rascunho provisório baseado em texto extraído da fonte original; requer revisão editorial."
+        )
+        body = (
+            "RASCUNHO AUTOMÁTICO — SEM REESCRITA POR IA E SEM CHECAGEM FACTUAL. "
+            "O trecho a seguir foi extraído da página original e é apresentado apenas para facilitar a revisão.\n\n"
+            + excerpt
+            + "\n\nAntes de publicar, confira manualmente os fatos, a data, o contexto, a autoria e os direitos de uso. "
+            "Este conteúdo não está aprovado para publicação."
+        )
+        articles.append({
+            "id": f"rascunho-{len(articles) + 1:02d}",
+            "pilar": item.get("pilar", ""),
+            "titulo": title,
+            "linha_fina": summary,
+            "corpo": body,
+            "fonte_publicadora": item.get("fonte_publicadora", ""),
+            "url_fonte": item.get("url_final", ""),
+            "titulo_fonte": item.get("titulo_pagina", ""),
+            "publicado_em_fonte": item.get("publicado_em_rss", ""),
+            "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "status_editorial": "rascunho_automatico_sem_ia_revisao_obrigatoria",
+            "aviso_editorial": "Trecho extraído da fonte original, sem reescrita por IA e sem checagem factual. Revisão humana obrigatória; não publicar automaticamente.",
+        })
+
+    return {
+        "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "total_recebidas": len(articles),
+        "total_materias_validas": len(articles),
+        "respostas_rejeitadas": 0,
+        "publicacao_oficial": False,
+        "aviso": "Modo alternativo sem Gemini. Os itens são rascunhos com trechos extraídos das fontes, não matérias reescritas nem fatos verificados. Revisão humana obrigatória. Motivo: " + reason[:240],
+        "materias": articles,
+    }
+
+
 def main() -> int:
     try:
         report = json.loads(INPUT_PATH.read_text(encoding="utf-8"))
@@ -191,11 +246,16 @@ def main() -> int:
             return 0
         api_key = os.environ.get("GEMINI_API_KEY", "").strip()
         if not api_key:
-            write_empty("GEMINI_API_KEY ausente; nenhuma matéria foi gerada.")
-            print("GEMINI_API_KEY ausente; arquivo de matérias vazio criado.")
-            return 0
-        response = call_gemini(api_key, os.environ.get("GEMINI_MODEL", DEFAULT_MODEL), build_prompt(eligible))
-        result = validate_articles(extract_json(response), eligible)
+            result = build_fallback_report(eligible, "GEMINI_API_KEY ausente")
+            print("Chave Gemini ausente; usando rascunhos alternativos sem IA.")
+        else:
+            try:
+                response = call_gemini(api_key, os.environ.get("GEMINI_MODEL", DEFAULT_MODEL), build_prompt(eligible))
+                result = validate_articles(extract_json(response), eligible)
+            except (RuntimeError, ValueError) as exc:
+                # Limite/cota, indisponibilidade ou resposta inválida: não interrompe o ciclo.
+                result = build_fallback_report(eligible, str(exc))
+                print(f"Gemini indisponível; usando rascunhos alternativos: {str(exc)[:240]}")
         OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Fontes elegíveis: {len(eligible)}")
