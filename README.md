@@ -1,47 +1,38 @@
 # GUIA COMERCIAL — Agente Editorial
 
-Repositório exclusivo para o protótipo do agente editorial do GUIA COMERCIAL.
+Protótipo do agente editorial do GUIA COMERCIAL, isolado dos demais repositórios.
 
-## O que já funciona
+## O que está automatizado
 
-O GitHub Actions executa a validação, os testes e uma coleta diária de sugestões de pauta via RSS para os cinco pilares: Pet, Lazer, Esportes, Saúde e Fitness.
+- Execução diária às 07h de Brasília e acionamento manual pelo GitHub Actions.
+- Descoberta de sugestões de pauta por Google News RSS nos pilares Pet, Lazer, Esportes, Saúde e Fitness, com foco em Brasília/DF.
+- Testes automatizados da configuração, seleção de pautas, coleta RSS e validação da triagem.
+- Triagem preliminar opcional pelo Gemini, limitada aos candidatos coletados, com rejeição de URLs inventadas e máximo de duas sugestões por pilar.
+- Relatórios guardados como artefatos do GitHub Actions por 14 dias.
 
-A coleta está configurada em `config/fontes.json` e usa pesquisas RSS do Google News com foco em Brasília/DF e Brasil. O relatório é produzido em JSON e guardado como artefato do GitHub Actions por 14 dias.
+## Gemini
 
-**A coleta é descoberta, não verificação factual.** O sistema registra título, link do agregador, publicação de origem quando identificada, data publicada e horário de consulta. As pautas precisam ser abertas e verificadas na fonte original antes de qualquer redação ou publicação.
+O workflow usa o segredo `GEMINI_API_KEY` e o modelo `gemini-3.6-flash`. Se o segredo não existir, a coleta RSS e os testes continuam funcionando, e a etapa Gemini é ignorada sem falhar. A chave nunca deve ser escrita nos arquivos do repositório.
 
-## O que ainda não faz
+Para habilitar a triagem: no repositório, abra **Settings → Secrets and variables → Actions → New repository secret**, use o nome `GEMINI_API_KEY` e cole a chave da API do Gemini como valor. Não envie a chave pelo chat. A integração não fica ativa até esse segredo existir.
 
-- Não confirma a veracidade das notícias nem lê integralmente todas as matérias.
-- Não redige artigos automaticamente.
-- Não gera imagens.
-- Não integra o Gemini.
-- Não publica no site.
-- Não altera os outros repositórios do usuário.
+## Limites importantes
 
-## Como executar
+O RSS e a triagem Gemini identificam pistas, não confirmam fatos. A triagem recebe títulos e resumos curtos, não o conteúdo integral das matérias originais. Antes de redigir um artigo, a fonte original deve ser aberta e verificada, especialmente para saúde, veterinária, pets e exercícios.
 
-Na página [Actions do repositório](https://github.com/eddypfernandes/guia-comercial-editorial/actions), escolha **Ciclo editorial — descoberta de pautas** e clique em **Run workflow** para executar manualmente.
+O protótipo ainda **não** redige artigos completos, gera imagens, publica no site ou altera qualquer outro repositório. A publicação oficial permanece desativada. O conteúdo nunca deve ser inventado para preencher metas.
 
-Quando uma execução terminar, abra-a e baixe o artefato **descoberta-editorial**. O workflow também é agendado diariamente às 07h de Brasília (10:00 UTC).
+## Executar manualmente
+
+Abra [Actions](https://github.com/eddypfernandes/guia-comercial-editorial/actions), escolha **Ciclo editorial — descoberta e triagem** e clique em **Run workflow**. Ao terminar, baixe o artefato **descoberta-editorial** e, se o segredo estiver configurado, **triagem-gemini**.
 
 ## Testes locais
 
-Requisito: Python 3.11 ou superior, sem dependências externas.
+Requisito: Python 3.12 ou superior, sem dependências externas.
 
 ```bash
 python prototipo/validar_config.py
 python -m unittest prototipo/testar_prototipo.py -v
 python -m unittest prototipo/testar_coletor.py -v
+python -m unittest prototipo/testar_gemini.py -v
 ```
-
-## Princípios
-
-1. Publicação oficial desativada durante o protótipo.
-2. Nenhum fato, citação, negócio local, preço ou horário pode ser inventado.
-3. Guardar fontes e datas de consulta.
-4. Não preencher metas com conteúdo fraco.
-5. Máximo de duas pautas selecionadas por pilar no ciclo de seleção.
-6. Tratar validade e duplicidade explicitamente.
-7. Manter credenciais fora do código e do histórico Git.
-8. Preservar os demais repositórios sem alterações.
