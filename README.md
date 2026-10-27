@@ -4,28 +4,38 @@ Repositório exclusivo para o protótipo do agente editorial autônomo do GUIA C
 
 ## Objetivo
 
-Produzir, por ciclos, de 1 a 2 conteúdos úteis e confiáveis para cada pilar:
+Preparar, por ciclos, conteúdos úteis e confiáveis para cinco pilares:
 - Pet
 - Lazer
 - Esportes
 - Saúde
 - Fitness
 
-O agente deverá pesquisar, selecionar pautas, verificar informações, redigir matérias, gerar imagens quando aplicável, registrar fontes e validade, controlar duplicidade e preparar os resultados para revisão visual.
+O agente deverá pesquisar, selecionar pautas, verificar informações, redigir matérias, gerar imagens quando aplicável, registrar fontes e validade, controlar duplicidade e preparar resultados para revisão visual.
 
 ## Estado atual
 
-**Protótipo inicial — não conectado à hospedagem e sem publicação oficial.**
+**Protótipo de seleção local implementado; ainda não há coleta automática na internet, integração com Gemini, interface ASP Clássico ou publicação oficial.**
 
-Nenhuma chave de API deve ser incluída no repositório. Configure credenciais futuramente em GitHub Actions Secrets ou em variáveis de ambiente protegidas.
+O código atual:
+- valida a configuração editorial;
+- valida os campos essenciais das pautas de entrada;
+- seleciona pautas por pontuação, validade e pilar;
+- identifica IDs, URLs e títulos duplicados;
+- limita a seleção a duas pautas por pilar sem preencher artificialmente;
+- gera relatório JSON para revisão;
+- executa testes automatizados no GitHub Actions.
 
-## Estrutura
+## Como testar localmente
 
-- `docs/`: decisões e especificações do projeto.
-- `config/`: configuração não secreta do protótipo.
-- `prototipo/`: componentes de demonstração.
-- `.github/workflows/`: automações do GitHub Actions.
-- `.env.example`: nomes ilustrativos de variáveis; não contém credenciais.
+Requisito: Python 3.11 ou superior, sem bibliotecas adicionais.
+
+```bash
+python prototipo/validar_config.py
+python -m unittest prototipo/testar_prototipo.py -v
+```
+
+Para preparar um ciclo, consulte [o guia do protótipo](prototipo/README.md). O arquivo `prototipo/entrada/pautas.exemplo.json` é apenas um modelo estrutural, não uma notícia real.
 
 ## Princípios
 
@@ -37,7 +47,11 @@ Nenhuma chave de API deve ser incluída no repositório. Configure credenciais f
 6. Expirar ou retirar conteúdo vencido de forma controlada.
 7. Manter metadados e arquivos de imagem separados.
 8. Não alterar os repositórios `radar-ticker`, `clima` ou `oportunidades`.
+9. Manter credenciais fora do código e do histórico Git.
 
-## Próximo desenvolvimento
+## Próximas etapas
 
-Implementar primeiro uma execução de teste que produza um relatório de pautas e matérias em artefatos de protótipo, sem publicar no site. A integração com Gemini, persistência e interface ASP Clássico será adicionada em etapas verificáveis.
+1. Verificar a execução dos testes no GitHub Actions.
+2. Integrar coleta de fontes permitidas e registro das evidências.
+3. Avaliar integração com Gemini depois de conferir o padrão usado nos repositórios existentes, sem modificá-los.
+4. Criar a revisão editorial e a pré-visualização; decidir persistência e interface ASP Clássico numa etapa posterior.
