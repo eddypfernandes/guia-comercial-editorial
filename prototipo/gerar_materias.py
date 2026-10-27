@@ -39,6 +39,7 @@ def build_prompt(items: list[dict]) -> str:
             "data_rss": item.get("publicado_em_rss", ""),
             "titulo_pagina": item.get("titulo_pagina", ""),
             "descricao_pagina": item.get("descricao_pagina", ""),
+            "imagem_url": item.get("imagem_url", ""),
             "texto_extraido": item.get("texto_extraido", "")[:10000],
         })
     return f"""Você é redator do GUIA COMERCIAL, voltado a leitores do Núcleo Bandeirante e regiões próximas de Brasília/DF.
@@ -52,10 +53,13 @@ REGRAS OBRIGATÓRIAS:
 - Não transforme hipótese, opinião ou alegação da fonte em fato comprovado.
 - Para saúde, veterinária, pets e atividade física, não ofereça diagnóstico nem prescrição.
 - Se o material não sustentar uma matéria útil, omita-o em vez de preencher lacunas.
+- Reescreva de verdade: não copie frases da fonte nem reproduza a matéria original em sequência. Produza uma síntese editorial própria, clara e agradável.
+- Prefira 3 a 5 parágrafos curtos, aproximadamente 180 a 350 palavras no total; elimine menus, publicidade, chamadas relacionadas e repetições.
+- Preserve o contexto, os dados essenciais e as ressalvas da fonte. Se o texto não permitir uma síntese fiel, omita a pauta.
 - Cada matéria deve ter título, linha fina e corpo com parágrafos separados por duas quebras de linha.
-- Inclua a URL exata da página original como url_fonte. Não invente nem altere URLs.
+- Inclua a URL exata da página original como url_fonte e a URL da imagem fornecida como imagem_url. Se não houver imagem, use string vazia. Não invente nem altere URLs.
 - Retorne somente JSON válido, sem Markdown, no formato:
-{{"materias":[{{"pilar":"pet","titulo":"...","linha_fina":"...","corpo":"Parágrafo 1.\\n\\nParágrafo 2.","url_fonte":"URL exata"}}]}}
+{{"materias":[{{"pilar":"pet","titulo":"...","linha_fina":"...","corpo":"Parágrafo 1.\\n\\nParágrafo 2.","url_fonte":"URL exata","imagem_url":"URL exata ou string vazia"}}]}}
 - No máximo uma matéria por fonte e até {MAX_ARTICLES} matérias no total.
 - O pilar deve ser o mesmo do material correspondente.
 
@@ -94,6 +98,10 @@ def validate_articles(data: dict, source_items: list[dict]) -> dict:
         if article.get("pilar") != source.get("pilar"):
             rejected += 1
             continue
+        image_url = source.get("imagem_url", "")
+        if article.get("imagem_url", "") not in ("", image_url):
+            rejected += 1
+            continue
         title = str(article.get("titulo", "")).strip()
         summary = str(article.get("linha_fina", "")).strip()
         body = str(article.get("corpo", "")).strip()
@@ -109,6 +117,7 @@ def validate_articles(data: dict, source_items: list[dict]) -> dict:
             "corpo": body[:12000],
             "fonte_publicadora": source.get("fonte_publicadora", ""),
             "url_fonte": url,
+            "imagem_url": image_url,
             "titulo_fonte": source.get("titulo_pagina", ""),
             "publicado_em_fonte": source.get("publicado_em_rss", ""),
             "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -211,6 +220,7 @@ def build_fallback_report(source_items: list[dict], reason: str) -> dict:
             "corpo": body,
             "fonte_publicadora": item.get("fonte_publicadora", ""),
             "url_fonte": item.get("url_final", ""),
+            "imagem_url": item.get("imagem_url", ""),
             "titulo_fonte": item.get("titulo_pagina", ""),
             "publicado_em_fonte": item.get("publicado_em_rss", ""),
             "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -249,13 +259,27 @@ def main() -> int:
             result = build_fallback_report(eligible, "GEMINI_API_KEY ausente")
             print("Chave Gemini ausente; usando rascunhos alternativos sem IA.")
         else:
-            try:
-                response = call_gemini(api_key, os.environ.get("GEMINI_MODEL", DEFAULT_MODEL), build_prompt(eligible))
-                result = validate_articles(extract_json(response), eligible)
-            except (RuntimeError, ValueError) as exc:
-                # Limite/cota, indisponibilidade ou resposta inválida: não interrompe o ciclo.
-                result = build_fallback_report(eligible, str(exc))
-                print(f"Gemini indisponível; usando rascunhos alternativos: {str(exc)[:240]}")
+            primary_model = os.environ.get("GEMINI_MODEL", DEFAULT_MODEL).strip()
+            fallback_models = [name.strip() for name in os.environ.get("GEMINI_FALLBACK_MODELS", "gemini-2.5-flash-lite").split(",") if name.strip()]
+            models = list(dict.fromkeys([primary_model] + fallback_models))
+            result = None
+            errors = []
+            for model in models:
+                try:
+                    print(f"Tentando redação editorial com o modelo {model}.")
+                    response = call_gemini(api_key, model, build_prompt(eligible))
+                    candidate = validate_articles(extract_json(response), eligible)
+                    if not candidate["materias"]:
+                        raise ValueError("O modelo não produziu matérias que passassem pela validação.")
+                    result = candidate
+                    break
+                except (RuntimeError, ValueError) as exc:
+                    errors.append(f"{model}: {str(exc)[:220]}")
+                    print(f"Modelo {model} indisponível ou resposta inválida; tentando alternativa.")
+            if result is None:
+                reason = " | ".join(errors) or "Nenhum modelo de redação disponível."
+                result = build_fallback_report(eligible, reason)
+                print(f"Gemini indisponível; usando rascunhos alternativos: {reason[:240]}")
         OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Fontes elegíveis: {len(eligible)}")
