@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 8
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      GEMINI_MODEL: gemini-3.6-flash
+      GEMINI_MODEL: gemini-3.8-flash
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
