@@ -11,7 +11,7 @@ on:
       - ".github/workflows/prototipo.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validar-e-descobrir:
@@ -52,6 +52,20 @@ jobs:
 
       - name: Redigir matérias para leitura
         run: python prototipo/gerar_materias.py
+
+      - name: Atualizar feed JSON da prévia do site
+        run: |
+          mkdir -p docs/data
+          cp prototipo/saida/materias-editoriais.json docs/data/materias-editoriais.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/materias-editoriais.json
+          if git diff --cached --quiet; then
+            echo "O feed editorial não teve alterações."
+          else
+            git commit -m "Atualiza matérias da prévia editorial"
+            git push
+          fi
 
       - name: Guardar relatório da descoberta
         uses: actions/upload-artifact@v4
