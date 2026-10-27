@@ -125,6 +125,74 @@ def extract_html(html: str) -> dict:
     }
 
 
+def resolve_google_news_url(url: str, opener=None) -> str:
+    """Resolve Google News RSS redirects using its undocumented article endpoint.
+
+    Google can change this mechanism or rate-limit it. Failure is recorded as
+    pending; the pipeline never guesses an original publisher URL.
+    """
+    parsed = urllib.parse.urlsplit(url)
+    host = (parsed.hostname or "").lower()
+    if host != "news.google.com" and not host.endswith(".news.google.com"):
+        return validate_public_url(url)
+    article_id = parsed.path.rstrip("/").split("/")[-1]
+    if not article_id or article_id in {"articles", "read"}:
+        raise ValueError("Link do Google News sem identificador de matéria.")
+    opener = opener or urllib.request.build_opener(SafeRedirectHandler())
+    page_url = "https://news.google.com/rss/articles/" + urllib.parse.quote(article_id, safe="-_")
+    request = urllib.request.Request(page_url, headers={
+        "User-Agent": "Mozilla/5.0 (compatible; GuiaComercialEditorial/0.2)",
+        "Cookie": "CONSENT=YES+cb; SOCS=CAI",
+        "Accept": "text/html,application/xhtml+xml",
+    })
+    with opener.open(request, timeout=TIMEOUT) as response:
+        final_url = response.geturl()
+        validate_public_url(final_url)
+        html = response.read(MAX_BYTES + 1).decode("utf-8", errors="replace")
+    if len(html.encode("utf-8")) > MAX_BYTES:
+        raise ValueError("Página de resolução Google News excedeu 2 MB.")
+    final_host = (urllib.parse.urlsplit(final_url).hostname or "").lower()
+    if final_host != "news.google.com" and not final_host.endswith(".news.google.com") and final_host != "consent.google.com":
+        return validate_public_url(final_url)
+
+    signature = re.search(r'data-n-a-sg="([^"]+)"', html)
+    timestamp = re.search(r'data-n-a-ts="([^"]+)"', html)
+    if not signature or not timestamp:
+        raise ValueError("Google News não forneceu assinatura/timestamp para resolver a matéria.")
+    inner = (
+        '["garturlreq",[["X","X",["X","X"],null,null,1,1,"BR:pt-419",null,1,'
+        'null,null,null,null,null,0,1],"X","X",1,[1,1,1],1,1,null,0,0,null,0],'
+        f'"{article_id}",{timestamp.group(1)},"{signature.group(1)}"]'
+    )
+    body = urllib.parse.urlencode({
+        "f.req": json.dumps([[["Fbv4je", inner, None, "generic"]]])
+    }).encode("utf-8")
+    post = urllib.request.Request(
+        "https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je",
+        data=body,
+        method="POST",
+        headers={
+            "User-Agent": "Mozilla/5.0 (compatible; GuiaComercialEditorial/0.2)",
+            "Cookie": "CONSENT=YES+cb; SOCS=CAI",
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+    )
+    with opener.open(post, timeout=TIMEOUT) as response:
+        raw = response.read(MAX_BYTES).decode("utf-8", errors="replace")
+    payload_text = raw.split("\n\n", 1)[1] if "\n\n" in raw else raw
+    if payload_text.startswith(")]}'"):
+        payload_text = payload_text.split("\n", 1)[-1]
+    try:
+        rows = json.loads(payload_text)
+        row = rows[0][2]
+        resolved = json.loads(row)[1] if row is not None else ""
+    except (json.JSONDecodeError, IndexError, KeyError, TypeError) as exc:
+        raise ValueError("Resposta do resolvedor Google News inválida ou sem URL.") from exc
+    if not isinstance(resolved, str) or not resolved:
+        raise ValueError("Google News não retornou URL da matéria original.")
+    return validate_public_url(resolved)
+
+
 def fetch_page(url: str, opener=None) -> tuple[str, str, str]:
     validate_public_url(url)
     opener = opener or urllib.request.build_opener(SafeRedirectHandler())
@@ -176,25 +244,10 @@ def verify_item(item: dict, opener=None) -> dict:
         "evidencia_tecnica": "Abertura de página e extração de texto não comprovam a veracidade das afirmações.",
     }
     try:
+        source_url = resolve_google_news_url(source_url, opener=opener)
         final_url, content_type, html = fetch_page(source_url, opener=opener)
         extracted = extract_html(html)
         host_final = (urllib.parse.urlsplit(final_url).hostname or "").lower()
-        if host_final == "news.google.com" or host_final.endswith(".news.google.com"):
-            publisher_host = (urllib.parse.urlsplit(item.get("url_fonte_publicadora", "")).hostname or "").lower()
-            candidates = []
-            for href in extracted.get("links", []):
-                candidate = urllib.parse.urljoin(final_url, href)
-                parsed = urllib.parse.urlsplit(candidate)
-                host = (parsed.hostname or "").lower()
-                if parsed.scheme != "https" or not host or host == "google.com" or host.endswith(".google.com") or host == "news.google.com" or host.endswith(".news.google.com"):
-                    continue
-                candidates.append(candidate)
-            candidates.sort(key=lambda url: 0 if publisher_host and (urllib.parse.urlsplit(url).hostname or "").lower().endswith(publisher_host) else 1)
-            if candidates:
-                source_url = candidates[0]
-                final_url, content_type, html = fetch_page(source_url, opener=opener)
-                extracted = extract_html(html)
-                host_final = (urllib.parse.urlsplit(final_url).hostname or "").lower()
         record.update({
             "url_final": final_url,
             "content_type": content_type,
