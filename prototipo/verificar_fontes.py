@@ -66,6 +66,7 @@ class ArticleParser(HTMLParser):
         self.title_parts: list[str] = []
         self.description = ""
         self.text_parts: list[str] = []
+        self.links: list[str] = []
         self._in_title = False
         self._skip_depth = 0
         self._skip_tags = {"script", "style", "noscript", "svg", "nav", "footer", "header", "aside", "form"}
@@ -75,6 +76,8 @@ class ArticleParser(HTMLParser):
         attrs = dict(attrs)
         if tag == "title":
             self._in_title = True
+        if tag == "a" and not self._skip_depth and attrs.get("href"):
+            self.links.append(attrs["href"])
         if tag in self._skip_tags:
             self._skip_depth += 1
         if tag == "meta" and attrs.get("name", "").lower() in {"description", "og:description"}:
@@ -113,6 +116,7 @@ def extract_html(html: str) -> dict:
         "descricao_pagina": parser.description,
         "texto_extraido": text,
         "caracteres_extraidos": len(text),
+        "links": parser.links[:100],
     }
 
 
@@ -139,7 +143,17 @@ def fetch_page(url: str, opener=None) -> tuple[str, str, str]:
 def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
     if triage and isinstance(triage.get("itens"), list):
         return triage["itens"][:10]
-    return discovery.get("itens", [])[:10]
+    # Sem Gemini, manter amostra equilibrada: no máximo duas pautas por pilar.
+    selected, counts = [], {}
+    for item in discovery.get("itens", []):
+        pillar = item.get("pilar", "")
+        if counts.get(pillar, 0) >= 2:
+            continue
+        selected.append(item)
+        counts[pillar] = counts.get(pillar, 0) + 1
+        if len(selected) >= 10:
+            break
+    return selected
 
 
 def verify_item(item: dict, opener=None) -> dict:
@@ -159,6 +173,23 @@ def verify_item(item: dict, opener=None) -> dict:
     try:
         final_url, content_type, html = fetch_page(source_url, opener=opener)
         extracted = extract_html(html)
+        host_final = (urllib.parse.urlsplit(final_url).hostname or "").lower()
+        if host_final == "news.google.com" or host_final.endswith(".news.google.com"):
+            publisher_host = (urllib.parse.urlsplit(item.get("url_fonte_publicadora", "")).hostname or "").lower()
+            candidates = []
+            for href in extracted.get("links", []):
+                candidate = urllib.parse.urljoin(final_url, href)
+                parsed = urllib.parse.urlsplit(candidate)
+                host = (parsed.hostname or "").lower()
+                if parsed.scheme != "https" or not host or host == "google.com" or host.endswith(".google.com") or host == "news.google.com" or host.endswith(".news.google.com"):
+                    continue
+                candidates.append(candidate)
+            candidates.sort(key=lambda url: 0 if publisher_host and (urllib.parse.urlsplit(url).hostname or "").lower().endswith(publisher_host) else 1)
+            if candidates:
+                source_url = candidates[0]
+                final_url, content_type, html = fetch_page(source_url, opener=opener)
+                extracted = extract_html(html)
+                host_final = (urllib.parse.urlsplit(final_url).hostname or "").lower()
         record.update({
             "url_final": final_url,
             "content_type": content_type,
@@ -168,10 +199,9 @@ def verify_item(item: dict, opener=None) -> dict:
             "caracteres_extraidos": extracted["caracteres_extraidos"],
             "duracao_segundos": round(time.monotonic() - started, 2),
         })
-        host_final = (urllib.parse.urlsplit(final_url).hostname or "").lower()
-        if host_final.endswith("news.google.com"):
+        if host_final == "news.google.com" or host_final.endswith(".news.google.com"):
             record["status_verificacao"] = "pendente_link_agregador"
-            record["erro"] = "O redirecionamento permaneceu no agregador; identifique a matéria original."
+            record["erro"] = "O agregador não revelou um link externo para a matéria original."
         elif extracted["caracteres_extraidos"] < MIN_TEXT_CHARS:
             record["status_verificacao"] = "pendente_texto_insuficiente"
             record["erro"] = "Texto extraído insuficiente; revisar manualmente ou acessar a fonte."
