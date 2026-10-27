@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from gerar_materias import extract_json, validate_articles
+from gerar_materias import build_fallback_report, extract_json, validate_articles
 
 
 class ArticleValidationTests(unittest.TestCase):
@@ -19,6 +19,16 @@ class ArticleValidationTests(unittest.TestCase):
             "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
         }]
         self.body = "Este é um texto editorial de teste, baseado no material fornecido pela fonte original. " * 5
+
+    def test_fallback_creates_explicit_unapproved_draft_without_ai(self):
+        result = build_fallback_report(self.source, "quota excedida")
+        self.assertEqual(result["total_materias_validas"], 1)
+        self.assertFalse(result["publicacao_oficial"])
+        article = result["materias"][0]
+        self.assertEqual(article["url_fonte"], "https://example.org/noticia")
+        self.assertEqual(article["status_editorial"], "rascunho_automatico_sem_ia_revisao_obrigatoria")
+        self.assertIn("SEM REESCRITA POR IA", article["corpo"])
+        self.assertIn("quota excedida", result["aviso"])
 
     def test_extract_json(self):
         self.assertEqual(
