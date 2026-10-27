@@ -1,4 +1,4 @@
-name: Ciclo editorial — descoberta de pautas
+name: Ciclo editorial — descoberta e triagem
 
 on:
   workflow_dispatch:
@@ -16,7 +16,10 @@ permissions:
 jobs:
   validar-e-descobrir:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: gemini-3.6-flash
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
@@ -33,14 +36,27 @@ jobs:
         run: |
           python -m unittest prototipo/testar_prototipo.py -v
           python -m unittest prototipo/testar_coletor.py -v
+          python -m unittest prototipo/testar_gemini.py -v
 
       - name: Coletar sugestões de pauta por RSS
         run: python prototipo/coletar_fontes.py
+
+      - name: Triagem preliminar pelo Gemini (opcional)
+        run: python prototipo/curar_com_gemini.py
 
       - name: Guardar relatório da descoberta
         uses: actions/upload-artifact@v4
         with:
           name: descoberta-editorial
           path: prototipo/saida/descoberta-fontes.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Guardar triagem Gemini, se disponível
+        uses: actions/upload-artifact@v4
+        if: hashFiles('prototipo/saida/triagem-gemini.json') != ''
+        with:
+          name: triagem-gemini
+          path: prototipo/saida/triagem-gemini.json
           if-no-files-found: error
           retention-days: 14
