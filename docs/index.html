@@ -28,7 +28,9 @@
     .btn-guia { background: var(--gc-verde); color: #fff; border-color: var(--gc-verde); }
     .btn-guia:hover { background: var(--gc-verde-hover); color: #fff; }
     .card { border-color: var(--gc-borda); border-radius: 1rem; overflow: hidden; }
-    .imagem-destaque { min-height: 220px; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; color: var(--gc-verde); }
+    .imagem-destaque { min-height: 220px; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; color: var(--gc-verde); overflow: hidden; }
+    .imagem-destaque img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
+    .imagem-mini img { width: 100%; height: 100%; object-fit: cover; border-radius: .75rem; }
     .imagem-mini { width: 104px; min-width: 104px; height: 92px; border-radius: .75rem; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; color: var(--gc-verde); }
     .anuncio { border: 1px dashed #b7c3b8; background: #fff; border-radius: 1rem; min-height: 250px; }
     .rodape { background: var(--gc-rodape); color: #fff; }
@@ -78,7 +80,7 @@
               <div class="card shadow-sm mb-4">
                 <div class="row g-0">
                   <div class="col-12 col-md-5">
-                    <div class="imagem-destaque h-100 p-4">
+                    <div id="imagemDestaque" class="imagem-destaque h-100 p-4">
                       <div class="text-center"><div class="display-4 fw-bold">GC</div><div class="small">Destaque editorial</div></div>
                     </div>
                   </div>
@@ -196,6 +198,33 @@
       return elemento;
     }
 
+    function imagemSegura(valor) {
+      try {
+        const url = new URL(valor, window.location.href);
+        return url.protocol === 'https:' && !url.username && !url.password;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function atualizarImagemDestaque(url, titulo) {
+      const area = document.getElementById('imagemDestaque');
+      area.replaceChildren();
+      if (!imagemSegura(url)) {
+        area.classList.add('p-4');
+        area.innerHTML = '<div class="text-center"><div class="display-4 fw-bold">GC</div><div class="small">Destaque editorial</div></div>';
+        return;
+      }
+      area.classList.remove('p-4');
+      const imagem = document.createElement('img');
+      imagem.src = url;
+      imagem.alt = titulo || 'Imagem da matéria em destaque';
+      imagem.loading = 'eager';
+      imagem.referrerPolicy = 'no-referrer';
+      imagem.addEventListener('error', () => atualizarImagemDestaque('', titulo), { once: true });
+      area.appendChild(imagem);
+    }
+
     function abrirMateria(materia) {
       modalMateria.querySelector('#modalTitulo').textContent = materia.titulo || 'Matéria editorial';
       modalMateria.querySelector('#modalPilar').textContent = materia.pilar || 'Notícia';
@@ -225,7 +254,18 @@
       materias.forEach((materia, indice) => {
         const item = textoSeguro('article', 'list-group-item p-3 p-md-4', '');
         const linha = textoSeguro('div', 'd-flex gap-3 align-items-start', '');
-        const mini = textoSeguro('div', 'imagem-mini', String(indice + 1).padStart(2, '0'));
+        const mini = textoSeguro('div', 'imagem-mini', '');
+        if (imagemSegura(materia.imagem_url)) {
+          const imagem = document.createElement('img');
+          imagem.src = materia.imagem_url;
+          imagem.alt = materia.titulo || 'Imagem da matéria';
+          imagem.loading = 'lazy';
+          imagem.referrerPolicy = 'no-referrer';
+          imagem.addEventListener('error', () => { mini.replaceChildren(textoSeguro('span', 'fw-bold', String(indice + 1).padStart(2, '0'))); });
+          mini.appendChild(imagem);
+        } else {
+          mini.appendChild(textoSeguro('span', 'fw-bold', String(indice + 1).padStart(2, '0')));
+        }
         const conteudo = textoSeguro('div', 'flex-grow-1', '');
         conteudo.appendChild(textoSeguro('span', 'small texto-suave', materia.pilar || 'Notícia'));
         conteudo.appendChild(textoSeguro('h3', 'h5 fw-bold mt-1 mb-2', materia.titulo));
@@ -264,6 +304,7 @@
         const destaque = materias[0];
         document.getElementById('tituloDestaque').textContent = destaque.titulo;
         document.getElementById('resumoDestaque').textContent = destaque.linha_fina;
+        atualizarImagemDestaque(destaque.imagem_url, destaque.titulo);
         document.getElementById('pilarDestaque').textContent = destaque.pilar || 'Notícia';
         document.getElementById('dataDestaque').textContent = destaque.publicado_em_fonte
           ? 'Fonte publicada em: ' + destaque.publicado_em_fonte
