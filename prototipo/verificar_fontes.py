@@ -140,7 +140,7 @@ def fetch_page(url: str, opener=None) -> tuple[str, str, str]:
     if len(body) > MAX_BYTES:
         raise ValueError("Página excedeu o limite de 2 MB.")
     if "html" not in content_type and not body.lstrip().lower().startswith((b"<!doctype html", b"<html", b"<head", b"<body")):
-        raise ValueError("A URL final não retornou uma página HTML.")
+        raise ValueError(f"A URL final não retornou HTML (content-type: {content_type or 'ausente'}; destino: {final_url[:180]}).")
     html = body.decode("utf-8", errors="replace")
     return final_url, content_type, html
 
