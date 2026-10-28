@@ -166,7 +166,7 @@
     <div class="container">
       <div class="row align-items-center g-2">
         <div class="col-12 col-md-7"><strong>Guia Comercial</strong><div class="small opacity-75">Informação e oportunidades para fortalecer a comunidade local.</div></div>
-        <div class="col-12 col-md-5 text-md-end small opacity-75">Prévia visual — matérias de exemplo, ainda sem integração automática.</div>
+        <div class="col-12 col-md-5 text-md-end small opacity-75">Prévia editorial conectada ao feed automático de matérias.</div>
       </div>
     </div>
   </footer>
@@ -319,13 +319,19 @@
         botaoDestaque.removeAttribute('data-bs-toggle');
         botaoDestaque.removeAttribute('data-bs-target');
         renderizarLista(materias.slice(1));
-        document.getElementById('estadoConteudo').textContent = materias.length + ' matéria(s) recebida(s) do robô editorial';
+        const dataGeracao = dados.gerado_em ? new Date(dados.gerado_em) : null;
+        const horarioAtualizacao = dataGeracao && !Number.isNaN(dataGeracao.getTime())
+          ? ' · Atualizado em ' + dataGeracao.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' })
+          : '';
+        document.getElementById('estadoConteudo').textContent = materias.length + ' matéria(s) recebida(s) do robô editorial' + horarioAtualizacao;
       } catch (erro) {
         document.getElementById('estadoConteudo').textContent = 'Prévia visual · aguardando conexão com o robô';
       }
     }
 
     carregarMaterias();
+    // Reconsulta o feed periodicamente para acompanhar novas execuções sem recarregar a página.
+    window.setInterval(carregarMaterias, 5 * 60 * 1000);
   </script>
 </body>
 </html>
