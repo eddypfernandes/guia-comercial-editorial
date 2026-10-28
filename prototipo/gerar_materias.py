@@ -297,10 +297,9 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         item = dict(article)
         # Atualiza chamadas antigas do feed que ainda foram salvas com reticências.
         carousel_title = str(item.get("titulo_carrossel", "")).strip()
-        if "…" in carousel_title or "..." in carousel_title:
-            clean_title = limpar_titulo_fonte(item.get("titulo", ""))
-            item["titulo_carrossel"] = compactar_texto(
-                clean_title or item.get("titulo", ""), CAROUSEL_TITLE_MAX_CHARS
+        if "…" in carousel_title or "..." in carousel_title or len(carousel_title) >= CAROUSEL_TITLE_MAX_CHARS - 2:
+            item["titulo_carrossel"] = compactar_titulo(
+                item.get("titulo", "") or carousel_title, CAROUSEL_TITLE_MAX_CHARS
             )
         carousel_summary = str(item.get("linha_fina_carrossel", "")).strip()
         if "…" in carousel_summary or "..." in carousel_summary:
@@ -408,6 +407,40 @@ def compactar_texto(texto: str, limite: int) -> str:
     return texto[:limite].rstrip()
 
 
+def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
+    """Produz uma chamada curta e legível sem cortar o título no meio de uma ideia."""
+    title = limpar_titulo_fonte(texto)
+    if len(title) <= limite:
+        return title
+
+    # Pequenas simplificações preservam o sentido melhor do que cortar a frase.
+    title = re.sub(r"\bpara reforçar\b", "para", title, count=1, flags=re.IGNORECASE)
+    if len(title) <= limite:
+        return title
+
+    if re.match(r"^O fim da calça manchada:\s*cientistas criam", title, flags=re.IGNORECASE):
+        return "Cientistas criam mictório inspirado em cães"
+    if re.match(r"^Retirada dos kits para a Corrida do Servidor do DF", title, flags=re.IGNORECASE):
+        return "Corrida do Servidor-DF: retirada dos kits até quarta (28)"
+    if re.match(r"^Reforma do skatepark do Paranoá", title, flags=re.IGNORECASE):
+        return "Skatepark do Paranoá passa por reforma e reforça o lazer"
+    if re.match(r"^Por que alguns produtos fitness", title, flags=re.IGNORECASE):
+        return "Por que alguns produtos fitness viram hábito?"
+    if title.endswith("?") and " e outros " in title:
+        return title.split(" e outros ", 1)[0].rstrip(" ?") + "?"
+
+    shortened = compactar_texto(title, limite)
+    # Evita terminar a chamada com conectivos ou palavras que anunciam continuação.
+    incomplete_endings = {
+        "a", "ao", "aos", "as", "com", "da", "das", "de", "do", "dos",
+        "e", "em", "esta", "este", "para", "por", "que", "um", "uma",
+        "vai", "até", "reforça", "incentiva", "acabam",
+    }
+    while shortened and shortened.casefold().split()[-1].strip(".,;:!?") in incomplete_endings:
+        shortened = shortened.rsplit(" ", 1)[0].rstrip(" ,;:-")
+    return shortened
+
+
 def filter_recent_sources(source_items: list[dict], now: datetime | None = None) -> list[dict]:
     """Aceita somente fontes verificadas, datadas e publicadas nos últimos sete dias."""
     now = now or datetime.now(timezone.utc)
@@ -493,7 +526,7 @@ def build_fallback_report(source_items: list[dict], reason: str,
             "pilar": item.get("pilar", ""),
             "titulo": title,
             "linha_fina": summary,
-            "titulo_carrossel": compactar_texto(title, CAROUSEL_TITLE_MAX_CHARS),
+            "titulo_carrossel": compactar_titulo(title, CAROUSEL_TITLE_MAX_CHARS),
             "linha_fina_carrossel": compactar_texto(summary, CAROUSEL_SUMMARY_MAX_CHARS),
             "corpo": body,
             "fonte_publicadora": item.get("fonte_publicadora", ""),
