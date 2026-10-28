@@ -22,22 +22,74 @@ class SourceVerificationTests(unittest.TestCase):
         self.assertNotIn("Menu ignorado", result["texto_extraido"])
         self.assertNotIn("código ignorado", result["texto_extraido"])
 
-
-    def test_candidate_sample_is_balanced_without_gemini(self):
+    def test_selects_up_to_three_sources_per_pillar_in_balanced_rounds(self):
+        pillars = ("pet", "lazer", "esportes", "saude", "fitness")
         items = []
-        for pillar in ("pet", "lazer", "esportes", "saude", "fitness"):
-            for number in range(4):
-                items.append({"pilar": pillar, "titulo": f"{pillar}-{number}"})
+        for number in range(4):
+            for pillar in pillars:
+                items.append({
+                    "pilar": pillar,
+                    "titulo": f"{pillar}-{number}",
+                    "url_agregador": f"https://news.google.com/rss/articles/{pillar}-{number}",
+                })
+        items.append({
+            "pilar": "outro",
+            "titulo": "Pauta fora dos pilares editoriais",
+            "url_agregador": "https://news.google.com/rss/articles/outro-1",
+        })
         selected = select_candidates({"itens": items}, None)
         counts = {}
         for item in selected:
             counts[item["pilar"]] = counts.get(item["pilar"], 0) + 1
-        self.assertEqual(len(selected), 5)
-        self.assertEqual(set(counts), {"pet", "lazer", "esportes", "saude", "fitness"})
-        self.assertTrue(all(count == 1 for count in counts.values()))
+        self.assertEqual(len(selected), 15)
+        self.assertEqual(set(counts), set(pillars))
+        self.assertTrue(all(count == 3 for count in counts.values()))
+        self.assertEqual(
+            [item["titulo"] for item in selected[:5]],
+            [f"{pillar}-0" for pillar in pillars],
+        )
+
+    def test_triage_candidates_remain_authoritative_and_duplicates_are_removed(self):
+        discovery_items = [
+            {
+                "pilar": "pet",
+                "titulo": "Descoberta",
+                "url_agregador": "https://news.google.com/rss/articles/discovery",
+            }
+        ]
+        triage_items = [
+            {
+                "pilar": "pet",
+                "titulo": "Triagem 1",
+                "url_agregador": "https://news.google.com/rss/articles/one",
+            },
+            {
+                "pilar": "pet",
+                "titulo": "Duplicada",
+                "url_agregador": "https://news.google.com/rss/articles/one/",
+            },
+            {
+                "pilar": "pet",
+                "titulo": "Triagem 2",
+                "url_agregador": "https://news.google.com/rss/articles/two",
+            },
+        ]
+        selected = select_candidates(
+            {"itens": discovery_items},
+            {"itens": triage_items},
+        )
+        self.assertEqual(
+            [item["titulo"] for item in selected],
+            ["Triagem 1", "Triagem 2"],
+        )
 
     def test_rejects_non_https_and_local_hosts(self):
-        for url in ("http://example.com", "https://localhost/article", "https://127.0.0.1/article", "https://user:pass@example.com"):
+        for url in (
+            "http://example.com",
+            "https://localhost/article",
+            "https://127.0.0.1/article",
+            "https://user:pass@example.com",
+        ):
             with self.subTest(url=url), self.assertRaises(ValueError):
                 validate_public_url(url)
 
