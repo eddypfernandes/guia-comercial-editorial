@@ -130,8 +130,8 @@ def validate_articles(data: dict, source_items: list[dict]) -> dict:
             "titulo_fonte": source.get("titulo_pagina", ""),
             "publicado_em_fonte": source.get("publicado_em_rss", ""),
             "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "status_editorial": "gerada_automaticamente_com_fonte",
-            "aviso_editorial": "Texto sintetizado por IA com base em página pública. A extração técnica não comprova a veracidade dos fatos; consulte a fonte original.",
+            "status_editorial": "apto_para_publicacao",
+            "aviso_editorial": "Matéria aprovada pelos critérios automáticos de estrutura, limites editoriais e correspondência com a fonte original. A verificação técnica não garante a veracidade independente de todos os fatos; em caso de dúvida, consulte a fonte original.",
         })
     return {
         "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
