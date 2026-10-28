@@ -1,7 +1,7 @@
 """Testes básicos do protótipo editorial, sem dependências externas."""
 import sys
 import unittest
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -9,6 +9,7 @@ sys.path.insert(0, str(ROOT / "prototipo"))
 
 from validar_config import validate_config
 from ciclo_editorial import select_cycle, validate_candidate
+from gerar_materias import merge_active_articles
 
 
 class ConfigTests(unittest.TestCase):
@@ -73,6 +74,52 @@ class CycleTests(unittest.TestCase):
         errors, item = validate_candidate({"id": "x"}, {"pet"})
         self.assertIsNone(item)
         self.assertTrue(errors)
+
+
+class FeedMergeTests(unittest.TestCase):
+    def article(self, identifier, pillar, url, published):
+        return {
+            "id": identifier,
+            "pilar": pillar,
+            "titulo": "Título editorial suficientemente claro",
+            "linha_fina": "Resumo editorial usado para validar o feed.",
+            "titulo_carrossel": "Chamada editorial",
+            "linha_fina_carrossel": "Resumo curto da chamada editorial.",
+            "corpo": "Conteúdo de teste.",
+            "url_fonte": url,
+            "publicado_em_fonte": published,
+            "status_editorial": "apto_para_publicacao",
+            "validade_ate": "2026-11-05",
+        }
+
+    def test_merge_sorts_newest_first_and_assigns_unique_stable_ids(self):
+        now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
+        older = self.article("rascunho-01", "pet", "https://example.org/pet", "Tue, 27 Oct 2026 10:00:00 GMT")
+        newer = self.article("rascunho-01", "lazer", "https://example.org/lazer", "Wed, 28 Oct 2026 11:00:00 GMT")
+        same_source_duplicate = self.article("rascunho-01", "pet", "https://EXAMPLE.org/pet/", "Tue, 27 Oct 2026 10:00:00 GMT")
+
+        result = merge_active_articles(
+            {"materias": [older, newer, same_source_duplicate]},
+            previous_feed={},
+            now=now,
+        )
+
+        self.assertEqual([item["url_fonte"] for item in result["materias"]],
+                         ["https://example.org/lazer", "https://example.org/pet"])
+        ids = [item["id"] for item in result["materias"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertTrue(all(item_id.startswith("materia-") for item_id in ids))
+        self.assertFalse(result["publicacao_oficial"])
+
+        repeated = merge_active_articles(
+            {"materias": [older, newer]},
+            previous_feed={},
+            now=now,
+        )
+        self.assertEqual(
+            {item["url_fonte"]: item["id"] for item in result["materias"]},
+            {item["url_fonte"]: item["id"] for item in repeated["materias"]},
+        )
 
 
 if __name__ == "__main__":
