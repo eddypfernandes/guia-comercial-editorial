@@ -5,6 +5,7 @@ afirma que os fatos foram verificados independentemente.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -310,6 +311,9 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
             parse_article_date(item.get("publicado_em_fonte")) + timedelta(days=validity_days)
         )
         item["validade_ate"] = expiry.date().isoformat()
+        # IDs de entrada podem se repetir entre rascunhos e matérias antigas.
+        # A URL normalizada gera um identificador estável e único por fonte.
+        item["id"] = "materia-" + hashlib.sha256(key.encode("utf-8")).hexdigest()[:12]
         selected.append(item)
 
     selected.sort(
