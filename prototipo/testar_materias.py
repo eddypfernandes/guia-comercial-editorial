@@ -1,10 +1,10 @@
 import sys
 import unittest
-from pathlib import Path
+from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from gerar_materias import build_fallback_report, extract_json, validate_articles
+from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles
 
 
 class ArticleValidationTests(unittest.TestCase):
@@ -66,6 +66,61 @@ class ArticleValidationTests(unittest.TestCase):
         result = validate_articles(data, self.source)
         self.assertEqual(result["total_materias_validas"], 0)
         self.assertEqual(result["respostas_rejeitadas"], 3)
+
+
+    def test_merge_preserves_recent_approved_articles_and_removes_expired(self):
+        now = datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc)
+        current = {
+            "gerado_em": now.isoformat(),
+            "total_materias_validas": 1,
+            "materias": [{
+                "id": "nova", "pilar": "lazer", "titulo": "Nova matéria válida",
+                "url_fonte": "https://example.org/nova", "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
+                "status_editorial": "apto_para_publicacao"
+            }]
+        }
+        previous = {"materias": [
+            {"id": "antiga-recente", "pilar": "pet", "titulo": "Matéria anterior ainda válida",
+             "url_fonte": "https://example.org/pet/", "publicado_em_fonte": "Mon, 26 Oct 2026 12:00:00 GMT",
+             "status_editorial": "apto_para_publicacao"},
+            {"id": "vencida", "pilar": "saude", "titulo": "Matéria antiga vencida",
+             "url_fonte": "https://example.org/antiga", "publicado_em_fonte": "Mon, 1 Sep 2026 12:00:00 GMT",
+             "status_editorial": "apto_para_publicacao"},
+            {"id": "rascunho", "pilar": "fitness", "titulo": "Rascunho não aprovado",
+             "url_fonte": "https://example.org/rascunho", "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
+             "status_editorial": "rascunho_automatico_sem_ia_revisao_obrigatoria"}
+        ]}
+        result = merge_active_articles(current, previous, now=now)
+        urls = [item["url_fonte"] for item in result["materias"]]
+        self.assertIn("https://example.org/nova", urls)
+        self.assertIn("https://example.org/pet/", urls)
+        self.assertNotIn("https://example.org/antiga", urls)
+        self.assertNotIn("https://example.org/rascunho", urls)
+        self.assertEqual(result["total_materias_validas"], 2)
+        self.assertTrue(all(item.get("validade_ate") for item in result["materias"]))
+
+    def test_merge_deduplicates_same_source_and_requires_publication_date(self):
+        now = datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc)
+        new_article = {
+            "id": "nova", "pilar": "lazer", "titulo": "Versão nova da matéria",
+            "url_fonte": "https://example.org/noticia?utm_source=rss",
+            "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
+            "status_editorial": "apto_para_publicacao"
+        }
+        old_article = {
+            "id": "antiga", "pilar": "lazer", "titulo": "Versão anterior da matéria",
+            "url_fonte": "https://example.org/noticia/",
+            "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
+            "status_editorial": "apto_para_publicacao"
+        }
+        undated = {
+            "id": "sem-data", "pilar": "pet", "titulo": "Matéria sem data confiável",
+            "url_fonte": "https://example.org/sem-data",
+            "status_editorial": "apto_para_publicacao"
+        }
+        result = merge_active_articles({"materias": [new_article]}, {"materias": [old_article, undated]}, now=now)
+        self.assertEqual(len(result["materias"]), 1)
+        self.assertEqual(result["materias"][0]["id"], "nova")
 
 
 if __name__ == "__main__":
