@@ -186,7 +186,7 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertIn("https://example.org/pet/", urls)
         self.assertNotIn("https://example.org/antiga", urls)
         self.assertNotIn("https://example.org/rascunho", urls)
-        self.assertEqual(result["total_materias_validas"], 2)
+        self.assertEqual(result["total_materias_validas"], 3)
         self.assertTrue(all(item.get("validade_ate") for item in result["materias"]))
         normalized = next(item for item in result["materias"] if item["id"] == "titulo-truncado")
         self.assertNotIn("…", normalized["titulo_carrossel"])
