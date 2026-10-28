@@ -21,6 +21,8 @@ API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:gener
 DEFAULT_MODEL = "gemini-3.6-flash"
 MAX_RESPONSE_BYTES = 1_000_000
 MAX_ARTICLES = 5
+CAROUSEL_TITLE_MAX_CHARS = 65
+CAROUSEL_SUMMARY_MAX_CHARS = 140
 
 
 def build_prompt(items: list[dict]) -> str:
@@ -57,9 +59,12 @@ REGRAS OBRIGATÓRIAS:
 - Prefira 3 a 5 parágrafos curtos, aproximadamente 180 a 350 palavras no total; elimine menus, publicidade, chamadas relacionadas e repetições.
 - Preserve o contexto, os dados essenciais e as ressalvas da fonte. Se o texto não permitir uma síntese fiel, omita a pauta.
 - Cada matéria deve ter título, linha fina e corpo com parágrafos separados por duas quebras de linha.
+- Além de titulo e linha_fina completos para a página de leitura, gere campos exclusivos para a chamada compacta da home: titulo_carrossel com no máximo 65 caracteres e linha_fina_carrossel com no máximo 140 caracteres.
+- Os campos *_carrossel devem ser reescritos de forma concisa, sem cortar palavras abruptamente, sem repetir a mesma informação e sem acrescentar fatos. Eles serão usados somente no carrossel da home; titulo, linha_fina e corpo continuam destinados à leitura completa.
+- Não use reticências para esconder um título excessivamente longo: reformule a chamada para caber no limite.
 - Inclua a URL exata da página original como url_fonte e a URL da imagem fornecida como imagem_url. Se não houver imagem, use string vazia. Não invente nem altere URLs.
 - Retorne somente JSON válido, sem Markdown, no formato:
-{{"materias":[{{"pilar":"pet","titulo":"...","linha_fina":"...","corpo":"Parágrafo 1.\\n\\nParágrafo 2.","url_fonte":"URL exata","imagem_url":"URL exata ou string vazia"}}]}}
+{{"materias":[{{"pilar":"pet","titulo":"Título completo","linha_fina":"Linha fina completa","titulo_carrossel":"Título conciso de até 65 caracteres","linha_fina_carrossel":"Resumo conciso de até 140 caracteres","corpo":"Parágrafo 1.\\n\\nParágrafo 2.","url_fonte":"URL exata","imagem_url":"URL exata ou string vazia"}}]}}
 - No máximo uma matéria por fonte e até {MAX_ARTICLES} matérias no total.
 - O pilar deve ser o mesmo do material correspondente.
 
@@ -104,8 +109,10 @@ def validate_articles(data: dict, source_items: list[dict]) -> dict:
             continue
         title = str(article.get("titulo", "")).strip()
         summary = str(article.get("linha_fina", "")).strip()
+        carousel_title = str(article.get("titulo_carrossel", "")).strip()
+        carousel_summary = str(article.get("linha_fina_carrossel", "")).strip()
         body = str(article.get("corpo", "")).strip()
-        if not title or len(title) < 12 or len(title) > 180 or len(summary) < 20 or len(summary) > 400 or len(body) < 250:
+        if not title or len(title) < 12 or len(title) > 180 or len(summary) < 20 or len(summary) > 400 or not carousel_title or len(carousel_title) > CAROUSEL_TITLE_MAX_CHARS or not carousel_summary or len(carousel_summary) > CAROUSEL_SUMMARY_MAX_CHARS or len(body) < 250:
             rejected += 1
             continue
         seen.add(url)
@@ -114,6 +121,8 @@ def validate_articles(data: dict, source_items: list[dict]) -> dict:
             "pilar": source.get("pilar", ""),
             "titulo": title,
             "linha_fina": summary,
+            "titulo_carrossel": carousel_title,
+            "linha_fina_carrossel": carousel_summary,
             "corpo": body[:12000],
             "fonte_publicadora": source.get("fonte_publicadora", ""),
             "url_fonte": url,
@@ -183,6 +192,15 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
 
     raise RuntimeError(f"Gemini não respondeu após 3 tentativas. Último erro: {last_error}") from last_error
 
+def compactar_texto(texto: str, limite: int) -> str:
+    """Cria chamada provisória curta sem alterar o texto integral da matéria."""
+    texto = " ".join(str(texto).split())
+    if len(texto) <= limite:
+        return texto
+    trecho = texto[:limite - 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
+    return (trecho or texto[:limite - 1].rstrip()) + "…"
+
+
 def build_fallback_report(source_items: list[dict], reason: str) -> dict:
     """Cria rascunhos sem IA usando apenas trechos da fonte original."""
     eligible = [
@@ -217,6 +235,8 @@ def build_fallback_report(source_items: list[dict], reason: str) -> dict:
             "pilar": item.get("pilar", ""),
             "titulo": title,
             "linha_fina": summary,
+            "titulo_carrossel": compactar_texto(title, CAROUSEL_TITLE_MAX_CHARS),
+            "linha_fina_carrossel": compactar_texto(summary, CAROUSEL_SUMMARY_MAX_CHARS),
             "corpo": body,
             "fonte_publicadora": item.get("fonte_publicadora", ""),
             "url_fonte": item.get("url_final", ""),
