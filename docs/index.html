@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Prévia do módulo editorial do Guia Comercial.">
-  <title>Notícias e novidades | Guia Comercial</title>
+  <meta name="description" content="Prévia do carrossel editorial do Guia Comercial.">
+  <title>Carrossel editorial | Guia Comercial</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root {
@@ -18,156 +18,109 @@
       --gc-rodape: #14362e;
     }
     body { background: var(--gc-fundo); color: var(--gc-texto); }
-    .navbar { background: #fff; border-bottom: 1px solid var(--gc-borda); }
-    .marca { color: var(--gc-verde); font-weight: 800; letter-spacing: -.04em; }
+    .faixa-topo { background: var(--gc-verde); color: #fff; font-size: .8125rem; }
+    .marca { color: var(--gc-verde); font-weight: 800; letter-spacing: -.04em; text-decoration: none; }
     .marca-ponto { color: var(--gc-dourado); }
-    .faixa-topo { background: var(--gc-verde); color: #fff; font-size: .875rem; }
     .titulo-secao { color: var(--gc-verde); letter-spacing: -.03em; }
     .texto-suave { color: var(--gc-suave); }
     .etiqueta { color: var(--gc-verde); background: #e8efe9; }
+    .carousel-materia { border: 1px solid var(--gc-borda); border-radius: 1rem; overflow: hidden; background: #fff; }
+    .carousel-materia .carousel-inner, .carousel-materia .carousel-item { min-height: 420px; }
+    .slide-imagem { height: 420px; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .slide-imagem img { width: 100%; height: 100%; object-fit: cover; }
+    .imagem-reserva { color: var(--gc-verde); text-align: center; padding: 1.5rem; }
+    .slide-conteudo { height: 420px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(1.25rem, 3vw, 2.5rem); }
+    .titulo-materia { color: var(--gc-verde); font-size: clamp(1.4rem, 2.3vw, 2.15rem); font-weight: 750; letter-spacing: -.035em; line-height: 1.2; }
+    .resumo-materia { color: var(--gc-suave); font-size: 1rem; line-height: 1.65; }
     .btn-guia { background: var(--gc-verde); color: #fff; border-color: var(--gc-verde); }
-    .btn-guia:hover { background: var(--gc-verde-hover); color: #fff; }
-    .card { border-color: var(--gc-borda); border-radius: 1rem; overflow: hidden; }
-    .imagem-destaque { min-height: 220px; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; color: var(--gc-verde); overflow: hidden; }
-    .imagem-destaque img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
-    .imagem-mini img { width: 100%; height: 100%; object-fit: cover; border-radius: .75rem; }
-    .imagem-mini { width: 100%; min-width: 0; height: 120px; border-radius: .75rem; background: linear-gradient(135deg, #dfe8df, #f3e6c9); display: flex; align-items: center; justify-content: center; color: var(--gc-verde); }
-    .anuncio { border: 1px dashed #b7c3b8; background: #fff; border-radius: 1rem; min-height: 250px; }
+    .btn-guia:hover { background: var(--gc-verde-hover); color: #fff; border-color: var(--gc-verde-hover); }
+    .controles-carrossel { display: flex; justify-content: flex-end; gap: .65rem; }
+    .controle-circular { width: 2.65rem; height: 2.65rem; border: 1px solid #b8c5bb; border-radius: 50%; background: #fff; color: var(--gc-verde); display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; line-height: 1; }
+    .controle-circular:hover:not(:disabled) { background: var(--gc-verde); border-color: var(--gc-verde); color: #fff; }
+    .controle-circular:disabled { opacity: .4; cursor: not-allowed; }
     .rodape { background: var(--gc-rodape); color: #fff; }
-    .link-leitura { color: var(--gc-verde); font-weight: 700; text-decoration: none; }
-    .link-leitura:hover { color: var(--gc-verde-hover); text-decoration: underline; }
     .modal-content { border: 0; border-radius: 1rem; }
+    .link-fonte { color: var(--gc-verde); font-weight: 700; }
+    @media (max-width: 767.98px) {
+      .carousel-materia .carousel-inner, .carousel-materia .carousel-item { min-height: 0; }
+      .slide-imagem { height: 220px; }
+      .slide-conteudo { height: auto; min-height: 240px; justify-content: flex-start; }
+      .titulo-materia { font-size: 1.5rem; }
+      .resumo-materia { font-size: .95rem; }
+    }
   </style>
 </head>
 <body>
   <div class="faixa-topo py-2">
-    <div class="container">Núcleo Bandeirante · Brasília, DF <span class="float-end">PRÉVIA DO MÓDULO EDITORIAL</span></div>
+    <div class="container d-flex justify-content-between align-items-center gap-3">
+      <span>Núcleo Bandeirante · Brasília, DF</span>
+      <span class="text-end">PRÉVIA DO CARROSSEL EDITORIAL</span>
+    </div>
   </div>
 
-  <nav class="navbar navbar-expand-lg">
-    <div class="container py-2">
-      <a class="navbar-brand marca fs-3" href="#">GUIA<span class="marca-ponto">.</span>COMERCIAL</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuPrincipal">
-        <ul class="navbar-nav ms-auto gap-lg-3">
-          <li class="nav-item"><a class="nav-link" href="#destaques">Destaques</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ultimas">Últimas notícias</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre o Guia</a></li>
-        </ul>
-      </div>
+  <header class="bg-white border-bottom" style="border-color: var(--gc-borda) !important;">
+    <div class="container py-3">
+      <a class="marca fs-3" href="./">GUIA<span class="marca-ponto">.</span>COMERCIAL</a>
     </div>
-  </nav>
+  </header>
 
   <main>
-    <section class="py-5">
+    <section class="py-4 py-md-5">
       <div class="container">
-        <div class="row align-items-end g-3 mb-4">
-          <div class="col-12 col-lg-8">
+        <div class="row align-items-end g-3 mb-3">
+          <div class="col-12 col-md-8">
             <span class="badge etiqueta rounded-pill px-3 py-2 mb-3">Informação local</span>
-            <h1 class="display-5 fw-bold titulo-secao mb-2">Notícias e novidades</h1>
+            <h1 class="h2 fw-bold titulo-secao mb-2">Notícias e novidades</h1>
             <p class="texto-suave mb-0">Informação útil para quem vive, trabalha e empreende na nossa região.</p>
           </div>
-          <div class="col-12 col-lg-4 text-lg-end">
-            <span id="estadoConteudo" class="small texto-suave">Carregando matérias editoriais…</span>
+          <div class="col-12 col-md-4 text-md-end">
+            <span id="estadoConteudo" class="small texto-suave" aria-live="polite">Carregando matérias editoriais…</span>
           </div>
         </div>
 
-        <div class="row g-4">
-          <div class="col-12 col-lg-8">
-            <section id="destaques" aria-labelledby="tituloDestaque">
-              <div class="card shadow-sm mb-4">
-                <div class="row g-0">
-                  <div class="col-12 col-md-5">
-                    <div id="imagemDestaque" class="imagem-destaque h-100 p-4">
-                      <div class="text-center"><div class="display-4 fw-bold">GC</div><div class="small">Destaque editorial</div></div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-7">
-                    <div class="card-body p-4">
-                      <span id="pilarDestaque" class="badge etiqueta rounded-pill mb-3">Comércio local</span>
-                      <h2 id="tituloDestaque" class="h3 fw-bold">Como fortalecer o comércio do bairro e descobrir serviços perto de você</h2>
-                      <p id="resumoDestaque" class="texto-suave">Uma apresentação de como notícias, serviços e informações locais podem ajudar moradores e comerciantes a se conectar.</p>
-                      <div id="dataDestaque" class="small texto-suave mb-3">Leitura de demonstração · 3 min</div>
-                      <button id="botaoDestaque" class="btn btn-guia rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalMateria" data-titulo="Como fortalecer o comércio do bairro e descobrir serviços perto de você">Ler matéria</button>
+        <div id="carrosselEditorial" class="carousel slide carousel-materia shadow-sm" aria-label="Carrossel de matérias editoriais">
+          <div id="slidesEditorial" class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row g-0">
+                <div class="col-12 col-md-6">
+                  <div class="slide-imagem">
+                    <div class="imagem-reserva">
+                      <div class="display-4 fw-bold">GC</div>
+                      <div class="small">Carregando destaque editorial</div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
-
-            <section id="ultimas" aria-labelledby="tituloUltimas">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <h2 id="tituloUltimas" class="h4 fw-bold titulo-secao mb-0">Últimas notícias</h2>
-                <span class="small texto-suave">Mais recentes</span>
-              </div>
-              <div class="card shadow-sm">
-                <div id="listaMaterias" class="list-group list-group-flush">
-                  <article class="list-group-item p-3 p-md-4">
-                    <div class="d-flex gap-3 align-items-start">
-                      <div class="imagem-mini"><span class="fw-bold">01</span></div>
-                      <div class="flex-grow-1">
-                        <span class="small texto-suave">Serviços e comunidade</span>
-                        <h3 class="h5 fw-bold mt-1 mb-2">Informação local: onde encontrar serviços e soluções para o dia a dia</h3>
-                        <p class="texto-suave mb-2">Um guia demonstrativo para facilitar a busca por serviços na própria região.</p>
-                        <button class="btn btn-link link-leitura p-0" data-bs-toggle="modal" data-bs-target="#modalMateria" data-titulo="Informação local: onde encontrar serviços e soluções para o dia a dia">Continuar lendo →</button>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-group-item p-3 p-md-4">
-                    <div class="d-flex gap-3 align-items-start">
-                      <div class="imagem-mini"><span class="fw-bold">02</span></div>
-                      <div class="flex-grow-1">
-                        <span class="small texto-suave">Empreendedorismo</span>
-                        <h3 class="h5 fw-bold mt-1 mb-2">Presença digital: por que ser encontrado na internet faz diferença</h3>
-                        <p class="texto-suave mb-2">Uma visão geral sobre a importância de apresentar bem uma empresa na internet.</p>
-                        <button class="btn btn-link link-leitura p-0" data-bs-toggle="modal" data-bs-target="#modalMateria" data-titulo="Presença digital: por que ser encontrado na internet faz diferença">Continuar lendo →</button>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-group-item p-3 p-md-4">
-                    <div class="d-flex gap-3 align-items-start">
-                      <div class="imagem-mini"><span class="fw-bold">03</span></div>
-                      <div class="flex-grow-1">
-                        <span class="small texto-suave">Vida no bairro</span>
-                        <h3 class="h5 fw-bold mt-1 mb-2">Novidades da região: informação que aproxima moradores e comerciantes</h3>
-                        <p class="texto-suave mb-2">Exemplo de espaço para notícias verificadas e assuntos de interesse da comunidade.</p>
-                        <button class="btn btn-link link-leitura p-0" data-bs-toggle="modal" data-bs-target="#modalMateria" data-titulo="Novidades da região: informação que aproxima moradores e comerciantes">Continuar lendo →</button>
-                      </div>
-                    </div>
-                  </article>
+                <div class="col-12 col-md-6">
+                  <div class="slide-conteudo">
+                    <span class="badge etiqueta rounded-pill mb-3">Destaque editorial</span>
+                    <h2 class="titulo-materia">Carregando matérias…</h2>
+                    <p class="resumo-materia mb-0">O carrossel será preenchido com as matérias válidas do feed editorial.</p>
+                  </div>
                 </div>
               </div>
-            </section>
+            </div>
           </div>
+        </div>
 
-          <aside class="col-12 col-lg-4" aria-label="Conteúdo complementar">
-            <div class="anuncio d-flex flex-column align-items-center justify-content-center text-center p-4 mb-4">
-              <span class="small text-uppercase texto-suave mb-2">Espaço reservado</span>
-              <h2 class="h5 fw-bold titulo-secao">Publicidade local</h2>
-              <p class="texto-suave small mb-0">Área para anúncios de empresas e parceiros do Guia Comercial.</p>
+        <div class="row align-items-center g-3 mt-1">
+          <div class="col-7">
+            <span id="posicaoCarrossel" class="small texto-suave">Aguardando conteúdo</span>
+          </div>
+          <div class="col-5">
+            <div class="controles-carrossel">
+              <button id="anterior" class="controle-circular" type="button" aria-label="Matéria anterior" disabled><span aria-hidden="true">‹</span></button>
+              <button id="proximo" class="controle-circular" type="button" aria-label="Próxima matéria" disabled><span aria-hidden="true">›</span></button>
             </div>
-            <div class="card shadow-sm">
-              <div class="card-body p-4">
-                <span class="badge etiqueta rounded-pill mb-3">Para comerciantes</span>
-                <h2 class="h4 fw-bold titulo-secao">Sua empresa merece ser encontrada.</h2>
-                <p class="texto-suave">O Guia Comercial aproxima negócios locais de quem procura produtos e serviços na região.</p>
-                <a class="btn btn-outline-success rounded-pill" href="https://github.com/eddypfernandes/guia-comercial-editorial">Conhecer o projeto</a>
-              </div>
-            </div>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="sobre" class="rodape py-4">
-    <div class="container">
-      <div class="row align-items-center g-2">
-        <div class="col-12 col-md-7"><strong>Guia Comercial</strong><div class="small opacity-75">Informação e oportunidades para fortalecer a comunidade local.</div></div>
-        <div class="col-12 col-md-5 text-md-end small opacity-75">Prévia editorial conectada ao feed automático de matérias.</div>
-      </div>
+  <footer class="rodape py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span class="fw-semibold">Guia Comercial</span>
+      <span class="small opacity-75">Prévia conectada ao feed automático · publicação oficial desativada.</span>
     </div>
   </footer>
 
@@ -175,12 +128,12 @@
     <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header border-0 px-4 pt-4">
-          <span id="modalPilar" class="badge etiqueta rounded-pill">Matéria demonstrativa</span>
+          <span id="modalPilar" class="badge etiqueta rounded-pill">Matéria editorial</span>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
         <div class="modal-body px-4 px-md-5 pb-5">
           <h2 id="modalTitulo" class="h3 fw-bold titulo-secao mb-3">Título da matéria</h2>
-          <div id="modalCorpo"><p class="texto-suave small">Conteúdo ilustrativo · Exemplo de leitura completa</p><p>Este espaço demonstra como uma matéria poderá ser aberta para leitura sem que a pessoa precise sair da página de notícias.</p><p>Na versão conectada ao robô editorial, o título, o resumo, o texto completo, a data e o link da fonte original serão carregados a partir das matérias geradas e validadas pelo processo editorial.</p><p class="mb-0">Por enquanto, este conteúdo é apenas uma demonstração do visual e do comportamento do módulo.</p></div>
+          <div id="modalCorpo"></div>
         </div>
       </div>
     </div>
@@ -188,10 +141,15 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const modalMateria = document.getElementById('modalMateria');
+    const slidesEditorial = document.getElementById('slidesEditorial');
+    const carrosselElemento = document.getElementById('carrosselEditorial');
+    const botaoAnterior = document.getElementById('anterior');
+    const botaoProximo = document.getElementById('proximo');
+    const modalElemento = document.getElementById('modalMateria');
     let materiasAtuais = [];
+    let carrosselBootstrap = null;
 
-    function textoSeguro(tag, classe, texto) {
+    function elementoSeguro(tag, classe, texto) {
       const elemento = document.createElement(tag);
       if (classe) elemento.className = classe;
       elemento.textContent = texto || '';
@@ -207,130 +165,152 @@
       }
     }
 
-    function atualizarImagemDestaque(url, titulo) {
-      const area = document.getElementById('imagemDestaque');
-      area.replaceChildren();
-      if (!imagemSegura(url)) {
-        area.classList.add('p-4');
-        area.innerHTML = '<div class="text-center"><div class="display-4 fw-bold">GC</div><div class="small">Destaque editorial</div></div>';
-        return;
+    function dataDaFonte(materia) {
+      if (materia.validade_ate) {
+        const limite = new Date(materia.validade_ate + 'T23:59:59Z');
+        if (!Number.isNaN(limite.getTime())) return limite;
       }
-      area.classList.remove('p-4');
-      const imagem = document.createElement('img');
-      imagem.src = url;
-      imagem.alt = titulo || 'Imagem da matéria em destaque';
-      imagem.loading = 'eager';
-      imagem.referrerPolicy = 'no-referrer';
-      imagem.addEventListener('error', () => atualizarImagemDestaque('', titulo), { once: true });
-      area.appendChild(imagem);
+      if (!materia.publicado_em_fonte) return null;
+      const publicada = new Date(materia.publicado_em_fonte);
+      if (Number.isNaN(publicada.getTime())) return null;
+      publicada.setUTCDate(publicada.getUTCDate() + 7);
+      return publicada;
+    }
+
+    function materiaAindaValida(materia) {
+      if (!materia || materia.status_editorial !== 'apto_para_publicacao') return false;
+      const publicada = materia.publicado_em_fonte ? new Date(materia.publicado_em_fonte) : null;
+      const validade = dataDaFonte(materia);
+      if (!publicada || Number.isNaN(publicada.getTime()) || !validade) return false;
+      if (publicada.getTime() > Date.now() + 86400000) return false;
+      return Date.now() <= validade.getTime();
     }
 
     function abrirMateria(materia) {
-      modalMateria.querySelector('#modalTitulo').textContent = materia.titulo || 'Matéria editorial';
-      modalMateria.querySelector('#modalPilar').textContent = materia.pilar || 'Notícia';
-      const corpo = modalMateria.querySelector('#modalCorpo');
+      document.getElementById('modalTitulo').textContent = materia.titulo || 'Matéria editorial';
+      document.getElementById('modalPilar').textContent = materia.pilar || 'Notícia';
+      const corpo = document.getElementById('modalCorpo');
       corpo.replaceChildren();
-      if (materia.linha_fina) corpo.appendChild(textoSeguro('p', 'lead', materia.linha_fina));
+      if (materia.linha_fina) corpo.appendChild(elementoSeguro('p', 'lead', materia.linha_fina));
       String(materia.corpo || '').split(/\n\s*\n/).filter(Boolean).forEach(paragrafo => {
-        corpo.appendChild(textoSeguro('p', '', paragrafo));
+        corpo.appendChild(elementoSeguro('p', '', paragrafo));
       });
-      if (materia.aviso_editorial) corpo.appendChild(textoSeguro('p', 'small texto-suave mt-4', materia.aviso_editorial));
-      if (materia.url_fonte) {
+      if (materia.aviso_editorial) corpo.appendChild(elementoSeguro('p', 'small texto-suave mt-4', materia.aviso_editorial));
+      if (materia.url_fonte && imagemSegura(materia.url_fonte)) {
         const linha = document.createElement('p');
         linha.className = 'small mt-3';
-        linha.appendChild(textoSeguro('strong', '', 'Fonte: '));
-        const link = textoSeguro('a', '', materia.fonte_publicadora || 'Consultar matéria original');
+        linha.appendChild(elementoSeguro('strong', '', 'Fonte: '));
+        const link = elementoSeguro('a', 'link-fonte', materia.fonte_publicadora || 'Consultar matéria original');
         link.href = materia.url_fonte;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         linha.appendChild(link);
         corpo.appendChild(linha);
       }
+      bootstrap.Modal.getOrCreateInstance(modalElemento).show();
     }
 
-    function renderizarLista(materias) {
-      const lista = document.getElementById('listaMaterias');
-      lista.replaceChildren();
-      materias.forEach((materia, indice) => {
-        const item = textoSeguro('article', 'list-group-item p-3 p-md-4', '');
-        const linha = textoSeguro('div', 'row g-3 align-items-start', '');
-        const colunaImagem = textoSeguro('div', 'col-4', '');
-        const mini = textoSeguro('div', 'imagem-mini', '');
-        if (imagemSegura(materia.imagem_url)) {
-          const imagem = document.createElement('img');
-          imagem.src = materia.imagem_url;
-          imagem.alt = materia.titulo || 'Imagem da matéria';
-          imagem.loading = 'lazy';
-          imagem.referrerPolicy = 'no-referrer';
-          imagem.addEventListener('error', () => { mini.replaceChildren(textoSeguro('span', 'fw-bold', String(indice + 1).padStart(2, '0'))); });
-          mini.appendChild(imagem);
-        } else {
-          mini.appendChild(textoSeguro('span', 'fw-bold', String(indice + 1).padStart(2, '0')));
-        }
-        colunaImagem.appendChild(mini);
-        const conteudo = textoSeguro('div', 'col-8', '');
-        conteudo.appendChild(textoSeguro('span', 'small texto-suave', materia.pilar || 'Notícia'));
-        conteudo.appendChild(textoSeguro('h3', 'h5 fw-bold mt-1 mb-2', materia.titulo));
-        conteudo.appendChild(textoSeguro('p', 'texto-suave mb-2', materia.linha_fina));
-        const botao = textoSeguro('button', 'btn btn-link link-leitura p-0', 'Continuar lendo →');
-        botao.type = 'button';
-        botao.addEventListener('click', () => {
-          abrirMateria(materia);
-          bootstrap.Modal.getOrCreateInstance(modalMateria).show();
-        });
-        conteudo.appendChild(botao);
-        linha.append(colunaImagem, conteudo);
-        item.appendChild(linha);
-        lista.appendChild(item);
-      });
-    }
-
-    modalMateria.addEventListener('show.bs.modal', function (event) {
-      const botao = event.relatedTarget;
-      if (botao && botao.hasAttribute('data-titulo')) {
-        modalMateria.querySelector('#modalTitulo').textContent = botao.getAttribute('data-titulo') || 'Matéria demonstrativa';
+    function criarSlide(materia, indice) {
+      const slide = elementoSeguro('div', 'carousel-item' + (indice === 0 ? ' active' : ''), '');
+      const linha = elementoSeguro('div', 'row g-0', '');
+      const colunaImagem = elementoSeguro('div', 'col-12 col-md-6', '');
+      const areaImagem = elementoSeguro('div', 'slide-imagem', '');
+      if (imagemSegura(materia.imagem_url)) {
+        const imagem = document.createElement('img');
+        imagem.src = materia.imagem_url;
+        imagem.alt = materia.titulo_carrossel || materia.titulo || 'Imagem da matéria';
+        imagem.loading = indice === 0 ? 'eager' : 'lazy';
+        imagem.referrerPolicy = 'no-referrer';
+        imagem.addEventListener('error', () => {
+          areaImagem.replaceChildren();
+          const reserva = elementoSeguro('div', 'imagem-reserva', '');
+          reserva.append(elementoSeguro('div', 'display-4 fw-bold', 'GC'), elementoSeguro('div', 'small', 'Destaque editorial'));
+          areaImagem.appendChild(reserva);
+        }, { once: true });
+        areaImagem.appendChild(imagem);
+      } else {
+        const reserva = elementoSeguro('div', 'imagem-reserva', '');
+        reserva.append(elementoSeguro('div', 'display-4 fw-bold', 'GC'), elementoSeguro('div', 'small', 'Destaque editorial'));
+        areaImagem.appendChild(reserva);
       }
-    });
+      colunaImagem.appendChild(areaImagem);
+
+      const colunaTexto = elementoSeguro('div', 'col-12 col-md-6', '');
+      const conteudo = elementoSeguro('div', 'slide-conteudo', '');
+      conteudo.appendChild(elementoSeguro('span', 'badge etiqueta rounded-pill mb-3', materia.pilar || 'Notícia'));
+      conteudo.appendChild(elementoSeguro('h2', 'titulo-materia mb-3', materia.titulo_carrossel || materia.titulo || 'Matéria editorial'));
+      conteudo.appendChild(elementoSeguro('p', 'resumo-materia mb-4', materia.linha_fina_carrossel || materia.linha_fina || ''));
+      const botao = elementoSeguro('button', 'btn btn-guia rounded-pill px-4 mt-auto', 'Ler matéria');
+      botao.type = 'button';
+      botao.addEventListener('click', () => abrirMateria(materia));
+      conteudo.appendChild(botao);
+      colunaTexto.appendChild(conteudo);
+      linha.append(colunaImagem, colunaTexto);
+      slide.appendChild(linha);
+      return slide;
+    }
+
+    function renderizarCarrossel(materias) {
+      if (carrosselBootstrap) {
+        carrosselBootstrap.dispose();
+        carrosselBootstrap = null;
+      }
+      slidesEditorial.replaceChildren();
+      materias.forEach((materia, indice) => slidesEditorial.appendChild(criarSlide(materia, indice)));
+      carrosselBootstrap = bootstrap.Carousel.getOrCreateInstance(carrosselElemento, { interval: false, ride: false, touch: true, wrap: true });
+      const temVarios = materias.length > 1;
+      botaoAnterior.disabled = !temVarios;
+      botaoProximo.disabled = !temVarios;
+      document.getElementById('posicaoCarrossel').textContent = materias.length ? '1 de ' + materias.length + ' matérias' : 'Nenhuma matéria válida no momento';
+      carrosselElemento.addEventListener('slid.bs.carousel', atualizarPosicao);
+    }
+
+    function atualizarPosicao() {
+      const ativos = [...slidesEditorial.querySelectorAll('.carousel-item')];
+      const indice = ativos.findIndex(item => item.classList.contains('active'));
+      document.getElementById('posicaoCarrossel').textContent = indice >= 0 ? (indice + 1) + ' de ' + materiasAtuais.length + ' matérias' : '';
+    }
+
+    botaoAnterior.addEventListener('click', () => carrosselBootstrap && carrosselBootstrap.prev());
+    botaoProximo.addEventListener('click', () => carrosselBootstrap && carrosselBootstrap.next());
 
     async function carregarMaterias() {
       try {
         const resposta = await fetch('data/materias-editoriais.json?v=' + Date.now(), { cache: 'no-store' });
-        if (!resposta.ok) throw new Error('Não foi possível carregar o arquivo editorial.');
+        if (!resposta.ok) throw new Error('Feed editorial indisponível.');
         const dados = await resposta.json();
-        const materias = Array.isArray(dados.materias) ? dados.materias : [];
-        if (!materias.length) {
-          document.getElementById('estadoConteudo').textContent = 'Aguardando a próxima execução do robô editorial';
-          return;
-        }
+        const materias = (Array.isArray(dados.materias) ? dados.materias : []).filter(materiaAindaValida);
         materiasAtuais = materias;
-        const destaque = materias[0];
-        document.getElementById('tituloDestaque').textContent = destaque.titulo;
-        document.getElementById('resumoDestaque').textContent = destaque.linha_fina;
-        atualizarImagemDestaque(destaque.imagem_url, destaque.titulo);
-        document.getElementById('pilarDestaque').textContent = destaque.pilar || 'Notícia';
-        document.getElementById('dataDestaque').textContent = destaque.publicado_em_fonte
-          ? 'Fonte publicada em: ' + destaque.publicado_em_fonte
-          : 'Matéria gerada pelo robô editorial';
-        const botaoDestaque = document.getElementById('botaoDestaque');
-        botaoDestaque.onclick = () => {
-          abrirMateria(destaque);
-          bootstrap.Modal.getOrCreateInstance(modalMateria).show();
-        };
-        botaoDestaque.removeAttribute('data-bs-toggle');
-        botaoDestaque.removeAttribute('data-bs-target');
-        renderizarLista(materias.slice(1));
-        const dataGeracao = dados.gerado_em ? new Date(dados.gerado_em) : null;
-        const horarioAtualizacao = dataGeracao && !Number.isNaN(dataGeracao.getTime())
-          ? ' · Atualizado em ' + dataGeracao.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' })
+        if (!materias.length) {
+          slidesEditorial.replaceChildren();
+          const vazio = elementoSeguro('div', 'carousel-item active', '');
+          const linha = elementoSeguro('div', 'row g-0', '');
+          const coluna = elementoSeguro('div', 'col-12', '');
+          const conteudo = elementoSeguro('div', 'slide-conteudo text-center align-items-center', '');
+          conteudo.append(elementoSeguro('span', 'badge etiqueta rounded-pill mb-3', 'Informação local'));
+          conteudo.append(elementoSeguro('h2', 'titulo-materia mb-3', 'Novas matérias em preparação'));
+          conteudo.append(elementoSeguro('p', 'resumo-materia mb-0', 'O carrossel será atualizado quando houver matérias editoriais válidas.'));
+          coluna.appendChild(conteudo);
+          linha.appendChild(coluna);
+          vazio.appendChild(linha);
+          slidesEditorial.appendChild(vazio);
+          botaoAnterior.disabled = true;
+          botaoProximo.disabled = true;
+          document.getElementById('posicaoCarrossel').textContent = 'Nenhuma matéria válida no momento';
+        } else {
+          renderizarCarrossel(materias);
+        }
+        const geradoEm = dados.gerado_em ? new Date(dados.gerado_em) : null;
+        const atualizado = geradoEm && !Number.isNaN(geradoEm.getTime())
+          ? ' · Atualizado em ' + geradoEm.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' })
           : '';
-        document.getElementById('estadoConteudo').textContent = materias.length + ' matéria(s) recebida(s) do robô editorial' + horarioAtualizacao;
-      } catch (erro) {
-        document.getElementById('estadoConteudo').textContent = 'Prévia visual · aguardando conexão com o robô';
+        document.getElementById('estadoConteudo').textContent = materias.length + ' matéria(s) válida(s)' + atualizado;
+      } catch (_) {
+        document.getElementById('estadoConteudo').textContent = 'Aguardando conexão com o feed editorial';
       }
     }
 
     carregarMaterias();
-    // Reconsulta o feed periodicamente para acompanhar novas execuções sem recarregar a página.
     window.setInterval(carregarMaterias, 5 * 60 * 1000);
   </script>
 </body>
