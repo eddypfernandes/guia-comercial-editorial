@@ -222,17 +222,46 @@ def fetch_page(url: str, opener=None) -> tuple[str, str, str]:
 
 
 def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
-    candidates = triage.get("itens", []) if triage and isinstance(triage.get("itens"), list) else discovery.get("itens", [])
-    # Um candidato por pilar mantém o ciclo diário rápido e representativo.
-    selected, seen_pillars = [], set()
+    """Seleciona até três fontes por pilar, em rodadas equilibradas.
+
+    Quando a triagem Gemini está disponível, respeita somente os candidatos
+    aprovados por ela. Sem triagem, amplia a amostra RSS para compensar falhas
+    de acesso às páginas originais, sem ultrapassar três tentativas por pilar.
+    """
+    candidates = (
+        triage.get("itens", [])
+        if triage and isinstance(triage.get("itens"), list)
+        else discovery.get("itens", [])
+    )
+    config_path = ROOT / "config" / "editorial.json"
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    allowed_pillars = set(config.get("pillars", []))
+    max_per_pillar = 3
+
+    buckets: dict[str, list[dict]] = {}
+    seen_urls: set[str] = set()
     for item in candidates:
-        pillar = item.get("pilar", "")
-        if not pillar or pillar in seen_pillars:
+        if not isinstance(item, dict):
             continue
-        selected.append(item)
-        seen_pillars.add(pillar)
-        if len(selected) >= 5:
-            break
+        pillar = str(item.get("pilar", "")).strip()
+        if pillar not in allowed_pillars:
+            continue
+        url = str(item.get("url_agregador") or item.get("url_fonte_publicadora") or "").strip()
+        key = url.rstrip("/").casefold()
+        if not key or key in seen_urls:
+            continue
+        seen_urls.add(key)
+        bucket = buckets.setdefault(pillar, [])
+        if len(bucket) < max_per_pillar:
+            bucket.append(item)
+
+    # Rodadas: primeira fonte de cada pilar, depois a segunda e a terceira.
+    selected = []
+    for round_index in range(max_per_pillar):
+        for pillar in allowed_pillars:
+            bucket = buckets.get(pillar, [])
+            if len(bucket) > round_index:
+                selected.append(bucket[round_index])
     return selected
 
 
