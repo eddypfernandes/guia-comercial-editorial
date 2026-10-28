@@ -92,6 +92,38 @@ class FeedMergeTests(unittest.TestCase):
             "validade_ate": "2026-11-05",
         }
 
+    def test_articles_expire_after_72_hours_even_if_explicit_expiry_is_later(self):
+        now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
+        article = self.article(
+            "old", "pet", "https://example.org/old",
+            "Sun, 25 Oct 2026 11:59:00 GMT"
+        )
+        article["validade_ate"] = "2026-11-05"
+        result = merge_active_articles(
+            {"materias": []}, previous_feed={"materias": [article]}, now=now
+        )
+        self.assertEqual(result["materias"], [])
+
+    def test_retains_up_to_four_per_pillar_and_twenty_total(self):
+        now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
+        pillars = ["pet", "lazer", "esportes", "saude", "fitness"]
+        articles = []
+        for pillar in pillars:
+            for index in range(6):
+                articles.append(self.article(
+                    f"{pillar}-{index}", pillar,
+                    f"https://example.org/{pillar}/{index}",
+                    f"Wed, 28 Oct 2026 {11-index:02d}:00:00 GMT"
+                ))
+        result = merge_active_articles(
+            {"materias": []}, previous_feed={"materias": articles}, now=now
+        )
+        self.assertEqual(len(result["materias"]), 20)
+        counts = {}
+        for article in result["materias"]:
+            counts[article["pilar"]] = counts.get(article["pilar"], 0) + 1
+        self.assertTrue(all(count <= 4 for count in counts.values()))
+
     def test_merge_sorts_newest_first_and_assigns_unique_stable_ids(self):
         now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
         older = self.article("rascunho-01", "pet", "https://example.org/pet", "Tue, 27 Oct 2026 10:00:00 GMT")
