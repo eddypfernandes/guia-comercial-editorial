@@ -63,8 +63,9 @@ def format_body_paragraphs(text: str) -> str:
         start = 0
         sentence_count = 0
         for match in sentence_end.finditer(protected):
+            pieces.append(protected[start:match.start(1)])
             pieces.append(match.group(1))
-            start = match.end()
+            start = match.end(2)
             sentence_count += 1
             if sentence_count % PARAGRAPH_BREAK_AFTER == 0:
                 pieces.append("\n\n")
