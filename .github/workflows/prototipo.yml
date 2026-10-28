@@ -3,7 +3,8 @@ name: Ciclo editorial — descoberta e matérias
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 10 * * *"
+    # 07h, 12h e 18h no horário de Brasília (UTC-3).
+    - cron: "0 10,15,21 * * *"
   push:
     paths:
       - "config/**"
