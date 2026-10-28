@@ -22,8 +22,9 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT_PATH = ROOT / "prototipo" / "saida" / "fontes-verificadas.json"
 OUTPUT_PATH = ROOT / "prototipo" / "saida" / "materias-editoriais.json"
 ACTIVE_FEED_PATH = ROOT / "docs" / "data" / "materias-editoriais.json"
-DEFAULT_VALIDITY_DAYS = 7
-MAX_ACTIVE_PER_PILLAR = 2
+DEFAULT_VALIDITY_DAYS = 3
+MAX_ACTIVE_PER_PILLAR = 4
+MAX_ACTIVE_ARTICLES = 20
 API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 DEFAULT_MODEL = "gemini-3.6-flash"
 MAX_RESPONSE_BYTES = 1_000_000
@@ -234,18 +235,24 @@ def source_key(article: dict) -> str:
 
 
 def article_is_current(article: dict, now: datetime, validity_days: int = DEFAULT_VALIDITY_DAYS) -> bool:
-    """Só mantém matérias aptas, datadas e ainda dentro da janela de validade."""
+    """Mantém matérias aptas por até 72 horas da publicação original, respeitando prazo menor."""
     if article.get("status_editorial") != "apto_para_publicacao":
         return False
     explicit_expiry = parse_article_date(article.get("validade_ate"))
     published = parse_article_date(article.get("publicado_em_fonte"))
     if not published:
         return False
-    if explicit_expiry:
-        return now <= explicit_expiry.replace(hour=23, minute=59, second=59, microsecond=999999)
     if published > now + timedelta(days=1):
         return False
-    return now <= published + timedelta(days=validity_days)
+
+    # A validade informada nunca pode prolongar uma matéria além da janela configurada.
+    valid_until = published + timedelta(days=validity_days)
+    if explicit_expiry:
+        explicit_expiry = explicit_expiry.replace(
+            hour=23, minute=59, second=59, microsecond=999999
+        )
+        valid_until = min(valid_until, explicit_expiry)
+    return now <= valid_until
 
 
 def load_previous_feed() -> dict:
@@ -259,7 +266,8 @@ def load_previous_feed() -> dict:
 
 def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
                           now: datetime | None = None, validity_days: int = DEFAULT_VALIDITY_DAYS,
-                          max_per_pillar: int = MAX_ACTIVE_PER_PILLAR) -> dict:
+                          max_per_pillar: int = MAX_ACTIVE_PER_PILLAR,
+                          max_articles: int = MAX_ACTIVE_ARTICLES) -> dict:
     """Preserva matérias anteriores válidas, acrescenta as novas e remove vencidas/duplicadas."""
     now = now or datetime.now(timezone.utc)
     if now.tzinfo is None:
@@ -316,6 +324,8 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         # A URL normalizada gera um identificador estável e único por fonte.
         item["id"] = "materia-" + hashlib.sha256(key.encode("utf-8")).hexdigest()[:12]
         selected.append(item)
+        if len(selected) >= max_articles:
+            break
 
     selected.sort(
         key=lambda article: parse_article_date(article.get("publicado_em_fonte")) or datetime.min.replace(tzinfo=timezone.utc),
