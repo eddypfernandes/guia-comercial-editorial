@@ -348,7 +348,7 @@ def build_fallback_report(source_items: list[dict], reason: str) -> dict:
         # Mantém o texto da fonte como excerto, sem fingir que houve reescrita ou checagem.
         excerpt = text[:1800].rsplit(" ", 1)[0].strip()
         summary = description if 20 <= len(description) <= 400 else (
-            "Rascunho provisório baseado em texto extraído da fonte original; requer revisão editorial."
+            "Informação reunida a partir da página original. Consulte a fonte para ver o contexto completo."
         )
         body = (
             "RASCUNHO AUTOMÁTICO — SEM REESCRITA POR IA E SEM CHECAGEM FACTUAL. "
