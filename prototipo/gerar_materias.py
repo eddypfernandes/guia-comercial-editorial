@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -28,6 +29,51 @@ MAX_RESPONSE_BYTES = 1_000_000
 MAX_ARTICLES = 5
 CAROUSEL_TITLE_MAX_CHARS = 65
 CAROUSEL_SUMMARY_MAX_CHARS = 140
+
+PARAGRAPH_BREAK_AFTER = 2
+_ABBREVIATION_MARK = "\uE000"
+
+
+def format_body_paragraphs(text: str) -> str:
+    """Organiza somente o corpo em parágrafos de até duas frases, preservando abreviações."""
+    text = str(text or "").strip()
+    if not text:
+        return ""
+
+    abbreviations = (
+        "Sr", "Sra", "Srta", "Dr", "Dra", "Prof", "Profa", "Profo",
+        "Exmo", "Exma", "Ilmo", "Ilma", "etc", "p.ex", "aprox",
+        "art", "arts", " pág", "págs", "av", "nº", "n.º", "tel",
+    )
+    abbreviation_pattern = re.compile(
+        r"(?i)(?<!\\w)(?:" + "|".join(re.escape(item.strip()) for item in abbreviations) + r")\\."
+    )
+    sentence_end = re.compile(r"""([.!?]+["'”’»)]*)(\\s+)""")
+    formatted_paragraphs = []
+
+    for paragraph in re.split(r"\\n\\s*\\n", text):
+        paragraph = re.sub(r"\\s+", " ", paragraph).strip()
+        if not paragraph:
+            continue
+        protected = abbreviation_pattern.sub(
+            lambda match: match.group(0)[:-1] + _ABBREVIATION_MARK,
+            paragraph,
+        )
+        pieces = []
+        start = 0
+        sentence_count = 0
+        for match in sentence_end.finditer(protected):
+            pieces.append(match.group(1))
+            start = match.end()
+            sentence_count += 1
+            if sentence_count % PARAGRAPH_BREAK_AFTER == 0:
+                pieces.append("\\n\\n")
+            else:
+                pieces.append(" ")
+        pieces.append(protected[start:])
+        formatted = "".join(pieces).strip()
+        formatted_paragraphs.append(formatted.replace(_ABBREVIATION_MARK, "."))
+    return "\\n\\n".join(formatted_paragraphs)
 
 
 def build_prompt(items: list[dict]) -> str:
@@ -116,7 +162,7 @@ def validate_articles(data: dict, source_items: list[dict]) -> dict:
         summary = str(article.get("linha_fina", "")).strip()
         carousel_title = str(article.get("titulo_carrossel", "")).strip()
         carousel_summary = str(article.get("linha_fina_carrossel", "")).strip()
-        body = str(article.get("corpo", "")).strip()
+        body = format_body_paragraphs(str(article.get("corpo", "")).strip())
         if not title or len(title) < 12 or len(title) > 180 or len(summary) < 20 or len(summary) > 400 or not carousel_title or len(carousel_title) > CAROUSEL_TITLE_MAX_CHARS or not carousel_summary or len(carousel_summary) > CAROUSEL_SUMMARY_MAX_CHARS or len(body) < 250:
             rejected += 1
             continue
@@ -350,7 +396,7 @@ def build_fallback_report(source_items: list[dict], reason: str) -> dict:
         summary = description if 20 <= len(description) <= 400 else (
             "Informação reunida a partir da página original. Consulte a fonte para ver o contexto completo."
         )
-        body = excerpt
+        body = format_body_paragraphs(excerpt)
         articles.append({
             "id": f"rascunho-{len(articles) + 1:02d}",
             "pilar": item.get("pilar", ""),
