@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs, limpar_titulo_fonte, compactar_texto
+from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs, limpar_titulo_fonte, compactar_texto, compactar_titulo
 
 
 class ArticleValidationTests(unittest.TestCase):
@@ -113,6 +113,26 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertLessEqual(len(result), 35)
         self.assertFalse(result.endswith("…"))
         self.assertEqual(result, "Esta é uma chamada editorial longa")
+
+    def test_compact_title_preserves_complete_meaning(self):
+        self.assertEqual(
+            compactar_titulo(
+                "Governo libera R$ 5,2 bilhões para reforçar assistência social e saúde | Agência Brasil"
+            ),
+            "Governo libera R$ 5,2 bilhões para assistência social e saúde",
+        )
+        self.assertEqual(
+            compactar_titulo(
+                "Retirada dos kits para a Corrida do Servidor do DF vai até esta quarta-feira (28)"
+            ),
+            "Corrida do Servidor-DF: retirada dos kits até quarta (28)",
+        )
+        self.assertEqual(
+            compactar_titulo(
+                "Por que alguns produtos fitness viram hábito e outros acabam esquecidos? – R7 Entretenimento"
+            ),
+            "Por que alguns produtos fitness viram hábito?",
+        )
 
     def test_extract_json(self):
         self.assertEqual(
