@@ -191,10 +191,10 @@ def article_is_current(article: dict, now: datetime, validity_days: int = DEFAUL
         return False
     explicit_expiry = parse_article_date(article.get("validade_ate"))
     published = parse_article_date(article.get("publicado_em_fonte"))
-    if explicit_expiry:
-        return now <= explicit_expiry.replace(hour=23, minute=59, second=59, microsecond=999999)
     if not published:
         return False
+    if explicit_expiry:
+        return now <= explicit_expiry.replace(hour=23, minute=59, second=59, microsecond=999999)
     if published > now + timedelta(days=1):
         return False
     return now <= published + timedelta(days=validity_days)
@@ -218,25 +218,27 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         now = now.replace(tzinfo=timezone.utc)
     now = now.astimezone(timezone.utc)
     previous_feed = previous_feed or {}
-    candidates = []
-    # Itens novos vêm primeiro; se a mesma fonte reaparecer, a versão recém-gerada prevalece.
+    # Primeiro indexa as novas matérias; uma URL repetida não substitui a versão recém-gerada.
+    by_source = {}
     for article in new_report.get("materias", []):
         if isinstance(article, dict) and article_is_current(article, now, validity_days):
-            candidates.append((0, article))
+            key = source_key(article)
+            if key:
+                by_source[key] = article
     for article in previous_feed.get("materias", []):
         if isinstance(article, dict) and article_is_current(article, now, validity_days):
-            candidates.append((1, article))
+            key = source_key(article)
+            if key and key not in by_source:
+                by_source[key] = article
 
-    selected, seen = [], set()
-    pillar_counts = {}
-    candidates.sort(
-        key=lambda pair: (
-            parse_article_date(pair[1].get("publicado_em_fonte")) or datetime.min.replace(tzinfo=timezone.utc),
-            -pair[0],
-        ),
+    candidates = sorted(
+        by_source.values(),
+        key=lambda article: parse_article_date(article.get("publicado_em_fonte")) or datetime.min.replace(tzinfo=timezone.utc),
         reverse=True,
     )
-    for _, article in candidates:
+    selected, seen = [], set()
+    pillar_counts = {}
+    for article in candidates:
         key = source_key(article)
         if not key or key in seen:
             continue
