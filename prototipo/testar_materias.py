@@ -22,16 +22,18 @@ class ArticleValidationTests(unittest.TestCase):
         }]
         self.body = "Este é um texto editorial de teste, baseado no material fornecido pela fonte original. " * 5
 
-    def test_fallback_creates_explicit_unapproved_draft_without_ai(self):
+    def test_fallback_creates_automatically_approved_preview_content_without_ai(self):
         result = build_fallback_report(self.source, "quota excedida")
         self.assertEqual(result["total_materias_validas"], 1)
         self.assertFalse(result["publicacao_oficial"])
         article = result["materias"][0]
         self.assertEqual(article["url_fonte"], "https://example.org/noticia")
         self.assertEqual(article["imagem_url"], "https://example.org/img/noticia.jpg")
-        self.assertEqual(article["status_editorial"], "rascunho_automatico_sem_ia_revisao_obrigatoria")
-        self.assertIn("SEM REESCRITA POR IA", article["corpo"])
+        self.assertEqual(article["status_editorial"], "apto_para_publicacao")
+        self.assertTrue(article["corpo"].startswith("Texto da fonte"))
+        self.assertIn("prévia de testes", article["aviso_editorial"])
         self.assertIn("quota excedida", result["aviso"])
+        self.assertIn("publicação simulada", result["aviso"])
 
     def test_extract_json(self):
         self.assertEqual(
