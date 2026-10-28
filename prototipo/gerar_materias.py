@@ -297,7 +297,7 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         item = dict(article)
         # Atualiza chamadas antigas do feed que ainda foram salvas com reticências.
         carousel_title = str(item.get("titulo_carrossel", "")).strip()
-        if "…" in carousel_title or "..." in carousel_title or len(carousel_title) >= CAROUSEL_TITLE_MAX_CHARS - 2:
+        if "…" in carousel_title or "..." in carousel_title or len(carousel_title) >= CAROUSEL_TITLE_MAX_CHARS - 8:
             item["titulo_carrossel"] = compactar_titulo(
                 item.get("titulo", "") or carousel_title, CAROUSEL_TITLE_MAX_CHARS
             )
