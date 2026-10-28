@@ -44,3 +44,17 @@ python -m unittest prototipo/testar_gemini.py -v
 python -m unittest prototipo/testar_fontes.py -v
 python -m unittest prototipo/testar_rascunhos.py -v
 \`\`\`
+## Contrato visual do carrossel editorial da home
+
+As limitações visuais abaixo se aplicam **somente** ao módulo `/novo/includes/home_editorial.asp`; não devem limitar nem alterar a leitura completa em `/novo/editorial/index.asp`.
+
+- Altura fixa do carrossel: **420 px**.
+- Layout desktop: imagem e texto lado a lado, em colunas iguais.
+- Layout mobile: imagem acima e conteúdo abaixo.
+- Título compacto do carrossel: até **65 caracteres**.
+- Linha fina compacta do carrossel: até **140 caracteres**.
+- Navegação inferior com setas anterior/próximo, botões circulares contornados e ícones chevron; sem pontos indicadores.
+- O agente editorial deve produzir `titulo_carrossel` e `linha_fina_carrossel` concisos, sem alterar os campos `titulo`, `linha_fina` e `corpo` usados na página completa.
+- A altura fixa será aplicada ao componente visual; o conteúdo da chamada deve respeitar os limites editoriais para evitar que os slides mudem de altura.
+
+A publicação oficial permanece desativada. As matérias continuam sujeitas a revisão factual e editorial.
