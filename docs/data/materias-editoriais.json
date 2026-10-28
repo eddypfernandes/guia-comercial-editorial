@@ -1,7 +1,7 @@
 {
-  "gerado_em": "2026-10-28T17:45:37+00:00",
+  "gerado_em": "2026-10-28T17:46:39+00:00",
   "total_recebidas": 5,
-  "total_materias_validas": 7,
+  "total_materias_validas": 10,
   "respostas_rejeitadas": 0,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: matérias aptas, dentro da validade configurada e sem duplicatas. Publicação oficial permanece desativada.",
@@ -79,7 +79,7 @@
       "validade_ate": "2026-11-03"
     },
     {
-      "id": "rascunho-01",
+      "id": "rascunho-03",
       "pilar": "esportes",
       "titulo": "Retirada dos kits para a Corrida do Servidor do DF vai até esta quarta-feira (28)",
       "linha_fina": "Evento registra 5 mil inscrições e será realizado no domingo (1º), na Praça do Buriti, com percursos de 3 km, 5 km e 10 km",
@@ -87,11 +87,47 @@
       "linha_fina_carrossel": "Evento registra 5 mil inscrições e será realizado no domingo (1º), na Praça do Buriti, com percursos de 3 km, 5 km e 10 km",
       "corpo": "27/10/2026 às 17h16 - Atualizado em 28/10/2026 às 08h07 Evento registra 5 mil inscrições e será realizado no domingo (1º), na Praça do Buriti, com percursos de 3 km, 5 km e 10 km Agência Brasília* | Edição: Plácido Fernandes Os participantes da Corrida do Servidor do Distrito Federal 2026 têm até esta quarta-feira (28), Dia do Servidor Público, para retirar seus kits no Pavilhão de Exposições do Parque da Cidade, das 9h às 19h. O acesso é pela bilheteria em frente ao Estacionamento 1.\n\nNão haverá entrega em outra data, nem no dia da prova. Ao todo, foram realizadas 5 mil inscrições, sendo 4 mil destinadas aos servidores públicos do Distrito Federal e mil ao público em geral.\n\nA participação expressiva reforça o interesse da população por iniciativas que incentivam a prática esportiva, a saúde e a qualidade de vida. Para retirar o kit, é necessário apresentar a ficha de inscrição com QR Code, impressa ou no celular, e documento oficial com foto.\n\nOs participantes inscritos nas vagas destinadas a servidores e demais pessoas com vínculo com o serviço público do DF também devem apresentar o comprovante de vínculo anexado à inscrição. A retirada por terceiros é permitida mediante apresentação de documento próprio, cópia do documento de identificação do inscrito e comprovante de inscrição.\n\nPromovida pela Secretaria de Esporte e Lazer do Distrito Federal (SEL-DF), a corrida será realizada neste domingo (1º), com largada e chegada em frente ao Palácio do Buriti. A concentração dos participantes começa às 6h, e as largadas ocorrem entre 6h55 e 7h15, de acordo com a modalidade.\n\nEsporte, saúde e valorização A programação inclui corrida de 5 km e 10 km, caminhada de 3 km e modalidades destinadas a pessoas com deficiência (PcD). O evento oferece opções para diferentes perfis de",
       "fonte_publicadora": "Agência Brasília",
-      "url_fonte": "https://www.agenciabrasilia.df.gov.br/w/retirada-dos-kits-para-a-corrida-do-servidor-do-df-vai-at%C3%A9-esta-quarta-feira-28-?redirect=%2Fnoticias",
+      "url_fonte": "https://www.agenciabrasilia.df.gov.br/w/retirada-dos-kits-para-a-corrida-do-servidor-do-df-vai-at%C3%A9-esta-quarta-feira-28-?redirect=%2Fnoticias%2F",
       "imagem_url": "https://www.agenciabrasilia.df.gov.br/documents/20117/0/WhatsApp+Image+2026-10-27+at+17.00.05.jpeg/6c62298c-f3ca-dad7-1c6a-15b4cf2f7abb?version=1.0&t=1793131662986&download=true",
       "titulo_fonte": "Retirada dos kits para a Corrida do Servidor do DF vai até esta quarta-feira (28)",
       "publicado_em_fonte": "Tue, 27 Oct 2026 20:16:00 GMT",
-      "gerado_em": "2026-10-28T17:45:37+00:00",
+      "gerado_em": "2026-10-28T17:46:39+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
+      "validade_ate": "2026-11-03"
+    },
+    {
+      "id": "rascunho-02",
+      "pilar": "lazer",
+      "titulo": "Reforma do skatepark do Paranoá incentiva prática esportiva e reforça oferta de lazer para população",
+      "linha_fina": "Obra foi autorizada pela governadora Celina Leão durante o GDF na Sua Porta; praça da Quadra 2 também passou por mudanças",
+      "titulo_carrossel": "Reforma do skatepark do Paranoá incentiva prática esportiva e…",
+      "linha_fina_carrossel": "Obra foi autorizada pela governadora Celina Leão durante o GDF na Sua Porta; praça da Quadra 2 também passou por mudanças",
+      "corpo": "27/10/2026 às 13h30 - Atualizado em 28/10/2026 às 09h06 Obra foi autorizada pela governadora Celina Leão durante o GDF na Sua Porta; praça da Quadra 2 também passou por mudanças Catarina Loiola, da Agência Brasília | Edição: Paulo Soares O Skatepark do Paranoá está pronto para receber manobras radicais. O espaço ganhou novos obstáculos, piso nivelado e guarda-corpos para a segurança dos esportistas, graças à reforma executada pelo Governo do Distrito Federal (GDF), por meio do programa GDF na Sua Porta.\n\nO programa passou pela cidade em abril e também autorizou obras na praça da Quadra 2, com instalação de um parquinho infantil e de um ponto de encontro comunitário (PEC) para agregar lazer à rotina da população. O administrador regional do Paranoá, Wagner Teixeira Lima de Souza, salienta que as obras reforçam a importância da iniciativa do Executivo.\n\n“O nome GDF na Sua Porta é exatamente isso: é o GDF na porta da população, conversando com a comunidade”, frisou ele, que também destacou a participação cidadã no mapeamento das demandas. “O skatepark era um pedido antigo, o pessoal achava o formato ultrapassado.\n\nQuando a governadora veio, logo a Novacap [Companhia Urbanizadora da Nova Capital do Brasil] começou as obras para ficar do jeito que a população quer.” No skatepark, os trabalhos foram concluídos em quatro meses, com investimento de R$ 427,9 mil.\n\nOcorreu a reforma completa, com demolição do piso existente, readequação das rampas e dos obstáculos às medidas oficiais do esporte, colocação de piso em granitina polida, pintura das paredes e instalação de cantoneiras e guarda-corpos metálicos. O ponto de encontro fica na praça central da cidade, ao lado de uma quadra de basquete.\n\nJá na praça da Quadra 2, o aporte chegou a R$ 623,3 mil, com execução em três meses. Os",
+      "fonte_publicadora": "Agência Brasília",
+      "url_fonte": "https://www.agenciabrasilia.df.gov.br/w/reforma-do-skatepark-do-paranoa-incentiva-pratica-esportiva-e-reforca-oferta-de-lazer-para-populacao",
+      "imagem_url": "https://www.agenciabrasilia.df.gov.br/documents/20117/0/WhatsApp+Image+2026-10-27+at+12.28.10.jpeg/f07b236a-10d5-de65-3bc8-dd80e37863b7?version=1.0&t=1793114978640&download=true",
+      "titulo_fonte": "Reforma do skatepark do Paranoá incentiva prática esportiva e reforça oferta de lazer para população",
+      "publicado_em_fonte": "Tue, 27 Oct 2026 19:07:00 GMT",
+      "gerado_em": "2026-10-28T17:46:39+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
+      "validade_ate": "2026-11-03"
+    },
+    {
+      "id": "rascunho-05",
+      "pilar": "fitness",
+      "titulo": "Por que alguns produtos fitness viram hábito e outros acabam esquecidos? – R7 Entretenimento Ir para bluesky Ir para facebook Ir para instagram Ir para kwai Ir para threads Ir para",
+      "linha_fina": "Qualidade e praticidade influenciam a recompra e ajudam a explicar por que alguns produtos conquistam o consumidor",
+      "titulo_carrossel": "Por que alguns produtos fitness viram hábito e outros acabam…",
+      "linha_fina_carrossel": "Qualidade e praticidade influenciam a recompra e ajudam a explicar por que alguns produtos conquistam o consumidor",
+      "corpo": "Adicione como fonte preferencial no Google Produzido pela Ri7a - a Inteligência Artificial do R7 Quem nunca comprou um suplemento, uma roupa nova de academia ou algum produto fitness cheio de vontade de começar uma rotina mais saudável, mas acabou deixando tudo de lado depois de algum tempo? Eu já vi esse filme e talvez você também.\n\nA verdade é que nem tudo o que desperta nossa curiosidade consegue conquistar um espaço definitivo no dia a dia. Alguns produtos viram companheiros de treino, enquanto outros acabam esquecidos no armário.\n\nMas o que faz essa diferença? Qualidade, praticidade, confiança e identificação com uma marca podem ajudar a explicar por que algumas compras se repetem e outras ficam restritas à primeira experiência.\n\nE entender esse comportamento vai além das estratégias de venda: também ajuda a refletir sobre como construímos nossos hábitos de consumo em torno da vida saudável. Para Leandro Capolupo, CMO e cofundador da BonifiQ, empresa especializada em estratégias de fidelização e engajamento de consumidores, o desafio das marcas é transformar a experimentação em um relacionamento duradouro.\n\n“Esses comportamentos reforçam que a recompra não depende apenas da primeira experiência com o produto, mas também da capacidade da marca de se aproximar, conhecer e manter um relacionamento relevante com o consumidor ao longo do tempo”, afirma Leandro. Como Ser Saudável Emagrecimento na terceira idade: 4 cuidados que fazem a diferença Como Ser Saudável Muay Thai emagrece?\n\nVeja os benefícios da ‘arte das oito armas’ para corpo e mente Como Ser Saudável Acorda com a glicemia alta? 4 hábitos que ajudam a controlar o açúcar no sangue No universo fitness, a decisão de comprar novamente não depende de um único fator.\n\nA qualidade do produto e o resultado percebido ajudam",
+      "fonte_publicadora": "R7",
+      "url_fonte": "https://entretenimento.r7.com/vivaavida/prisma/como-ser-saudavel/por-que-alguns-produtos-fitness-viram-habito-e-outros-acabam-esquecidos-27102026/",
+      "imagem_url": "https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/FHQOGGMHRRF5DDO4OFEYKBISQQ.png?smart=true&auth=ee9cdad3a4b4a15499446126005f130b7e5df37a12fbc009bc60ebb3e32230f0&width=1200&height=630",
+      "titulo_fonte": "Por que alguns produtos fitness viram hábito e outros acabam esquecidos? – R7 Entretenimento Ir para bluesky Ir para facebook Ir para instagram Ir para kwai Ir para threads Ir para recordplus Ir para tiktok Ir para X Ir para whatsapp Ir para youtube Ir para facebook Ir para X Ir para instagram Ir pa",
+      "publicado_em_fonte": "Tue, 27 Oct 2026 05:00:01 GMT",
+      "gerado_em": "2026-10-28T17:46:39+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
       "validade_ate": "2026-11-03"
@@ -131,6 +167,24 @@
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
       "validade_ate": "2026-11-01"
+    },
+    {
+      "id": "rascunho-01",
+      "pilar": "pet",
+      "titulo": "Sport lança projeto Meu AUmigo Rubro-Negro para incentivar a adoção responsável de animais - Sport Club do Recife",
+      "linha_fina": "O Sport Club do Recife dará início, nesta sexta-feira (23), ao projeto Meu AUmigo Rubro-Negro, uma iniciativa realizada em parceria com a Prefeitura do Recife, por meio da plataforma Adota PET, e com o apoio de instituições parceiras da causa animal, como Cantinho da Filó e Instituto Elo Animal. A ação tem como objetivo divulgar […]",
+      "titulo_carrossel": "Sport lança projeto Meu AUmigo Rubro-Negro para incentivar a…",
+      "linha_fina_carrossel": "O Sport Club do Recife dará início, nesta sexta-feira (23), ao projeto Meu AUmigo Rubro-Negro, uma iniciativa realizada em parceria com a…",
+      "corpo": "Início Notícias O Clube Sport lança projeto Meu AUmigo Rubro-Negro para incentivar a adoção responsável de animais 22 de outubro de 2026 Compartilhe: O Sport Club do Recife dará início, nesta sexta-feira (23), ao projeto Meu AUmigo Rubro-Negro, uma iniciativa realizada em parceria com a Prefeitura do Recife, por meio da plataforma Adota PET, e com o apoio de instituições parceiras da causa animal, como Cantinho da Filó e Instituto Elo Animal. A ação tem como objetivo divulgar e incentivar a adoção responsável dos animais que vivem nas dependências do Clube, tanto no Centro de Treinamento (CT), quanto na Ilha do Retiro.\n\nO lançamento será marcado por uma ação especial onde os pets, que vivem no CT e no Cantinho da Filó, entrarão para uma volta olímpica durante o aquecimento dos jogadores na partida contra o Criciúma, na Ilha do Retiro. A iniciativa busca aproximar a causa animal da torcida rubro-negra e dar visibilidade aos pets que estão em busca de um novo lar.\n\nO projeto prevê uma série de etapas voltadas ao cuidado, à conscientização e à adoção. Neste primeiro momento, o trabalho está concentrado nos animais que vivem no CT.\n\nOs cuidados já foram iniciados, com avaliações veterinárias, exames clínicos, administração de medicações, higienização e castrações. Os procedimentos estão sendo organizados de forma gradual, considerando o número de animais e a necessidade de garantir a assistência adequada a cada um deles.\n\n“Queremos que o Meu AUmigo Rubro-Negro seja o início de um trabalho contínuo, capaz de conectar cada vez mais pessoas a essa causa. O Sport tem uma torcida engajada e um alcance que podem contribuir muito para dar visibilidade a iniciativas importantes, aproximando projetos, instituições e pessoas que desejam fazer a diferença na vida desses animais.\n\nEsse",
+      "fonte_publicadora": "Sport Club do Recife",
+      "url_fonte": "https://sportrecife.com.br/o-clube/sport-lanca-projeto-meu-aumigo-rubro-negro-para-incentivar-a-adocao-responsavel-de-animais/",
+      "imagem_url": "https://sportrecife.com.br/wp-content/uploads/2026/10/0HR1511-scaled.jpg",
+      "titulo_fonte": "Sport lança projeto Meu AUmigo Rubro-Negro para incentivar a adoção responsável de animais - Sport Club do Recife",
+      "publicado_em_fonte": "Fri, 23 Oct 2026 00:09:13 GMT",
+      "gerado_em": "2026-10-28T17:46:39+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
+      "validade_ate": "2026-10-30"
     }
   ]
 }
