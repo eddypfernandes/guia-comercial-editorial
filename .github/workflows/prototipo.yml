@@ -69,9 +69,9 @@ jobs:
             echo "O feed editorial não teve alterações."
           else
             git commit -m "Atualiza matérias da prévia editorial"
-            # Integra commits que chegaram durante a geração, sem sobrescrever a branch.
             git fetch origin main
-            git rebase origin/main
+            # Se o feed também mudou na main, preserva o JSON gerado nesta execução.
+            git rebase -X theirs origin/main
             git push origin HEAD:main
           fi
 
