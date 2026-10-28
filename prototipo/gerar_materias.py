@@ -11,12 +11,17 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT_PATH = ROOT / "prototipo" / "saida" / "fontes-verificadas.json"
 OUTPUT_PATH = ROOT / "prototipo" / "saida" / "materias-editoriais.json"
+ACTIVE_FEED_PATH = ROOT / "docs" / "data" / "materias-editoriais.json"
+DEFAULT_VALIDITY_DAYS = 7
+MAX_ACTIVE_PER_PILLAR = 2
 API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 DEFAULT_MODEL = "gemini-3.6-flash"
 MAX_RESPONSE_BYTES = 1_000_000
@@ -144,6 +149,125 @@ def validate_articles(data: dict, source_items: list[dict]) -> dict:
     }
 
 
+
+def parse_article_date(value: str | None) -> datetime | None:
+    """Interpreta datas ISO ou datas RSS; datas ausentes não são consideradas válidas."""
+    if not value or not str(value).strip():
+        return None
+    text = str(value).strip()
+    try:
+        parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
+    except ValueError:
+        try:
+            parsed = parsedate_to_datetime(text)
+        except (TypeError, ValueError, OverflowError):
+            return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def source_key(article: dict) -> str:
+    """Normaliza a URL para evitar duplicatas da mesma página original."""
+    value = str(article.get("url_fonte", "")).strip()
+    if not value:
+        return ""
+    try:
+        parts = urlsplit(value)
+        if parts.scheme.lower() not in {"http", "https"} or not parts.hostname:
+            return value.rstrip("/").casefold()
+        host = parts.hostname.lower()
+        port = parts.port
+        netloc = host if port is None or (parts.scheme.lower(), port) in {("http", 80), ("https", 443)} else f"{host}:{port}"
+        path = parts.path.rstrip("/") or "/"
+        return urlunsplit((parts.scheme.lower(), netloc, path, "", "")).casefold()
+    except ValueError:
+        return value.rstrip("/").casefold()
+
+
+def article_is_current(article: dict, now: datetime, validity_days: int = DEFAULT_VALIDITY_DAYS) -> bool:
+    """Só mantém matérias aptas, datadas e ainda dentro da janela de validade."""
+    if article.get("status_editorial") != "apto_para_publicacao":
+        return False
+    explicit_expiry = parse_article_date(article.get("validade_ate"))
+    published = parse_article_date(article.get("publicado_em_fonte"))
+    if explicit_expiry:
+        return now <= explicit_expiry.replace(hour=23, minute=59, second=59, microsecond=999999)
+    if not published:
+        return False
+    if published > now + timedelta(days=1):
+        return False
+    return now <= published + timedelta(days=validity_days)
+
+
+def load_previous_feed() -> dict:
+    """Lê o feed publicado anteriormente; ausência/erro não interrompe a geração."""
+    try:
+        data = json.loads(ACTIVE_FEED_PATH.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
+                          now: datetime | None = None, validity_days: int = DEFAULT_VALIDITY_DAYS,
+                          max_per_pillar: int = MAX_ACTIVE_PER_PILLAR) -> dict:
+    """Preserva matérias anteriores válidas, acrescenta as novas e remove vencidas/duplicadas."""
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    now = now.astimezone(timezone.utc)
+    previous_feed = previous_feed or {}
+    candidates = []
+    # Itens novos vêm primeiro; se a mesma fonte reaparecer, a versão recém-gerada prevalece.
+    for article in new_report.get("materias", []):
+        if isinstance(article, dict) and article_is_current(article, now, validity_days):
+            candidates.append((0, article))
+    for article in previous_feed.get("materias", []):
+        if isinstance(article, dict) and article_is_current(article, now, validity_days):
+            candidates.append((1, article))
+
+    selected, seen = [], set()
+    pillar_counts = {}
+    candidates.sort(
+        key=lambda pair: (
+            parse_article_date(pair[1].get("publicado_em_fonte")) or datetime.min.replace(tzinfo=timezone.utc),
+            -pair[0],
+        ),
+        reverse=True,
+    )
+    for _, article in candidates:
+        key = source_key(article)
+        if not key or key in seen:
+            continue
+        pillar = str(article.get("pilar", "")).strip().lower()
+        if not pillar or pillar_counts.get(pillar, 0) >= max_per_pillar:
+            continue
+        seen.add(key)
+        pillar_counts[pillar] = pillar_counts.get(pillar, 0) + 1
+        item = dict(article)
+        expiry = parse_article_date(item.get("validade_ate")) or (
+            parse_article_date(item.get("publicado_em_fonte")) + timedelta(days=validity_days)
+        )
+        item["validade_ate"] = expiry.date().isoformat()
+        selected.append(item)
+
+    selected.sort(
+        key=lambda article: parse_article_date(article.get("publicado_em_fonte")) or datetime.min.replace(tzinfo=timezone.utc),
+        reverse=True,
+    )
+    result = dict(new_report)
+    result["gerado_em"] = now.isoformat(timespec="seconds")
+    result["total_materias_validas"] = len(selected)
+    result["materias"] = selected
+    result["publicacao_oficial"] = False
+    result["aviso"] = (
+        "Prévia editorial: matérias aptas, dentro da validade configurada e sem duplicatas. "
+        "Publicação oficial permanece desativada."
+    )
+    return result
+
+
 def write_empty(reason: str) -> None:
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     report = {
@@ -155,6 +279,7 @@ def write_empty(reason: str) -> None:
         "aviso": reason,
         "materias": [],
     }
+    report = merge_active_articles(report, load_previous_feed())
     OUTPUT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -300,6 +425,7 @@ def main() -> int:
                 reason = " | ".join(errors) or "Nenhum modelo de redação disponível."
                 result = build_fallback_report(eligible, reason)
                 print(f"Gemini indisponível; usando rascunhos alternativos: {reason[:240]}")
+        result = merge_active_articles(result, load_previous_feed())
         OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Fontes elegíveis: {len(eligible)}")
