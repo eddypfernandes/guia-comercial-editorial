@@ -43,6 +43,8 @@ class ArticleValidationTests(unittest.TestCase):
             "pilar": "lazer",
             "titulo": "Uma notícia útil para a comunidade",
             "linha_fina": "Resumo claro com contexto para o leitor local.",
+            "titulo_carrossel": "Notícia útil para a comunidade",
+            "linha_fina_carrossel": "Resumo conciso para a chamada da home.",
             "corpo": self.body,
             "url_fonte": "https://example.org/noticia",
             "imagem_url": "https://example.org/img/noticia.jpg",
@@ -55,9 +57,9 @@ class ArticleValidationTests(unittest.TestCase):
 
     def test_rejects_unknown_source_wrong_pillar_and_short_text(self):
         data = {"materias": [
-            {"pilar": "lazer", "titulo": "Uma notícia útil para a comunidade", "linha_fina": "Resumo claro com contexto para o leitor local.", "corpo": self.body, "url_fonte": "https://invented.example/news"},
-            {"pilar": "pet", "titulo": "Uma notícia útil para a comunidade", "linha_fina": "Resumo claro com contexto para o leitor local.", "corpo": self.body, "url_fonte": "https://example.org/noticia"},
-            {"pilar": "lazer", "titulo": "Uma notícia útil para a comunidade", "linha_fina": "Resumo claro com contexto para o leitor local.", "corpo": "curto", "url_fonte": "https://example.org/noticia"},
+            {"pilar": "lazer", "titulo": "Uma notícia útil para a comunidade", "linha_fina": "Resumo claro com contexto para o leitor local.", "titulo_carrossel": "Notícia útil para a comunidade", "linha_fina_carrossel": "Resumo conciso para a chamada da home.", "corpo": self.body, "url_fonte": "https://invented.example/news"},
+            {"pilar": "pet", "titulo": "Uma notícia útil para a comunidade", "linha_fina": "Resumo claro com contexto para o leitor local.", "titulo_carrossel": "Notícia útil para a comunidade", "linha_fina_carrossel": "Resumo conciso para a chamada da home.", "corpo": self.body, "url_fonte": "https://example.org/noticia"},
+            {"pilar": "lazer", "titulo": "Uma notícia útil para a comunidade", "linha_fina": "Resumo claro com contexto para o leitor local.", "titulo_carrossel": "Notícia útil para a comunidade", "linha_fina_carrossel": "Resumo conciso para a chamada da home.", "corpo": "curto", "url_fonte": "https://example.org/noticia"},
         ]}
         result = validate_articles(data, self.source)
         self.assertEqual(result["total_materias_validas"], 0)
