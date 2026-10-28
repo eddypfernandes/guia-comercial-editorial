@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs
+from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs, limpar_titulo_fonte, compactar_texto
 
 
 class ArticleValidationTests(unittest.TestCase):
@@ -90,6 +90,29 @@ class ArticleValidationTests(unittest.TestCase):
             "https://example.org/antiga",
             {item["url_fonte"] for item in result["materias"]},
         )
+
+    def test_fallback_titles_remove_source_suffixes_and_social_menu_noise(self):
+        self.assertEqual(
+            limpar_titulo_fonte(
+                "O fim da calça manchada: cientistas criam mictório revolucionário inspirado em cães | CNN Brasil"
+            ),
+            "O fim da calça manchada: cientistas criam mictório revolucionário inspirado em cães",
+        )
+        self.assertEqual(
+            limpar_titulo_fonte(
+                "Por que alguns produtos fitness viram hábito e outros acabam esquecidos? – R7 Entretenimento Ir para bluesky Ir para facebook"
+            ),
+            "Por que alguns produtos fitness viram hábito e outros acabam esquecidos?",
+        )
+
+    def test_compact_calls_end_at_word_boundary_without_ellipsis(self):
+        result = compactar_texto(
+            "Esta é uma chamada editorial longa que precisa caber no espaço disponível",
+            35,
+        )
+        self.assertLessEqual(len(result), 35)
+        self.assertFalse(result.endswith("…"))
+        self.assertEqual(result, "Esta é uma chamada editorial longa")
 
     def test_extract_json(self):
         self.assertEqual(
