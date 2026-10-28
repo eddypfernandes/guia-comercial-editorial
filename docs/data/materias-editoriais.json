@@ -1,7 +1,7 @@
 {
-  "gerado_em": "2026-10-28T19:31:11+00:00",
+  "gerado_em": "2026-10-28T19:36:08+00:00",
   "total_recebidas": 5,
-  "total_materias_validas": 10,
+  "total_materias_validas": 12,
   "respostas_rejeitadas": 0,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: matérias aptas, dentro da validade configurada e sem duplicatas. Publicação oficial permanece desativada.",
@@ -19,10 +19,10 @@
       "imagem_url": "https://api.dino.com.br/v2/news/tr/339168?partnerId=3677",
       "titulo_fonte": "Framework é destaque em cultura e pessoas - RADAR DIGITAL BRASÍLIA Botão WhatsApp - Canal TI Botão WhatsApp - Canal TI",
       "publicado_em_fonte": "Wed, 28 Oct 2026 19:22:07 GMT",
-      "gerado_em": "2026-10-28T19:31:11+00:00",
+      "gerado_em": "2026-10-28T19:36:08+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
-      "validade_ate": "2026-11-04"
+      "validade_ate": "2026-10-31"
     },
     {
       "id": "materia-a0858ee86f65",
@@ -43,6 +43,42 @@
       "validade_ate": "2026-11-04"
     },
     {
+      "id": "materia-b087c391083a",
+      "pilar": "saude",
+      "titulo": "Rondônia avança na saúde ocular com novos equipamentos para tratamentos especializados",
+      "linha_fina": "Com o objetivo de reforçar a assistência oftalmológica na rede pública estadual, o governo de Rondônia recebeu do Ministério da Saúde (MS) dois nov...",
+      "titulo_carrossel": "Rondônia avança na saúde ocular com novos equipamentos",
+      "linha_fina_carrossel": "Com o objetivo de reforçar a assistência oftalmológica na rede pública estadual, o governo de Rondônia recebeu do Ministério da Saúde (MS)",
+      "corpo": "C om o objetivo de reforçar a assistência oftalmológica na rede pública estadual, o governo de Rondônia recebeu do Ministério da Saúde (MS) dois novos equipamentos. A entrega foi realizada nesta terça-feira (27), na sede do Hospital de Base Dr. Ary Pinheiro (HBAP), ampliando os recursos disponíveis para a realização de procedimentos especializados.\n\nOs equipamentos somam R$ 475 mil em investimentos e incluem um fotocoagulador a laser e um equipamento a laser para uso oftalmológico, dos tipos YAG e diodo. A iniciativa reforça a estrutura de atendimento e amplia os recursos disponíveis para a realização de procedimentos especializados.\n\nO fotocoagulador a laser é utilizado em tratamentos da retina por meio da aplicação de feixes de laser terapêuticos. O procedimento pode auxiliar no tratamento de alterações nos vasos sanguíneos, no controle de sangramentos e em determinadas condições que comprometem a retina.\n\nJá o laser oftalmológico YAG/diodo é utilizado em procedimentos específicos, conforme a tecnologia e a indicação clínica, contribuindo para ampliar as possibilidades de tratamento na área da oftalmologia. O governador de Rondônia, Marcos Rocha ressaltou a importância da parceria entre os governos estadual e federal para o aprimoramento da saúde pública.\n\n“Essa parceria com o Ministério da Saúde contribui para ampliar e reforçar a estrutura e o atendimento da saúde ocular em Rondônia. A chegada de novos equipamentos representa mais recursos para os profissionais e melhores condições para atender a população que depende dos serviços públicos de saúde”.\n\nPara o secretário de Estado da Saúde, Edilton Oliveira, a chegada dos equipamentos representa um reforço à estrutura da rede estadual e às condições de atendimento especializado. “Esses equipamentos impulsionam a",
+      "fonte_publicadora": "tvcbrasil.com.br",
+      "url_fonte": "https://tvcbrasil.com.br/noticia/44227/rondonia-avanca-na-saude-ocular-com-novos-equipamentos-para-tratamentos-especializados/amp",
+      "imagem_url": "https://str1.lnmimg.net/img/2026/10/28/5448e0b71732c31ac940e1ae32b8491b.webp",
+      "titulo_fonte": "Rondônia avança na saúde ocular com novos equipamentos para tratamentos especializados",
+      "publicado_em_fonte": "Wed, 28 Oct 2026 17:36:00 GMT",
+      "gerado_em": "2026-10-28T19:36:08+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
+      "validade_ate": "2026-10-31"
+    },
+    {
+      "id": "materia-28adc9fe5f59",
+      "pilar": "fitness",
+      "titulo": "Caminhar em vez de ir à academia é uma ótima opção, mas só traz resultados reais se o ritmo for de pelo menos 5 km/h e com constância - Minha Vida",
+      "linha_fina": "Não é obrigatório treinar em blocos longos de tempo, mas, para quem vive no sedentarismo, agrupar os passos em caminhadas contínuas faz toda a diferença para o coração.",
+      "titulo_carrossel": "Caminhar em vez de ir à academia é uma ótima opção, mas só traz",
+      "linha_fina_carrossel": "Não é obrigatório treinar em blocos longos de tempo, mas, para quem vive no sedentarismo, agrupar os passos em caminhadas contínuas faz toda",
+      "corpo": "Jornalista com experiência como repórter, assessor e social media e apaixonado por esporte. Escrevo matérias sobre saúde mental, família, bem-estar e Durante muito tempo, acreditou-se que qualquer exercício físico só trazia benefícios reais se fosse praticado em longas sessões ininterruptas ou dentro de uma sala de musculação.\n\nAntigas diretrizes de saúde chegavam a exigir blocos mínimos de 10 minutos seguidos para que o movimento \" valesse a pena \". No entanto, a ciência atual mudou esse olhar de forma radical.\n\nRevisões sistemáticas recentes comprovam que a redução do risco de mortalidade ocorre tanto quando acumulamos pequenas movimentações ao longo do dia quanto quando treinamos em blocos estruturados. Por essa razão, as orientações da Organização Mundial da Saúde (OMS) eliminaram exigências de tempo mínimo contínuo: a regra atual é que cada minuto em movimento conta .\n\nApesar dessa flexibilidade, para pessoas sedentárias ou com baixa rotina de atividades, a forma como esses passos são dados carrega um peso extra. Veja também: Caminhada: 11 benefícios, como emagrecer e como começar Um estudo recente liderado pela Universidade Europeia de Madri analisou mais de 33 mil adultos do banco de dados britânico UK Biobank que davam 8.000 passos ou menos por dia .\n\nO trabalho revelou que a incidência de problemas cardiovasculares variava drasticamente conforme os passos eram distribuídos: Isso derruba o mito de que é obrigatório caminhar 40 ou 60 minutos seguidos logo no início: para quem está saindo do sedentarismo, sessões de 10 a 15 minutos contínuos já geram proteção cardiovascular expressiva e são muito mais fáceis de encaixar no dia a dia. Veja também: Caminhada reduz níveis de pressão arterial por até 24 horas Passear devagar, olhando vitrines por uma hora, não equivale a",
+      "fonte_publicadora": "Minha Vida Saúde",
+      "url_fonte": "https://www.minhavida.com.br/materias/materia-30026",
+      "imagem_url": "https://static1.minhavida.com.br/articles/09/fe/79/6b/mulher-fazendo-caminhada-ao-ar-livre-orig-1.jpg",
+      "titulo_fonte": "Caminhar em vez de ir à academia é uma ótima opção, mas só traz resultados reais se o ritmo for de pelo menos 5 km/h e com constância - Minha Vida",
+      "publicado_em_fonte": "Wed, 28 Oct 2026 16:06:17 GMT",
+      "gerado_em": "2026-10-28T19:36:08+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
+      "validade_ate": "2026-10-31"
+    },
+    {
       "id": "materia-0340c535f328",
       "pilar": "pet",
       "titulo": "Cobras gostam de carinho? Biólogo revela curiosidades sobre pets exóticos",
@@ -55,10 +91,10 @@
       "imagem_url": "https://primeirapagina.com.br/wp-content/uploads/2026/10/animais-de-estimacao-exoticos.jpg",
       "titulo_fonte": "Cobras gostam de carinho? Biólogo revela curiosidades sobre pets exóticos",
       "publicado_em_fonte": "Wed, 28 Oct 2026 14:22:22 GMT",
-      "gerado_em": "2026-10-28T19:31:11+00:00",
+      "gerado_em": "2026-10-28T19:36:08+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
-      "validade_ate": "2026-11-04"
+      "validade_ate": "2026-10-31"
     },
     {
       "id": "materia-6a201aeb541c",
@@ -127,10 +163,10 @@
       "imagem_url": "https://imagens.ne10.uol.com.br/veiculos/_midias/png/2026/10/28/852x479/1_blog_do_torcedor___site__8_-37188812.png",
       "titulo_fonte": "Sport x Náutico ao vivo: onde assistir e horário da final do Pernambucano Sub-15",
       "publicado_em_fonte": "Wed, 28 Oct 2026 10:19:00 GMT",
-      "gerado_em": "2026-10-28T19:31:11+00:00",
+      "gerado_em": "2026-10-28T19:36:08+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
-      "validade_ate": "2026-11-04"
+      "validade_ate": "2026-10-31"
     },
     {
       "id": "materia-56207ac091cb",
