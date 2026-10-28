@@ -44,7 +44,10 @@ class ArticleValidationTests(unittest.TestCase):
         self.body = "Este é um texto editorial de teste, baseado no material fornecido pela fonte original. " * 5
 
     def test_fallback_creates_automatically_approved_preview_content_without_ai(self):
-        result = build_fallback_report(self.source, "quota excedida")
+        result = build_fallback_report(
+            self.source, "quota excedida",
+            now=datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc),
+        )
         self.assertEqual(result["total_materias_validas"], 1)
         self.assertFalse(result["publicacao_oficial"])
         article = result["materias"][0]
@@ -55,6 +58,38 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertIn("prévia de testes", article["aviso_editorial"])
         self.assertIn("quota excedida", result["aviso"])
         self.assertIn("publicação simulada", result["aviso"])
+
+    def test_fallback_ignores_stale_sources_and_balances_recent_pillars(self):
+        now = datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc)
+        pillars = ("pet", "lazer", "esportes", "saude", "fitness")
+        sources = []
+        for index, pillar in enumerate(pillars):
+            sources.append({
+                "pilar": pillar,
+                "fonte_publicadora": "Fonte de teste",
+                "url_final": f"https://example.org/recente-{pillar}",
+                "titulo_pagina": f"Notícia recente de {pillar}",
+                "publicado_em_rss": "2026-10-27",
+                "texto_extraido": "Texto recente da fonte " * 40,
+                "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
+            })
+        sources.append({
+            "pilar": "fitness",
+            "fonte_publicadora": "Fonte antiga",
+            "url_final": "https://example.org/antiga",
+            "titulo_pagina": "Notícia antiga de fitness",
+            "publicado_em_rss": "2026-04-10",
+            "texto_extraido": "Texto antigo da fonte " * 40,
+            "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
+        })
+
+        result = build_fallback_report(sources, "quota indisponível", now=now)
+        self.assertEqual(result["total_materias_validas"], 5)
+        self.assertEqual({item["pilar"] for item in result["materias"]}, set(pillars))
+        self.assertNotIn(
+            "https://example.org/antiga",
+            {item["url_fonte"] for item in result["materias"]},
+        )
 
     def test_extract_json(self):
         self.assertEqual(
