@@ -375,17 +375,71 @@ def compactar_texto(texto: str, limite: int) -> str:
     return (trecho or texto[:limite - 1].rstrip()) + "…"
 
 
-def build_fallback_report(source_items: list[dict], reason: str) -> dict:
+def filter_recent_sources(source_items: list[dict], now: datetime | None = None) -> list[dict]:
+    """Aceita somente fontes verificadas, datadas e publicadas nos últimos sete dias."""
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    now = now.astimezone(timezone.utc)
+
+    recent, seen = [], set()
+    for item in source_items:
+        if not isinstance(item, dict):
+            continue
+        if item.get("status_verificacao") != "pagina_original_extraida_revisao_factual_pendente":
+            continue
+        if len(item.get("texto_extraido", "")) < 500 or not item.get("url_final"):
+            continue
+        published = parse_article_date(item.get("publicado_em_rss"))
+        if not published or published > now + timedelta(days=1):
+            continue
+        if now > published + timedelta(days=DEFAULT_VALIDITY_DAYS):
+            continue
+        key = source_key({"url_fonte": item.get("url_final", "")})
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        recent.append(item)
+
+    return sorted(
+        recent,
+        key=lambda item: parse_article_date(item.get("publicado_em_rss")) or datetime.min.replace(tzinfo=timezone.utc),
+        reverse=True,
+    )
+
+
+def select_balanced_recent_sources(source_items: list[dict], limit: int,
+                                  now: datetime | None = None) -> list[dict]:
+    """Prioriza fontes recentes, distribuindo-as pelos pilares antes de repetir."""
+    recent = filter_recent_sources(source_items, now)
+    config_path = ROOT / "config" / "editorial.json"
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    pillars = config.get("pillars", [])
+    buckets = {pillar: [] for pillar in pillars}
+
+    for item in recent:
+        pillar = item.get("pilar")
+        if pillar in buckets:
+            buckets[pillar].append(item)
+
+    selected = []
+    for round_index in range(max(0, limit)):
+        for pillar in pillars:
+            if len(selected) >= limit:
+                return selected
+            if len(buckets[pillar]) > round_index:
+                selected.append(buckets[pillar][round_index])
+    return selected
+
+
+def build_fallback_report(source_items: list[dict], reason: str,
+                         now: datetime | None = None) -> dict:
     """Cria conteúdo de contingência para a prévia automática usando trechos da fonte original."""
-    eligible = [
-        item for item in source_items
-        if item.get("status_verificacao") == "pagina_original_extraida_revisao_factual_pendente"
-        and len(item.get("texto_extraido", "")) >= 500
-        and item.get("url_final")
-    ]
+    now = now or datetime.now(timezone.utc)
+    eligible = select_balanced_recent_sources(source_items, MAX_ARTICLES, now)
 
     articles = []
-    for item in eligible[:MAX_ARTICLES]:
+    for item in eligible:
         title = str(item.get("titulo_pagina") or item.get("titulo_pauta") or "").strip()
         if len(title) < 12:
             title = str(item.get("titulo_pauta") or "Rascunho editorial para revisão").strip()
@@ -433,11 +487,7 @@ def main() -> int:
         items = report.get("itens", [])
         if not isinstance(items, list):
             raise ValueError("Relatório de fontes inválido.")
-        eligible = [
-            item for item in items
-            if item.get("status_verificacao") == "pagina_original_extraida_revisao_factual_pendente"
-            and len(item.get("texto_extraido", "")) >= 500
-        ]
+        eligible = filter_recent_sources(items)
         if not eligible:
             write_empty("Nenhuma fonte com texto suficiente para gerar matérias neste ciclo.")
             print("Nenhuma fonte elegível; arquivo de matérias vazio criado.")
