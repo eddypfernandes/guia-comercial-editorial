@@ -258,16 +258,18 @@
       slidesEditorial.replaceChildren();
       materias.forEach((materia, indice) => slidesEditorial.appendChild(criarSlide(materia, indice)));
       carrosselBootstrap = bootstrap.Carousel.getOrCreateInstance(carrosselElemento, { interval: false, ride: false, touch: true, wrap: true });
-      const temVarios = materias.length > 1;
+      const totalSlides = slidesEditorial.querySelectorAll('.carousel-item').length;
+      const temVarios = totalSlides > 1;
       botaoAnterior.disabled = !temVarios;
       botaoProximo.disabled = !temVarios;
-      document.getElementById('posicaoCarrossel').textContent = materias.length ? '1 de ' + materias.length + ' matérias' : 'Nenhuma matéria válida no momento';
+      document.getElementById('posicaoCarrossel').textContent = totalSlides ? '1 de ' + totalSlides + ' matérias' : 'Nenhuma matéria válida no momento';
     }
 
     function atualizarPosicao() {
       const ativos = [...slidesEditorial.querySelectorAll('.carousel-item')];
       const indice = ativos.findIndex(item => item.classList.contains('active'));
-      document.getElementById('posicaoCarrossel').textContent = indice >= 0 ? (indice + 1) + ' de ' + materiasAtuais.length + ' matérias' : '';
+      const totalSlides = materiasAtuais.length ? ativos.length : 0;
+      document.getElementById('posicaoCarrossel').textContent = indice >= 0 && totalSlides ? (indice + 1) + ' de ' + totalSlides + ' matérias' : '';
     }
 
     carrosselElemento.addEventListener('slid.bs.carousel', atualizarPosicao);
@@ -304,7 +306,8 @@
         const atualizado = geradoEm && !Number.isNaN(geradoEm.getTime())
           ? ' · Atualizado em ' + geradoEm.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' })
           : '';
-        document.getElementById('estadoConteudo').textContent = materias.length + ' matéria(s) válida(s)' + atualizado;
+        const totalSlidesExibidos = materias.length ? slidesEditorial.querySelectorAll('.carousel-item').length : 0;
+        document.getElementById('estadoConteudo').textContent = totalSlidesExibidos + ' matéria(s) válida(s)' + atualizado;
       } catch (_) {
         document.getElementById('estadoConteudo').textContent = 'Aguardando conexão com o feed editorial';
       }
