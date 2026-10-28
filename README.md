@@ -12,6 +12,13 @@ Protótipo do agente editorial do GUIA COMERCIAL, isolado dos demais repositóri
 - Testes automatizados para configuração, coleta, triagem, extração e validação de rascunhos.
 - Artefatos do GitHub Actions retidos por 14 dias.
 
+## Retenção do conteúdo editorial
+
+- Matérias aptas permanecem ativas por até **72 horas desde a publicação original**, respeitando qualquer prazo menor informado.
+- O feed conserva até **20 matérias**, com limite de **4 por pilar**, sempre das mais recentes para as mais antigas.
+- Duplicatas e matérias vencidas são removidas na montagem do feed. Se uma coleta não trouxer novidades, as matérias ainda válidas são preservadas.
+- Esses limites organizam somente a prévia editorial; a publicação oficial continua desativada.
+
 ## Artefatos da execução
 
 No GitHub, abra [Actions](https://github.com/eddypfernandes/guia-comercial-editorial/actions), selecione **Ciclo editorial — descoberta e triagem**, abra uma execução e baixe:
