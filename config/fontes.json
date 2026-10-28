@@ -9,11 +9,11 @@
   "queries": [
     {
       "pillar": "pet",
-      "query": "(pets OR cães OR gatos OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "query": "(pets OR cães OR gatos OR bichinhos de estimação OR animais domésticos OR animais exóticos OR cuidados com pet OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
     },
     {
       "pillar": "lazer",
-      "query": "(lazer OR cultura OR turismo OR eventos) (Brasília OR \"Distrito Federal\")"
+      "query": "(lazer OR cultura OR turismo OR eventos OR passeios OR entretenimentos OR viagens) (Brasília OR \"Distrito Federal\")"
     },
     {
       "pillar": "esportes",
@@ -21,11 +21,15 @@
     },
     {
       "pillar": "saude",
-      "query": "(saúde OR prevenção OR vacinação OR bem-estar) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "query": "(saúde OR prevenção OR vacinação OR bem-estar OR alimentação saudável OR cuidados OR tratamentos) (Brasília OR \"Distrito Federal\" OR Brasil)"
     },
     {
       "pillar": "fitness",
-      "query": "(fitness OR academia OR exercício físico OR atividade física) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "query": "(fitness OR academia OR exercício físico OR atividade física OR alimentação fitness OR suplementos fitness OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
+    },
+    {
+      "pillar": "política",
+      "query": "(política OR novas leis OR novos decretos OR novas medidas) (Brasília OR \"Distrito Federal\" OR Brasil)"
     }
   ]
 }
