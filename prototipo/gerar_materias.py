@@ -46,13 +46,13 @@ def format_body_paragraphs(text: str) -> str:
         "art", "arts", " pág", "págs", "av", "nº", "n.º", "tel",
     )
     abbreviation_pattern = re.compile(
-        r"(?i)(?<!\\w)(?:" + "|".join(re.escape(item.strip()) for item in abbreviations) + r")\\."
+        r"(?i)(?<!\w)(?:" + "|".join(re.escape(item.strip()) for item in abbreviations) + r")\."
     )
-    sentence_end = re.compile(r"""([.!?]+["'”’»)]*)(\\s+)""")
+    sentence_end = re.compile(r"""([.!?]+["'”’»)]*)(\s+)""")
     formatted_paragraphs = []
 
-    for paragraph in re.split(r"\\n\\s*\\n", text):
-        paragraph = re.sub(r"\\s+", " ", paragraph).strip()
+    for paragraph in re.split(r"\n\s*\n", text):
+        paragraph = re.sub(r"\s+", " ", paragraph).strip()
         if not paragraph:
             continue
         protected = abbreviation_pattern.sub(
@@ -67,13 +67,13 @@ def format_body_paragraphs(text: str) -> str:
             start = match.end()
             sentence_count += 1
             if sentence_count % PARAGRAPH_BREAK_AFTER == 0:
-                pieces.append("\\n\\n")
+                pieces.append("\n\n")
             else:
                 pieces.append(" ")
         pieces.append(protected[start:])
         formatted = "".join(pieces).strip()
         formatted_paragraphs.append(formatted.replace(_ABBREVIATION_MARK, "."))
-    return "\\n\\n".join(formatted_paragraphs)
+    return "\n\n".join(formatted_paragraphs)
 
 
 def build_prompt(items: list[dict]) -> str:
