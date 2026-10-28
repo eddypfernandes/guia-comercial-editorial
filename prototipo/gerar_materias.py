@@ -350,13 +350,7 @@ def build_fallback_report(source_items: list[dict], reason: str) -> dict:
         summary = description if 20 <= len(description) <= 400 else (
             "Informação reunida a partir da página original. Consulte a fonte para ver o contexto completo."
         )
-        body = (
-            "RASCUNHO AUTOMÁTICO — SEM REESCRITA POR IA E SEM CHECAGEM FACTUAL. "
-            "O trecho a seguir foi extraído da página original e é apresentado apenas para facilitar a revisão.\n\n"
-            + excerpt
-            + "\n\nAntes de publicar, confira manualmente os fatos, a data, o contexto, a autoria e os direitos de uso. "
-            "Este conteúdo não está aprovado para publicação."
-        )
+        body = excerpt
         articles.append({
             "id": f"rascunho-{len(articles) + 1:02d}",
             "pilar": item.get("pilar", ""),
