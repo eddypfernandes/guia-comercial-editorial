@@ -295,6 +295,18 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         seen.add(key)
         pillar_counts[pillar] = pillar_counts.get(pillar, 0) + 1
         item = dict(article)
+        # Atualiza chamadas antigas do feed que ainda foram salvas com reticências.
+        carousel_title = str(item.get("titulo_carrossel", "")).strip()
+        if "…" in carousel_title or "..." in carousel_title:
+            clean_title = limpar_titulo_fonte(item.get("titulo", ""))
+            item["titulo_carrossel"] = compactar_texto(
+                clean_title or item.get("titulo", ""), CAROUSEL_TITLE_MAX_CHARS
+            )
+        carousel_summary = str(item.get("linha_fina_carrossel", "")).strip()
+        if "…" in carousel_summary or "..." in carousel_summary:
+            item["linha_fina_carrossel"] = compactar_texto(
+                item.get("linha_fina", ""), CAROUSEL_SUMMARY_MAX_CHARS
+            )
         expiry = parse_article_date(item.get("validade_ate")) or (
             parse_article_date(item.get("publicado_em_fonte")) + timedelta(days=validity_days)
         )
