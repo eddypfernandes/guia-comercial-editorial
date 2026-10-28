@@ -5,6 +5,7 @@ paywalls ou conteúdo dependente de JavaScript ficam pendentes de revisão human
 """
 from __future__ import annotations
 
+import http.client
 import ipaddress
 import json
 import re
@@ -272,7 +273,7 @@ def verify_item(item: dict, opener=None) -> dict:
             record["erro"] = "Texto extraído insuficiente; revisar manualmente ou acessar a fonte."
         else:
             record["status_verificacao"] = "pagina_original_extraida_revisao_factual_pendente"
-    except (OSError, ValueError, urllib.error.URLError, TimeoutError, socket.gaierror) as exc:
+    except (OSError, ValueError, urllib.error.URLError, TimeoutError, socket.gaierror, http.client.HTTPException) as exc:
         record["erro"] = f"{type(exc).__name__}: {str(exc)[:300]}"
         record["duracao_segundos"] = round(time.monotonic() - started, 2)
     return record
