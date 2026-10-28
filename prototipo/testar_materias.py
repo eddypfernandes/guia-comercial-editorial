@@ -5,10 +5,31 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles
+from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs
 
 
 class ArticleValidationTests(unittest.TestCase):
+    def test_body_is_split_after_two_sentences_without_splitting_abbreviations(self):
+        body = (
+            "A primeira frase termina aqui. A segunda também termina aqui. "
+            "A terceira começa aqui. Dr. Silva chegou cedo. "
+            "A quarta termina aqui. A quinta termina aqui."
+        )
+        self.assertEqual(
+            format_body_paragraphs(body),
+            "A primeira frase termina aqui. A segunda também termina aqui.\\n\\n"
+            "A terceira começa aqui. Dr. Silva chegou cedo.\\n\\n"
+            "A quarta termina aqui. A quinta termina aqui.",
+        )
+
+    def test_body_formatter_preserves_existing_paragraphs_and_empty_text(self):
+        body = "Primeira frase. Segunda frase.\\n\\nTerceira frase. Quarta frase."
+        self.assertEqual(
+            format_body_paragraphs(body),
+            "Primeira frase. Segunda frase.\\n\\nTerceira frase. Quarta frase.",
+        )
+        self.assertEqual(format_body_paragraphs("  "), "")
+
     def setUp(self):
         self.source = [{
             "pilar": "lazer",
