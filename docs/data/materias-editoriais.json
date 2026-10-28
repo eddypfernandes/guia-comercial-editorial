@@ -1,11 +1,47 @@
 {
-  "gerado_em": "2026-10-28T11:17:57+00:00",
+  "gerado_em": "2026-10-28T11:55:07+00:00",
   "total_recebidas": 4,
-  "total_materias_validas": 1,
+  "total_materias_validas": 4,
   "respostas_rejeitadas": 0,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: matérias aptas, dentro da validade configurada e sem duplicatas. Publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-01",
+      "pilar": "pet",
+      "titulo": "Cientistas se inspiram em cães para criar mictório sem respingos",
+      "linha_fina": "Pesquisa canadense utiliza a postura dos cachorros para redefinir o design de banheiros masculinos e evitar sujeira.",
+      "titulo_carrossel": "Cientistas criam mictório sem respingos inspirado em cães",
+      "linha_fina_carrossel": "Estudo aplicou a física do movimento canino para evitar sujeira nas roupas em sanitários públicos.",
+      "corpo": "Pesquisadores da Universidade de Waterloo, liderados pelo professor Zhao Pan, desenvolveram novos formatos de mictórios cerâmicos projetados para eliminar os respingos causados durante o uso. A inovação buscou solução na física da mecânica dos fluidos após os cientistas observarem o comportamento dos cães ao urinar.\n\nAo notar que os cachorros erguem a pata para atingir superfícies verticais com ângulos de impacto mais rasos, a equipe constatou que gotas de respingo desaparecem quando o jato incide em um ângulo inferior a 30 graus. Com base nisso, foram criados protótipos com geometrias diferenciadas para garantir esse mesmo efeito físico no uso humano.\n\nOs testes de laboratório demonstraram o sucesso dos novos formatos em comparação aos modelos tradicionais, cuja estrutura permaneceu praticamente inalterada por mais de um século. Além de reduzir sujeiras e manchas nas roupas, o projeto visa economizar água e produtos de limpeza em banheiros públicos.",
+      "fonte_publicadora": "CNN Brasil",
+      "url_fonte": "https://www.cnnbrasil.com.br/curiosidades/o-fim-da-calca-manchada-cientistas-criam-mictorio-revolucionario-inspirado-em-caes/",
+      "imagem_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Zhao-Pan-Universidade-de-Waterloo.jpg?w=1094&h=608&crop=1",
+      "titulo_fonte": "O fim da calça manchada: cientistas criam mictório revolucionário inspirado em cães | CNN Brasil",
+      "publicado_em_fonte": "Wed, 28 Oct 2026 01:22:52 GMT",
+      "gerado_em": "2026-10-28T11:55:07+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Matéria aprovada pelos critérios automáticos de estrutura, limites editoriais e correspondência com a fonte original. A verificação técnica não garante a veracidade independente de todos os fatos; em caso de dúvida, consulte a fonte original.",
+      "validade_ate": "2026-11-04"
+    },
+    {
+      "id": "materia-03",
+      "pilar": "saude",
+      "titulo": "Jornalistas da EBC recebem indicações em prêmio nacional de saúde",
+      "linha_fina": "Premiação do Hospital Einstein destaca quatro profissionais e a Agência Brasil pela cobertura científica.",
+      "titulo_carrossel": "Jornalistas da EBC ganham destaque em prêmio de saúde",
+      "linha_fina_carrossel": "Quatro repórteres e a Agência Brasil foram indicadas no Prêmio Einstein por reportagens sobre ciência.",
+      "corpo": "Quatro jornalistas da Empresa Brasil de Comunicação (EBC) e a Agência Brasil se classificaram entre os finalistas do Prêmio Einstein +Admirados da Imprensa de Saúde, Ciência e Bem-Estar de 2026. A premiação é organizada pelo Hospital Israelita Albert Einstein em parceria com o Portal dos Jornalistas e o Jornalistas&Cia.\n\nAs repórteres Tâmara Freire, Paula Laboissière, Patrícia Serrão e Raíssa Saraiva conquistaram reconhecimento nas categorias nacional e regional. O trabalho das jornalistas Patrícia e Raíssa inclui a produção do podcast VideBula, focado em abordar a rotina de quem convive com doenças raras e condições crônicas.\n\nA edição deste ano teve ampla presença feminina, com as mulheres representando 83% dos profissionais contemplados. Os vencedores finais e as colocações das categorias serão revelados durante cerimônia oficial em São Paulo, agendada para 17 de novembro.",
+      "fonte_publicadora": "Agência Brasil",
+      "url_fonte": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-10/ebc-tem-quatro-jornalistas-entre-os-finalistas-do-premio-admirados",
+      "imagem_url": "https://imagens.ebc.com.br/qvh0DCo4AFWDicPTJnbsos5_ckg=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2026/07/31/totem2.jpg?itok=h3thKRAK",
+      "titulo_fonte": "EBC tem quatro jornalistas entre os finalistas do prêmio +Admirados | Agência Brasil",
+      "publicado_em_fonte": "Tue, 27 Oct 2026 23:24:00 GMT",
+      "gerado_em": "2026-10-28T11:55:07+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Matéria aprovada pelos critérios automáticos de estrutura, limites editoriais e correspondência com a fonte original. A verificação técnica não garante a veracidade independente de todos os fatos; em caso de dúvida, consulte a fonte original.",
+      "validade_ate": "2026-11-03"
+    },
     {
       "id": "materia-01",
       "pilar": "lazer",
@@ -23,6 +59,24 @@
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Matéria aprovada pelos critérios automáticos de estrutura, limites editoriais e correspondência com a fonte original. A verificação técnica não garante a veracidade independente de todos os fatos; em caso de dúvida, consulte a fonte original.",
       "validade_ate": "2026-11-03"
+    },
+    {
+      "id": "materia-02",
+      "pilar": "esportes",
+      "titulo": "Corrida de rua reúne centenas de atletas e destaca inclusão em Brasília",
+      "linha_fina": "Evento Metrópoles Endurance promoveu provas de 4 km, 8 km e 16 km com categoria dedicada a pessoas com deficiência.",
+      "titulo_carrossel": "Corrida de rua destaca inclusão e saúde em Brasília",
+      "linha_fina_carrossel": "O evento Metrópoles Endurance reuniu centenas de participantes em percursos de 4 km, 8 km e 16 km.",
+      "corpo": "A capital federal sediou a corrida Metrópoles Endurance no último sábado, 24 de outubro, reunindo centenas de corredores amadores e profissionais pelas vias de Brasília. O evento contou com trajetos ajustados a diferentes preparos físicos, cobrindo distâncias de 4 km, 8 km e 16 km.\n\nUm dos destaques da competição foi o incentivo à diversidade por meio de uma categoria exclusiva voltada para pessoas com deficiência (PCD). A modalidade recebeu atletas cadeirantes e deficientes visuais acompanhados de guias, reforçando o esporte como instrumento de acessibilidade e integração comunitária.\n\nA iniciativa buscou incentivar a prática regular de exercícios na rotina urbana e o convívio social. A organização garantiu o suporte técnico necessário aos participantes ao longo de todo o percurso pelas ruas da cidade.",
+      "fonte_publicadora": "Capital Política",
+      "url_fonte": "https://capitalpolitica.com.br/metropoles-endurance-corrida-o-triunfo-do-esporte-e-da-inclusao-em-brasilia/",
+      "imagem_url": "https://capitalpolitica.com.br/wp-content/uploads/2026/10/endurance3.jpeg",
+      "titulo_fonte": "Metrópoles Endurance Corrida: O Triunfo do Esporte e da Inclusão em Brasília - Capital Política",
+      "publicado_em_fonte": "Sun, 25 Oct 2026 16:00:57 GMT",
+      "gerado_em": "2026-10-28T11:55:07+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Matéria aprovada pelos critérios automáticos de estrutura, limites editoriais e correspondência com a fonte original. A verificação técnica não garante a veracidade independente de todos os fatos; em caso de dúvida, consulte a fonte original.",
+      "validade_ate": "2026-11-01"
     }
   ]
 }
