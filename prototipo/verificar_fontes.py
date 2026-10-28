@@ -225,7 +225,7 @@ def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
     """Seleciona até três fontes por pilar, em rodadas equilibradas.
 
     Quando a triagem Gemini está disponível, respeita somente os candidatos
-    aprovados por ela. Sem triagem, amplia a amostra RSS para compensar falhas
+    retornados por ela. Sem triagem, amplia a amostra RSS para compensar falhas
     de acesso às páginas originais, sem ultrapassar três tentativas por pilar.
     """
     candidates = (
