@@ -366,13 +366,34 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
 
     raise RuntimeError(f"Gemini não respondeu após 3 tentativas. Último erro: {last_error}") from last_error
 
+def limpar_titulo_fonte(texto: str) -> str:
+    """Remove sufixos de identificação da fonte e menus de compartilhamento do título."""
+    texto = " ".join(str(texto or "").split())
+    texto = re.split(
+        r"\s+Ir para\s+(?:bluesky|facebook|instagram|kwai|threads)\b",
+        texto,
+        maxsplit=1,
+        flags=re.IGNORECASE,
+    )[0]
+    texto = re.sub(
+        r"\s*(?:\||–|—|-)\s*(?:Agência Brasil|CNN Brasil|R7 Entretenimento|"
+        r"Niterói\s*\|\s*O Globo|Sport Club do Recife|Capital Política)\b.*$",
+        "",
+        texto,
+        flags=re.IGNORECASE,
+    )
+    return texto.strip(" \t-|–—:")
+
+
 def compactar_texto(texto: str, limite: int) -> str:
-    """Cria chamada provisória curta sem alterar o texto integral da matéria."""
+    """Encurta chamadas em limite de palavra, sem reticências ou palavras cortadas."""
     texto = " ".join(str(texto).split())
     if len(texto) <= limite:
         return texto
-    trecho = texto[:limite - 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
-    return (trecho or texto[:limite - 1].rstrip()) + "…"
+    trecho = texto[:limite + 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
+    if trecho:
+        return trecho
+    return texto[:limite].rstrip()
 
 
 def filter_recent_sources(source_items: list[dict], now: datetime | None = None) -> list[dict]:
@@ -440,9 +461,12 @@ def build_fallback_report(source_items: list[dict], reason: str,
 
     articles = []
     for item in eligible:
-        title = str(item.get("titulo_pagina") or item.get("titulo_pauta") or "").strip()
+        title_original = str(item.get("titulo_pagina") or item.get("titulo_pauta") or "").strip()
+        title = limpar_titulo_fonte(title_original)
         if len(title) < 12:
-            title = str(item.get("titulo_pauta") or "Rascunho editorial para revisão").strip()
+            title = limpar_titulo_fonte(str(item.get("titulo_pauta") or "Rascunho editorial para revisão"))
+        if len(title) < 12:
+            title = title_original
         title = title[:180]
         description = str(item.get("descricao_pagina") or "").strip()
         text = " ".join(str(item.get("texto_extraido", "")).split())
