@@ -13,6 +13,11 @@ on:
 permissions:
   contents: write
 
+# Evita duas execuções editoriais concorrentes disputando a atualização do feed.
+concurrency:
+  group: ciclo-editorial-${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   validar-e-descobrir:
     runs-on: ubuntu-latest
@@ -64,7 +69,10 @@ jobs:
             echo "O feed editorial não teve alterações."
           else
             git commit -m "Atualiza matérias da prévia editorial"
-            git push
+            # Integra commits que chegaram durante a geração, sem sobrescrever a branch.
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
 
       - name: Guardar relatório da descoberta
