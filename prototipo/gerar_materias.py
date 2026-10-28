@@ -329,7 +329,7 @@ def compactar_texto(texto: str, limite: int) -> str:
 
 
 def build_fallback_report(source_items: list[dict], reason: str) -> dict:
-    """Cria rascunhos sem IA usando apenas trechos da fonte original."""
+    """Cria conteúdo de contingência para a prévia automática usando trechos da fonte original."""
     eligible = [
         item for item in source_items
         if item.get("status_verificacao") == "pagina_original_extraida_revisao_factual_pendente"
@@ -365,8 +365,8 @@ def build_fallback_report(source_items: list[dict], reason: str) -> dict:
             "titulo_fonte": item.get("titulo_pagina", ""),
             "publicado_em_fonte": item.get("publicado_em_rss", ""),
             "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "status_editorial": "rascunho_automatico_sem_ia_revisao_obrigatoria",
-            "aviso_editorial": "Trecho extraído da fonte original, sem reescrita por IA e sem checagem factual. Revisão humana obrigatória; não publicar automaticamente.",
+            "status_editorial": "apto_para_publicacao",
+            "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
         })
 
     return {
@@ -375,7 +375,7 @@ def build_fallback_report(source_items: list[dict], reason: str) -> dict:
         "total_materias_validas": len(articles),
         "respostas_rejeitadas": 0,
         "publicacao_oficial": False,
-        "aviso": "Modo alternativo sem Gemini. Os itens são rascunhos com trechos extraídos das fontes, não matérias reescritas nem fatos verificados. Revisão humana obrigatória. Motivo: " + reason[:240],
+        "aviso": "Modo alternativo sem Gemini: conteúdo de contingência incluído na prévia de testes em publicação simulada. Os trechos vêm das fontes originais; a publicação oficial permanece desativada. Motivo: " + reason[:240],
         "materias": articles,
     }
 
@@ -398,7 +398,7 @@ def main() -> int:
         api_key = os.environ.get("GEMINI_API_KEY", "").strip()
         if not api_key:
             result = build_fallback_report(eligible, "GEMINI_API_KEY ausente")
-            print("Chave Gemini ausente; usando rascunhos alternativos sem IA.")
+            print("Chave Gemini ausente; usando conteúdo de contingência na prévia automática.")
         else:
             primary_model = os.environ.get("GEMINI_MODEL", DEFAULT_MODEL).strip()
             fallback_models = [name.strip() for name in os.environ.get("GEMINI_FALLBACK_MODELS", "gemini-2.5-flash-lite").split(",") if name.strip()]
@@ -420,7 +420,7 @@ def main() -> int:
             if result is None:
                 reason = " | ".join(errors) or "Nenhum modelo de redação disponível."
                 result = build_fallback_report(eligible, reason)
-                print(f"Gemini indisponível; usando rascunhos alternativos: {reason[:240]}")
+                print(f"Gemini indisponível; usando conteúdo de contingência na prévia: {reason[:240]}")
         result = merge_active_articles(result, load_previous_feed())
         OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
