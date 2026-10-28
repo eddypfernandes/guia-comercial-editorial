@@ -17,16 +17,16 @@ class ArticleValidationTests(unittest.TestCase):
         )
         self.assertEqual(
             format_body_paragraphs(body),
-            "A primeira frase termina aqui. A segunda também termina aqui.\\n\\n"
-            "A terceira começa aqui. Dr. Silva chegou cedo.\\n\\n"
+            "A primeira frase termina aqui. A segunda também termina aqui.\n\n"
+            "A terceira começa aqui. Dr. Silva chegou cedo.\n\n"
             "A quarta termina aqui. A quinta termina aqui.",
         )
 
     def test_body_formatter_preserves_existing_paragraphs_and_empty_text(self):
-        body = "Primeira frase. Segunda frase.\\n\\nTerceira frase. Quarta frase."
+        body = "Primeira frase. Segunda frase.\n\nTerceira frase. Quarta frase."
         self.assertEqual(
             format_body_paragraphs(body),
-            "Primeira frase. Segunda frase.\\n\\nTerceira frase. Quarta frase.",
+            "Primeira frase. Segunda frase.\n\nTerceira frase. Quarta frase.",
         )
         self.assertEqual(format_body_paragraphs("  "), "")
 
