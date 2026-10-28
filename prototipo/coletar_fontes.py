@@ -27,6 +27,8 @@ def text_of(parent: ET.Element, name: str) -> str:
 
 
 def make_feed_url(query: str, language: str, region: str, edition: str) -> str:
+    # Evita que o Google News preencha o feed com resultados antigos.
+    query = f"{query} when:7d"
     params = urllib.parse.urlencode({
         "q": query,
         "hl": language,
