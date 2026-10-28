@@ -26,10 +26,6 @@
     {
       "pillar": "fitness",
       "query": "(fitness OR academia OR exercício físico OR atividade física OR alimentação fitness OR suplementos fitness OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
-    },
-    {
-      "pillar": "política",
-      "query": "(política OR novas leis OR novos decretos OR novas medidas) (Brasília OR \"Distrito Federal\" OR Brasil)"
     }
   ]
 }
