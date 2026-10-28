@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import sys
 import time
+from email.utils import parsedate_to_datetime
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -81,6 +82,25 @@ def fetch_feed(url: str, timeout: int, max_bytes: int) -> bytes:
     return body
 
 
+def publication_timestamp(item: dict) -> float:
+    """Converte pubDate em timestamp; datas ausentes/inválidas ficam no fim."""
+    published = str(item.get("publicado_em", "")).strip()
+    if not published:
+        return float("-inf")
+    try:
+        parsed = parsedate_to_datetime(published)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.timestamp()
+    except (TypeError, ValueError, OverflowError):
+        return float("-inf")
+
+
+def sort_newest_first(items: list[dict]) -> list[dict]:
+    """Prioriza a data original de publicação, não a ordem devolvida pelo RSS."""
+    return sorted(items, key=publication_timestamp, reverse=True)
+
+
 def deduplicate(items: list[dict]) -> list[dict]:
     seen: set[str] = set()
     result: list[dict] = []
@@ -112,7 +132,9 @@ def collect(config: dict, opener=fetch_feed) -> dict:
         try:
             xml_bytes = opener(url, timeout, max_bytes)
             items = parse_feed(xml_bytes, pillar, url, fetched_at)
-            items = deduplicate(items)[:limit]
+            # O Google News RSS pode devolver itens fora de ordem cronológica.
+            # Ordenar antes do limite impede que notícias novas sejam descartadas.
+            items = sort_newest_first(deduplicate(items))[:limit]
             all_items.extend(items)
             feed_status.append({
                 "pilar": pillar,
