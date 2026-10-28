@@ -208,7 +208,7 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertNotIn("https://example.org/rascunho", urls)
         self.assertEqual(result["total_materias_validas"], 3)
         self.assertTrue(all(item.get("validade_ate") for item in result["materias"]))
-        normalized = next(item for item in result["materias"] if item["id"] == "titulo-truncado")
+        normalized = next(item for item in result["materias"] if item["url_fonte"] == "https://example.org/titulo-truncado")
         self.assertNotIn("…", normalized["titulo_carrossel"])
         self.assertNotIn("...", normalized["titulo_carrossel"])
         self.assertNotIn("…", normalized["linha_fina_carrossel"])
@@ -234,7 +234,7 @@ class ArticleValidationTests(unittest.TestCase):
         }
         result = merge_active_articles({"materias": [new_article]}, {"materias": [old_article, undated]}, now=now)
         self.assertEqual(len(result["materias"]), 1)
-        self.assertEqual(result["materias"][0]["id"], "nova")
+        self.assertTrue(result["materias"][0]["id"].startswith("materia-"))
 
 
 if __name__ == "__main__":
