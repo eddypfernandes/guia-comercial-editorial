@@ -53,6 +53,8 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertEqual(result["total_materias_validas"], 1)
         self.assertEqual(result["materias"][0]["url_fonte"], "https://example.org/noticia")
         self.assertEqual(result["materias"][0]["imagem_url"], "https://example.org/img/noticia.jpg")
+        self.assertEqual(result["materias"][0]["status_editorial"], "apto_para_publicacao")
+        self.assertIn("não garante a veracidade independente", result["materias"][0]["aviso_editorial"])
         self.assertFalse(result["publicacao_oficial"])
 
     def test_rejects_unknown_source_wrong_pillar_and_short_text(self):
