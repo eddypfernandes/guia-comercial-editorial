@@ -235,7 +235,8 @@ def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
     )
     config_path = ROOT / "config" / "editorial.json"
     config = json.loads(config_path.read_text(encoding="utf-8"))
-    allowed_pillars = set(config.get("pillars", []))
+    allowed_pillars = config.get("pillars", [])
+    allowed_pillar_set = set(allowed_pillars)
     max_per_pillar = 3
 
     buckets: dict[str, list[dict]] = {}
@@ -244,7 +245,7 @@ def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
         if not isinstance(item, dict):
             continue
         pillar = str(item.get("pilar", "")).strip()
-        if pillar not in allowed_pillars:
+        if pillar not in allowed_pillar_set:
             continue
         url = str(item.get("url_agregador") or item.get("url_fonte_publicadora") or "").strip()
         key = url.rstrip("/").casefold()
