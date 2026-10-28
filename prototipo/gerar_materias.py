@@ -271,7 +271,8 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
     for article in new_report.get("materias", []):
         if isinstance(article, dict) and article_is_current(article, now, validity_days):
             key = source_key(article)
-            if key:
+            if key and key not in by_source:
+                # Mantém a primeira versão recebida para cada fonte no relatório novo.
                 by_source[key] = article
     for article in previous_feed.get("materias", []):
         if isinstance(article, dict) and article_is_current(article, now, validity_days):
