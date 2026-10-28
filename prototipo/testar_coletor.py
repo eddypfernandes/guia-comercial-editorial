@@ -26,6 +26,7 @@ class CollectorTests(unittest.TestCase):
         url = make_feed_url("saúde Brasília", "pt-BR", "BR", "BR:pt-419")
         self.assertIn("news.google.com/rss/search?", url)
         self.assertIn("q=sa%C3%BAde", url)
+        self.assertIn("when%3A7d", url)
 
     def test_parse_rss_records_source_and_warning_status(self):
         items = parse_feed(SAMPLE_RSS, "saude", "https://example.org/rss", "2026-10-27T10:00:00+00:00")
