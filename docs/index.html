@@ -262,7 +262,6 @@
       botaoAnterior.disabled = !temVarios;
       botaoProximo.disabled = !temVarios;
       document.getElementById('posicaoCarrossel').textContent = materias.length ? '1 de ' + materias.length + ' matérias' : 'Nenhuma matéria válida no momento';
-      carrosselElemento.addEventListener('slid.bs.carousel', atualizarPosicao);
     }
 
     function atualizarPosicao() {
@@ -271,6 +270,7 @@
       document.getElementById('posicaoCarrossel').textContent = indice >= 0 ? (indice + 1) + ' de ' + materiasAtuais.length + ' matérias' : '';
     }
 
+    carrosselElemento.addEventListener('slid.bs.carousel', atualizarPosicao);
     botaoAnterior.addEventListener('click', () => carrosselBootstrap && carrosselBootstrap.prev());
     botaoProximo.addEventListener('click', () => carrosselBootstrap && carrosselBootstrap.next());
 
