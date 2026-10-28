@@ -1,27 +1,28 @@
 {
-  "gerado_em": "2026-10-28T10:38:52+00:00",
+  "gerado_em": "2026-10-28T11:07:35+00:00",
   "total_recebidas": 1,
   "total_materias_validas": 1,
   "respostas_rejeitadas": 0,
   "publicacao_oficial": false,
-  "aviso": "Matérias geradas automaticamente; links para as fontes originais são preservados. O arquivo ainda não está conectado ao site.",
+  "aviso": "Prévia editorial: matérias aptas, dentro da validade configurada e sem duplicatas. Publicação oficial permanece desativada.",
   "materias": [
     {
       "id": "materia-01",
       "pilar": "lazer",
-      "titulo": "Espaço Cultural Renato Russo recebe festival gratuito de arte e cultura surda",
-      "linha_fina": "Evento com entrada franca reúne espetáculos, oficinas, mostra de cinema e feira de empreendedorismo na Asa Sul.",
+      "titulo": "Espaço Cultural Renato Russo recebe o 4º Festival Despertacular de Arte e Cultura Surda",
+      "linha_fina": "Evento gratuito reúne teatro, dança, oficinas e feira de empreendedores na Asa Sul entre os dias 29 de outubro e 1º de novembro",
       "titulo_carrossel": "Brasília recebe festival gratuito de arte e cultura surda",
-      "linha_fina_carrossel": "Evento no Espaço Cultural Renato Russo traz peças, oficinas e feira de empreendedores surdos de 29 de outubro a 1º de novembro.",
-      "corpo": "O Espaço Cultural Renato Russo, situado na 508 Sul, em Brasília, será palco da quarta edição do Festival Despertacular de Arte e Cultura Surda. O evento, com entrada franca e programação das 8h às 22h, é realizado entre quinta-feira, 29 de outubro, e domingo, 1º de novembro. A iniciativa busca valorizar a produção artística da comunidade surda e promover o encontro com o público ouvinte por meio da Língua Brasileira de Sinais (Libras).\n\nA grade do festival conta com apresentações de teatro, dança, cinema, música e performances. Entre os espetáculos previstos estão “Drogan Visual”, “Deixe-me Ser Surda”, “Peter Pan na Terra do Nunca Ouve”, “El Show de Chavi”, “Um Dedo Bem Dado” e “Encruzilhada”. O público também poderá visitar exposições e uma feira de empreendedores surdos, que contará com a participação do grafiteiro Rafael Odrus.\n\nAlém das atrações artísticas, a programação inclui oficinas voltadas para formação e criação, como “O Sopro e o Gesto”, “Arte Feminista e Sarau das Manas” e “Hip Hop Deaf Power”. Criado em 2018 pelos pesquisadores e artistas Renata Rezende e Lucas Sacramento, o festival é viabilizado com recursos do Fundo de Apoio à Cultura do Distrito Federal (FAC-DF). As inscrições para as oficinas podem ser feitas na internet ou presencialmente no local do evento.",
+      "linha_fina_carrossel": "Evento com teatro, oficinas e exposições ocorre no Espaço Cultural Renato Russo, de 29 de outubro a 1º de novembro.",
+      "corpo": "O Espaço Cultural Renato Russo, localizado na 508 Sul, em Brasília, sedia a quarta edição do Festival Despertacular de Arte e Cultura Surda. A programação ocorre de quinta-feira, 29 de outubro, a domingo, 1º de novembro de 2026, das 8h às 22h, com entrada gratuita. O evento busca valorizar a produção artística da comunidade surda e ampliar a visibilidade da Língua Brasileira de Sinais (Libras).\n\nIdealizado em 2018 pelos pesquisadores e artistas Renata Rezende e Lucas Sacramento, o festival reúne atrações como teatro, dança, cinema, música, exposições e performances. Entre os espetáculos previstos na grade estão peças como “Deixe-me Ser Surda”, “Peter Pan na Terra do Nunca Ouve” e “Encruzilhada”. O público também poderá visitar uma feira dedicada a empreendedores surdos, com a participação de nomes como o grafiteiro Rafael Odrus.\n\nAlém das apresentações culturais, o Despertacular oferece oficinas voltadas à formação e criação artística, abrangendo temas de gestão cultural, arte feminista e dança hip hop. Realizada com apoio do Fundo de Apoio à Cultura do Distrito Federal (FAC-DF), a iniciativa tem inscrições para oficinas liberadas pela internet ou presencialmente. A programação detalhada pode ser consultada nos canais oficiais do projeto.",
       "fonte_publicadora": "Curta Mais - Goiânia",
       "url_fonte": "https://curtamais.com.br/brasilia/2026/10/27/brasilia-tera-festival-gratuito-de-arte-e-cultura-inclusiva/",
       "imagem_url": "https://curtamais.com.br/brasilia/wp-content/uploads/sites/3/2026/10/despertarcular.jpg",
       "titulo_fonte": "Brasília terá festival gratuito de arte e cultura inclusiva - Curta Mais - Brasília",
       "publicado_em_fonte": "Tue, 27 Oct 2026 21:36:44 GMT",
-      "gerado_em": "2026-10-28T10:38:52+00:00",
+      "gerado_em": "2026-10-28T11:07:35+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Matéria aprovada pelos critérios automáticos de estrutura, limites editoriais e correspondência com a fonte original. A verificação técnica não garante a veracidade independente de todos os fatos; em caso de dúvida, consulte a fonte original."
+      "aviso_editorial": "Matéria aprovada pelos critérios automáticos de estrutura, limites editoriais e correspondência com a fonte original. A verificação técnica não garante a veracidade independente de todos os fatos; em caso de dúvida, consulte a fonte original.",
+      "validade_ate": "2026-11-03"
     }
   ]
 }
