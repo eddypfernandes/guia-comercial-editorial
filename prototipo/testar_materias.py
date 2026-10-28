@@ -170,7 +170,15 @@ class ArticleValidationTests(unittest.TestCase):
              "status_editorial": "apto_para_publicacao"},
             {"id": "rascunho", "pilar": "fitness", "titulo": "Rascunho não aprovado",
              "url_fonte": "https://example.org/rascunho", "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
-             "status_editorial": "rascunho_automatico_sem_ia_revisao_obrigatoria"}
+             "status_editorial": "rascunho_automatico_sem_ia_revisao_obrigatoria"},
+            {"id": "titulo-truncado", "pilar": "fitness",
+             "titulo": "Governo libera R$ 5,2 bilhões para reforçar assistência social e saúde | Agência Brasil",
+             "titulo_carrossel": "Governo libera R$ 5,2 bilhões para reforçar assistência social…",
+             "linha_fina": "Resumo completo com contexto suficiente para o leitor entender a notícia.",
+             "linha_fina_carrossel": "Resumo de chamada que termina com texto cortado…",
+             "url_fonte": "https://example.org/titulo-truncado",
+             "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
+             "status_editorial": "apto_para_publicacao"}
         ]}
         result = merge_active_articles(current, previous, now=now)
         urls = [item["url_fonte"] for item in result["materias"]]
@@ -180,6 +188,10 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertNotIn("https://example.org/rascunho", urls)
         self.assertEqual(result["total_materias_validas"], 2)
         self.assertTrue(all(item.get("validade_ate") for item in result["materias"]))
+        normalized = next(item for item in result["materias"] if item["id"] == "titulo-truncado")
+        self.assertNotIn("…", normalized["titulo_carrossel"])
+        self.assertNotIn("...", normalized["titulo_carrossel"])
+        self.assertNotIn("…", normalized["linha_fina_carrossel"])
 
     def test_merge_deduplicates_same_source_and_requires_publication_date(self):
         now = datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc)
