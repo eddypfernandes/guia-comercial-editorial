@@ -1,13 +1,13 @@
 {
-  "gerado_em": "2026-10-28T14:25:15+00:00",
-  "total_recebidas": 5,
+  "gerado_em": "2026-10-28T14:34:49+00:00",
+  "total_recebidas": 4,
   "total_materias_validas": 6,
   "respostas_rejeitadas": 0,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: matérias aptas, dentro da validade configurada e sem duplicatas. Publicação oficial permanece desativada.",
   "materias": [
     {
-      "id": "rascunho-04",
+      "id": "rascunho-03",
       "pilar": "saude",
       "titulo": "Governo libera R$ 5,2 bilhões para reforçar assistência social e saúde | Agência Brasil",
       "linha_fina": "Recursos serão direcionados ao Benefício de Prestação Continuada (BPC), ensino profissional marítimo e programas de assistência farmacêutica do SUS.",
@@ -19,7 +19,7 @@
       "imagem_url": "https://imagens.ebc.com.br/I9qxnIezgLXlcgir6WOoAWwr4RE=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2024/04/15/raf08851.jpg?itok=vn3mJ8f5",
       "titulo_fonte": "Governo libera R$ 5,2 bilhões para reforçar assistência social e saúde | Agência Brasil",
       "publicado_em_fonte": "Wed, 28 Oct 2026 12:50:00 GMT",
-      "gerado_em": "2026-10-28T14:25:15+00:00",
+      "gerado_em": "2026-10-28T14:34:49+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
       "validade_ate": "2026-11-04"
@@ -37,7 +37,7 @@
       "imagem_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Zhao-Pan-Universidade-de-Waterloo.jpg?w=1094&h=608&crop=1",
       "titulo_fonte": "O fim da calça manchada: cientistas criam mictório revolucionário inspirado em cães | CNN Brasil",
       "publicado_em_fonte": "Wed, 28 Oct 2026 01:22:52 GMT",
-      "gerado_em": "2026-10-28T14:25:15+00:00",
+      "gerado_em": "2026-10-28T14:34:49+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
       "validade_ate": "2026-11-04"
@@ -85,13 +85,13 @@
       "linha_fina": "Evento registra 5 mil inscrições e será realizado no domingo (1º), na Praça do Buriti, com percursos de 3 km, 5 km e 10 km",
       "titulo_carrossel": "Retirada dos kits para a Corrida do Servidor do DF vai até esta…",
       "linha_fina_carrossel": "Evento registra 5 mil inscrições e será realizado no domingo (1º), na Praça do Buriti, com percursos de 3 km, 5 km e 10 km",
-      "corpo": "27/10/2026 às 17h16 - Atualizado em 28/10/2026 às 08h07 Evento registra 5 mil inscrições e será realizado no domingo (1º), na Praça do Buriti, com percursos de 3 km, 5 km e 10 km Agência Brasília* | Edição: Plácido Fernandes Os participantes da Corrida do Servidor do Distrito Federal 2026 têm até esta quarta-feira (28), Dia do Servidor Público, para retirar seus kits no Pavilhão de Exposições do Parque da Cidade, das 9h às 19h. O acesso é pela bilheteria em frente ao Estacionamento 1. Não haverá entrega em outra data, nem no dia da prova. Ao todo, foram realizadas 5 mil inscrições, sendo 4 mil destinadas aos servidores públicos do Distrito Federal e mil ao público em geral. A participação expressiva reforça o interesse da população por iniciativas que incentivam a prática esportiva, a saúde e a qualidade de vida. Para retirar o kit, é necessário apresentar a ficha de inscrição com QR Code, impressa ou no celular, e documento oficial com foto. Os participantes inscritos nas vagas destinadas a servidores e demais pessoas com vínculo com o serviço público do DF também devem apresentar o comprovante de vínculo anexado à inscrição. A retirada por terceiros é permitida mediante apresentação de documento próprio, cópia do documento de identificação do inscrito e comprovante de inscrição. Promovida pela Secretaria de Esporte e Lazer do Distrito Federal (SEL-DF), a corrida será realizada neste domingo (1º), com largada e chegada em frente ao Palácio do Buriti. A concentração dos participantes começa às 6h, e as largadas ocorrem entre 6h55 e 7h15, de acordo com a modalidade. Esporte, saúde e valorização A programação inclui corrida de 5 km e 10 km, caminhada de 3 km e modalidades destinadas a pessoas com deficiência (PcD). O evento oferece opções para diferentes perfis de",
+      "corpo": "27/10/2026 às 17h16 - Atualizado em 28/10/2026 às 08h07 Evento registra 5 mil inscrições e será realizado no domingo (1º), na Praça do Buriti, com percursos de 3 km, 5 km e 10 km Agência Brasília* | Edição: Plácido Fernandes Os participantes da Corrida do Servidor do Distrito Federal 2026 têm até esta quarta-feira (28), Dia do Servidor Público, para retirar seus kits no Pavilhão de Exposições do Parque da Cidade, das 9h às 19h. O acesso é pela bilheteria em frente ao Estacionamento 1.\n\nNão haverá entrega em outra data, nem no dia da prova. Ao todo, foram realizadas 5 mil inscrições, sendo 4 mil destinadas aos servidores públicos do Distrito Federal e mil ao público em geral.\n\nA participação expressiva reforça o interesse da população por iniciativas que incentivam a prática esportiva, a saúde e a qualidade de vida. Para retirar o kit, é necessário apresentar a ficha de inscrição com QR Code, impressa ou no celular, e documento oficial com foto.\n\nOs participantes inscritos nas vagas destinadas a servidores e demais pessoas com vínculo com o serviço público do DF também devem apresentar o comprovante de vínculo anexado à inscrição. A retirada por terceiros é permitida mediante apresentação de documento próprio, cópia do documento de identificação do inscrito e comprovante de inscrição.\n\nPromovida pela Secretaria de Esporte e Lazer do Distrito Federal (SEL-DF), a corrida será realizada neste domingo (1º), com largada e chegada em frente ao Palácio do Buriti. A concentração dos participantes começa às 6h, e as largadas ocorrem entre 6h55 e 7h15, de acordo com a modalidade.\n\nEsporte, saúde e valorização A programação inclui corrida de 5 km e 10 km, caminhada de 3 km e modalidades destinadas a pessoas com deficiência (PcD). O evento oferece opções para diferentes perfis de",
       "fonte_publicadora": "Agência Brasília",
       "url_fonte": "https://www.agenciabrasilia.df.gov.br/w/retirada-dos-kits-para-a-corrida-do-servidor-do-df-vai-at%C3%A9-esta-quarta-feira-28-?redirect=%2Fnoticias%2F",
       "imagem_url": "https://www.agenciabrasilia.df.gov.br/documents/20117/0/WhatsApp+Image+2026-10-27+at+17.00.05.jpeg/6c62298c-f3ca-dad7-1c6a-15b4cf2f7abb?version=1.0&t=1793131662986&download=true",
       "titulo_fonte": "Retirada dos kits para a Corrida do Servidor do DF vai até esta quarta-feira (28)",
       "publicado_em_fonte": "Tue, 27 Oct 2026 20:16:00 GMT",
-      "gerado_em": "2026-10-28T14:19:39+00:00",
+      "gerado_em": "2026-10-28T14:34:49+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
       "validade_ate": "2026-11-03"
