@@ -17,5 +17,16 @@
   "local_focus": [
     "Núcleo Bandeirante",
     "regiões próximas de Brasília"
-  ]
+  ],
+  "home_editorial_carousel": {
+    "applies_only_to": "/novo/includes/home_editorial.asp",
+    "height_px": 420,
+    "carousel_title_max_characters": 65,
+    "carousel_summary_max_characters": 140,
+    "desktop_layout": "Imagem e texto lado a lado, duas colunas iguais",
+    "mobile_layout": "Imagem acima e texto abaixo",
+    "navigation": "Setas anterior/próximo na parte inferior, botões circulares com contorno e chevrons; sem indicadores de pontos",
+    "detail_page_unaffected": "/novo/editorial/index.asp",
+    "note": "Os campos titulo_carrossel e linha_fina_carrossel são exclusivos da chamada compacta da home. titulo, linha_fina e corpo permanecem destinados à leitura completa."
+  }
 }
