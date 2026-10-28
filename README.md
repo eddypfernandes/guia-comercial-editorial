@@ -30,7 +30,7 @@ Sem a chave, o fluxo ainda coleta RSS, tenta extrair páginas e gera relatórios
 
 Abertura de página e extração de texto são verificações técnicas, **não** confirmação factual. Sites podem bloquear a coleta, depender de JavaScript, exigir assinatura ou fornecer pouco texto; nesses casos, o item permanece pendente de revisão manual. Os rascunhos são sínteses assistidas por IA e podem conter erros mesmo quando citam a fonte correta.
 
-Nenhum rascunho é publicação autorizada. Revisão humana deve conferir a fonte original, autoria, data, contexto e todas as afirmações. Saúde, veterinária, pets e atividade física exigem cuidado especializado. Não se inventam fatos locais para tornar a pauta relevante. O workflow não publica no site e não modifica outros repositórios.
+Matérias redigidas pela IA que passam pelas validações automáticas de estrutura, limites editoriais e correspondência com a fonte recebem `status_editorial: "apto_para_publicacao"` e podem seguir para o fluxo editorial do ambiente de teste. Esse status confirma a aprovação pelos critérios automáticos definidos, mas não representa comprovação factual independente. Se a IA estiver indisponível ou a redação não passar nas validações, o sistema gera um rascunho alternativo com revisão obrigatória, que não recebe o status de apto. `publicacao_oficial` permanece `false`: este workflow não publica no site oficial nem modifica outros repositórios. Abertura de página e extração técnica não garantem que todas as afirmações sejam verdadeiras; saúde, veterinária, pets e atividade física exigem cuidado especializado. Não se inventam fatos locais para tornar a pauta relevante.
 
 ## Testes locais
 
