@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
 
-from coletar_fontes import collect, make_feed_url, parse_feed
+from coletar_fontes import collect, make_feed_url, parse_feed, sort_newest_first
 
 SAMPLE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
@@ -34,6 +34,18 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(items[0]["fonte_publicadora"], "Fonte de teste")
         self.assertEqual(items[0]["status_editorial"], "descoberta_pendente_verificacao")
 
+    def test_sort_newest_first_ignores_rss_return_order(self):
+        items = [
+            {"titulo": "Antiga", "publicado_em": "Mon, 26 Oct 2026 10:00:00 GMT"},
+            {"titulo": "Mais nova", "publicado_em": "Wed, 28 Oct 2026 16:06:17 GMT"},
+            {"titulo": "Data ausente", "publicado_em": ""},
+            {"titulo": "Intermediária", "publicado_em": "Tue, 27 Oct 2026 12:00:00 GMT"},
+        ]
+        ordered = sort_newest_first(items)
+        self.assertEqual(
+            [item["titulo"] for item in ordered],
+            ["Mais nova", "Intermediária", "Antiga", "Data ausente"],
+        )
     def test_collect_records_feed_failure_without_crashing(self):
         def broken_opener(url, timeout, max_bytes):
             raise OSError("falha simulada")
