@@ -9,7 +9,7 @@
   "queries": [
     {
       "pillar": "Pet Care",
-      "query": "(pets OR cães OR gatos OR bichinhos de estimação OR \"animais domésticos\" OR \"animais exóticos\" OR cuidados com pet OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "query": "(\"bem-estar pet\" OR \"saúde pet\" OR cães OR gatos OR bichinhos de estimação OR \"animais domésticos\" OR \"animais exóticos\" OR cuidados com pet OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
     },
     {
       "pillar": "Entretenimento & Lazer",
@@ -25,7 +25,7 @@
     },
     {
       "pillar": "Vida fitness",
-      "query": "(fitness OR academia OR \"exercício físico\" OR \"atividade física\" OR \"alimentação fitness\" OR \"suplementos fitness\" OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "query": "(fitness OR academia \"ar livre\" OR \"exercício físico\" OR \"atividade física\" OR \"alimentação fitness\" OR \"suplementos fitness\" OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
     }
   ]
 }
