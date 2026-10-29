@@ -409,7 +409,7 @@ def limpar_titulo_fonte(texto: str) -> str:
     )[0]
     texto = re.sub(
         r"\s*(?:\||–|—|-)\s*(?:Agência Brasil|CNN Brasil|R7 Entretenimento|"
-        r"Niterói\s*\|\s*O Globo|Sport Club do Recife|Capital Política)\b.*$",
+        r"Niterói\s*\|\s*O Globo|Sport Club do Recife|Capital Política|RADAR DIGITAL)\b.*$",
         "",
         texto,
         flags=re.IGNORECASE,
@@ -424,7 +424,7 @@ def compactar_texto(texto: str, limite: int) -> str:
         return ""
 
     ruido = re.compile(
-        r"(?i)(all rights reserved|designed and developed|aguarde,? carregando|"
+        r"(?i)(@2022|all right(?:s)? reserved|designed and developed|aguarde,? carregando|"
         r"clique aqui|ouça a matéria|jornalista com experiência|publicidade|"
         r"compartilhe|aceite os cookies|loading\.\.\.)"
     )
@@ -432,7 +432,7 @@ def compactar_texto(texto: str, limite: int) -> str:
         "a", "ao", "aos", "as", "com", "da", "das", "de", "do", "dos",
         "e", "em", "para", "pela", "pelas", "pelo", "pelos", "por", "que",
         "mas", "ou", "se", "sobre", "um", "uma", "pode", "podem", "deve",
-        "devem", "traz", "trazem", "só",
+        "devem", "traz", "trazem", "só", "dr", "dra", "sr", "sra", "prof", "etc", "av", "nº", "n.º",
     }
     frases = re.findall(r"""[^.!?]+[.!?]+(?:["'”’»)]*)""", texto)
     for frase in frases:
@@ -480,6 +480,10 @@ def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
         return valor
 
     title = remover_final_incompleto(title)
+    if ";" in title:
+        principal = title.split(";", 1)[0].strip()
+        if 20 <= len(principal) <= limite and len(title) > limite:
+            return remover_final_incompleto(principal)
     if len(title) <= limite:
         return title
 
