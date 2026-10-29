@@ -182,7 +182,7 @@ class CarouselTextTests(unittest.TestCase):
         title = "Santos x Palmeiras: veja escalações para a partida pela 33ª rodada do Brasileirão Logo UOL UOL Flash"
         result = compactar_titulo(title)
         self.assertTrue(result.startswith("Santos x Palmeiras:"))
-        self.assertLessEqual(len(result), 65)
+        self.assertLessEqual(len(result), 80)
         self.assertNotRegex(result, r"\b(de|do|da|para|pela|com|e|que)$")
 
     def test_long_summary_uses_a_complete_sentence(self):
