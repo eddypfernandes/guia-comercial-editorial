@@ -8,23 +8,23 @@
   "max_response_bytes": 2000000,
   "queries": [
     {
-      "pillar": "Pet Care",
+      "pillar": "pet",
       "query": "(\"bem-estar pet\" OR \"saúde pet\" OR cães OR gatos OR \"bichinhos de estimação\" OR \"animais domésticos\" OR \"animais exóticos\" OR cuidados com pet OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
     },
     {
-      "pillar": "Entretenimento & Lazer",
+      "pillar": "lazer",
       "query": "(lazer OR cultura OR turismo OR eventos OR passeios OR entretenimentos OR viagens) (Brasília OR \"Distrito Federal\")"
     },
     {
-      "pillar": "Esportes",
+      "pillar": "esportes",
       "query": "(atletismo OR corrida OR futebol OR \"atividade esportiva\" OR voleibol OR basquete) (Brasília OR \"Distrito Federal\")"
     },
     {
-      "pillar": "Saúde em foco",
+      "pillar": "saude",
       "query": "(saúde OR prevenção OR vacinação OR bem-estar OR \"alimentação saudável\" OR cuidados OR tratamentos) (Brasília OR \"Distrito Federal\" OR Brasil)"
     },
     {
-      "pillar": "Vida fitness",
+      "pillar": "fitness",
       "query": "(fitness OR academia OR \"ar livre\" OR \"exercício físico\" OR \"atividade física\" OR \"alimentação fitness\" OR \"suplementos fitness\" OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
     }
   ]
