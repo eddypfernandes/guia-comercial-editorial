@@ -314,6 +314,11 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
             item.get("linha_fina", "") or item.get("linha_fina_carrossel", ""),
             CAROUSEL_SUMMARY_MAX_CHARS,
         )
+        if item["linha_fina_carrossel"] == "Leia a matéria completa para conhecer os detalhes.":
+            item["linha_fina_carrossel"] = compactar_texto(
+                item.get("corpo", ""),
+                CAROUSEL_SUMMARY_MAX_CHARS,
+            )
         if not item["titulo_carrossel"] or not item["linha_fina_carrossel"]:
             continue
         expiry = parse_article_date(item.get("validade_ate")) or (
