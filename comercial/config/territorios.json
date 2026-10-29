@@ -1,0 +1,22 @@
+{
+  "versao": 1,
+  "territorio_inicial": {
+    "nome": "Núcleo Bandeirante",
+    "regiao_administrativa": "Núcleo Bandeirante",
+    "municipio": "Brasília",
+    "uf": "DF",
+    "pais": "Brasil",
+    "status": "piloto"
+  },
+  "estrategia": {
+    "modo_coleta": "hibrido_por_territorio_e_categoria",
+    "categorias_iniciais": [],
+    "fontes_aprovadas": [],
+    "expandir_automaticamente": false
+  },
+  "observacoes": [
+    "Definir fontes e respectivas condições de uso antes de ativar a coleta.",
+    "Categorias e localidades adicionais serão incluídas após avaliação da cobertura do piloto.",
+    "Não presumir que a ausência de um estabelecimento nos resultados signifique que ele não exista."
+  ]
+}
