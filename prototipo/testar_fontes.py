@@ -49,19 +49,19 @@ class SourceVerificationTests(unittest.TestCase):
             [f"{pillar}-0" for pillar in pillars],
         )
 
-    def test_maps_collector_pillar_labels_to_editorial_ids(self):
+    def test_accepts_only_canonical_pillar_ids_from_collector(self):
+        pillars = ("pet", "lazer", "esportes", "saude", "fitness")
         items = [
-            {"pilar": "Pet Care", "titulo": "Pet", "url_agregador": "https://news.google.com/rss/articles/pet"},
-            {"pilar": "Entretenimento & Lazer", "titulo": "Lazer", "url_agregador": "https://news.google.com/rss/articles/lazer"},
-            {"pilar": "Esportes", "titulo": "Esportes", "url_agregador": "https://news.google.com/rss/articles/esportes"},
-            {"pilar": "Saúde em foco", "titulo": "Saúde", "url_agregador": "https://news.google.com/rss/articles/saude"},
-            {"pilar": "Vida fitness", "titulo": "Fitness", "url_agregador": "https://news.google.com/rss/articles/fitness"},
+            {"pilar": pillar, "titulo": pillar, "url_agregador": f"https://news.google.com/rss/articles/{pillar}"}
+            for pillar in pillars
         ]
+        items.append({
+            "pilar": "Pet Care",
+            "titulo": "Rótulo antigo não canônico",
+            "url_agregador": "https://news.google.com/rss/articles/old-label",
+        })
         selected = select_candidates({"itens": items}, None)
-        self.assertEqual(
-            [item["pilar"] for item in selected],
-            ["pet", "lazer", "esportes", "saude", "fitness"],
-        )
+        self.assertEqual([item["pilar"] for item in selected], list(pillars))
         self.assertEqual(len(selected), 5)
 
     def test_triage_candidates_remain_authoritative_and_duplicates_are_removed(self):
