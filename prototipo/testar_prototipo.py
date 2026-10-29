@@ -9,7 +9,7 @@ sys.path.insert(0, str(ROOT / "prototipo"))
 
 from validar_config import validate_config
 from ciclo_editorial import select_cycle, validate_candidate
-from gerar_materias import merge_active_articles
+from gerar_materias import merge_active_articles, compactar_titulo, compactar_texto
 
 
 class ConfigTests(unittest.TestCase):
@@ -152,6 +152,31 @@ class FeedMergeTests(unittest.TestCase):
             {item["url_fonte"]: item["id"] for item in result["materias"]},
             {item["url_fonte"]: item["id"] for item in repeated["materias"]},
         )
+
+
+class CarouselTextTests(unittest.TestCase):
+    def test_long_title_prefers_a_complete_lead_sentence(self):
+        title = "Quem é Renato Cariani? Conheça o influenciador fitness que pode pegar até 51 anos de prisão - Na Hora da Notícia"
+        result = compactar_titulo(title)
+        self.assertEqual(result, "Quem é Renato Cariani?")
+        self.assertLessEqual(len(result), 65)
+
+    def test_colon_title_keeps_subject_and_avoids_cutting_a_connector(self):
+        title = "Santos x Palmeiras: veja escalações para a partida pela 33ª rodada do Brasileirão Logo UOL UOL Flash"
+        result = compactar_titulo(title)
+        self.assertTrue(result.startswith("Santos x Palmeiras:"))
+        self.assertLessEqual(len(result), 65)
+        self.assertNotRegex(result, r"\b(de|do|da|para|pela|com|e|que)$")
+
+    def test_long_summary_uses_a_complete_sentence(self):
+        summary = "Renato Cariani, de 50 anos, é um dos nomes mais conhecidos do universo fitness brasileiro. Empresário, fisiculturista e influenciador digital, ele conquistou"
+        result = compactar_texto(summary, 140)
+        self.assertEqual(result, "Renato Cariani, de 50 anos, é um dos nomes mais conhecidos do universo fitness brasileiro.")
+        self.assertLessEqual(len(result), 140)
+
+    def test_summary_without_safe_sentence_uses_complete_neutral_copy(self):
+        result = compactar_texto("A resposta pode estar nos genes mas também passa pela vida social e pelo acesso à saúde", 140)
+        self.assertEqual(result, "Leia a matéria completa para conhecer os detalhes.")
 
 
 if __name__ == "__main__":
