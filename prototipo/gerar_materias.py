@@ -114,7 +114,7 @@ REGRAS OBRIGATÓRIAS:
 - Preserve o contexto, os dados essenciais e as ressalvas da fonte. Se o texto não permitir uma síntese fiel, omita a pauta.
 - Cada matéria deve ter título, linha fina e corpo com parágrafos separados por duas quebras de linha.
 - Além de titulo e linha_fina completos para a página de leitura, gere campos exclusivos para a chamada compacta da home: titulo_carrossel com no máximo 65 caracteres e linha_fina_carrossel com no máximo 140 caracteres.
-- Os campos *_carrossel devem ser reescritos de forma concisa, sem cortar palavras abruptamente, sem repetir a mesma informação e sem acrescentar fatos. Eles serão usados somente no carrossel da home; titulo, linha_fina e corpo continuam destinados à leitura completa.
+- Os campos *_carrossel devem ser reescritos de forma concisa, sem cortar palavras ou ideias abruptamente, sem repetir informação e sem acrescentar fatos. A linha_fina_carrossel deve ser uma frase completa, com pontuação final. Se não for possível resumir com fidelidade, omita a matéria. Esses campos são exclusivos do carrossel; titulo, linha_fina e corpo continuam destinados à leitura completa.
 - Não use reticências para esconder um título excessivamente longo: reformule a chamada para caber no limite.
 - Inclua a URL exata da página original como url_fonte e a URL da imagem fornecida como imagem_url. Se não houver imagem, use string vazia. Não invente nem altere URLs.
 - Retorne somente JSON válido, sem Markdown, no formato:
@@ -305,17 +305,17 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         seen.add(key)
         pillar_counts[pillar] = pillar_counts.get(pillar, 0) + 1
         item = dict(article)
-        # Atualiza chamadas antigas do feed que ainda foram salvas com reticências.
-        carousel_title = str(item.get("titulo_carrossel", "")).strip()
-        if "…" in carousel_title or "..." in carousel_title or len(carousel_title) >= CAROUSEL_TITLE_MAX_CHARS - 8:
-            item["titulo_carrossel"] = compactar_titulo(
-                item.get("titulo", "") or carousel_title, CAROUSEL_TITLE_MAX_CHARS
-            )
-        carousel_summary = str(item.get("linha_fina_carrossel", "")).strip()
-        if "…" in carousel_summary or "..." in carousel_summary:
-            item["linha_fina_carrossel"] = compactar_texto(
-                item.get("linha_fina", ""), CAROUSEL_SUMMARY_MAX_CHARS
-            )
+        # Recalcula as chamadas compactas para corrigir feeds antigos com frases truncadas.
+        item["titulo_carrossel"] = compactar_titulo(
+            item.get("titulo", "") or item.get("titulo_carrossel", ""),
+            CAROUSEL_TITLE_MAX_CHARS,
+        )
+        item["linha_fina_carrossel"] = compactar_texto(
+            item.get("linha_fina", "") or item.get("linha_fina_carrossel", ""),
+            CAROUSEL_SUMMARY_MAX_CHARS,
+        )
+        if not item["titulo_carrossel"] or not item["linha_fina_carrossel"]:
+            continue
         expiry = parse_article_date(item.get("validade_ate")) or (
             parse_article_date(item.get("publicado_em_fonte")) + timedelta(days=validity_days)
         )
@@ -412,27 +412,31 @@ def limpar_titulo_fonte(texto: str) -> str:
 
 
 def compactar_texto(texto: str, limite: int) -> str:
-    """Encurta chamadas em limite de palavra, sem reticências ou palavras cortadas."""
-    texto = " ".join(str(texto).split())
-    if len(texto) <= limite:
+    """Gera uma linha fina curta e completa; nunca termina com um corte arbitrário."""
+    texto = " ".join(str(texto or "").split())
+    if not texto:
+        return ""
+    if len(texto) <= limite and re.search(r"[.!?][\"'”’»)]?$", texto):
         return texto
-    trecho = texto[:limite + 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
-    if trecho:
-        return trecho
-    return texto[:limite].rstrip()
+    frases = re.findall(r"[^.!?]+[.!?]+(?:[\"'”’»)]*)", texto)
+    if frases and len(frases[0].strip()) <= limite:
+        return frases[0].strip()
+    return "Leia a matéria completa para conhecer os detalhes."
 
 
 def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
-    """Produz uma chamada curta e legível sem cortar o título no meio de uma ideia."""
+    """Cria uma chamada curta sem cortar o título no meio de uma frase ou ideia."""
     title = limpar_titulo_fonte(texto)
+    if not title:
+        return ""
     if len(title) <= limite:
         return title
-
-    # Pequenas simplificações preservam o sentido melhor do que cortar a frase.
+    frases = re.findall(r"[^.!?]+[.!?]+(?:[\"'”’»)]*)", title)
+    if frases and len(frases[0].strip()) <= limite:
+        return frases[0].strip()
     title = re.sub(r"\bpara reforçar\b", "para", title, count=1, flags=re.IGNORECASE)
     if len(title) <= limite:
         return title
-
     if re.match(r"^O fim da calça manchada:\s*cientistas criam", title, flags=re.IGNORECASE):
         return "Cientistas criam mictório inspirado em cães"
     if re.match(r"^Retirada dos kits para a Corrida do Servidor do DF", title, flags=re.IGNORECASE):
@@ -441,20 +445,33 @@ def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
         return "Skatepark do Paranoá passa por reforma e reforça o lazer"
     if re.match(r"^Por que alguns produtos fitness", title, flags=re.IGNORECASE):
         return "Por que alguns produtos fitness viram hábito?"
-    if title.endswith("?") and " e outros " in title:
-        return title.split(" e outros ", 1)[0].rstrip(" ?") + "?"
-
-    shortened = compactar_texto(title, limite)
-    # Evita terminar a chamada com conectivos ou palavras que anunciam continuação.
     incomplete_endings = {
-        "a", "ao", "aos", "as", "com", "da", "das", "de", "do", "dos",
-        "e", "em", "esta", "este", "para", "por", "que", "um", "uma",
-        "vai", "até", "reforça", "incentiva", "acabam",
+        "a", "ao", "aos", "as", "até", "com", "da", "das", "de", "do", "dos",
+        "e", "em", "entre", "essa", "esse", "esta", "este", "na", "nas", "no",
+        "nos", "o", "os", "para", "pela", "pelas", "pelo", "pelos", "por",
+        "que", "se", "sem", "sob", "sobre", "um", "uma", "uns", "umas",
+        "vai", "vão", "pode", "podem", "deve", "devem", "como", "quando",
     }
-    while shortened and shortened.casefold().split()[-1].strip(".,;:!?") in incomplete_endings:
+    if ":" in title:
+        assunto, complemento = title.split(":", 1)
+        if len(assunto.strip()) >= 12:
+            disponivel = limite - len(assunto.strip()) - 2
+            trecho = complemento.strip()[:disponivel + 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
+            while trecho and (
+                trecho.casefold().split()[-1].strip(".,;:!?") in incomplete_endings
+                or re.search(r"\b\d+[ºª]?$", trecho)
+            ):
+                trecho = trecho.rsplit(" ", 1)[0].rstrip(" ,;:-")
+            chamada = assunto.strip() + (": " + trecho if trecho else "")
+            if 18 <= len(chamada) <= limite:
+                return chamada
+    shortened = title[:limite + 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
+    while shortened:
+        ultima = shortened.casefold().split()[-1].strip(".,;:!?")
+        if ultima not in incomplete_endings:
+            break
         shortened = shortened.rsplit(" ", 1)[0].rstrip(" ,;:-")
-    return shortened
-
+    return shortened if len(shortened) >= 18 else ""
 
 def filter_recent_sources(source_items: list[dict], now: datetime | None = None) -> list[dict]:
     """Aceita somente fontes verificadas, datadas e publicadas nos últimos sete dias."""
