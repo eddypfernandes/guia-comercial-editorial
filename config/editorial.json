@@ -21,8 +21,8 @@
   "home_editorial_carousel": {
     "applies_only_to": "/novo/includes/home_editorial.asp",
     "height_px": 420,
-    "carousel_title_max_characters": 65,
-    "carousel_summary_max_characters": 140,
+    "carousel_title_max_characters": 80,
+    "carousel_summary_max_characters": 200,
     "desktop_layout": "Imagem e texto lado a lado, duas colunas iguais",
     "mobile_layout": "Imagem acima e texto abaixo",
     "navigation": "Setas anterior/próximo na parte inferior, botões circulares com contorno e chevrons; sem indicadores de pontos",
