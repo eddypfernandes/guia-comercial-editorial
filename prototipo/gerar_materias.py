@@ -311,9 +311,14 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
             CAROUSEL_TITLE_MAX_CHARS,
         )
         item["linha_fina_carrossel"] = compactar_texto(
-            item.get("linha_fina", "") or item.get("linha_fina_carrossel", ""),
+            item.get("linha_fina_carrossel", ""),
             CAROUSEL_SUMMARY_MAX_CHARS,
         )
+        if not item["linha_fina_carrossel"]:
+            item["linha_fina_carrossel"] = compactar_texto(
+                item.get("linha_fina", ""),
+                CAROUSEL_SUMMARY_MAX_CHARS,
+            )
         if not item["linha_fina_carrossel"]:
             item["linha_fina_carrossel"] = compactar_texto(
                 item.get("corpo", ""),
