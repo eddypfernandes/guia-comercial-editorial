@@ -423,10 +423,10 @@ def compactar_texto(texto: str, limite: int) -> str:
     if not texto:
         return ""
 
-    ruído = re.compile(
+    ruido = re.compile(
         r"(?i)(all rights reserved|designed and developed|aguarde,? carregando|"
         r"clique aqui|ouça a matéria|jornalista com experiência|publicidade|"
-        r"compartilhe|aceite os cookies|loading\\.\\.\\.)"
+        r"compartilhe|aceite os cookies|loading\.\.\.)"
     )
     finais_incompletos = {
         "a", "ao", "aos", "as", "com", "da", "das", "de", "do", "dos",
@@ -434,17 +434,17 @@ def compactar_texto(texto: str, limite: int) -> str:
         "mas", "ou", "se", "sobre", "um", "uma", "pode", "podem", "deve",
         "devem", "traz", "trazem", "só",
     }
-    frases = re.findall(r"[^.!?]+[.!?]+(?:[\\"'”’»)]*)", texto)
+    frases = re.findall(r"""[^.!?]+[.!?]+(?:["'”’»)]*)""", texto)
     for frase in frases:
         candidata = frase.strip()
         if len(candidata) > limite or "..." in candidata or "…" in candidata:
             continue
-        if ruído.search(candidata):
+        if ruido.search(candidata):
             continue
-        ultima = candidata.rstrip("\\"'”’»)]").rstrip(".!?").split()
+        ultima = candidata.rstrip("”’»)]").rstrip('"').rstrip("'").rstrip(".!?").split()
         if not ultima or ultima[-1].casefold().strip(" ,;:") in finais_incompletos:
             continue
-        if re.search(r"\\b\\d+[ºª]?\\.$", candidata):
+        if re.search(r"\b\d+[ºª]?\.$", candidata):
             continue
         return candidata
     return ""
@@ -465,10 +465,9 @@ def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
         "trazem", "só", "veja", "saiba", "entenda", "conheça", "descubra",
     }
 
-    # Corrige títulos de fonte que terminam com uma segunda chamada truncada.
     if ";" in title:
         principal, complemento = title.rsplit(";", 1)
-        if re.fullmatch(r"\\s*(?:\\d+|veja|saiba|entenda)\\s*", complemento, flags=re.IGNORECASE):
+        if re.fullmatch(r"\s*(?:\d+|veja|saiba|entenda)\s*", complemento, flags=re.IGNORECASE):
             title = principal.strip()
 
     def remover_final_incompleto(valor: str) -> str:
@@ -484,15 +483,15 @@ def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
     if len(title) <= limite:
         return title
 
-    frases = re.findall(r"[^.!?]+[.!?]+(?:[\\"'”’»)]*)", title)
+    frases = re.findall(r"""[^.!?]+[.!?]+(?:["'”’»)]*)""", title)
     if frases and len(frases[0].strip()) <= limite:
         return frases[0].strip()
 
-    title = re.sub(r"\\bpara reforçar\\b", "para", title, count=1, flags=re.IGNORECASE)
+    title = re.sub(r"\bpara reforçar\b", "para", title, count=1, flags=re.IGNORECASE)
     if len(title) <= limite:
         return remover_final_incompleto(title)
 
-    if re.match(r"^O fim da calça manchada:\\s*cientistas criam", title, flags=re.IGNORECASE):
+    if re.match(r"^O fim da calça manchada:\s*cientistas criam", title, flags=re.IGNORECASE):
         return "Cientistas criam mictório inspirado em cães"
     if re.match(r"^Retirada dos kits para a Corrida do Servidor do DF", title, flags=re.IGNORECASE):
         return "Corrida do Servidor-DF: retirada dos kits até quarta (28)"
@@ -507,7 +506,7 @@ def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
             disponivel = limite - len(assunto.strip()) - 2
             trecho = complemento.strip()[:disponivel + 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
             trecho = remover_final_incompleto(trecho)
-            while trecho and re.search(r"\\b\\d+[ºª]?$", trecho):
+            while trecho and re.search(r"\b\d+[ºª]?$", trecho):
                 trecho = remover_final_incompleto(trecho.rsplit(" ", 1)[0])
             chamada = assunto.strip() + (": " + trecho if trecho else "")
             if 18 <= len(chamada) <= limite:
