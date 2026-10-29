@@ -241,10 +241,21 @@ def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
 
     buckets: dict[str, list[dict]] = {}
     seen_urls: set[str] = set()
+    # O coletor usa rótulos legíveis; a configuração editorial usa identificadores.
+    # Converte os rótulos antes de filtrar, evitando descartar todas as pautas.
+    pillar_aliases = {
+        "pet care": "pet",
+        "entretenimento & lazer": "lazer",
+        "esportes": "esportes",
+        "saúde em foco": "saude",
+        "vida fitness": "fitness",
+    }
+
     for item in candidates:
         if not isinstance(item, dict):
             continue
-        pillar = str(item.get("pilar", "")).strip()
+        original_pillar = str(item.get("pilar", "")).strip()
+        pillar = pillar_aliases.get(original_pillar.casefold(), original_pillar)
         if pillar not in allowed_pillar_set:
             continue
         url = str(item.get("url_agregador") or item.get("url_fonte_publicadora") or "").strip()
