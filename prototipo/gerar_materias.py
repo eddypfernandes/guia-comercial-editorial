@@ -310,13 +310,15 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
             item.get("titulo", "") or item.get("titulo_carrossel", ""),
             CAROUSEL_TITLE_MAX_CHARS,
         )
+        # Recria o resumo compacto a partir da linha fina completa para não perpetuar
+        # resumos antigos que ficaram desconectados após uma atualização do título.
         item["linha_fina_carrossel"] = compactar_texto(
-            item.get("linha_fina_carrossel", ""),
+            item.get("linha_fina", ""),
             CAROUSEL_SUMMARY_MAX_CHARS,
         )
         if not item["linha_fina_carrossel"]:
             item["linha_fina_carrossel"] = compactar_texto(
-                item.get("linha_fina", ""),
+                item.get("linha_fina_carrossel", ""),
                 CAROUSEL_SUMMARY_MAX_CHARS,
             )
         if not item["linha_fina_carrossel"]:
