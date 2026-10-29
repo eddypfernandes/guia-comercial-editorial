@@ -312,8 +312,8 @@ def verify_item(item: dict, opener=None) -> dict:
 def main() -> int:
     try:
         discovery = json.loads(DISCOVERY_PATH.read_text(encoding="utf-8"))
-        triage = json.loads(TRIAGE_PATH.read_text(encoding="utf-8")) if TRIAGE_PATH.exists() else None
-        candidates = select_candidates(discovery, triage)
+        # O ciclo editorial usa diretamente as sugestões RSS; Gemini está desativado.
+        candidates = select_candidates(discovery, None)
         if not isinstance(candidates, list):
             raise ValueError("Lista de candidatos inválida.")
         records = [verify_item(item) for item in candidates if isinstance(item, dict)]
