@@ -424,7 +424,7 @@ def compactar_texto(texto: str, limite: int) -> str:
         return ""
 
     ruido = re.compile(
-        r"(?i)(@2022|all right(?:s)? reserved|designed and developed|aguarde,? carregando|"
+        r"(?i)(@2022|atualizado|all right(?:s)? reserved|designed and developed|aguarde,? carregando|"
         r"clique aqui|ouça a matéria|jornalista com experiência|publicidade|"
         r"compartilhe|aceite os cookies|loading\.\.\.)"
     )
@@ -432,7 +432,7 @@ def compactar_texto(texto: str, limite: int) -> str:
         "a", "ao", "aos", "as", "com", "da", "das", "de", "do", "dos",
         "e", "em", "para", "pela", "pelas", "pelo", "pelos", "por", "que",
         "mas", "ou", "se", "sobre", "um", "uma", "pode", "podem", "deve",
-        "devem", "traz", "trazem", "só", "dr", "dra", "sr", "sra", "prof", "etc", "av", "nº", "n.º",
+        "devem", "traz", "trazem", "só", "dr", "dra", "sr", "sra", "prof", "etc", "av", "nº", "n.º", "ampliando", "aumentando", "permitindo", "reforçando", "incluindo", "levando", "contribuindo", "buscando", "trazendo", "oferecendo", "garantindo", "favorecendo", "promovendo", "apontando", "destacando", "resultando",
     }
     frases = re.findall(r"""[^.!?]+[.!?]+(?:["'”’»)]*)""", texto)
     for frase in frases:
@@ -471,12 +471,12 @@ def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
             title = principal.strip()
 
     def remover_final_incompleto(valor: str) -> str:
-        valor = valor.strip(" ,;:-")
+        valor = valor.strip(" ,;:-–—")
         while valor:
             ultima = valor.casefold().split()[-1].strip(".,;:!?")
             if ultima not in incompletas:
                 break
-            valor = valor.rsplit(" ", 1)[0].rstrip(" ,;:-")
+            valor = valor.rsplit(" ", 1)[0].rstrip(" ,;:-–—")
         return valor
 
     title = remover_final_incompleto(title)
