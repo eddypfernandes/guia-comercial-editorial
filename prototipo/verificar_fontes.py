@@ -265,7 +265,9 @@ def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
         seen_urls.add(key)
         bucket = buckets.setdefault(pillar, [])
         if len(bucket) < max_per_pillar:
-            bucket.append(item)
+            normalized_item = dict(item)
+            normalized_item["pilar"] = pillar
+            bucket.append(normalized_item)
 
     # Rodadas: primeira fonte de cada pilar, depois a segunda e a terceira.
     selected = []
