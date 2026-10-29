@@ -105,14 +105,12 @@ class ArticleValidationTests(unittest.TestCase):
             "Por que alguns produtos fitness viram hábito e outros acabam esquecidos?",
         )
 
-    def test_compact_calls_end_at_word_boundary_without_ellipsis(self):
+    def test_summary_without_complete_sentence_is_rejected(self):
         result = compactar_texto(
             "Esta é uma chamada editorial longa que precisa caber no espaço disponível",
             35,
         )
-        self.assertLessEqual(len(result), 35)
-        self.assertFalse(result.endswith("…"))
-        self.assertEqual(result, "Esta é uma chamada editorial longa")
+        self.assertEqual(result, "")
 
     def test_compact_title_preserves_complete_meaning(self):
         self.assertEqual(
@@ -178,12 +176,14 @@ class ArticleValidationTests(unittest.TestCase):
             "materias": [{
                 "id": "nova", "pilar": "lazer", "titulo": "Nova matéria válida",
                 "url_fonte": "https://example.org/nova", "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
+                "linha_fina_carrossel": "A matéria apresenta uma novidade para os moradores da região.",
                 "status_editorial": "apto_para_publicacao"
             }]
         }
         previous = {"materias": [
             {"id": "antiga-recente", "pilar": "pet", "titulo": "Matéria anterior ainda válida",
              "url_fonte": "https://example.org/pet/", "publicado_em_fonte": "Mon, 26 Oct 2026 12:00:00 GMT",
+             "linha_fina_carrossel": "A matéria apresenta informações úteis para os moradores.",
              "status_editorial": "apto_para_publicacao"},
             {"id": "vencida", "pilar": "saude", "titulo": "Matéria antiga vencida",
              "url_fonte": "https://example.org/antiga", "publicado_em_fonte": "Mon, 1 Sep 2026 12:00:00 GMT",
@@ -219,12 +219,14 @@ class ArticleValidationTests(unittest.TestCase):
             "id": "nova", "pilar": "lazer", "titulo": "Versão nova da matéria",
             "url_fonte": "https://example.org/noticia?utm_source=rss",
             "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
+            "linha_fina_carrossel": "A matéria apresenta informações novas sobre o assunto.",
             "status_editorial": "apto_para_publicacao"
         }
         old_article = {
             "id": "antiga", "pilar": "lazer", "titulo": "Versão anterior da matéria",
             "url_fonte": "https://example.org/noticia/",
             "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
+            "linha_fina_carrossel": "A matéria apresenta informações anteriores sobre o assunto.",
             "status_editorial": "apto_para_publicacao"
         }
         undated = {
