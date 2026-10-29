@@ -161,8 +161,7 @@ class FeedMergeTests(unittest.TestCase):
             "Wed, 28 Oct 2026 11:00:00 GMT"
         )
         article["linha_fina"] = (
-            "Especialista explicou como a intensidade e a frequência dos exercícios "
-            "influenciam os resultados dos treinos curtos."
+            "O especialista recomenda treinos curtos para melhorar os resultados."
         )
         article["linha_fina_carrossel"] = (
             "A entidade também recomenda exercícios em pelo menos dois dias da semana."
