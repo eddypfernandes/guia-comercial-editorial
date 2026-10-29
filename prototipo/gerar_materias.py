@@ -434,12 +434,30 @@ def compactar_texto(texto: str, limite: int) -> str:
         "mas", "ou", "se", "sobre", "um", "uma", "pode", "podem", "deve",
         "devem", "traz", "trazem", "só", "dr", "dra", "sr", "sra", "prof", "etc", "av", "nº", "n.º", "ampliando", "aumentando", "permitindo", "reforçando", "incluindo", "levando", "contribuindo", "buscando", "trazendo", "oferecendo", "garantindo", "favorecendo", "promovendo", "apontando", "destacando", "resultando",
     }
+    verbos = re.compile(
+        r"(?i)\b(?:é|são|foi|foram|será|serão|está|estão|tem|têm|há|existe|"
+        r"existem|recebeu|receberam|recebe|recebem|conta|contam|intriga|"
+        r"representa|passa|passam|pode|podem|deve|devem|explica|explicam|"
+        r"mostra|mostram|indica|indicam|reforça|reforçam|cresceu|crescem|"
+        r"chegou|chegam|trouxe|traz|leva|levam|inclui|incluem|ocorre|ocorrem|"
+        r"acontece|anunciou|anunciam|libera|liberou|apresenta|apresentam|"
+        r"busca|buscam|aguarda|aguardam|conquistou|oferece|oferecem|contará|"
+        r"participa|participam|realiza|realizou|ampliou|ampliam|alcança|"
+        r"contribui|depende|surge|nasceu|mudou|mudaram|chega|reúne|gera|geram|"
+        r"faz|fazem|mantém|mantêm|destaca|resulta|marca|marcou|afirma|disse|"
+        r"declarou|determina|permite|ajuda|recomenda|elimina|revelou|analisou|"
+        r"concluiu|defende|aponta|cria|decidiu|promove|ocupa|envolve|exige|"
+        r"celebra|desenvolve|construiu|precisa|estabelece|prevê|tornou|tornam|"
+        r"vale|valem|ficou|fica|atende|atendem|somam|foi criada|foi criado)\b"
+    )
     frases = re.findall(r"""[^.!?]+[.!?]+(?:["'”’»)]*)""", texto)
     for frase in frases:
         candidata = frase.strip()
         if len(candidata) > limite or "..." in candidata or "…" in candidata:
             continue
-        if ruido.search(candidata):
+        if ruido.search(candidata) or not verbos.search(candidata):
+            continue
+        if re.match(r"^[A-ZÁÉÍÓÚÂÊÔÃÕÇ][\w\s().-]{1,45},\s*(?:ampliando|aumentando|permitindo|reforçando|incluindo|levando)\b", candidata):
             continue
         ultima = candidata.rstrip("”’»)]").rstrip('"').rstrip("'").rstrip(".!?").split()
         if not ultima or ultima[-1].casefold().strip(" ,;:") in finais_incompletos:
