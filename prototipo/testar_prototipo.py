@@ -154,6 +154,27 @@ class FeedMergeTests(unittest.TestCase):
         )
 
 
+    def test_merge_rebuilds_carousel_summary_from_full_summary(self):
+        now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
+        article = self.article(
+            "refresh-summary", "fitness", "https://example.org/refresh-summary",
+            "Wed, 28 Oct 2026 11:00:00 GMT"
+        )
+        article["linha_fina"] = (
+            "Especialista explicou como a intensidade e a frequência dos exercícios "
+            "influenciam os resultados dos treinos curtos."
+        )
+        article["linha_fina_carrossel"] = (
+            "A entidade também recomenda exercícios em pelo menos dois dias da semana."
+        )
+        result = merge_active_articles(
+            {"materias": []}, previous_feed={"materias": [article]}, now=now
+        )
+        self.assertEqual(
+            result["materias"][0]["linha_fina_carrossel"],
+            article["linha_fina"],
+        )
+
     def test_merge_uses_body_when_source_summary_is_truncated(self):
         now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
         article = self.article(
