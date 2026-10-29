@@ -23,7 +23,6 @@ jobs:
   validar-e-descobrir:
     runs-on: ubuntu-latest
     timeout-minutes: 8
-    env: {}
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
