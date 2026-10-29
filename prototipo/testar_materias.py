@@ -194,7 +194,7 @@ class ArticleValidationTests(unittest.TestCase):
             {"id": "titulo-truncado", "pilar": "fitness",
              "titulo": "Governo libera R$ 5,2 bilhões para reforçar assistência social e saúde | Agência Brasil",
              "titulo_carrossel": "Governo libera R$ 5,2 bilhões para reforçar assistência social…",
-             "linha_fina": "Resumo completo com contexto suficiente para o leitor entender a notícia.",
+             "linha_fina": "A matéria apresenta contexto suficiente para o leitor entender a notícia.",
              "linha_fina_carrossel": "Resumo de chamada que termina com texto cortado…",
              "url_fonte": "https://example.org/titulo-truncado",
              "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
