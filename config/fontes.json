@@ -8,24 +8,24 @@
   "max_response_bytes": 2000000,
   "queries": [
     {
-      "pillar": "pet",
-      "query": "(pets OR cães OR gatos OR bichinhos de estimação OR animais domésticos OR animais exóticos OR cuidados com pet OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "pillar": "Pet Care",
+      "query": "(pets OR cães OR gatos OR bichinhos de estimação OR \"animais domésticos\" OR \"animais exóticos\" OR cuidados com pet OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
     },
     {
-      "pillar": "lazer",
+      "pillar": "Entretenimento & Lazer",
       "query": "(lazer OR cultura OR turismo OR eventos OR passeios OR entretenimentos OR viagens) (Brasília OR \"Distrito Federal\")"
     },
     {
-      "pillar": "esportes",
-      "query": "(esportes OR corrida OR futebol OR atividade esportiva) (Brasília OR \"Distrito Federal\")"
+      "pillar": "Esportes",
+      "query": "(atletismo OR corrida OR futebol OR \"atividade esportiva\" OR voleibol OR basquete) (Brasília OR \"Distrito Federal\")"
     },
     {
-      "pillar": "saude",
-      "query": "(saúde OR prevenção OR vacinação OR bem-estar OR alimentação saudável OR cuidados OR tratamentos) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "pillar": "Saúde em foco",
+      "query": "(saúde OR prevenção OR vacinação OR bem-estar OR \"alimentação saudável\" OR cuidados OR tratamentos) (Brasília OR \"Distrito Federal\" OR Brasil)"
     },
     {
-      "pillar": "fitness",
-      "query": "(fitness OR academia OR exercício físico OR atividade física OR alimentação fitness OR suplementos fitness OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "pillar": "Vida fitness",
+      "query": "(fitness OR academia OR \"exercício físico\" OR \"atividade física\" OR \"alimentação fitness\" OR \"suplementos fitness\" OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
     }
   ]
 }
