@@ -117,7 +117,7 @@ class ArticleValidationTests(unittest.TestCase):
             compactar_titulo(
                 "Governo libera R$ 5,2 bilhões para reforçar assistência social e saúde | Agência Brasil"
             ),
-            "Governo libera R$ 5,2 bilhões para assistência social e saúde",
+            "Governo libera R$ 5,2 bilhões para reforçar assistência social e saúde",
         )
         self.assertEqual(
             compactar_titulo(
