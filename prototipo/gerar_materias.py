@@ -29,8 +29,8 @@ API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:gener
 DEFAULT_MODEL = "gemini-3.6-flash"
 MAX_RESPONSE_BYTES = 1_000_000
 MAX_ARTICLES = 5
-CAROUSEL_TITLE_MAX_CHARS = 65
-CAROUSEL_SUMMARY_MAX_CHARS = 140
+CAROUSEL_TITLE_MAX_CHARS = 80
+CAROUSEL_SUMMARY_MAX_CHARS = 200
 
 PARAGRAPH_BREAK_AFTER = 2
 _ABBREVIATION_MARK = "\uE000"
@@ -113,12 +113,12 @@ REGRAS OBRIGATÓRIAS:
 - Prefira 3 a 5 parágrafos curtos, aproximadamente 180 a 350 palavras no total; elimine menus, publicidade, chamadas relacionadas e repetições.
 - Preserve o contexto, os dados essenciais e as ressalvas da fonte. Se o texto não permitir uma síntese fiel, omita a pauta.
 - Cada matéria deve ter título, linha fina e corpo com parágrafos separados por duas quebras de linha.
-- Além de titulo e linha_fina completos para a página de leitura, gere campos exclusivos para a chamada compacta da home: titulo_carrossel com no máximo 65 caracteres e linha_fina_carrossel com no máximo 140 caracteres.
-- Os campos *_carrossel devem ser reescritos de forma concisa, sem cortar palavras ou ideias abruptamente, sem repetir informação e sem acrescentar fatos. A linha_fina_carrossel deve ser uma frase completa, com pontuação final. Se não for possível resumir com fidelidade, omita a matéria. Esses campos são exclusivos do carrossel; titulo, linha_fina e corpo continuam destinados à leitura completa.
+- Além de titulo e linha_fina completos para a página de leitura, gere campos exclusivos para a chamada da home: titulo_carrossel com no máximo 80 caracteres e linha_fina_carrossel com no máximo 200 caracteres.
+- Preserve o máximo de informação relevante na coleta e na leitura do material antes de reescrever; não reduza a matéria original para tentar caber no carrossel. Depois, reescreva titulo_carrossel e linha_fina_carrossel para apresentação, usando até os limites máximos de 80 e 200 caracteres, sem tamanho mínimo nem faixa ideal. Use somente o espaço necessário; não alongue artificialmente o texto. Preserve fatos essenciais, nomes, números, contexto e ressalvas. Não invente, repita informação, corte palavras ou encerre frases abruptamente. O título deve representar a notícia e a linha fina deve complementar o título com contexto coerente, em frase completa e com pontuação final. Se não for possível produzir uma chamada fiel e clara, omita a matéria. Esses campos são exclusivos do carrossel; titulo, linha_fina e corpo continuam destinados à leitura completa.
 - Não use reticências para esconder um título excessivamente longo: reformule a chamada para caber no limite.
 - Inclua a URL exata da página original como url_fonte e a URL da imagem fornecida como imagem_url. Se não houver imagem, use string vazia. Não invente nem altere URLs.
 - Retorne somente JSON válido, sem Markdown, no formato:
-{{"materias":[{{"pilar":"pet","titulo":"Título completo","linha_fina":"Linha fina completa","titulo_carrossel":"Título conciso de até 65 caracteres","linha_fina_carrossel":"Resumo conciso de até 140 caracteres","corpo":"Parágrafo 1.\\n\\nParágrafo 2.","url_fonte":"URL exata","imagem_url":"URL exata ou string vazia"}}]}}
+{{"materias":[{{"pilar":"pet","titulo":"Título completo","linha_fina":"Linha fina completa","titulo_carrossel":"Título editorial de até 80 caracteres","linha_fina_carrossel":"Resumo contextual de até 200 caracteres","corpo":"Parágrafo 1.\\n\\nParágrafo 2.","url_fonte":"URL exata","imagem_url":"URL exata ou string vazia"}}]}}
 - No máximo uma matéria por fonte e até {MAX_ARTICLES} matérias no total.
 - O pilar deve ser o mesmo do material correspondente.
 
