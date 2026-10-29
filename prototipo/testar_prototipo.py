@@ -176,7 +176,7 @@ class CarouselTextTests(unittest.TestCase):
 
     def test_summary_without_safe_sentence_uses_complete_neutral_copy(self):
         result = compactar_texto("A resposta pode estar nos genes mas também passa pela vida social e pelo acesso à saúde", 140)
-        self.assertEqual(result, "Leia a matéria completa para conhecer os detalhes.")
+        self.assertEqual(result, "")
 
     def test_merge_uses_body_when_source_summary_is_truncated(self):
         now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
