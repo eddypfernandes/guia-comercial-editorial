@@ -9,7 +9,7 @@
   "queries": [
     {
       "pillar": "Pet Care",
-      "query": "(\"bem-estar pet\" OR \"saúde pet\" OR cães OR gatos OR bichinhos de estimação OR \"animais domésticos\" OR \"animais exóticos\" OR cuidados com pet OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "query": "(\"bem-estar pet\" OR \"saúde pet\" OR cães OR gatos OR \"bichinhos de estimação\" OR \"animais domésticos\" OR \"animais exóticos\" OR cuidados com pet OR veterinária) (Brasília OR \"Distrito Federal\" OR Brasil)"
     },
     {
       "pillar": "Entretenimento & Lazer",
