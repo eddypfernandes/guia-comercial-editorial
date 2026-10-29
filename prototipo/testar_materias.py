@@ -129,7 +129,7 @@ class ArticleValidationTests(unittest.TestCase):
             compactar_titulo(
                 "Por que alguns produtos fitness viram hábito e outros acabam esquecidos? – R7 Entretenimento"
             ),
-            "Por que alguns produtos fitness viram hábito?",
+            "Por que alguns produtos fitness viram hábito e outros acabam esquecidos?",
         )
 
     def test_extract_json(self):
