@@ -453,7 +453,7 @@ def compactar_texto(texto: str, limite: int) -> str:
     frases = re.findall(r"""[^.!?]+[.!?]+(?:["'”’»)]*)""", texto)
     for frase in frases:
         candidata = frase.strip()
-        if len(candidata) > limite or "..." in candidata or "…" in candidata:
+        if len(candidata) > limite or "..." in candidata or "…" in candidata or re.match(r"^\d", candidata):
             continue
         if ruido.search(candidata) or not verbos.search(candidata):
             continue
