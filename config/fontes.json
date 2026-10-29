@@ -25,7 +25,7 @@
     },
     {
       "pillar": "Vida fitness",
-      "query": "(fitness OR academia \"ar livre\" OR \"exercício físico\" OR \"atividade física\" OR \"alimentação fitness\" OR \"suplementos fitness\" OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
+      "query": "(fitness OR academia OR \"ar livre\" OR \"exercício físico\" OR \"atividade física\" OR \"alimentação fitness\" OR \"suplementos fitness\" OR aeróbica) (Brasília OR \"Distrito Federal\" OR Brasil)"
     }
   ]
 }
