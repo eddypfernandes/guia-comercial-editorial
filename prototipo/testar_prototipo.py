@@ -82,9 +82,9 @@ class FeedMergeTests(unittest.TestCase):
             "id": identifier,
             "pilar": pillar,
             "titulo": "Título editorial suficientemente claro",
-            "linha_fina": "Resumo editorial usado para validar o feed.",
+            "linha_fina": "A matéria apresenta um resumo editorial para validar o feed.",
             "titulo_carrossel": "Chamada editorial",
-            "linha_fina_carrossel": "Resumo curto da chamada editorial.",
+            "linha_fina_carrossel": "O texto explica o contexto desta chamada editorial.",
             "corpo": "Conteúdo de teste.",
             "url_fonte": url,
             "publicado_em_fonte": published,
@@ -154,6 +154,23 @@ class FeedMergeTests(unittest.TestCase):
         )
 
 
+    def test_merge_uses_body_when_source_summary_is_truncated(self):
+        now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
+        article = self.article(
+            "body-fallback", "pet", "https://example.org/body-fallback",
+            "Wed, 28 Oct 2026 11:00:00 GMT"
+        )
+        article["linha_fina"] = "A descrição foi cortada antes de terminar"
+        article["linha_fina_carrossel"] = "A descrição foi cortada antes de terminar"
+        article["corpo"] = "A notícia explica como os moradores podem participar da iniciativa. O restante dos detalhes está disponível na fonte original."
+        result = merge_active_articles(
+            {"materias": []}, previous_feed={"materias": [article]}, now=now
+        )
+        self.assertEqual(
+            result["materias"][0]["linha_fina_carrossel"],
+            "A notícia explica como os moradores podem participar da iniciativa."
+        )
+
 class CarouselTextTests(unittest.TestCase):
     def test_long_title_prefers_a_complete_lead_sentence(self):
         title = "Quem é Renato Cariani? Conheça o influenciador fitness que pode pegar até 51 anos de prisão - Na Hora da Notícia"
@@ -174,25 +191,9 @@ class CarouselTextTests(unittest.TestCase):
         self.assertEqual(result, "Renato Cariani, de 50 anos, é um dos nomes mais conhecidos do universo fitness brasileiro.")
         self.assertLessEqual(len(result), 140)
 
-    def test_summary_without_safe_sentence_uses_complete_neutral_copy(self):
+    def test_summary_without_safe_sentence_is_rejected(self):
         result = compactar_texto("A resposta pode estar nos genes mas também passa pela vida social e pelo acesso à saúde", 140)
         self.assertEqual(result, "")
-
-    def test_merge_uses_body_when_source_summary_is_truncated(self):
-        now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
-        article = self.article(
-            "body-fallback", "pet", "https://example.org/body-fallback",
-            "Wed, 28 Oct 2026 11:00:00 GMT"
-        )
-        article["linha_fina"] = "A descrição foi cortada antes de terminar"
-        article["corpo"] = "A notícia explica como os moradores podem participar da iniciativa. O restante dos detalhes está disponível na fonte original."
-        result = merge_active_articles(
-            {"materias": []}, previous_feed={"materias": [article]}, now=now
-        )
-        self.assertEqual(
-            result["materias"][0]["linha_fina_carrossel"],
-            "A notícia explica como os moradores podem participar da iniciativa."
-        )
 
     def test_summary_skips_measurement_fragment_and_uses_next_complete_sentence(self):
         text = "O negócio cresceu até se tornar uma indústria com aproximadamente 4.500 m² em Osasco, na Grande São Paulo. Hoje, atende academias, estúdios, clubes, hotéis e condomínios."
