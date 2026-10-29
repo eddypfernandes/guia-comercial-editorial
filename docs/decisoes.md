@@ -10,6 +10,7 @@
 - Histórico mínimo preservado para controle de duplicidade.
 - Pesquisa em fontes conhecidas e descoberta de novas fontes com critérios de confiabilidade.
 - Protótipos primeiro; nenhuma publicação oficial nesta fase.
+- Chamada do carrossel: título com limite máximo de 80 caracteres e linha fina com limite máximo de 200; preservar a informação na coleta e reescrever para apresentação, sem metas mínimas de tamanho.
 - Backend previsto: ASP Clássico; interface: Bootstrap 5.3.3.
 - Não modificar os repositórios das automações já existentes.
 
