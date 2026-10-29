@@ -178,6 +178,22 @@ class CarouselTextTests(unittest.TestCase):
         result = compactar_texto("A resposta pode estar nos genes mas também passa pela vida social e pelo acesso à saúde", 140)
         self.assertEqual(result, "Leia a matéria completa para conhecer os detalhes.")
 
+    def test_merge_uses_body_when_source_summary_is_truncated(self):
+        now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
+        article = self.article(
+            "body-fallback", "pet", "https://example.org/body-fallback",
+            "Wed, 28 Oct 2026 11:00:00 GMT"
+        )
+        article["linha_fina"] = "A descrição foi cortada antes de terminar"
+        article["corpo"] = "A notícia explica como os moradores podem participar da iniciativa. O restante dos detalhes está disponível na fonte original."
+        result = merge_active_articles(
+            {"materias": []}, previous_feed={"materias": [article]}, now=now
+        )
+        self.assertEqual(
+            result["materias"][0]["linha_fina_carrossel"],
+            "A notícia explica como os moradores podem participar da iniciativa."
+        )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
