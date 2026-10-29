@@ -194,6 +194,13 @@ class CarouselTextTests(unittest.TestCase):
             "A notícia explica como os moradores podem participar da iniciativa."
         )
 
+    def test_summary_skips_measurement_fragment_and_uses_next_complete_sentence(self):
+        text = "O negócio cresceu até se tornar uma indústria com aproximadamente 4.500 m² em Osasco, na Grande São Paulo. Hoje, atende academias, estúdios, clubes, hotéis e condomínios."
+        self.assertEqual(
+            compactar_texto(text, 140),
+            "Hoje, atende academias, estúdios, clubes, hotéis e condomínios."
+        )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
