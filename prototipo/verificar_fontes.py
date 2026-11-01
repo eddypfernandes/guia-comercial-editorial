@@ -25,7 +25,7 @@ TRIAGE_PATH = ROOT / "prototipo" / "saida" / "triagem-gemini.json"
 OUTPUT_PATH = ROOT / "prototipo" / "saida" / "fontes-verificadas.json"
 USER_AGENT = "GuiaComercialEditorialPrototype/0.2 (+https://github.com/eddypfernandes/guia-comercial-editorial)"
 MAX_BYTES = 2_000_000
-MAX_TEXT_CHARS = 12_000
+MAX_TEXT_CHARS = 30_000
 MIN_TEXT_CHARS = 500
 TIMEOUT = 8
 
@@ -117,8 +117,10 @@ def extract_html(html: str, base_url: str = "") -> dict:
     parser = ArticleParser()
     parser.feed(html)
     text = " ".join(parser.text_parts)
-    # Evita repetições triviais e mantém o limite de conteúdo enviado ao modelo.
-    text = " ".join(text.split())[:MAX_TEXT_CHARS]
+    text = " ".join(text.split())
+    texto_truncado = len(text) > MAX_TEXT_CHARS
+    if texto_truncado:
+        text = text[:MAX_TEXT_CHARS].rsplit(" ", 1)[0].rstrip()
     image_url = urllib.parse.urljoin(base_url, parser.image_url) if parser.image_url else ""
     parsed_image = urllib.parse.urlsplit(image_url)
     if (parsed_image.scheme.lower() != "https" or not parsed_image.hostname
@@ -130,6 +132,7 @@ def extract_html(html: str, base_url: str = "") -> dict:
         "imagem_url": image_url,
         "texto_extraido": text,
         "caracteres_extraidos": len(text),
+        "texto_truncado": texto_truncado,
     }
 
 
@@ -294,11 +297,15 @@ def verify_item(item: dict, opener=None) -> dict:
             "imagem_url": extracted["imagem_url"],
             "texto_extraido": extracted["texto_extraido"],
             "caracteres_extraidos": extracted["caracteres_extraidos"],
+            "texto_truncado": extracted["texto_truncado"],
             "duracao_segundos": round(time.monotonic() - started, 2),
         })
         if host_final == "news.google.com" or host_final.endswith(".news.google.com"):
             record["status_verificacao"] = "pendente_link_agregador"
             record["erro"] = "O agregador não revelou um link externo para a matéria original."
+        elif extracted["texto_truncado"]:
+            record["status_verificacao"] = "pendente_texto_truncado"
+            record["erro"] = "A página excedeu o limite de extração; matéria rejeitada para evitar publicação incompleta."
         elif extracted["caracteres_extraidos"] < MIN_TEXT_CHARS:
             record["status_verificacao"] = "pendente_texto_insuficiente"
             record["erro"] = "Texto extraído insuficiente; revisar manualmente ou acessar a fonte."
