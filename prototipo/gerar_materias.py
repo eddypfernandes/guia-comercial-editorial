@@ -606,7 +606,7 @@ def select_balanced_recent_sources(source_items: list[dict], limit: int,
 def texto_tem_encerramento(texto: str) -> bool:
     """Evita aceitar extrações que terminam no meio de uma frase."""
     texto = str(texto or "").strip()
-    return len(texto) >= 500 and bool(re.search(r"[.!?][\"'”’»)]*\\s*$", texto))
+    return len(texto) >= 500 and bool(re.search(r"[.!?][\"'”’»)]*\s*$", texto))
 
 
 def build_fallback_report(source_items: list[dict], reason: str = "",
@@ -638,7 +638,9 @@ def build_fallback_report(source_items: list[dict], reason: str = "",
         body = format_body_paragraphs(text)
         carousel_title = compactar_titulo(title, CAROUSEL_TITLE_MAX_CHARS)
         carousel_summary = compactar_texto(summary, CAROUSEL_SUMMARY_MAX_CHARS)
-        if not carousel_title or not carousel_summary or not texto_tem_encerramento(body):
+        if not carousel_summary:
+            carousel_summary = "Consulte os detalhes da publicação original."
+        if not carousel_title or not texto_tem_encerramento(body):
             rejected += 1
             continue
 
@@ -681,7 +683,7 @@ def main() -> int:
         result = build_fallback_report(eligible, now=datetime.now(timezone.utc))
         result = merge_active_articles(result, load_previous_feed())
         OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+        OUTPUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Fontes elegíveis: {len(eligible)}")
         print(f"Matérias completas aceitas: {result['total_materias_validas']}")
         print(f"Matérias rejeitadas por extração incompleta ou chamada inválida: {result['respostas_rejeitadas']}")
