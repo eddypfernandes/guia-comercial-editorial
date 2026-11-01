@@ -37,7 +37,7 @@ class ArticleValidationTests(unittest.TestCase):
             "url_final": "https://example.org/noticia",
             "titulo_pagina": "Notícia original",
             "publicado_em_rss": "2026-10-27",
-            "texto_extraido": "Texto da fonte " * 50,
+            "texto_extraido": ("Texto da fonte apresenta informações relevantes para a comunidade. " * 50) + "A publicação encerra com os dados finais.",
             "imagem_url": "https://example.org/img/noticia.jpg",
             "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
         }]
@@ -55,9 +55,24 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertEqual(article["imagem_url"], "https://example.org/img/noticia.jpg")
         self.assertEqual(article["status_editorial"], "apto_para_publicacao")
         self.assertTrue(article["corpo"].startswith("Texto da fonte"))
-        self.assertIn("prévia de testes", article["aviso_editorial"])
-        self.assertIn("quota excedida", result["aviso"])
-        self.assertIn("publicação simulada", result["aviso"])
+        self.assertIn("Texto integral extraído", article["aviso_editorial"])
+        self.assertIn("Modo autônomo sem Gemini", result["aviso"])
+        self.assertNotIn("publicação simulada", result["aviso"])
+
+
+    def test_fallback_preserves_full_source_text_and_rejects_unfinished_text(self):
+        complete = ("Informação completa da notícia, com contexto e detalhes importantes. " * 40) + "A matéria termina com uma conclusão."
+        incomplete = "Informação incompleta da notícia, com contexto e detalhes importantes. " * 40
+        sources = [
+            dict(self.source[0], texto_extraido=complete, url_final="https://example.org/completa"),
+            dict(self.source[0], texto_extraido=incomplete, url_final="https://example.org/incompleta"),
+        ]
+        result = build_fallback_report(
+            sources, now=datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc)
+        )
+        accepted = next(item for item in result["materias"] if item["url_fonte"].endswith("completa"))
+        self.assertEqual(accepted["corpo"].replace("\n\n", " "), complete)
+        self.assertNotIn("https://example.org/incompleta", {item["url_fonte"] for item in result["materias"]})
 
     def test_fallback_ignores_stale_sources_and_balances_recent_pillars(self):
         now = datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc)
@@ -70,7 +85,7 @@ class ArticleValidationTests(unittest.TestCase):
                 "url_final": f"https://example.org/recente-{pillar}",
                 "titulo_pagina": f"Notícia recente de {pillar}",
                 "publicado_em_rss": "2026-10-27",
-                "texto_extraido": "Texto recente da fonte " * 40,
+                "texto_extraido": ("Texto recente da fonte apresenta informações úteis. " * 40) + "A publicação encerra com os dados finais.",
                 "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
             })
         sources.append({
@@ -79,7 +94,7 @@ class ArticleValidationTests(unittest.TestCase):
             "url_final": "https://example.org/antiga",
             "titulo_pagina": "Notícia antiga de fitness",
             "publicado_em_rss": "2026-04-10",
-            "texto_extraido": "Texto antigo da fonte " * 40,
+            "texto_extraido": ("Texto antigo da fonte apresenta informações úteis. " * 40) + "A publicação encerra com os dados finais.",
             "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
         })
 
