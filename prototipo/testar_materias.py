@@ -197,6 +197,7 @@ class ArticleValidationTests(unittest.TestCase):
         }
         previous = {"materias": [
             {"id": "antiga-recente", "pilar": "pet", "titulo": "Matéria anterior ainda válida",
+             "corpo": "Texto completo da matéria anterior. A publicação termina aqui.",
              "url_fonte": "https://example.org/pet/", "publicado_em_fonte": "Mon, 26 Oct 2026 12:00:00 GMT",
              "linha_fina_carrossel": "A matéria apresenta informações úteis para os moradores.",
              "status_editorial": "apto_para_publicacao"},
@@ -207,6 +208,7 @@ class ArticleValidationTests(unittest.TestCase):
              "url_fonte": "https://example.org/rascunho", "publicado_em_fonte": "Tue, 27 Oct 2026 12:00:00 GMT",
              "status_editorial": "rascunho_automatico_sem_ia_revisao_obrigatoria"},
             {"id": "titulo-truncado", "pilar": "fitness",
+             "corpo": "Texto completo da matéria anterior. A publicação termina aqui.",
              "titulo": "Governo libera R$ 5,2 bilhões para reforçar assistência social e saúde | Agência Brasil",
              "titulo_carrossel": "Governo libera R$ 5,2 bilhões para reforçar assistência social…",
              "linha_fina": "A matéria apresenta contexto suficiente para o leitor entender a notícia.",
