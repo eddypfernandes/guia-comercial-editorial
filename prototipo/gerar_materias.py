@@ -603,54 +603,70 @@ def select_balanced_recent_sources(source_items: list[dict], limit: int,
     return selected
 
 
-def build_fallback_report(source_items: list[dict], reason: str,
+def texto_tem_encerramento(texto: str) -> bool:
+    """Evita aceitar extrações que terminam no meio de uma frase."""
+    texto = str(texto or "").strip()
+    return len(texto) >= 500 and bool(re.search(r"[.!?][\"'”’»)]*\\s*$", texto))
+
+
+def build_fallback_report(source_items: list[dict], reason: str = "",
                          now: datetime | None = None) -> dict:
-    """Cria conteúdo de contingência para a prévia automática usando trechos da fonte original."""
+    """Monta notas com todo o texto extraído; rejeita fontes sem encerramento identificável."""
     now = now or datetime.now(timezone.utc)
     eligible = select_balanced_recent_sources(source_items, MAX_ARTICLES, now)
-
     articles = []
+    rejected = 0
+
     for item in eligible:
+        text = str(item.get("texto_extraido", "")).strip()
+        if item.get("texto_truncado") or not texto_tem_encerramento(text):
+            rejected += 1
+            continue
+
         title_original = str(item.get("titulo_pagina") or item.get("titulo_pauta") or "").strip()
         title = limpar_titulo_fonte(title_original)
         if len(title) < 12:
-            title = limpar_titulo_fonte(str(item.get("titulo_pauta") or "Rascunho editorial para revisão"))
+            title = limpar_titulo_fonte(str(item.get("titulo_pauta") or ""))
         if len(title) < 12:
-            title = title_original
-        title = title[:180]
+            rejected += 1
+            continue
+
         description = str(item.get("descricao_pagina") or "").strip()
-        text = " ".join(str(item.get("texto_extraido", "")).split())
-        # Mantém o texto da fonte como excerto, sem fingir que houve reescrita ou checagem.
-        excerpt = text[:1800].rsplit(" ", 1)[0].strip()
         summary = description if 20 <= len(description) <= 400 else (
-            "Informação reunida a partir da página original. Consulte a fonte para ver o contexto completo."
+            "Leia o conteúdo completo extraído da publicação original e consulte a fonte ao final."
         )
-        body = format_body_paragraphs(excerpt)
+        body = format_body_paragraphs(text)
+        carousel_title = compactar_titulo(title, CAROUSEL_TITLE_MAX_CHARS)
+        carousel_summary = compactar_texto(summary, CAROUSEL_SUMMARY_MAX_CHARS)
+        if not carousel_title or not carousel_summary or not texto_tem_encerramento(body):
+            rejected += 1
+            continue
+
         articles.append({
-            "id": f"rascunho-{len(articles) + 1:02d}",
+            "id": f"nota-{len(articles) + 1:02d}",
             "pilar": item.get("pilar", ""),
-            "titulo": title,
+            "titulo": title[:180],
             "linha_fina": summary,
-            "titulo_carrossel": compactar_titulo(title, CAROUSEL_TITLE_MAX_CHARS),
-            "linha_fina_carrossel": compactar_texto(summary, CAROUSEL_SUMMARY_MAX_CHARS),
+            "titulo_carrossel": carousel_title,
+            "linha_fina_carrossel": carousel_summary,
             "corpo": body,
             "fonte_publicadora": item.get("fonte_publicadora", ""),
             "url_fonte": item.get("url_final", ""),
             "imagem_url": item.get("imagem_url", ""),
             "titulo_fonte": item.get("titulo_pagina", ""),
             "publicado_em_fonte": item.get("publicado_em_rss", ""),
-            "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "gerado_em": now.isoformat(timespec="seconds"),
             "status_editorial": "apto_para_publicacao",
-            "aviso_editorial": "Conteúdo de contingência exibido automaticamente na prévia de testes. Trecho extraído da fonte original, sem reescrita por IA; consulte a fonte para contexto completo.",
+            "aviso_editorial": "Texto integral extraído da publicação original e organizado em parágrafos, sem reescrita automática. A extração não representa checagem factual; consulte a fonte original.",
         })
 
     return {
-        "gerado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "total_recebidas": len(articles),
+        "gerado_em": now.isoformat(timespec="seconds"),
+        "total_recebidas": len(eligible),
         "total_materias_validas": len(articles),
-        "respostas_rejeitadas": 0,
+        "respostas_rejeitadas": rejected,
         "publicacao_oficial": False,
-        "aviso": "Modo alternativo sem Gemini: conteúdo de contingência incluído na prévia de testes em publicação simulada. Os trechos vêm das fontes originais; a publicação oficial permanece desativada. Motivo: " + reason[:240],
+        "aviso": "Modo autônomo sem Gemini: textos integrais extraídos e organizados. Fontes incompletas ou truncadas são rejeitadas; publicação oficial permanece desativada.",
         "materias": articles,
     }
 
@@ -662,43 +678,15 @@ def main() -> int:
         if not isinstance(items, list):
             raise ValueError("Relatório de fontes inválido.")
         eligible = filter_recent_sources(items)
-        if not eligible:
-            write_empty("Nenhuma fonte com texto suficiente para gerar matérias neste ciclo.")
-            print("Nenhuma fonte elegível; arquivo de matérias vazio criado.")
-            return 0
-        api_key = os.environ.get("GEMINI_API_KEY", "").strip()
-        if not api_key:
-            result = build_fallback_report(eligible, "GEMINI_API_KEY ausente")
-            print("Chave Gemini ausente; usando conteúdo de contingência na prévia automática.")
-        else:
-            primary_model = os.environ.get("GEMINI_MODEL", DEFAULT_MODEL).strip()
-            fallback_models = [name.strip() for name in os.environ.get("GEMINI_FALLBACK_MODELS", "gemini-2.5-flash-lite").split(",") if name.strip()]
-            models = list(dict.fromkeys([primary_model] + fallback_models))
-            result = None
-            errors = []
-            for model in models:
-                try:
-                    print(f"Tentando redação editorial com o modelo {model}.")
-                    response = call_gemini(api_key, model, build_prompt(eligible))
-                    candidate = validate_articles(extract_json(response), eligible)
-                    if not candidate["materias"]:
-                        raise ValueError("O modelo não produziu matérias que passassem pela validação.")
-                    result = candidate
-                    break
-                except (RuntimeError, ValueError) as exc:
-                    errors.append(f"{model}: {str(exc)[:220]}")
-                    print(f"Modelo {model} indisponível ou resposta inválida; tentando alternativa.")
-            if result is None:
-                reason = " | ".join(errors) or "Nenhum modelo de redação disponível."
-                result = build_fallback_report(eligible, reason)
-                print(f"Gemini indisponível; usando conteúdo de contingência na prévia: {reason[:240]}")
+        result = build_fallback_report(eligible, now=datetime.now(timezone.utc))
         result = merge_active_articles(result, load_previous_feed())
         OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        OUTPUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
         print(f"Fontes elegíveis: {len(eligible)}")
-        print(f"Matérias geradas e validadas estruturalmente: {result['total_materias_validas']}")
+        print(f"Matérias completas aceitas: {result['total_materias_validas']}")
+        print(f"Matérias rejeitadas por extração incompleta ou chamada inválida: {result['respostas_rejeitadas']}")
         print(f"Relatório: {OUTPUT_PATH.relative_to(ROOT)}")
-        print("Nenhuma matéria foi publicada no site.")
+        print("Execução autônoma concluída; Gemini não é utilizado e nenhuma matéria é publicada diretamente no site.")
         return 0
     except (OSError, json.JSONDecodeError, ValueError, RuntimeError) as exc:
         print(f"ERRO na geração de matérias: {exc}")
