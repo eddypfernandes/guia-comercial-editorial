@@ -285,7 +285,7 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
     for article in previous_feed.get("materias", []):
         if (isinstance(article, dict)
                 and article_is_current(article, now, validity_days)
-                and texto_tem_encerramento(article.get("corpo", ""))):
+                and texto_tem_encerramento(article.get("corpo", ""), minimo=1)):
             key = source_key(article)
             if key and key not in by_source:
                 by_source[key] = article
@@ -605,10 +605,10 @@ def select_balanced_recent_sources(source_items: list[dict], limit: int,
     return selected
 
 
-def texto_tem_encerramento(texto: str) -> bool:
+def texto_tem_encerramento(texto: str, minimo: int = 500) -> bool:
     """Evita aceitar extrações que terminam no meio de uma frase."""
     texto = str(texto or "").strip()
-    return len(texto) >= 500 and bool(re.search(r"[.!?][\"'”’»)]*\s*$", texto))
+    return len(texto) >= minimo and bool(re.search(r"[.!?][\"'”’»)]*\s*$", texto))
 
 
 def build_fallback_report(source_items: list[dict], reason: str = "",
