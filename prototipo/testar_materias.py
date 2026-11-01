@@ -62,7 +62,7 @@ class ArticleValidationTests(unittest.TestCase):
 
     def test_fallback_preserves_full_source_text_and_rejects_unfinished_text(self):
         complete = ("Informação completa da notícia, com contexto e detalhes importantes. " * 40) + "A matéria termina com uma conclusão."
-        incomplete = "Informação incompleta da notícia, com contexto e detalhes importantes. " * 40
+        incomplete = ("Informação incompleta da notícia, com contexto e detalhes importantes. " * 40) + "O texto termina abruptamente em uma ideia que ficou"
         sources = [
             dict(self.source[0], texto_extraido=complete, url_final="https://example.org/completa"),
             dict(self.source[0], texto_extraido=incomplete, url_final="https://example.org/incompleta"),
