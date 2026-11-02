@@ -41,6 +41,7 @@ jobs:
           python -m unittest prototipo/testar_coletor.py -v
           python -m unittest prototipo/testar_fontes.py -v
           python -m unittest prototipo/testar_materias.py -v
+          python -m unittest prototipo/testar_resumidor.py -v
 
       - name: Coletar sugestões de pauta por RSS
         run: python prototipo/coletar_fontes.py
@@ -50,6 +51,9 @@ jobs:
 
       - name: Redigir matérias para leitura
         run: python prototipo/gerar_materias.py
+
+      - name: Resumir conteúdo das matérias
+        run: python prototipo/resumir_materias.py
 
       - name: Atualizar feed JSON da prévia do site
         run: |
