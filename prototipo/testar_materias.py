@@ -36,7 +36,7 @@ class ArticleValidationTests(unittest.TestCase):
             "fonte_publicadora": "Jornal Exemplo",
             "url_final": "https://example.org/noticia",
             "titulo_pagina": "Notícia original",
-            "publicado_em_rss": "2026-10-27",
+            "publicado_em_rss": "Tue, 27 Oct 2026 13:00:00 GMT",
             "texto_extraido": ("Texto da fonte apresenta informações relevantes para a comunidade. " * 50) + "A publicação encerra com os dados finais.",
             "imagem_url": "https://example.org/img/noticia.jpg",
             "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
@@ -84,7 +84,7 @@ class ArticleValidationTests(unittest.TestCase):
                 "fonte_publicadora": "Fonte de teste",
                 "url_final": f"https://example.org/recente-{pillar}",
                 "titulo_pagina": f"Notícia recente de {pillar}",
-                "publicado_em_rss": "2026-10-27",
+                "publicado_em_rss": "Tue, 27 Oct 2026 13:00:00 GMT",
                 "texto_extraido": ("Texto recente da fonte apresenta informações úteis. " * 40) + "A publicação encerra com os dados finais.",
                 "status_verificacao": "pagina_original_extraida_revisao_factual_pendente",
             })
@@ -198,7 +198,7 @@ class ArticleValidationTests(unittest.TestCase):
         previous = {"materias": [
             {"id": "antiga-recente", "pilar": "pet", "titulo": "Matéria anterior ainda válida",
              "corpo": "Texto completo da matéria anterior. A publicação termina aqui.",
-             "url_fonte": "https://example.org/pet/", "publicado_em_fonte": "Mon, 26 Oct 2026 12:00:00 GMT",
+             "url_fonte": "https://example.org/pet/", "publicado_em_fonte": "Tue, 27 Oct 2026 13:00:00 GMT",
              "linha_fina_carrossel": "A matéria apresenta informações úteis para os moradores.",
              "status_editorial": "apto_para_publicacao"},
             {"id": "vencida", "pilar": "saude", "titulo": "Matéria antiga vencida",
