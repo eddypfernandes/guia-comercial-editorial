@@ -126,9 +126,9 @@ class FeedMergeTests(unittest.TestCase):
 
     def test_merge_sorts_newest_first_and_assigns_unique_stable_ids(self):
         now = datetime(2026, 10, 28, 12, tzinfo=timezone.utc)
-        older = self.article("rascunho-01", "pet", "https://example.org/pet", "Tue, 27 Oct 2026 10:00:00 GMT")
+        older = self.article("rascunho-01", "pet", "https://example.org/pet", "Tue, 27 Oct 2026 13:00:00 GMT")
         newer = self.article("rascunho-01", "lazer", "https://example.org/lazer", "Wed, 28 Oct 2026 11:00:00 GMT")
-        same_source_duplicate = self.article("rascunho-01", "pet", "https://EXAMPLE.org/pet/", "Tue, 27 Oct 2026 10:00:00 GMT")
+        same_source_duplicate = self.article("rascunho-01", "pet", "https://EXAMPLE.org/pet/", "Tue, 27 Oct 2026 13:00:00 GMT")
 
         result = merge_active_articles(
             {"materias": [older, newer, same_source_duplicate]},
