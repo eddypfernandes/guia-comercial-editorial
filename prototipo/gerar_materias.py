@@ -13,7 +13,8 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
@@ -22,7 +23,8 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT_PATH = ROOT / "prototipo" / "saida" / "fontes-verificadas.json"
 OUTPUT_PATH = ROOT / "prototipo" / "saida" / "materias-editoriais.json"
 ACTIVE_FEED_PATH = ROOT / "docs" / "data" / "materias-editoriais.json"
-DEFAULT_VALIDITY_DAYS = 3
+DEFAULT_VALIDITY_DAYS = 1
+BRASILIA_TZ = ZoneInfo("America/Sao_Paulo")
 MAX_ACTIVE_PER_PILLAR = 4
 MAX_ACTIVE_ARTICLES = 20
 API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
@@ -234,25 +236,65 @@ def source_key(article: dict) -> str:
         return value.rstrip("/").casefold()
 
 
+MONTHS_PT = {
+    "janeiro": 1, "fevereiro": 2, "março": 3, "marco": 3,
+    "abril": 4, "maio": 5, "junho": 6, "julho": 7,
+    "agosto": 8, "setembro": 9, "outubro": 10,
+    "novembro": 11, "dezembro": 12,
+}
+DATE_CONTEXT = re.compile(
+    r"(?i)\b(?:neste\s+dia|no\s+dia|para\s+o\s+dia|programação\s+(?:de|para)|"
+    r"agenda\s+(?:de|para)|acontecerá?\s+(?:em|no dia)?|será\s+"
+    r"(?:realizado|realizada|promovido|promovida|celebrado|celebrada)|"
+    r"até\s+(?:o\s+)?dia|entre\s+os\s+dias|nos\s+dias)\b"
+)
+
+
+def contextual_expiry_date(article: dict, now: datetime) -> date | None:
+    """Identifica datas explícitas associadas a programação, prazo ou acontecimento."""
+    text = " ".join(str(article.get(field, "")) for field in ("titulo", "linha_fina", "corpo"))
+    if not text.strip():
+        return None
+    published = parse_article_date(article.get("publicado_em_fonte"))
+    local_now = now.astimezone(BRASILIA_TZ)
+    year_base = published.astimezone(BRASILIA_TZ).year if published else local_now.year
+    pattern = re.compile(
+        r"(?i)\b(?:dia\s+)?(\d{1,2})(?:º|°)?\s+de\s+"
+        r"(janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|"
+        r"setembro|outubro|novembro|dezembro)(?:\s+de\s+(20\d{2}))?\b"
+    )
+    dates = []
+    for match in pattern.finditer(text):
+        before = text[max(0, match.start() - 100):match.start()]
+        if not DATE_CONTEXT.search(before):
+            continue
+        day = int(match.group(1))
+        month = MONTHS_PT[match.group(2).casefold()]
+        year = int(match.group(3)) if match.group(3) else year_base
+        try:
+            dates.append(date(year, month, day))
+        except ValueError:
+            continue
+    return max(dates) if dates else None
+
+
 def article_is_current(article: dict, now: datetime, validity_days: int = DEFAULT_VALIDITY_DAYS) -> bool:
-    """Mantém matérias aptas por até 72 horas da publicação original, respeitando prazo menor."""
+    """Usa a data contextual do acontecimento; sem ela, aplica retenção padrão de 24 horas."""
     if article.get("status_editorial") != "apto_para_publicacao":
         return False
-    explicit_expiry = parse_article_date(article.get("validade_ate"))
     published = parse_article_date(article.get("publicado_em_fonte"))
-    if not published:
+    if not published or published > now + timedelta(days=1):
         return False
-    if published > now + timedelta(days=1):
-        return False
-
-    # A validade informada nunca pode prolongar uma matéria além da janela configurada.
-    valid_until = published + timedelta(days=validity_days)
-    if explicit_expiry:
-        explicit_expiry = explicit_expiry.replace(
-            hour=23, minute=59, second=59, microsecond=999999
-        )
-        valid_until = min(valid_until, explicit_expiry)
-    return now <= valid_until
+    contextual_expiry = contextual_expiry_date(article, now)
+    explicit_expiry = parse_article_date(article.get("validade_ate"))
+    if contextual_expiry:
+        expiry_date = contextual_expiry
+    elif explicit_expiry:
+        expiry_date = explicit_expiry.astimezone(BRASILIA_TZ).date()
+    else:
+        return now <= published + timedelta(hours=24)
+    expiry_local = datetime.combine(expiry_date, datetime.max.time(), tzinfo=BRASILIA_TZ)
+    return now <= expiry_local.astimezone(timezone.utc)
 
 
 def load_previous_feed() -> dict:
@@ -332,10 +374,16 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         # Sem título ou resumo completo, a matéria aguarda revisão e não entra no carrossel.
         if not item["titulo_carrossel"] or not item["linha_fina_carrossel"]:
             continue
-        expiry = parse_article_date(item.get("validade_ate")) or (
-            parse_article_date(item.get("publicado_em_fonte")) + timedelta(days=validity_days)
-        )
-        item["validade_ate"] = expiry.date().isoformat()
+        contextual_expiry = contextual_expiry_date(item, now)
+        explicit_expiry = parse_article_date(item.get("validade_ate"))
+        if contextual_expiry:
+            item["validade_ate"] = contextual_expiry.isoformat()
+        elif explicit_expiry:
+            item["validade_ate"] = explicit_expiry.astimezone(BRASILIA_TZ).date().isoformat()
+        else:
+            item["validade_ate"] = (
+                parse_article_date(item.get("publicado_em_fonte")) + timedelta(hours=24)
+            ).astimezone(BRASILIA_TZ).date().isoformat()
         # IDs de entrada podem se repetir entre rascunhos e matérias antigas.
         # A URL normalizada gera um identificador estável e único por fonte.
         item["id"] = "materia-" + hashlib.sha256(key.encode("utf-8")).hexdigest()[:12]
