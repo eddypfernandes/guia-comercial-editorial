@@ -286,12 +286,10 @@ def article_is_current(article: dict, now: datetime, validity_days: int = DEFAUL
     if not published or published > now + timedelta(days=1):
         return False
     contextual_expiry = contextual_expiry_date(article, now)
-    explicit_expiry = parse_article_date(article.get("validade_ate"))
     if contextual_expiry:
         expiry_date = contextual_expiry
-    elif explicit_expiry:
-        expiry_date = explicit_expiry.astimezone(BRASILIA_TZ).date()
     else:
+        # Campos de validade antigos não prolongam matérias genéricas: 24 horas exatas.
         return now <= published + timedelta(hours=24)
     expiry_local = datetime.combine(expiry_date, datetime.max.time(), tzinfo=BRASILIA_TZ)
     return now <= expiry_local.astimezone(timezone.utc)
