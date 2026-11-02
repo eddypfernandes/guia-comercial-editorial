@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs, limpar_titulo_fonte, compactar_texto, compactar_titulo
+from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs, limpar_titulo_fonte, compactar_texto, compactar_titulo, article_is_current
 
 
 class ArticleValidationTests(unittest.TestCase):
@@ -229,6 +229,34 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertNotIn("…", normalized["titulo_carrossel"])
         self.assertNotIn("...", normalized["titulo_carrossel"])
         self.assertNotIn("…", normalized["linha_fina_carrossel"])
+
+    def test_generic_article_expires_after_24_hours(self):
+        article = {
+            "status_editorial": "apto_para_publicacao",
+            "publicado_em_fonte": "2026-11-01T12:00:00-03:00",
+            "titulo": "Informação geral para a comunidade",
+            "corpo": "Texto sem data contextual de evento ou programação.",
+        }
+        self.assertTrue(article_is_current(article, datetime(2026, 11, 2, 14, 59, tzinfo=timezone.utc)))
+        self.assertFalse(article_is_current(article, datetime(2026, 11, 2, 15, 1, tzinfo=timezone.utc)))
+
+    def test_contextual_date_expires_after_the_mentioned_day(self):
+        article = {
+            "status_editorial": "apto_para_publicacao",
+            "publicado_em_fonte": "2026-11-01T08:00:00-03:00",
+            "titulo": "O que fazer de lazer neste dia 1 de novembro",
+            "corpo": "Confira a programação para este dia 1 de novembro em Brasília.",
+        }
+        self.assertFalse(article_is_current(article, datetime(2026, 11, 2, 12, 0, tzinfo=timezone.utc)))
+
+    def test_future_contextual_date_overrides_generic_24_hour_window(self):
+        article = {
+            "status_editorial": "apto_para_publicacao",
+            "publicado_em_fonte": "2026-11-01T08:00:00-03:00",
+            "titulo": "Programação para o dia 5 de novembro",
+            "corpo": "A agenda para o dia 5 de novembro reúne atividades culturais.",
+        }
+        self.assertTrue(article_is_current(article, datetime(2026, 11, 2, 12, 0, tzinfo=timezone.utc)))
 
     def test_merge_deduplicates_same_source_and_requires_publication_date(self):
         now = datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc)
