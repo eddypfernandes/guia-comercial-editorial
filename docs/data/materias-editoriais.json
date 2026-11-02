@@ -1,11 +1,29 @@
 {
-  "gerado_em": "2026-11-02T12:23:00+00:00",
+  "gerado_em": "2026-11-02T12:24:45+00:00",
   "total_recebidas": 5,
-  "total_materias_validas": 7,
+  "total_materias_validas": 8,
   "respostas_rejeitadas": 2,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-5bd008266a78",
+      "pilar": "saude",
+      "titulo": "Dia de Finados: Nova Legislação Consolida Direitos de Pacientes e Cuidados Paliativos no Brasil",
+      "linha_fina": "Dispositivo dispensa exigências cartorárias complexas e busca padronização técnica nos registros hospitalares",
+      "titulo_carrossel": "Dia de Finados: Nova Legislação Consolida Direitos de Pacientes e Cuidados",
+      "linha_fina_carrossel": "O instrumento prevê validade documental simplificada para a declaração, afastando formalidades cartorárias solenes e ampliando o acesso à população usuária dos serviços públicos e privados.",
+      "corpo": "A sanção da Lei Federal nº 15. 378/2026, que institui o Estatuto dos Direitos dos Pacientes, estabeleceu parâmetros jurídicos formais para assegurar a autonomia individual em decisões de saúde no fim da vida.\n\nA legislação define o instrumento como a declaração escrita sobre os cuidados, procedimentos e terapias aceitos ou recusados pelo cidadão, com cumprimento obrigatório pelas equipes médicas caso o indivíduo perca a capacidade de manifestação lúcida. Os desdobramentos da nova legislação exigem agora a adaptação dos protocolos clínicos e o treinamento de equipes multiprofissionais em hospitais públicos e redes suplementares em todo o país.",
+      "fonte_publicadora": "Forbes Brasil",
+      "url_fonte": "https://forbes.com.br/geral/2026/11/dia-de-finados-nova-legislacao-consolida-direitos-de-pacientes-e-cuidados-paliativos-no-brasil/",
+      "imagem_url": "https://forbes.com.br/wp-content/uploads/2026/11/geral_cemiterio_finados_Agencia_Brasil_02.11.2026-1200x675.jpg",
+      "titulo_fonte": "Dia de Finados: Nova Legislação Consolida Direitos de Pacientes e Cuidados Paliativos no Brasil",
+      "publicado_em_fonte": "Mon, 02 Nov 2026 12:20:58 GMT",
+      "gerado_em": "2026-11-02T12:24:45+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-03"
+    },
     {
       "id": "materia-833c2e64abd3",
       "pilar": "saude",
@@ -13,7 +31,7 @@
       "linha_fina": "Representantes de entidades, associações, órgãos do governo e clubes de futebol se reúnem em 3 de novembro para audiência no Supremo; ao todo, serão 34 participantes",
       "titulo_carrossel": "Fux inclui ministérios da Saúde e da Justiça em discussão sobre bets",
       "linha_fina_carrossel": "A decisão atende a pedido da AGU (Advocacia-Geral da União).",
-      "corpo": "O ministro do STF (Supremo Tribunal Federal) Luiz Fux convocou representantes dos ministérios da Saúde e da Justiça e Segurança Pública para a audiência que discutirá os impactos da MP (Medida Provisória) que proíbe o funcionamento de empresa de apostas online no Brasil , as bets. A audiência pública será realizada na terça-feira (3), a partir das 10h.\n\nAlém de representantes dos ministérios, Fux também convocou a Abras (Associação Brasileira de Supermercados), o Comitê Paralímpico do Brasil, e a Fenapaf (Federação Nacional dos Atletas Profissionais de Futebol). As partes envolvidas nas ações pediram urgência na discussão do tema levando em conta as datas fixadas na medida provisória e os impactos econômicos para o futebol brasileiro e setores da economia sob o ângulo da segurança jurídica.",
+      "corpo": "O ministro do STF (Supremo Tribunal Federal) Luiz Fux convocou representantes dos ministérios da Saúde e da Justiça e Segurança Pública para a audiência que discutirá os impactos da MP (Medida Provisória) que proíbe o funcionamento de empresa de apostas online no Brasil , as bets. A audiência pública será realizada na terça-feira (3), a partir das 10h. Além de representantes dos ministérios, Fux também convocou a Abras (Associação Brasileira de Supermercados), o Comitê Paralímpico do Brasil, e a Fenapaf (Federação Nacional dos Atletas Profissionais de Futebol). As partes envolvidas nas ações pediram urgência na discussão do tema levando em conta as datas fixadas na medida provisória e os impactos econômicos para o futebol brasileiro e setores da economia sob o ângulo da segurança jurídica.",
       "fonte_publicadora": "CNN Brasil",
       "url_fonte": "https://www.cnnbrasil.com.br/politica/fux-inclui-ministerios-da-saude-e-da-justica-em-discussao-sobre-bets/",
       "imagem_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/06/ministro-luiz-fux-plenario-stf.jpg?w=1200&h=630&crop=1",
@@ -22,25 +40,25 @@
       "gerado_em": "2026-11-02T12:23:00+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-03"
+      "validade_ate": "2026-11-02"
     },
     {
       "id": "materia-c62c3882bad6",
-      "pilar": "esportes",
+      "pilar": "lazer",
       "titulo": "Corrida do Servidor 2026: vencedores dos 5 km e 10 km",
       "linha_fina": "Corrida do Servidor 2026 no Eixo Monumental: veja os vencedores dos 5 km e 10 km, as vagas e o estande da Copa Feminina de 2027.",
       "titulo_carrossel": "Corrida do Servidor 2026: vencedores dos 5 km e 10 km",
       "linha_fina_carrossel": "Brasília é uma das oito cidades-sede do torneio e receberá sete partidas no Estádio Nacional Mané Garrincha.",
-      "corpo": "A Corrida do Servidor 2026 ocupou o Eixo Monumental na manhã deste domingo (1º/11), com largada em frente ao Palácio do Buriti e 5 mil vagas: 4 mil para servidores públicos do Distrito Federal e mil para a população em geral. A corrida teve apoio do Governo do Distrito Federal (GDF) e do Fundo de Apoio ao Esporte (FAE) e buscou reconhecer o trabalho de quem atua nos serviços públicos. A servidora Aline Cardoso elogiou a organização e a estrutura de hidratação. A Secretaria de Esporte e Lazer (SEL-DF) montou no evento um espaço sobre a Copa do Mundo Feminina da Fifa de 2027, com ações de divulgação e a distribuição de cerca de mil brindes. Brasília é uma das oito cidades-sede do torneio e receberá sete partidas no Estádio Nacional Mané Garrincha.",
+      "corpo": "A Corrida do Servidor 2026 ocupou o Eixo Monumental na manhã deste domingo (1º/11), com largada em frente ao Palácio do Buriti e 5 mil vagas: 4 mil para servidores públicos do Distrito Federal e mil para a população em geral. A corrida teve apoio do Governo do Distrito Federal (GDF) e do Fundo de Apoio ao Esporte (FAE) e buscou reconhecer o trabalho de quem atua nos serviços públicos.\n\nA servidora Aline Cardoso elogiou a organização e a estrutura de hidratação. A Secretaria de Esporte e Lazer (SEL-DF) montou no evento um espaço sobre a Copa do Mundo Feminina da Fifa de 2027, com ações de divulgação e a distribuição de cerca de mil brindes.\n\nBrasília é uma das oito cidades-sede do torneio e receberá sete partidas no Estádio Nacional Mané Garrincha.",
       "fonte_publicadora": "soubrasilia.com",
       "url_fonte": "https://soubrasilia.com/corrida-do-servidor-2026-eixo-monumental-vencedores-5-10-km/",
       "imagem_url": "https://soubrasilia.com/wp-content/uploads/2026/11/corrida-do-servidor-2026-largada-pista.jpg",
       "titulo_fonte": "Corrida do Servidor 2026: vencedores dos 5 km e 10 km",
       "publicado_em_fonte": "Mon, 02 Nov 2026 00:37:48 GMT",
-      "gerado_em": "2026-11-02T12:03:48+00:00",
+      "gerado_em": "2026-11-02T12:24:45+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-04"
+      "validade_ate": "2026-11-02"
     },
     {
       "id": "materia-19dc61c9bfd3",
@@ -55,7 +73,7 @@
       "imagem_url": "https://midias.correiobraziliense.com.br/_midias/jpg/2026/11/01/675x450/1_bsb-basquete-68119177.jpg?20261101210246?20261101210246",
       "titulo_fonte": "NBB: Brasília recebe o Botafogo no Ginásio Nilson Nelson",
       "publicado_em_fonte": "Mon, 02 Nov 2026 00:04:00 GMT",
-      "gerado_em": "2026-11-02T12:23:00+00:00",
+      "gerado_em": "2026-11-02T12:24:45+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-02"
@@ -76,7 +94,7 @@
       "gerado_em": "2026-11-02T11:52:32+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-03"
+      "validade_ate": "2026-11-02"
     },
     {
       "id": "materia-11e752a57ff9",
@@ -94,7 +112,7 @@
       "gerado_em": "2026-11-02T12:03:48+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-03"
+      "validade_ate": "2026-11-02"
     },
     {
       "id": "materia-b62f52944ca9",
@@ -112,7 +130,7 @@
       "gerado_em": "2026-11-01T16:44:51+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-03"
+      "validade_ate": "2026-11-02"
     },
     {
       "id": "materia-e4c68b71f52b",
@@ -130,7 +148,7 @@
       "gerado_em": "2026-11-01T16:44:51+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-03"
+      "validade_ate": "2026-11-02"
     }
   ]
 }
