@@ -1,11 +1,47 @@
 {
-  "gerado_em": "2026-11-02T12:24:45+00:00",
+  "gerado_em": "2026-11-02T20:14:56+00:00",
   "total_recebidas": 5,
-  "total_materias_validas": 8,
-  "respostas_rejeitadas": 2,
+  "total_materias_validas": 6,
+  "respostas_rejeitadas": 3,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-ffb94fc349af",
+      "pilar": "esportes",
+      "titulo": "Pinheiros domina e Botafogo vence por um ponto no NBB",
+      "linha_fina": "Pinheiros bate Caxias do Sul com folga e Botafogo busca virada na reta final contra o Brasília pela quarta rodada do NBB.",
+      "titulo_carrossel": "Pinheiros domina e Botafogo vence por um ponto no NBB",
+      "linha_fina_carrossel": "Pinheiros bate Caxias do Sul com folga e Botafogo busca virada na reta final contra o Brasília pela quarta rodada do NBB.",
+      "corpo": "Paulistas confirmam quarta vitória seguida com autoridade no Henrique Villaboim, enquanto equipe carioca conta com brilho de Thornton no quarto final A manhã de feriado desta segunda-feira (2) foi movimentada por duas partidas válidas pela quarta rodada do NBB. O resultado marca a quarta vitória consecutiva do Pinheiros, que perdeu apenas na estreia e figura na segunda colocação da liga nacional.\n\nO Botafogo iniciou o último quarto com seis pontos de vantagem, mas viu o Brasília reagir e assumir a liderança do placar, abrindo quatro pontos de frente quando restavam somente 33 segundos para o fim. O armador do Botafogo teve atuação de destaque no período final ao anotar 16 pontos na parcial, convertendo os últimos cinco pontos da equipe para confirmar a virada por 77 a 76.",
+      "fonte_publicadora": "Olimpíada Todo Dia",
+      "url_fonte": "https://www.olimpiadatododia.com.br/basquete/771440-pinheiros-botafogo-vitorias-segunda-feira-nbb/",
+      "imagem_url": "https://www.olimpiadatododia.com.br/wp-content/uploads/2026/11/Brasilia-x-Botafogo-NBB-1000x600.jpg",
+      "titulo_fonte": "Pinheiros domina e Botafogo vence por um ponto no NBB",
+      "publicado_em_fonte": "Mon, 02 Nov 2026 17:44:43 GMT",
+      "gerado_em": "2026-11-02T20:14:56+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-03"
+    },
+    {
+      "id": "materia-962ca24f8446",
+      "pilar": "saude",
+      "titulo": "Super El Niño: como o clima severo impacta a saúde do seu rosto",
+      "linha_fina": "Oscilações de temperatura e alta radiação UV comprometem a barreira cutânea e agravam quadros já conhecidos como acne, rosácea e melasma",
+      "titulo_carrossel": "Super El Niño: como o clima severo impacta a saúde do seu rosto",
+      "linha_fina_carrossel": "\"A amplitude térmica faz com que o corpo seja forçado a gastar mais energia para se adaptar à nova temperatura, gerando estresse celular e inflamações\", explica em entrevista à CNN Brasil .",
+      "corpo": "O El Niño , fenômeno climático marcado pelo aquecimento anormal das águas do Oceano Pacífico e apontado por especialistas como um dos mais intensos da história, vai além dos impactos ambientais e climáticos globais. Quando se trata de rosácea , o aumento de temperatura pode desencadear ardor e sensação de rosto quente, além da vermelhidão\", pontua.\n\nA lista de condições afetadas pelo clima severo inclui ainda outras manifestações: Acne: A associação entre suor, atrito, oleosidade e a oclusão dos poros favorece o aparecimento de lesões. Para enfrentar as variações de temperatura impostas pelo El Niño sem comprometer a saúde da pele, as duas especialistas coincidem no principal conselho: evitar excessos e manter a constância nos cuidados.",
+      "fonte_publicadora": "CNN Brasil",
+      "url_fonte": "https://www.cnnbrasil.com.br/style/beleza/super-el-nino-como-o-clima-severo-impacta-a-saude-do-seu-rosto/",
+      "imagem_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/11/cuidados-com-a-pele.jpg?w=1200&h=630&crop=1",
+      "titulo_fonte": "Super El Niño: como o clima severo impacta a saúde do seu rosto | CNN Brasil",
+      "publicado_em_fonte": "Mon, 02 Nov 2026 15:00:49 GMT",
+      "gerado_em": "2026-11-02T20:14:56+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-03"
+    },
     {
       "id": "materia-5bd008266a78",
       "pilar": "saude",
@@ -13,7 +49,7 @@
       "linha_fina": "Dispositivo dispensa exigências cartorárias complexas e busca padronização técnica nos registros hospitalares",
       "titulo_carrossel": "Dia de Finados: Nova Legislação Consolida Direitos de Pacientes e Cuidados",
       "linha_fina_carrossel": "O instrumento prevê validade documental simplificada para a declaração, afastando formalidades cartorárias solenes e ampliando o acesso à população usuária dos serviços públicos e privados.",
-      "corpo": "A sanção da Lei Federal nº 15. 378/2026, que institui o Estatuto dos Direitos dos Pacientes, estabeleceu parâmetros jurídicos formais para assegurar a autonomia individual em decisões de saúde no fim da vida.\n\nA legislação define o instrumento como a declaração escrita sobre os cuidados, procedimentos e terapias aceitos ou recusados pelo cidadão, com cumprimento obrigatório pelas equipes médicas caso o indivíduo perca a capacidade de manifestação lúcida. Os desdobramentos da nova legislação exigem agora a adaptação dos protocolos clínicos e o treinamento de equipes multiprofissionais em hospitais públicos e redes suplementares em todo o país.",
+      "corpo": "A sanção da Lei Federal nº 15. 378/2026, que institui o Estatuto dos Direitos dos Pacientes, estabeleceu parâmetros jurídicos formais para assegurar a autonomia individual em decisões de saúde no fim da vida. A legislação define o instrumento como a declaração escrita sobre os cuidados, procedimentos e terapias aceitos ou recusados pelo cidadão, com cumprimento obrigatório pelas equipes médicas caso o indivíduo perca a capacidade de manifestação lúcida. Os desdobramentos da nova legislação exigem agora a adaptação dos protocolos clínicos e o treinamento de equipes multiprofissionais em hospitais públicos e redes suplementares em todo o país.",
       "fonte_publicadora": "Forbes Brasil",
       "url_fonte": "https://forbes.com.br/geral/2026/11/dia-de-finados-nova-legislacao-consolida-direitos-de-pacientes-e-cuidados-paliativos-no-brasil/",
       "imagem_url": "https://forbes.com.br/wp-content/uploads/2026/11/geral_cemiterio_finados_Agencia_Brasil_02.11.2026-1200x675.jpg",
@@ -22,7 +58,7 @@
       "gerado_em": "2026-11-02T12:24:45+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-03"
+      "validade_ate": "2026-11-02"
     },
     {
       "id": "materia-833c2e64abd3",
@@ -40,7 +76,7 @@
       "gerado_em": "2026-11-02T12:23:00+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-02"
+      "validade_ate": "2026-11-01"
     },
     {
       "id": "materia-c62c3882bad6",
@@ -49,7 +85,7 @@
       "linha_fina": "Corrida do Servidor 2026 no Eixo Monumental: veja os vencedores dos 5 km e 10 km, as vagas e o estande da Copa Feminina de 2027.",
       "titulo_carrossel": "Corrida do Servidor 2026: vencedores dos 5 km e 10 km",
       "linha_fina_carrossel": "Brasília é uma das oito cidades-sede do torneio e receberá sete partidas no Estádio Nacional Mané Garrincha.",
-      "corpo": "A Corrida do Servidor 2026 ocupou o Eixo Monumental na manhã deste domingo (1º/11), com largada em frente ao Palácio do Buriti e 5 mil vagas: 4 mil para servidores públicos do Distrito Federal e mil para a população em geral. A corrida teve apoio do Governo do Distrito Federal (GDF) e do Fundo de Apoio ao Esporte (FAE) e buscou reconhecer o trabalho de quem atua nos serviços públicos.\n\nA servidora Aline Cardoso elogiou a organização e a estrutura de hidratação. A Secretaria de Esporte e Lazer (SEL-DF) montou no evento um espaço sobre a Copa do Mundo Feminina da Fifa de 2027, com ações de divulgação e a distribuição de cerca de mil brindes.\n\nBrasília é uma das oito cidades-sede do torneio e receberá sete partidas no Estádio Nacional Mané Garrincha.",
+      "corpo": "A Corrida do Servidor 2026 ocupou o Eixo Monumental na manhã deste domingo (1º/11), com largada em frente ao Palácio do Buriti e 5 mil vagas: 4 mil para servidores públicos do Distrito Federal e mil para a população em geral. A corrida teve apoio do Governo do Distrito Federal (GDF) e do Fundo de Apoio ao Esporte (FAE) e buscou reconhecer o trabalho de quem atua nos serviços públicos. A servidora Aline Cardoso elogiou a organização e a estrutura de hidratação. A Secretaria de Esporte e Lazer (SEL-DF) montou no evento um espaço sobre a Copa do Mundo Feminina da Fifa de 2027, com ações de divulgação e a distribuição de cerca de mil brindes. Brasília é uma das oito cidades-sede do torneio e receberá sete partidas no Estádio Nacional Mané Garrincha.",
       "fonte_publicadora": "soubrasilia.com",
       "url_fonte": "https://soubrasilia.com/corrida-do-servidor-2026-eixo-monumental-vencedores-5-10-km/",
       "imagem_url": "https://soubrasilia.com/wp-content/uploads/2026/11/corrida-do-servidor-2026-largada-pista.jpg",
@@ -58,7 +94,7 @@
       "gerado_em": "2026-11-02T12:24:45+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-02"
+      "validade_ate": "2026-11-01"
     },
     {
       "id": "materia-19dc61c9bfd3",
@@ -67,7 +103,7 @@
       "linha_fina": "Equipe do Distrito Federal tem três vitórias em quatro jogos e busca, nesta segunda-feira (2/11), ampliar o saldo positivo neste início de temporada",
       "titulo_carrossel": "NBB: Brasília recebe o Botafogo no Ginásio Nilson Nelson",
       "linha_fina_carrossel": "Após início animador de temporada, com três vitórias consecutivas, o Brasília sofreu a primeira derrota no Novo Basquete Brasil e busca se recuperar em casa.",
-      "corpo": "Após início animador de temporada, com três vitórias consecutivas, o Brasília sofreu a primeira derrota no Novo Basquete Brasil e busca se recuperar em casa. Entretanto, a equipe volta à capital federal após duas partidas em Belo Horizonte e tenta reencontrar o caminho dos triunfos diante da torcida brasiliense, no Ginásio Nilson Nelson.\n\nNesta segunda-feira (2/11), às 11h, os comandados de Dedé Barbosa enfrentam o Botafogo. A derrota para o Minas foi o segundo revés do Brasília na temporada.\n\nMesmo com o bom início de temporada e as atuações dos novos reforços, o treinador Dedé Barbosa destacou que o desempenho defensivo da equipe ainda pode melhorar. Por outro lado, o Botafogo também não vem de um bom início no NBB.",
+      "corpo": "Após início animador de temporada, com três vitórias consecutivas, o Brasília sofreu a primeira derrota no Novo Basquete Brasil e busca se recuperar em casa. Entretanto, a equipe volta à capital federal após duas partidas em Belo Horizonte e tenta reencontrar o caminho dos triunfos diante da torcida brasiliense, no Ginásio Nilson Nelson. Nesta segunda-feira (2/11), às 11h, os comandados de Dedé Barbosa enfrentam o Botafogo. A derrota para o Minas foi o segundo revés do Brasília na temporada. Mesmo com o bom início de temporada e as atuações dos novos reforços, o treinador Dedé Barbosa destacou que o desempenho defensivo da equipe ainda pode melhorar. Por outro lado, o Botafogo também não vem de um bom início no NBB.",
       "fonte_publicadora": "Correio Braziliense",
       "url_fonte": "https://www.correiobraziliense.com.br/esportes/2026/11/7531710-nbb-brasilia-recebe-o-botafogo-no-ginasio-nilson-nelson.html",
       "imagem_url": "https://midias.correiobraziliense.com.br/_midias/jpg/2026/11/01/675x450/1_bsb-basquete-68119177.jpg?20261101210246?20261101210246",
@@ -76,79 +112,7 @@
       "gerado_em": "2026-11-02T12:24:45+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-02"
-    },
-    {
-      "id": "materia-8899db782b18",
-      "pilar": "esportes",
-      "titulo": "Corrida do Servidor 2026 reúne milhares no Eixo Monumental - Agita Brasília",
-      "linha_fina": "Competição em Brasília teve percursos variados, atrações musicais e divulgação da Copa do Mundo Feminina de 2027.",
-      "titulo_carrossel": "Corrida do Servidor 2026 reúne milhares no Eixo Monumental - Agita Brasília",
-      "linha_fina_carrossel": "“Essa corrida é uma forma de reconhecer e valorizar aqueles que trabalham diariamente para fazer o Distrito Federal acontecer”, declarou o secretário de Esporte e Lazer do DF, Renato Junqueira.",
-      "corpo": "A Corrida do Servidor 2026 movimentou o Eixo Monumental na manhã de um domingo repleto de esporte, lazer e integração, tendo sua largada posicionada em frente ao Palácio do Buriti. O evento reuniu milhares de participantes em uma celebração voltada à saúde, à qualidade de vida e à valorização dos profissionais que atuam diariamente nos serviços públicos do Distrito Federal. “Essa corrida é uma forma de reconhecer e valorizar aqueles que trabalham diariamente para fazer o Distrito Federal acontecer”, declarou o secretário de Esporte e Lazer do DF, Renato Junqueira. Ver o Eixo Monumental tomado por corredores, famílias e pessoas celebrando juntas mostra a força do esporte e reforça que Brasília é, cada vez mais, a capital do esporte.”",
-      "fonte_publicadora": "Agita Brasília",
-      "url_fonte": "https://agitabrasilia.com/corrida-do-servidor-2026-reune-milhares-de-participantes/",
-      "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/corrida-do-servidor-2026-reune-milhares-de-participantes-1793557475.jpg",
-      "titulo_fonte": "Corrida do Servidor 2026 reúne milhares no Eixo Monumental - Agita Brasília",
-      "publicado_em_fonte": "Sun, 01 Nov 2026 20:05:40 GMT",
-      "gerado_em": "2026-11-02T11:52:32+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-02"
-    },
-    {
-      "id": "materia-11e752a57ff9",
-      "pilar": "lazer",
-      "titulo": "Parque dos Eucaliptos transforma Ceilândia em polo de lazer - Agita Brasília",
-      "linha_fina": "Antiga praça e área escolar se unem em um complexo de 77 mil metros quadrados focado em esporte, educação e segurança pública",
-      "titulo_carrossel": "Parque dos Eucaliptos transforma Ceilândia em polo de lazer - Agita Brasília",
-      "linha_fina_carrossel": "O administrador regional de Ceilândia, Renato Santana, destaca o impacto positivo da abertura desse novo polo de lazer urbano para a comunidade.",
-      "corpo": "A região administrativa de Ceilândia ganha um importante polo de convivência e atividades físicas com a criação do Parque dos Eucaliptos em Ceilândia , estruturado em uma área de aproximadamente 77,8 mil metros quadrados na QNM 14. O administrador regional de Ceilândia, Renato Santana, destaca o impacto positivo da abertura desse novo polo de lazer urbano para a comunidade. “Ceilândia ganha mais um parque urbano. Nós temos a cultura das praças, mas, no caso da Praça dos Eucaliptos, nós convertemos a área em uma unidade de parque urbano no modelo do Parque do Setor O. Então esse parque vai vivenciar o que Ceilândia tem de melhor”, elogiou Clodoaldo, que hoje usa a pista para treinar futuros campeões.",
-      "fonte_publicadora": "Agita Brasília",
-      "url_fonte": "https://agitabrasilia.com/parque-dos-eucaliptos-transforma-espaco-em-ceilandia-e-une-esporte-lazer-e-seguranca-para-a-comunidade/",
-      "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/parque-dos-eucaliptos-transforma-espaco-em-ceilandia-e-une-esporte-lazer-e-seguranca-para-a-comunidade-1793551236.jpg",
-      "titulo_fonte": "Parque dos Eucaliptos transforma Ceilândia em polo de lazer - Agita Brasília",
-      "publicado_em_fonte": "Sun, 01 Nov 2026 17:11:28 GMT",
-      "gerado_em": "2026-11-02T12:03:48+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-02"
-    },
-    {
-      "id": "materia-b62f52944ca9",
-      "pilar": "lazer",
-      "titulo": "Cursos gratuitos de Libras e audiodescrição no DF",
-      "linha_fina": "Inscrições até 6/11 para Audiodescrição Básica, Avançada e Libras para Teatro, grátis e presenciais. Veja datas, locais e requisitos.",
-      "titulo_carrossel": "Cursos gratuitos de Libras e audiodescrição no DF",
-      "linha_fina_carrossel": "Estão abertas até 6 de novembro as inscrições para três cursos gratuitos de acessibilidade cultural no Distrito Federal: Audiodescrição Básica, Audiodescrição Avançada e Libras para Teatro.",
-      "corpo": "Estão abertas até 6 de novembro as inscrições para três cursos gratuitos de acessibilidade cultural no Distrito Federal: Audiodescrição Básica, Audiodescrição Avançada e Libras para Teatro. Os cursos fazem parte do projeto Janelas da Inclusão e contam com recursos do Fundo de Apoio à Cultura (FAC-DF), da Secretaria de Cultura e Economia Criativa (Secec-DF). Quem escolher o avançado ou o de teatro precisa liberar esses dias; os dois cursos usam o mesmo espaço, mas em turnos diferentes, tarde para Libras e noite para audiodescrição. Em outubro, o projeto abriu inscrições para cursos de Libras e audiodescrição para iniciantes, também no Espaço Cultural Renato Russo, como o SouBrasília mostrou em matéria sobre as primeiras turmas do projeto .",
-      "fonte_publicadora": "soubrasilia.com",
-      "url_fonte": "https://soubrasilia.com/libras-teatro-audiodescricao-cursos-gratuitos-inscricoes-6-novembro-2026-df/",
-      "imagem_url": "https://soubrasilia.com/wp-content/uploads/2026/11/curso-libras-audiodescricao-renato-russo-01nov2026.jpg",
-      "titulo_fonte": "Cursos gratuitos de Libras e audiodescrição no DF",
-      "publicado_em_fonte": "Sun, 01 Nov 2026 13:09:42 GMT",
-      "gerado_em": "2026-11-01T16:44:51+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-02"
-    },
-    {
-      "id": "materia-e4c68b71f52b",
-      "pilar": "lazer",
-      "titulo": "O que fazer em Brasília hoje? Veja a programação deste domingo - Agita Brasília",
-      "linha_fina": "Shows, samba, teatro e exposições movimentam Brasília neste 1º de novembro, com atrações gratuitas e opções para toda a família.",
-      "titulo_carrossel": "O que fazer em Brasília hoje? Veja a programação deste domingo - Agita Brasília",
-      "linha_fina_carrossel": "Na véspera do feriado de Finados, a capital oferece alternativas para quem deseja aproveitar o dia em família, sair com os amigos ou conhecer novos espaços culturais.",
-      "corpo": "Quem procura o que fazer em Brasília hoje, domingo (1º de novembro) , encontra uma programação que reúne música ao vivo, espetáculos, exposições e atividades gratuitas em diferentes regiões do Distrito Federal. Para quem prefere aproveitar o domingo ao som de samba e pagode, a agenda também apresenta boas opções. O Clube do Choro de Brasília integra a programação musical deste domingo com encontros entre artistas e instrumentistas da música brasileira. Para conhecer mais atividades culturais, confira também a programação de cinema, teatro e exposições para o feriadão , já publicada pelo Agita Brasília. Além da programação deste domingo, Brasília reúne atrações culturais, gastronômicas e musicais ao longo de todo o mês de novembro.",
-      "fonte_publicadora": "Agita Brasília",
-      "url_fonte": "https://agitabrasilia.com/o-que-fazer-em-brasilia-hoje-veja-a-programacao-deste-domingo/",
-      "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/8v9RF_Sk6XVI6qWihnMyk8FJBEisqk10nRM0AJE14OtBwKaY0TEq83wOgsPmqIYF2iPX3G9nvbti8oRznMeiCUg5-8TEwY4zQ-yON42TVw-2qVZ9-nVQS1PF2mVY_AbkaJHx7gXQOgFh3bl8OicqngMASTswSp1J1HirnMecTZaOf5ig6GdXd-knQbcGHeiu.jpg",
-      "titulo_fonte": "O que fazer em Brasília hoje? Veja a programação deste domingo - Agita Brasília",
-      "publicado_em_fonte": "Sun, 01 Nov 2026 13:06:30 GMT",
-      "gerado_em": "2026-11-01T16:44:51+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-02"
+      "validade_ate": "2026-11-01"
     }
   ]
 }
