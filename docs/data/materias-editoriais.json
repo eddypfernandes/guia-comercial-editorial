@@ -1,11 +1,29 @@
 {
-  "gerado_em": "2026-11-02T20:14:56+00:00",
+  "gerado_em": "2026-11-03T02:53:28+00:00",
   "total_recebidas": 5,
   "total_materias_validas": 6,
-  "respostas_rejeitadas": 3,
+  "respostas_rejeitadas": 2,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-fbce3702a73c",
+      "pilar": "saude",
+      "titulo": "Márcia Goldschmidt desabafa sobre saúde após ser internada: \"Por um triz\"",
+      "linha_fina": "Comunicadora de 64 anos publicou desabafo sobre o peso que mulheres fortes carregam e pediu para que seguidores valorizem a vida",
+      "titulo_carrossel": "Márcia Goldschmidt desabafa sobre saúde após ser internada: \"Por um triz\"",
+      "linha_fina_carrossel": "Logo, ela apareceu em um vídeo para os seguidores e relatou que deve seguir internada por tempo indeterminado .",
+      "corpo": "A apresentadora Márcia Goldschmidt , 64, publicou alguns registros internada em um hospital e preocupou os fãs ao falar de seu estado de saúde. Amo vocês\", escreveu Márcia, sem detalhar o que havia ocorrido.\n\nLogo, ela apareceu em um vídeo para os seguidores e relatou que deve seguir internada por tempo indeterminado . Na legenda, Márcia Goldschmidt ressaltou que os fãs deveriam \"valorizar a vida\" e que, ao se recuperar, daria mais detalhes de seu caso.\n\nA CNN Brasil b uscou a assessoria de Márcia Goldschmidt, mas, até o momento da publicação, não teve resposta. Márcia se tornou popular ao ser apresentadora da TV aberta, passando pelo SBT, TV Gazeta, Band e Multishow, com atrações como \"Márcia\" e \"Mulheres\".",
+      "fonte_publicadora": "CNN Brasil",
+      "url_fonte": "https://www.cnnbrasil.com.br/pop/celebridades/marcia-goldschmidt-desabafa-sobre-saude-apos-ser-internada-por-um-triz/",
+      "imagem_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/11/marcia-goldschmidt.png?w=1200&h=630&crop=1",
+      "titulo_fonte": "Márcia Goldschmidt desabafa sobre saúde após ser internada: \"Por um triz\" | CNN Brasil",
+      "publicado_em_fonte": "Tue, 03 Nov 2026 00:58:38 GMT",
+      "gerado_em": "2026-11-03T02:53:28+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-03"
+    },
     {
       "id": "materia-ffb94fc349af",
       "pilar": "esportes",
@@ -13,7 +31,7 @@
       "linha_fina": "Pinheiros bate Caxias do Sul com folga e Botafogo busca virada na reta final contra o Brasília pela quarta rodada do NBB.",
       "titulo_carrossel": "Pinheiros domina e Botafogo vence por um ponto no NBB",
       "linha_fina_carrossel": "Pinheiros bate Caxias do Sul com folga e Botafogo busca virada na reta final contra o Brasília pela quarta rodada do NBB.",
-      "corpo": "Paulistas confirmam quarta vitória seguida com autoridade no Henrique Villaboim, enquanto equipe carioca conta com brilho de Thornton no quarto final A manhã de feriado desta segunda-feira (2) foi movimentada por duas partidas válidas pela quarta rodada do NBB. O resultado marca a quarta vitória consecutiva do Pinheiros, que perdeu apenas na estreia e figura na segunda colocação da liga nacional.\n\nO Botafogo iniciou o último quarto com seis pontos de vantagem, mas viu o Brasília reagir e assumir a liderança do placar, abrindo quatro pontos de frente quando restavam somente 33 segundos para o fim. O armador do Botafogo teve atuação de destaque no período final ao anotar 16 pontos na parcial, convertendo os últimos cinco pontos da equipe para confirmar a virada por 77 a 76.",
+      "corpo": "Paulistas confirmam quarta vitória seguida com autoridade no Henrique Villaboim, enquanto equipe carioca conta com brilho de Thornton no quarto final A manhã de feriado desta segunda-feira (2) foi movimentada por duas partidas válidas pela quarta rodada do NBB. O resultado marca a quarta vitória consecutiva do Pinheiros, que perdeu apenas na estreia e figura na segunda colocação da liga nacional. O Botafogo iniciou o último quarto com seis pontos de vantagem, mas viu o Brasília reagir e assumir a liderança do placar, abrindo quatro pontos de frente quando restavam somente 33 segundos para o fim. O armador do Botafogo teve atuação de destaque no período final ao anotar 16 pontos na parcial, convertendo os últimos cinco pontos da equipe para confirmar a virada por 77 a 76.",
       "fonte_publicadora": "Olimpíada Todo Dia",
       "url_fonte": "https://www.olimpiadatododia.com.br/basquete/771440-pinheiros-botafogo-vitorias-segunda-feira-nbb/",
       "imagem_url": "https://www.olimpiadatododia.com.br/wp-content/uploads/2026/11/Brasilia-x-Botafogo-NBB-1000x600.jpg",
@@ -22,7 +40,7 @@
       "gerado_em": "2026-11-02T20:14:56+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-03"
+      "validade_ate": "2026-11-02"
     },
     {
       "id": "materia-962ca24f8446",
@@ -31,13 +49,31 @@
       "linha_fina": "Oscilações de temperatura e alta radiação UV comprometem a barreira cutânea e agravam quadros já conhecidos como acne, rosácea e melasma",
       "titulo_carrossel": "Super El Niño: como o clima severo impacta a saúde do seu rosto",
       "linha_fina_carrossel": "\"A amplitude térmica faz com que o corpo seja forçado a gastar mais energia para se adaptar à nova temperatura, gerando estresse celular e inflamações\", explica em entrevista à CNN Brasil .",
-      "corpo": "O El Niño , fenômeno climático marcado pelo aquecimento anormal das águas do Oceano Pacífico e apontado por especialistas como um dos mais intensos da história, vai além dos impactos ambientais e climáticos globais. Quando se trata de rosácea , o aumento de temperatura pode desencadear ardor e sensação de rosto quente, além da vermelhidão\", pontua.\n\nA lista de condições afetadas pelo clima severo inclui ainda outras manifestações: Acne: A associação entre suor, atrito, oleosidade e a oclusão dos poros favorece o aparecimento de lesões. Para enfrentar as variações de temperatura impostas pelo El Niño sem comprometer a saúde da pele, as duas especialistas coincidem no principal conselho: evitar excessos e manter a constância nos cuidados.",
+      "corpo": "O El Niño , fenômeno climático marcado pelo aquecimento anormal das águas do Oceano Pacífico e apontado por especialistas como um dos mais intensos da história, vai além dos impactos ambientais e climáticos globais. Quando se trata de rosácea , o aumento de temperatura pode desencadear ardor e sensação de rosto quente, além da vermelhidão\", pontua. A lista de condições afetadas pelo clima severo inclui ainda outras manifestações: Acne: A associação entre suor, atrito, oleosidade e a oclusão dos poros favorece o aparecimento de lesões. Para enfrentar as variações de temperatura impostas pelo El Niño sem comprometer a saúde da pele, as duas especialistas coincidem no principal conselho: evitar excessos e manter a constância nos cuidados.",
       "fonte_publicadora": "CNN Brasil",
       "url_fonte": "https://www.cnnbrasil.com.br/style/beleza/super-el-nino-como-o-clima-severo-impacta-a-saude-do-seu-rosto/",
       "imagem_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/11/cuidados-com-a-pele.jpg?w=1200&h=630&crop=1",
       "titulo_fonte": "Super El Niño: como o clima severo impacta a saúde do seu rosto | CNN Brasil",
       "publicado_em_fonte": "Mon, 02 Nov 2026 15:00:49 GMT",
       "gerado_em": "2026-11-02T20:14:56+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-02"
+    },
+    {
+      "id": "materia-137f94ff51f2",
+      "pilar": "esportes",
+      "titulo": "Ceisc União Corinthians concentra atenções no Brasília",
+      "linha_fina": "Ceisc União Corinthians volta as atenções para o próximo duelo em casa. A partida contra o Brasília no Arnão será na próxima segunda",
+      "titulo_carrossel": "Ceisc União Corinthians concentra atenções no Brasília",
+      "linha_fina_carrossel": "Não tem uma conta?",
+      "corpo": "Não tem uma conta? A partida contra o Brasília no Arnão será na próxima segunda-feira, 6, às 19h30.\n\nCom duas vitórias e três derrotas, o UniCo é 11º por aproveitamento na tabela do NBB. O comentarista da Rádio Gazeta FM 107,9 , Alexandre Cruxen, elogiou a postura da equipe diante do Flamengo.\n\nSouberam buscar o jogo e passaram à frente duas vezes. O Flamengo se impôs no último quarto, mas o placar não reflete o que foi o jogo.\n\nSe tivesse jogado da mesma forma contra o Pinheiros, poderia ter vencido”, analisou. “Vai ter o acréscimo de um armador e se buscar mais um pivô, vai melhorar ainda mais”, concluiu.",
+      "fonte_publicadora": "GAZ",
+      "url_fonte": "https://www.gaz.com.br/ceisc-uniao-corinthians-concentra-atencoes-no-brasilia/",
+      "imagem_url": "https://www.gaz.com.br/uploads/2026/11/UniCo_Flamengo_PaulaReis.jpg",
+      "titulo_fonte": "Ceisc União Corinthians concentra atenções no Brasília",
+      "publicado_em_fonte": "Mon, 02 Nov 2026 14:53:00 GMT",
+      "gerado_em": "2026-11-03T02:53:28+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-03"
@@ -58,7 +94,7 @@
       "gerado_em": "2026-11-02T12:24:45+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-02"
+      "validade_ate": "2026-11-01"
     },
     {
       "id": "materia-833c2e64abd3",
@@ -76,43 +112,7 @@
       "gerado_em": "2026-11-02T12:23:00+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-01"
-    },
-    {
-      "id": "materia-c62c3882bad6",
-      "pilar": "lazer",
-      "titulo": "Corrida do Servidor 2026: vencedores dos 5 km e 10 km",
-      "linha_fina": "Corrida do Servidor 2026 no Eixo Monumental: veja os vencedores dos 5 km e 10 km, as vagas e o estande da Copa Feminina de 2027.",
-      "titulo_carrossel": "Corrida do Servidor 2026: vencedores dos 5 km e 10 km",
-      "linha_fina_carrossel": "Brasília é uma das oito cidades-sede do torneio e receberá sete partidas no Estádio Nacional Mané Garrincha.",
-      "corpo": "A Corrida do Servidor 2026 ocupou o Eixo Monumental na manhã deste domingo (1º/11), com largada em frente ao Palácio do Buriti e 5 mil vagas: 4 mil para servidores públicos do Distrito Federal e mil para a população em geral. A corrida teve apoio do Governo do Distrito Federal (GDF) e do Fundo de Apoio ao Esporte (FAE) e buscou reconhecer o trabalho de quem atua nos serviços públicos. A servidora Aline Cardoso elogiou a organização e a estrutura de hidratação. A Secretaria de Esporte e Lazer (SEL-DF) montou no evento um espaço sobre a Copa do Mundo Feminina da Fifa de 2027, com ações de divulgação e a distribuição de cerca de mil brindes. Brasília é uma das oito cidades-sede do torneio e receberá sete partidas no Estádio Nacional Mané Garrincha.",
-      "fonte_publicadora": "soubrasilia.com",
-      "url_fonte": "https://soubrasilia.com/corrida-do-servidor-2026-eixo-monumental-vencedores-5-10-km/",
-      "imagem_url": "https://soubrasilia.com/wp-content/uploads/2026/11/corrida-do-servidor-2026-largada-pista.jpg",
-      "titulo_fonte": "Corrida do Servidor 2026: vencedores dos 5 km e 10 km",
-      "publicado_em_fonte": "Mon, 02 Nov 2026 00:37:48 GMT",
-      "gerado_em": "2026-11-02T12:24:45+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-01"
-    },
-    {
-      "id": "materia-19dc61c9bfd3",
-      "pilar": "esportes",
-      "titulo": "NBB: Brasília recebe o Botafogo no Ginásio Nilson Nelson",
-      "linha_fina": "Equipe do Distrito Federal tem três vitórias em quatro jogos e busca, nesta segunda-feira (2/11), ampliar o saldo positivo neste início de temporada",
-      "titulo_carrossel": "NBB: Brasília recebe o Botafogo no Ginásio Nilson Nelson",
-      "linha_fina_carrossel": "Após início animador de temporada, com três vitórias consecutivas, o Brasília sofreu a primeira derrota no Novo Basquete Brasil e busca se recuperar em casa.",
-      "corpo": "Após início animador de temporada, com três vitórias consecutivas, o Brasília sofreu a primeira derrota no Novo Basquete Brasil e busca se recuperar em casa. Entretanto, a equipe volta à capital federal após duas partidas em Belo Horizonte e tenta reencontrar o caminho dos triunfos diante da torcida brasiliense, no Ginásio Nilson Nelson. Nesta segunda-feira (2/11), às 11h, os comandados de Dedé Barbosa enfrentam o Botafogo. A derrota para o Minas foi o segundo revés do Brasília na temporada. Mesmo com o bom início de temporada e as atuações dos novos reforços, o treinador Dedé Barbosa destacou que o desempenho defensivo da equipe ainda pode melhorar. Por outro lado, o Botafogo também não vem de um bom início no NBB.",
-      "fonte_publicadora": "Correio Braziliense",
-      "url_fonte": "https://www.correiobraziliense.com.br/esportes/2026/11/7531710-nbb-brasilia-recebe-o-botafogo-no-ginasio-nilson-nelson.html",
-      "imagem_url": "https://midias.correiobraziliense.com.br/_midias/jpg/2026/11/01/675x450/1_bsb-basquete-68119177.jpg?20261101210246?20261101210246",
-      "titulo_fonte": "NBB: Brasília recebe o Botafogo no Ginásio Nilson Nelson",
-      "publicado_em_fonte": "Mon, 02 Nov 2026 00:04:00 GMT",
-      "gerado_em": "2026-11-02T12:24:45+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-01"
+      "validade_ate": "2026-10-31"
     }
   ]
 }
