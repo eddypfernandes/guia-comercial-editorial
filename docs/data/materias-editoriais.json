@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-07T00:50:37+00:00",
+  "gerado_em": "2026-11-07T16:18:09+00:00",
   "total_recebidas": 5,
   "total_materias_validas": 6,
   "respostas_rejeitadas": 3,
@@ -7,13 +7,49 @@
   "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
   "materias": [
     {
+      "id": "materia-d27041adf37f",
+      "pilar": "saude",
+      "titulo": "Mobilização de Vacinação Contra Sarampo na Tríplice Fronteira do Brasil",
+      "linha_fina": "Neste sábado (7), municípios da tríplice fronteira entre Brasil, Peru e Colômbia participam de uma ação conjunta de vacinação contra o sarampo. No Brasil, as cidades envolvidas são Tabatinga (AM), Benjamin Constant (AM), São Paulo de Olivença (AM) e Atalaia do Norte (AM). O Ministério da Saúde, em colaboração com os governos locais, anunciou que […]",
+      "titulo_carrossel": "Mobilização de Vacinação Contra Sarampo na Tríplice Fronteira do Brasil",
+      "linha_fina_carrossel": "Neste sábado (7), municípios da tríplice fronteira entre Brasil, Peru e Colômbia participam de uma ação conjunta de vacinação contra o sarampo.",
+      "corpo": "Editorias Neste sábado (7), municípios da tríplice fronteira entre Brasil, Peru e Colômbia participam de uma ação conjunta de vacinação contra o sarampo. Para fortalecer a resposta regional, o Ministério da Saúde enviou 500 mil doses da vacina tríplice viral ao Peru, que enfrenta mais de 2 mil casos em 2026, sendo um dos países com mais notificações nas Américas.\n\nDos 65 casos confirmados em 2026, 21 ocorreram no Amazonas, em municípios na faixa de fronteira com o Peru e a Colômbia. Durante 2025, a cobertura vacinal contra o sarampo no Amazonas foi de 89,7% para a primeira dose e 76% para a segunda.\n\nbr/saude/noticia/2026-11/municipios-da-triplice-fronteira-recebem-mobilizacao-contra-o-sarampo Administrador Nosso site utiliza cookies para melhorar a experiência do usuário.",
+      "fonte_publicadora": "Metrô News Jornal",
+      "url_fonte": "https://metronews.com.br/mobilizacao-de-vacinacao-contra-sarampo-na-triplice-fronteira-do-brasil/",
+      "imagem_url": "https://metronews.com.br/wp-content/uploads/2025/09/imagem-padrao-post.png",
+      "titulo_fonte": "Mobilização de Vacinação Contra Sarampo na Tríplice Fronteira do Brasil",
+      "publicado_em_fonte": "Sat, 07 Nov 2026 16:03:00 GMT",
+      "gerado_em": "2026-11-07T16:18:09+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-08"
+    },
+    {
+      "id": "materia-39072bd24f91",
+      "pilar": "esportes",
+      "titulo": "Brasília Vôlei encara Praia Clube com duelo de destaque no passe",
+      "linha_fina": "Equipe candanga recebe o atual campeão neste sábado (18h30), na 708/908 Sul, em confronto marcado pelo embate estatístico entre a ponteira Milca e a líbero medalhista olímpica Natinha",
+      "titulo_carrossel": "Brasília Vôlei encara Praia Clube com duelo de destaque no passe",
+      "linha_fina_carrossel": "A equipe do Distrito Federal recebe o atual campeão Praia Clube.",
+      "corpo": "O Ginásio da Federação de Vôlei do Distrito Federal (FVDF), na 708/908 Sul, será palco neste sábado, às 18h30, de um dos desafios mais exigentes do Brasília Vôlei na primeira fase da Superliga Feminina. A equipe do Distrito Federal recebe o atual campeão Praia Clube.\n\nComo se não bastasse a Natinha e o fato de o Praia Clube ser o atual campeão, eles trouxeram de volta a Sofya Kuznetsov, russa\"\" Aguinado Santos. técnico do Brasília Vôlei, em entrevista ao Correio Pelo Brasília Vôlei, o destaque no fundamento é a ponteira Milca.\n\nO duelo no fundamento passe entre Natinha e Milca promete ser o termômetro de uma partida na qual o controle da primeira bola definirá quem dita o ritmo do jogo na Asa Sul.",
+      "fonte_publicadora": "Correio Braziliense",
+      "url_fonte": "https://www.correiobraziliense.com.br/esportes/2026/11/7534809-brasilia-volei-encara-praia-clube-com-duelo-de-destaque-no-passe.html",
+      "imagem_url": "https://midias.correiobraziliense.com.br/_midias/jpg/2026/11/06/675x450/1_brasilia-volei--3--68165502.jpeg?20261106223548?20261106223548",
+      "titulo_fonte": "Brasília Vôlei encara Praia Clube com duelo de destaque no passe",
+      "publicado_em_fonte": "Sat, 07 Nov 2026 01:40:55 GMT",
+      "gerado_em": "2026-11-07T16:18:09+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-07"
+    },
+    {
       "id": "materia-15ab3de8498a",
       "pilar": "saude",
       "titulo": "Fórum debaterá prevenção e combate a incêndios florestais no DF - Agita Brasília",
       "linha_fina": "Encontro marcado para os dias 23 e 24 de novembro na Escola de Governo vai apresentar o balanço de 2026 e planejar ações para o próximo ano.",
       "titulo_carrossel": "Fórum debaterá prevenção e combate a incêndios florestais no DF - Agita Brasília",
       "linha_fina_carrossel": "Para a governadora Celina Leão, o evento reforça o papel de cada cidadão na proteção do bioma local.",
-      "corpo": "A Secretaria do Meio Ambiente (Sema-DF) vai promover, entre os dias 23 e 24 de novembro, o Fórum Distrital de Prevenção e Combate aos Incêndios Florestais 2026. O encontro atende ao Decreto nº 37.\n\nAs conclusões extraídas dos debates servem como alicerce para o plano de trabalho do Grupo Executivo do Sistema Distrital de Prevenção e Combate aos Incêndios Florestais no ano seguinte. “O Fórum é um espaço para ouvir, compartilhar informações e aprender com a experiência de cada instituição que atua na prevenção e no combate aos incêndios.\n\nEm seguida, o Módulo IV expõe as ações operacionais de prevenção e combate executadas no território brasiliense, contando com o Corpo de Bombeiros Militar (CBMDF), Brasília Ambiental, Jardim Botânico de Brasília (JBB), APA do Gama e Cabeça de Veado, além da Sema.",
+      "corpo": "A Secretaria do Meio Ambiente (Sema-DF) vai promover, entre os dias 23 e 24 de novembro, o Fórum Distrital de Prevenção e Combate aos Incêndios Florestais 2026. O encontro atende ao Decreto nº 37. As conclusões extraídas dos debates servem como alicerce para o plano de trabalho do Grupo Executivo do Sistema Distrital de Prevenção e Combate aos Incêndios Florestais no ano seguinte. “O Fórum é um espaço para ouvir, compartilhar informações e aprender com a experiência de cada instituição que atua na prevenção e no combate aos incêndios. Em seguida, o Módulo IV expõe as ações operacionais de prevenção e combate executadas no território brasiliense, contando com o Corpo de Bombeiros Militar (CBMDF), Brasília Ambiental, Jardim Botânico de Brasília (JBB), APA do Gama e Cabeça de Veado, além da Sema.",
       "fonte_publicadora": "Agita Brasília",
       "url_fonte": "https://agitabrasilia.com/forum-reune-sociedade-e-instituicoes-para-debater-prevencao-e-combate-a-incendios-florestais-no-df/",
       "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/forum-reune-sociedade-e-instituicoes-para-debater-prevencao-e-combate-a-incendios-florestais-no-df-1794002069.jpg",
@@ -31,7 +67,7 @@
       "linha_fina": "Capacita Bancorbrás premia iniciativas de turismo sustentável no Centro-Oeste, a iniciativa buscou fortalecer a atuação",
       "titulo_carrossel": "Capacita Bancorbrás premia iniciativas de turismo sustentável no Centro-Oeste",
       "linha_fina_carrossel": "A fase também marcou o início da aplicação dos projetos selecionados, com apoio financeiro e acompanhamento técnico.",
-      "corpo": "@2022 - All Right Reserved. Designed and Developed by PenciDesign Com o objetivo de capacitar guias de turismo e profissionais do setor na região Centro-Oeste, os Institutos Bancorbrás e Civicus promoveram, em 2025, o Capacita Bancorbrás.\n\nJá as iniciativas classificadas entre o 4º e o 7º lugar receberam R$ 2 mil cada. Após a premiação, os finalistas seguem para a etapa de execução dos projetos, com a aplicação dos recursos recebidos e suporte e acompanhamento técnico contínuo da Civicus e do Instituto Bancorbrás ao longo de um ano.\n\nA iniciativa foi destinada exclusivamente aos profissionais que participaram do curso de turismo sustentável realizado em 2025 e contou com o patrocínio da Operadora Bancorbrás e a execução do Instituto Civicus.",
+      "corpo": "@2022 - All Right Reserved. Designed and Developed by PenciDesign Com o objetivo de capacitar guias de turismo e profissionais do setor na região Centro-Oeste, os Institutos Bancorbrás e Civicus promoveram, em 2025, o Capacita Bancorbrás. Já as iniciativas classificadas entre o 4º e o 7º lugar receberam R$ 2 mil cada. Após a premiação, os finalistas seguem para a etapa de execução dos projetos, com a aplicação dos recursos recebidos e suporte e acompanhamento técnico contínuo da Civicus e do Instituto Bancorbrás ao longo de um ano. A iniciativa foi destinada exclusivamente aos profissionais que participaram do curso de turismo sustentável realizado em 2025 e contou com o patrocínio da Operadora Bancorbrás e a execução do Instituto Civicus.",
       "fonte_publicadora": "Brasília ETC",
       "url_fonte": "https://brasiliaetc.com.br/capacita-bancorbras-premia-iniciativas-de-turismo-sustentavel-no-centro-oeste/",
       "imagem_url": "https://brasiliaetc.com.br/wp-content/uploads/2026/11/Foto-divulgacao-98.jpg",
@@ -40,7 +76,7 @@
       "gerado_em": "2026-11-07T00:50:37+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-07"
+      "validade_ate": "2026-11-06"
     },
     {
       "id": "materia-2adcd9b06597",
@@ -58,7 +94,7 @@
       "gerado_em": "2026-11-06T17:23:25+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-06"
+      "validade_ate": "2026-11-05"
     },
     {
       "id": "materia-ab34c52a5e83",
@@ -76,43 +112,7 @@
       "gerado_em": "2026-11-06T17:23:25+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-06"
-    },
-    {
-      "id": "materia-2d3740962bf7",
-      "pilar": "lazer",
-      "titulo": "Secretaria de Cultura do DF publica resultado preliminar do edital FAC I - Diário Goianiense",
-      "linha_fina": "Relação dos contemplados na etapa inicial foi oficializada no Diário Oficial do Distrito Federal nesta sexta-feira.",
-      "titulo_carrossel": "Secretaria de Cultura do DF publica resultado preliminar do edital FAC I",
-      "linha_fina_carrossel": "Relação dos contemplados na etapa inicial foi oficializada no Diário Oficial do Distrito Federal nesta sexta-feira.",
-      "corpo": "Aguarde, carregando... Cidades Adicione nosso site às suas fontes preferidas para acompanhar nossas notícias. 📰 A Secretaria de Cultura do Distrito Federal divulgou o resultado preliminar do FAC I nesta sexta-feira (6/11). A listagem traz a classificação inicial dos projetos inscritos na seleção pública. A consulta completa da ata foi disponibilizada na edição do Diário Oficial do Distrito Federal (DODF), permitindo que os proponentes verifiquem a situação de suas propostas. Leia também Tentativa de feminicídio: lutador agride mulher com 35 golpes em elevador Maycon Douglas é preso em flagrante com MD, 34 munições e kit rajada Corpo de homem desaparecido no Entorno é encontrado no Lago Paranoá Para comentar realize o login em sua conta!",
-      "fonte_publicadora": "Diário Goianiense",
-      "url_fonte": "https://www.diariogoianiense.com.br/noticia/secretaria-de-cultura-do-df-publica-resultado-preliminar-do-edital-fac-i",
-      "imagem_url": "https://www.diariogoianiense.com.br/uploads/images/2026/11/secretaria-de-cultura-do-df-divulga-resultado-preliminar-do-fac-i-confira1793968518.jpg",
-      "titulo_fonte": "Secretaria de Cultura do DF publica resultado preliminar do edital FAC I - Diário Goianiense",
-      "publicado_em_fonte": "Fri, 06 Nov 2026 12:32:00 GMT",
-      "gerado_em": "2026-11-06T17:23:25+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-06"
-    },
-    {
-      "id": "materia-c0f3c2bc409d",
-      "pilar": "fitness",
-      "titulo": "Academia Nacional de Engenharia visita polo da Embraer e projeta estratégias para superar barreiras tecnológicas industriais - Brasil Inovador",
-      "linha_fina": "A presidência da Academia Nacional de Engenharia realizou uma visita institucional ao Centro de Engenharia e Tecnologia da Embraer, em Florianópolis (SC), com",
-      "titulo_carrossel": "Academia Nacional de Engenharia visita polo da Embraer e projeta estratégias",
-      "linha_fina_carrossel": "A entidade sustenta que o contato direto com essas divisões técnicas reforça a necessidade de criar pontes entre a formulação teórica das academias e as exigências regulatórias do comércio exterior.",
-      "corpo": "A presidência da Academia Nacional de Engenharia realizou uma visita institucional ao Centro de Engenharia e Tecnologia da Embraer , em Florianópolis (SC), com o objetivo de alinhar discussões sobre produtividade, soberania tecnológica e capacitação profissional à realidade fabril de fronteira. Segundo informações divulgadas pela Academia Nacional de Engenharia (ANE), a comitiva foi liderada pelo presidente da entidade, Mário Menel , acompanhado pelo coordenador do Capítulo Santa Catarina, Sergio Luiz Gargioni , e pelo diretor institucional e engenheiro aeronáutico, Emilio Matsuo . A visita antecede a realização do Seminário ANE 2026 — O Futuro da Engenharia no Brasil , promovido nos dias 5 e 6 de novembro de 2026 na sede da Federação das Indústrias do Estado de Santa Catarina (FIESC), na capital catarinense.",
-      "fonte_publicadora": "Brasil Inovador",
-      "url_fonte": "https://brasilinovador.com.br/academia-nacional-de-engenharia-visita-polo-da-embraer-e-projeta-estrategias-para-superar-barreiras-tecnologicas-industriais/",
-      "imagem_url": "https://brasilinovador.com.br/wp-content/uploads/2026/09/brasil-inovador-11.jpg",
-      "titulo_fonte": "Academia Nacional de Engenharia visita polo da Embraer e projeta estratégias para superar barreiras tecnológicas industriais - Brasil Inovador",
-      "publicado_em_fonte": "Fri, 06 Nov 2026 07:55:07 GMT",
-      "gerado_em": "2026-11-06T17:23:25+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-06"
+      "validade_ate": "2026-11-05"
     }
   ]
 }
