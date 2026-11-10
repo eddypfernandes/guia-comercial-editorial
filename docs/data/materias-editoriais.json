@@ -1,11 +1,65 @@
 {
-  "gerado_em": "2026-11-09T20:38:55+00:00",
+  "gerado_em": "2026-11-10T03:25:00+00:00",
   "total_recebidas": 5,
-  "total_materias_validas": 7,
-  "respostas_rejeitadas": 1,
+  "total_materias_validas": 9,
+  "respostas_rejeitadas": 2,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-0518da6f9331",
+      "pilar": "esportes",
+      "titulo": "Brasília Basquete perde para União Corinthians em partida equilibrada",
+      "linha_fina": "Brasília Basquete foi derrotado pelo União Corinthians por 70 a 61, marcando sua quarta derrota no NBB.",
+      "titulo_carrossel": "Brasília Basquete perde para União Corinthians em partida equilibrada",
+      "linha_fina_carrossel": "Brasília Basquete foi derrotado pelo União Corinthians por 70 a 61, marcando sua quarta derrota no NBB.",
+      "corpo": "Na última segunda-feira (9/11), o Brasília Basquete enfrentou o União Corinthians em uma competição acirrada, mas acabou sendo derrotado por 70 a 61. O União Corinthians rapidamente abriu vantagem, com uma run de 10-0 nos primeiros minutos, situando o placar em 16 a 6.\n\nA equipe brasiliense continuou a se esforçar e, embora o quarto tenha terminado 19 a 13 a favor do União Corinthians, ainda era possível ver que o time mantinha-se próximo no placar, encerrando a primeira metade da partida com 40 a 33 para os visitantes. Após essa partida, o Brasília Basquete já se prepara para o próximo desafio na competição, que envolve uma viagem para o Sul-Americano.\n\nA jornada no NBB continua, e a torcida aposta na superação após essa derrota.",
+      "fonte_publicadora": "Diário do Estado",
+      "url_fonte": "https://diariodoestadogo.com.br/brasilia-basquete-perde-para-uniao-corinthians-em-partida-equilibrada/",
+      "imagem_url": "https://diariodoestadogo.com.br/wp-content/uploads/2026/11/brasilia-basquete-perde-para-uniao-corinthians-em-partida-equilibrada.webp",
+      "titulo_fonte": "Brasília Basquete perde para União Corinthians em partida equilibrada",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 02:04:46 GMT",
+      "gerado_em": "2026-11-10T03:25:00+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-10"
+    },
+    {
+      "id": "materia-7a8d79adc6b2",
+      "pilar": "lazer",
+      "titulo": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
+      "linha_fina": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital.",
+      "titulo_carrossel": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
+      "linha_fina_carrossel": "A proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop.",
+      "corpo": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital. A capital federal se prepara para sediar a terceira edição do Space Today Experience , um grande encontro que une ciência, tecnologia e entretenimento.\n\nA proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop. Abaixo estão listadas as principais informações práticas para quem deseja participar da programação oficial: Data: 19 a 22 de novembro de 2026 Local: Pavilhão do Parque da Cidade, Brasília (DF) Entrada: Gratuita, mediante retirada prévia pelo Sympla Condição de acesso: Apresentação do ingresso mais 1 kg de alimento não perecível ou um item de lixo eletrônico.",
+      "fonte_publicadora": "Agita Brasília",
+      "url_fonte": "https://agitabrasilia.com/evento-gratuito-em-brasilia-tera-concursos-de-cosplay-games-e-atracoes-interativas/",
+      "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/evento-gratuito-em-brasilia-tera-concursos-de-cosplay-games-e-atracoes-interativas-1794275283.jpg",
+      "titulo_fonte": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 01:48:08 GMT",
+      "gerado_em": "2026-11-10T03:25:00+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-22"
+    },
+    {
+      "id": "materia-fba596dd0e7b",
+      "pilar": "saude",
+      "titulo": "Bruce Willis: sinais de demência e cuidados no Brasil",
+      "linha_fina": "Entenda os sinais de demência e veja orientações da OMS e do SUS para prevenir riscos e apoiar famílias brasileiras.",
+      "titulo_carrossel": "Bruce Willis: sinais de demência e cuidados no Brasil",
+      "linha_fina_carrossel": "Em fevereiro de 2023, a família anunciou um diagnóstico mais específico, a demência frontotemporal (DFT).",
+      "corpo": "O diagnóstico de demência frontotemporal de Bruce Willis voltou a chamar atenção para uma preocupação que também atinge famílias brasileiras: como reconhecer alterações persistentes na fala, no comportamento e na memória sem confundi-las com o envelhecimento normal? Impulsividade incomum, perda de iniciativa, mudanças no julgamento e comportamentos muito diferentes dos habituais podem ser sinais de alerta em algumas formas de demência frontotemporal.\n\nA situação de Bruce Willis, cujo diagnóstico foi comunicado publicamente pela família em 2023, reforça uma discussão que vai além da vida de uma celebridade: alterações persistentes de linguagem, comportamento e memória merecem atenção, enquanto prevenção baseada em evidências e apoio às pessoas cuidadoras precisam fazer parte da rotina de saúde no Brasil.",
+      "fonte_publicadora": "capixabadagema.com.br",
+      "url_fonte": "https://capixabadagema.com.br/bruce-willis-sinais-demencia-prevencao-brasil/",
+      "imagem_url": "https://capixabadagema.com.br/wp-content/uploads/2026/11/Bruce-Willis_-sinais-de-demencia-e-cuidados-no-Brasil.webp",
+      "titulo_fonte": "Bruce Willis: sinais de demência e cuidados no Brasil",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 00:47:20 GMT",
+      "gerado_em": "2026-11-10T03:25:00+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-10"
+    },
     {
       "id": "materia-b661f78839f3",
       "pilar": "saude",
@@ -13,7 +67,7 @@
       "linha_fina": "Uma pesquisa realizada pelo A.C.Camargo Cancer Center, em parceria com a Nexus, Pesquisa e Inteligência de Dados, revelou que, em 2026, 56% dos homens entrevistados afirmaram não saber como prevenir o câncer de próstata. Esse resultado representa um aumento de 12 pontos percentuais em relação a 2024, quando 44% dos…",
       "titulo_carrossel": "Prevenção ao câncer de próstata cai no Brasil, aponta pesquisa - Notícia Toda",
       "linha_fina_carrossel": "Camargo Cancer Center, em parceria com a Nexus, Pesquisa e Inteligência de Dados, revelou que, em 2026, 56% dos homens entrevistados afirmaram não saber como prevenir o câncer de próstata.",
-      "corpo": "Compartilhe Uma pesquisa realizada pelo A. Camargo Cancer Center, em parceria com a Nexus, Pesquisa e Inteligência de Dados, revelou que, em 2026, 56% dos homens entrevistados afirmaram não saber como prevenir o câncer de próstata.\n\nPor outro lado, aqueles que afirmam saber “mais ou menos” diminuíram de 17% para 8%. Dentre os brasileiros de 16 a 24 anos, 71% disseram não saber como prevenir o câncer de próstata.\n\nA pesquisa foi divulgada durante o Novembro Azul, um mês dedicado à conscientização sobre a saúde do homem, com foco na prevenção e no diagnóstico precoce do câncer de próstata. O levantamento também apontou uma queda na intenção de se submeter ao exame de toque, utilizado para o diagnóstico precoce do câncer de próstata.",
+      "corpo": "Compartilhe Uma pesquisa realizada pelo A. Camargo Cancer Center, em parceria com a Nexus, Pesquisa e Inteligência de Dados, revelou que, em 2026, 56% dos homens entrevistados afirmaram não saber como prevenir o câncer de próstata. Por outro lado, aqueles que afirmam saber “mais ou menos” diminuíram de 17% para 8%. Dentre os brasileiros de 16 a 24 anos, 71% disseram não saber como prevenir o câncer de próstata. A pesquisa foi divulgada durante o Novembro Azul, um mês dedicado à conscientização sobre a saúde do homem, com foco na prevenção e no diagnóstico precoce do câncer de próstata. O levantamento também apontou uma queda na intenção de se submeter ao exame de toque, utilizado para o diagnóstico precoce do câncer de próstata.",
       "fonte_publicadora": "Notícia Toda Hora",
       "url_fonte": "https://noticiatodahora.com.br/prevencao-ao-cancer-de-prostata-cai-no-brasil-aponta-pesquisa/",
       "imagem_url": "https://noticiatodahora.com.br/wp-content/uploads/2026/11/imagem-62.webp",
@@ -22,7 +76,7 @@
       "gerado_em": "2026-11-09T20:38:55+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-09"
     },
     {
       "id": "materia-87941ca4bb6e",
@@ -31,7 +85,7 @@
       "linha_fina": "Pesquisa mostra aumento de 12 pontos no desconhecimento sobre prevenção. Leia mais na Tribuna do Paraná",
       "titulo_carrossel": "Desconhecimento sobre câncer de próstata sobe para 56% no Brasil",
       "linha_fina_carrossel": "Pesquisa mostra aumento de 12 pontos no desconhecimento sobre prevenção.",
-      "corpo": "Um levantamento realizado pelo A. Camargo Cancer Center em parceria com a Nexus mostrou que 56% dos homens brasileiros afirmam não saber como prevenir o câncer de próstata em 2026.\n\nA parcela dos homens que dizem saber como prevenir o câncer de próstata passou de 36% para 35% entre 2024 e 2026. No interior do país, o percentual de desconhecimento chega a 58%.\n\nO levantamento também identificou queda na intenção de fazer o exame de toque, utilizado para diagnóstico precoce do câncer de próstata. O câncer de próstata é o tipo mais incidente entre os homens no Brasil e representa 30,5% de todos os casos de câncer diagnosticados no sexo masculino, segundo o Instituto Nacional do Câncer.",
+      "corpo": "Um levantamento realizado pelo A. Camargo Cancer Center em parceria com a Nexus mostrou que 56% dos homens brasileiros afirmam não saber como prevenir o câncer de próstata em 2026. A parcela dos homens que dizem saber como prevenir o câncer de próstata passou de 36% para 35% entre 2024 e 2026. No interior do país, o percentual de desconhecimento chega a 58%. O levantamento também identificou queda na intenção de fazer o exame de toque, utilizado para diagnóstico precoce do câncer de próstata. O câncer de próstata é o tipo mais incidente entre os homens no Brasil e representa 30,5% de todos os casos de câncer diagnosticados no sexo masculino, segundo o Instituto Nacional do Câncer.",
       "fonte_publicadora": "Tribuna do Paraná",
       "url_fonte": "https://www.tribunapr.com.br/saude-e-bem-estar/desconhecimento-sobre-prevencao-do-cancer-de-prostata-cresce-no-brasil/",
       "imagem_url": "https://www.tribunapr.com.br/wp-content/uploads/2026/11/01150008/saude-homem-2.jpg",
@@ -40,7 +94,7 @@
       "gerado_em": "2026-11-09T20:38:55+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-09"
     },
     {
       "id": "materia-976cdad3b07a",
@@ -49,7 +103,7 @@
       "linha_fina": "Leia o conteúdo completo extraído da publicação original e consulte a fonte ao final.",
       "titulo_carrossel": "Brasília recebe o Brasília Expo Korea 2026, festival imersivo da cultura",
       "linha_fina_carrossel": "O festival recebe, diretamente da Coreia do Sul, o grupo de K-pop NCHIVE, que está em turnê pelo Brasil.",
-      "corpo": "Crédito: Divulgação Crédito: Divulgação De 13 a 15 de novembro de 2026, a capital federal se tornará o centro da cultura sul-coreana com a realização do Brasília Expo Korea 2026. A participação traz um atrativo extra: a inscrição na corrida garante automaticamente o passaporte de entrada para a Expo Korea 2026 no mesmo dia, permitindo que os atletas aproveitem todas as atrações do festival após cruzarem a linha de chegada.\n\nSERVIÇO Evento: Brasília Expo Korea 2026 Datas: 13, 14 e 15 de novembro de 2026 Horários do Festival: Sexta e sábado, das 11h às 21h; Domingo, das 11h às 20h Local: Transplantas Garden Center (Complexo Kireibara) – Núcleo Rural Taguatinga, s/n, Taguatinga, Brasília - DF K-RUN (Corrida 4km): Domingo, 15 de novembro, largada às 18h. Inscrições pelo site centraldacorrida.",
+      "corpo": "Crédito: Divulgação Crédito: Divulgação De 13 a 15 de novembro de 2026, a capital federal se tornará o centro da cultura sul-coreana com a realização do Brasília Expo Korea 2026. A participação traz um atrativo extra: a inscrição na corrida garante automaticamente o passaporte de entrada para a Expo Korea 2026 no mesmo dia, permitindo que os atletas aproveitem todas as atrações do festival após cruzarem a linha de chegada. SERVIÇO Evento: Brasília Expo Korea 2026 Datas: 13, 14 e 15 de novembro de 2026 Horários do Festival: Sexta e sábado, das 11h às 21h; Domingo, das 11h às 20h Local: Transplantas Garden Center (Complexo Kireibara) – Núcleo Rural Taguatinga, s/n, Taguatinga, Brasília - DF K-RUN (Corrida 4km): Domingo, 15 de novembro, largada às 18h. Inscrições pelo site centraldacorrida.",
       "fonte_publicadora": "Visite Brasília",
       "url_fonte": "https://visitebrasilia.com.br/noticias/brasilia-recebe-o-brasilia-expo-korea-2026-festival-imersivo-da-cultura-sul-coreana",
       "imagem_url": "https://visitebrasilia.com.br/images/2026/11/20261109151626_s_275ec2e7-b220-4070-b861-cf5780271452.jpg",
@@ -58,7 +112,7 @@
       "gerado_em": "2026-11-09T20:38:55+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-09"
     },
     {
       "id": "materia-11601c14719b",
@@ -67,7 +121,7 @@
       "linha_fina": "A WTM Fitness, fabricante de equipamentos profissionais para academias sediada em Franca (SP), programou sua participação comercial na Recifitness 2026,",
       "titulo_carrossel": "Expansão do mercado fitness impulsiona demanda por infraestrutura técnica",
       "linha_fina_carrossel": "A modernização do parque de equipamentos em academias tornou-se uma variável crítica de produtividade operacional e retenção de mensalistas.",
-      "corpo": "A WTM Fitness , fabricante de equipamentos profissionais para academias sediada em Franca (SP), programou sua participação comercial na Recifitness 2026 , agendada para os dias 14 e 15 de novembro de 2026 no espaço RioMar Eventos, em Recife (PE). 743/0001-35 Av. Brigadeiro Faria Lima, 1739 São Paulo SP CEP 01452-001 Telefone e WhatsApp: +55 11 94040-5356 Brasil Inovador® é uma plataforma neutra, técnica e orientada a dados e negócios, que dialoga com todos os atores do desenvolvimento econômico e institucional.\n\nAssine o Brasil Inovador Brasil Inovador® é uma plataforma neutra, técnica e orientada a dados e negócios, que dialoga com todos os atores do desenvolvimento econômico e institucional. Brasil Inovador® is a neutral, technical, and data- and business-driven platform that engages with all stakeholders in economic and institutional development.",
+      "corpo": "A WTM Fitness , fabricante de equipamentos profissionais para academias sediada em Franca (SP), programou sua participação comercial na Recifitness 2026 , agendada para os dias 14 e 15 de novembro de 2026 no espaço RioMar Eventos, em Recife (PE). 743/0001-35 Av. Brigadeiro Faria Lima, 1739 São Paulo SP CEP 01452-001 Telefone e WhatsApp: +55 11 94040-5356 Brasil Inovador® é uma plataforma neutra, técnica e orientada a dados e negócios, que dialoga com todos os atores do desenvolvimento econômico e institucional. Assine o Brasil Inovador Brasil Inovador® é uma plataforma neutra, técnica e orientada a dados e negócios, que dialoga com todos os atores do desenvolvimento econômico e institucional. Brasil Inovador® is a neutral, technical, and data- and business-driven platform that engages with all stakeholders in economic and institutional development.",
       "fonte_publicadora": "Brasil Inovador",
       "url_fonte": "https://brasilinovador.com.br/expansao-do-mercado-fitness-impulsiona-demanda-por-infraestrutura-tecnica-no-nordeste/",
       "imagem_url": "https://brasilinovador.com.br/wp-content/uploads/2026/09/brasil-inovador-11.jpg",
@@ -76,25 +130,7 @@
       "gerado_em": "2026-11-09T20:38:55+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
-    },
-    {
-      "id": "materia-93fbc97abc9e",
-      "pilar": "saude",
-      "titulo": "Vacina contra mpox: Brasil terá reforço de 25 mil doses",
-      "linha_fina": "Imunizantes negociados com laboratório dinamarquês têm chegada prevista para as próximas três semanas e serão destinados a grupos prioritários",
-      "titulo_carrossel": "Vacina contra mpox: Brasil terá reforço de 25 mil doses",
-      "linha_fina_carrossel": "Os imunizantes devem chegar ao país nas próximas três semanas e vão reforçar o estoque estratégico do Ministério da Saúde.",
-      "corpo": "O Brasil garantiu a compra de 25 mil doses da vacina contra a mpox . A quantidade representa um aumento de 5 mil doses em relação à oferta inicial, de 20 mil. Também podem receber doses, conforme a disponibilidade, pessoas com HIV e CD4 inferior a 200 células/mm³, usuários de profilaxia pré-exposição ao HIV (PrEP) e profissionais de laboratório que trabalham com amostras do vírus. O Brasil registrou o primeiro caso de mpox em 2022 , ano em que enfrentou um surto da doença. Na comparação com 2025, quando o país contabilizou cerca de mil casos, duas mortes e 58 internações, os dados deste ano apontam redução de 16,8% nas notificações e de 6,9% nas hospitalizações.",
-      "fonte_publicadora": "CNN Brasil",
-      "url_fonte": "https://www.cnnbrasil.com.br/nacional/brasil/vacina-contra-mpox-brasil-tera-reforco-de-25-mil-doses/",
-      "imagem_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/11/vacina-mpox.jpeg?w=1200&h=630&crop=1",
-      "titulo_fonte": "Vacina contra mpox: Brasil terá reforço de 25 mil doses | CNN Brasil",
-      "publicado_em_fonte": "Sun, 08 Nov 2026 22:31:24 GMT",
-      "gerado_em": "2026-11-09T00:44:24+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-08"
+      "validade_ate": "2026-11-09"
     },
     {
       "id": "materia-c8aa355bef93",
