@@ -1,11 +1,65 @@
 {
-  "gerado_em": "2026-11-10T03:25:00+00:00",
+  "gerado_em": "2026-11-10T17:40:18+00:00",
   "total_recebidas": 5,
-  "total_materias_validas": 9,
+  "total_materias_validas": 10,
   "respostas_rejeitadas": 2,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-d6a330870e29",
+      "pilar": "saude",
+      "titulo": "Na COP31, Brasil apresenta plano para adaptar sistemas de saúde ao clima",
+      "linha_fina": "Ministro da Saúde, Alexandre Padilha, está em Antália, na Turquia, para evento sobre mudanças climáticas",
+      "titulo_carrossel": "Na COP31, Brasil apresenta plano para adaptar sistemas de saúde ao clima",
+      "linha_fina_carrossel": "“A escolha depende da natureza da iniciativa e da realidade de cada país.",
+      "corpo": "Ministro da Saúde, Alexandre Padilha, está em Antália, na Turquia, para evento sobre mudanças climáticas 10/11/2026 14:11 • Atualizado há 16 min 10/11/2026 14:11 • Atualizado há 16 min Alexandre Padilha, ministro da Saúde, na COP31 João Risi / MS Na 31ª Conferência das Nações Unidas sobre Mudanças Climáticas (COP31), que acontece na Turquia, o Brasil apresentou o Marco de Financiamento do Plano de Ação em Saúde de Belém. Os recursos apoiam ações contra o calor extremo e a poluição do ar, a prevenção de doenças infecciosas ligadas ao clima e o fortalecimento dos sistemas de dados de clima, ambiente e saúde.\n\nNa COP31, o ministro da Saúde, Alexandre Padilha, destacou o AdaptaSUS, plano nacional que reúne 27 metas e 93 ações para adaptar o sistema de saúde brasileiro às mudanças climáticas. Com Agência Brasil.",
+      "fonte_publicadora": "Band",
+      "url_fonte": "https://www.band.com.br/internacional/na-cop31-brasil-apresenta-plano-para-adaptar-sistemas-de-saude-ao-clima",
+      "imagem_url": "https://img.band.com.br/image/2026/11/PUB-MANU-2026-11-10T141014.703.png",
+      "titulo_fonte": "Na COP31, Brasil apresenta plano para adaptar sistemas de saúde ao clima",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 17:11:00 GMT",
+      "gerado_em": "2026-11-10T17:40:18+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-11"
+    },
+    {
+      "id": "materia-e57e70fa7c90",
+      "pilar": "esportes",
+      "titulo": "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB | Jornal de Brasília Brasília Basquete perde para o União Corinthians e chega à quarta derrota no N",
+      "linha_fina": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes",
+      "titulo_carrossel": "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB",
+      "linha_fina_carrossel": "O resultado representa a quarta derrota da equipe na competição.",
+      "corpo": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes João Victor Rodrigues 10/11/2026 6h47 Foto: Matheus Maranhão / CAIXA Brasília Basquete O Brasília Basquete não conseguiu reagir e foi derrotado pelo União Corinthians por 70 a 61, na noite desta segunda-feira (9/11), em partida válida pelo Novo Basquete Brasil (NBB). No segundo período, porém, o União Corinthians voltou a controlar as ações e venceu por 19 a 13, levando o placar de 40 a 33 para o intervalo.\n\nApós o compromisso, o Brasília Basquete viajará para disputar o Campeonato Sul-Americano. A equipe só volta à quadra pelo NBB em 22 de novembro, domingo, às 11h15, quando enfrentará o Pato Basquete no ginásio Nilson Nelson, em Brasília.",
+      "fonte_publicadora": "Jornal de Brasília",
+      "url_fonte": "https://jornaldebrasilia.com.br/torcida/brasilia-basquete-perde-para-o-uniao-corinthians-e-chega-a-quarta-derrota-no-nbb/",
+      "imagem_url": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2026/10/22065014/Captura-de-tela-2026-10-22-064950.png",
+      "titulo_fonte": "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB | Jornal de Brasília Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB - Jornal de Brasília",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 09:47:06 GMT",
+      "gerado_em": "2026-11-10T17:40:18+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-11"
+    },
+    {
+      "id": "materia-697f9d2bb4a4",
+      "pilar": "lazer",
+      "titulo": "FGA Journey planeja reunir mais de 3 mil empresários em Brasília novo template · Portal Radar FGA Journey planeja reunir mais de 3 mil empresários em Brasília - Portal Radar",
+      "linha_fina": "Brasília receberá, nos dias 22 e 23 de novembro, o FGA Journey 2026, evento que espera reunir mais de 3 mil empresários para discutir estra...",
+      "titulo_carrossel": "FGA Journey planeja reunir mais de 3 mil empresários em Brasília novo template ·",
+      "linha_fina_carrossel": "Para Gustavo de Oliveira, empresário e fundador da FGA Educação, a proposta é aproximar as estratégias apresentadas no palco dos desafios enfrentados diariamente por quem administra um negócio.",
+      "corpo": "Brasília receberá, nos dias 22 e 23 de novembro, o FGA Journey 2026, evento que espera reunir mais de 3 mil empresários para discutir estratégias de marketing, vendas e gestão. Para Gustavo de Oliveira, empresário e fundador da FGA Educação, a proposta é aproximar as estratégias apresentadas no palco dos desafios enfrentados diariamente por quem administra um negócio.\n\nMÉTODO COMERCIAL SERÁ APRESENTADO AOS EMPRESÁRIOS Entre os principais assuntos do FGA Journey estão marketing e geração de demanda, estruturação de equipes de pré-vendas, conversão de oportunidades comerciais, gestão por indicadores e uso da inteligência artificial para melhorar a produtividade das empresas. com/evento-fga/ Jornalista formado pela PUC-SP, Editor do Portal Radar e da Radar Magazine.",
+      "fonte_publicadora": "Portal Radar",
+      "url_fonte": "https://portalradar.com.br/fga-journey-planeja-reunir-mais-de-3-mil-empresarios-em-brasilia/",
+      "imagem_url": "https://portalradar.com.br/wp-content/uploads/2026/11/Samuel-FGA.jpg",
+      "titulo_fonte": "FGA Journey planeja reunir mais de 3 mil empresários em Brasília novo template · Portal Radar FGA Journey planeja reunir mais de 3 mil empresários em Brasília - Portal Radar",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 08:00:15 GMT",
+      "gerado_em": "2026-11-10T17:40:18+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-23"
+    },
     {
       "id": "materia-0518da6f9331",
       "pilar": "esportes",
@@ -13,7 +67,7 @@
       "linha_fina": "Brasília Basquete foi derrotado pelo União Corinthians por 70 a 61, marcando sua quarta derrota no NBB.",
       "titulo_carrossel": "Brasília Basquete perde para União Corinthians em partida equilibrada",
       "linha_fina_carrossel": "Brasília Basquete foi derrotado pelo União Corinthians por 70 a 61, marcando sua quarta derrota no NBB.",
-      "corpo": "Na última segunda-feira (9/11), o Brasília Basquete enfrentou o União Corinthians em uma competição acirrada, mas acabou sendo derrotado por 70 a 61. O União Corinthians rapidamente abriu vantagem, com uma run de 10-0 nos primeiros minutos, situando o placar em 16 a 6.\n\nA equipe brasiliense continuou a se esforçar e, embora o quarto tenha terminado 19 a 13 a favor do União Corinthians, ainda era possível ver que o time mantinha-se próximo no placar, encerrando a primeira metade da partida com 40 a 33 para os visitantes. Após essa partida, o Brasília Basquete já se prepara para o próximo desafio na competição, que envolve uma viagem para o Sul-Americano.\n\nA jornada no NBB continua, e a torcida aposta na superação após essa derrota.",
+      "corpo": "Na última segunda-feira (9/11), o Brasília Basquete enfrentou o União Corinthians em uma competição acirrada, mas acabou sendo derrotado por 70 a 61. O União Corinthians rapidamente abriu vantagem, com uma run de 10-0 nos primeiros minutos, situando o placar em 16 a 6. A equipe brasiliense continuou a se esforçar e, embora o quarto tenha terminado 19 a 13 a favor do União Corinthians, ainda era possível ver que o time mantinha-se próximo no placar, encerrando a primeira metade da partida com 40 a 33 para os visitantes. Após essa partida, o Brasília Basquete já se prepara para o próximo desafio na competição, que envolve uma viagem para o Sul-Americano. A jornada no NBB continua, e a torcida aposta na superação após essa derrota.",
       "fonte_publicadora": "Diário do Estado",
       "url_fonte": "https://diariodoestadogo.com.br/brasilia-basquete-perde-para-uniao-corinthians-em-partida-equilibrada/",
       "imagem_url": "https://diariodoestadogo.com.br/wp-content/uploads/2026/11/brasilia-basquete-perde-para-uniao-corinthians-em-partida-equilibrada.webp",
@@ -22,7 +76,7 @@
       "gerado_em": "2026-11-10T03:25:00+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-09"
     },
     {
       "id": "materia-7a8d79adc6b2",
@@ -31,7 +85,7 @@
       "linha_fina": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital.",
       "titulo_carrossel": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
       "linha_fina_carrossel": "A proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop.",
-      "corpo": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital. A capital federal se prepara para sediar a terceira edição do Space Today Experience , um grande encontro que une ciência, tecnologia e entretenimento.\n\nA proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop. Abaixo estão listadas as principais informações práticas para quem deseja participar da programação oficial: Data: 19 a 22 de novembro de 2026 Local: Pavilhão do Parque da Cidade, Brasília (DF) Entrada: Gratuita, mediante retirada prévia pelo Sympla Condição de acesso: Apresentação do ingresso mais 1 kg de alimento não perecível ou um item de lixo eletrônico.",
+      "corpo": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital. A capital federal se prepara para sediar a terceira edição do Space Today Experience , um grande encontro que une ciência, tecnologia e entretenimento. A proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop. Abaixo estão listadas as principais informações práticas para quem deseja participar da programação oficial: Data: 19 a 22 de novembro de 2026 Local: Pavilhão do Parque da Cidade, Brasília (DF) Entrada: Gratuita, mediante retirada prévia pelo Sympla Condição de acesso: Apresentação do ingresso mais 1 kg de alimento não perecível ou um item de lixo eletrônico.",
       "fonte_publicadora": "Agita Brasília",
       "url_fonte": "https://agitabrasilia.com/evento-gratuito-em-brasilia-tera-concursos-de-cosplay-games-e-atracoes-interativas/",
       "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/evento-gratuito-em-brasilia-tera-concursos-de-cosplay-games-e-atracoes-interativas-1794275283.jpg",
@@ -40,7 +94,7 @@
       "gerado_em": "2026-11-10T03:25:00+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-22"
+      "validade_ate": "2026-11-21"
     },
     {
       "id": "materia-fba596dd0e7b",
@@ -49,7 +103,7 @@
       "linha_fina": "Entenda os sinais de demência e veja orientações da OMS e do SUS para prevenir riscos e apoiar famílias brasileiras.",
       "titulo_carrossel": "Bruce Willis: sinais de demência e cuidados no Brasil",
       "linha_fina_carrossel": "Em fevereiro de 2023, a família anunciou um diagnóstico mais específico, a demência frontotemporal (DFT).",
-      "corpo": "O diagnóstico de demência frontotemporal de Bruce Willis voltou a chamar atenção para uma preocupação que também atinge famílias brasileiras: como reconhecer alterações persistentes na fala, no comportamento e na memória sem confundi-las com o envelhecimento normal? Impulsividade incomum, perda de iniciativa, mudanças no julgamento e comportamentos muito diferentes dos habituais podem ser sinais de alerta em algumas formas de demência frontotemporal.\n\nA situação de Bruce Willis, cujo diagnóstico foi comunicado publicamente pela família em 2023, reforça uma discussão que vai além da vida de uma celebridade: alterações persistentes de linguagem, comportamento e memória merecem atenção, enquanto prevenção baseada em evidências e apoio às pessoas cuidadoras precisam fazer parte da rotina de saúde no Brasil.",
+      "corpo": "O diagnóstico de demência frontotemporal de Bruce Willis voltou a chamar atenção para uma preocupação que também atinge famílias brasileiras: como reconhecer alterações persistentes na fala, no comportamento e na memória sem confundi-las com o envelhecimento normal? Impulsividade incomum, perda de iniciativa, mudanças no julgamento e comportamentos muito diferentes dos habituais podem ser sinais de alerta em algumas formas de demência frontotemporal. A situação de Bruce Willis, cujo diagnóstico foi comunicado publicamente pela família em 2023, reforça uma discussão que vai além da vida de uma celebridade: alterações persistentes de linguagem, comportamento e memória merecem atenção, enquanto prevenção baseada em evidências e apoio às pessoas cuidadoras precisam fazer parte da rotina de saúde no Brasil.",
       "fonte_publicadora": "capixabadagema.com.br",
       "url_fonte": "https://capixabadagema.com.br/bruce-willis-sinais-demencia-prevencao-brasil/",
       "imagem_url": "https://capixabadagema.com.br/wp-content/uploads/2026/11/Bruce-Willis_-sinais-de-demencia-e-cuidados-no-Brasil.webp",
@@ -58,7 +112,7 @@
       "gerado_em": "2026-11-10T03:25:00+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-09"
     },
     {
       "id": "materia-b661f78839f3",
@@ -76,7 +130,7 @@
       "gerado_em": "2026-11-09T20:38:55+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-09"
+      "validade_ate": "2026-11-08"
     },
     {
       "id": "materia-87941ca4bb6e",
@@ -94,7 +148,7 @@
       "gerado_em": "2026-11-09T20:38:55+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-09"
+      "validade_ate": "2026-11-08"
     },
     {
       "id": "materia-976cdad3b07a",
@@ -112,25 +166,7 @@
       "gerado_em": "2026-11-09T20:38:55+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-09"
-    },
-    {
-      "id": "materia-11601c14719b",
-      "pilar": "fitness",
-      "titulo": "Expansão do mercado fitness impulsiona demanda por infraestrutura técnica no Nordeste - Brasil Inovador",
-      "linha_fina": "A WTM Fitness, fabricante de equipamentos profissionais para academias sediada em Franca (SP), programou sua participação comercial na Recifitness 2026,",
-      "titulo_carrossel": "Expansão do mercado fitness impulsiona demanda por infraestrutura técnica",
-      "linha_fina_carrossel": "A modernização do parque de equipamentos em academias tornou-se uma variável crítica de produtividade operacional e retenção de mensalistas.",
-      "corpo": "A WTM Fitness , fabricante de equipamentos profissionais para academias sediada em Franca (SP), programou sua participação comercial na Recifitness 2026 , agendada para os dias 14 e 15 de novembro de 2026 no espaço RioMar Eventos, em Recife (PE). 743/0001-35 Av. Brigadeiro Faria Lima, 1739 São Paulo SP CEP 01452-001 Telefone e WhatsApp: +55 11 94040-5356 Brasil Inovador® é uma plataforma neutra, técnica e orientada a dados e negócios, que dialoga com todos os atores do desenvolvimento econômico e institucional. Assine o Brasil Inovador Brasil Inovador® é uma plataforma neutra, técnica e orientada a dados e negócios, que dialoga com todos os atores do desenvolvimento econômico e institucional. Brasil Inovador® is a neutral, technical, and data- and business-driven platform that engages with all stakeholders in economic and institutional development.",
-      "fonte_publicadora": "Brasil Inovador",
-      "url_fonte": "https://brasilinovador.com.br/expansao-do-mercado-fitness-impulsiona-demanda-por-infraestrutura-tecnica-no-nordeste/",
-      "imagem_url": "https://brasilinovador.com.br/wp-content/uploads/2026/09/brasil-inovador-11.jpg",
-      "titulo_fonte": "Expansão do mercado fitness impulsiona demanda por infraestrutura técnica no Nordeste - Brasil Inovador",
-      "publicado_em_fonte": "Mon, 09 Nov 2026 17:35:10 GMT",
-      "gerado_em": "2026-11-09T20:38:55+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-09"
+      "validade_ate": "2026-11-08"
     },
     {
       "id": "materia-c8aa355bef93",
@@ -149,24 +185,6 @@
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-12"
-    },
-    {
-      "id": "materia-15ab3de8498a",
-      "pilar": "saude",
-      "titulo": "Fórum debaterá prevenção e combate a incêndios florestais no DF - Agita Brasília",
-      "linha_fina": "Encontro marcado para os dias 23 e 24 de novembro na Escola de Governo vai apresentar o balanço de 2026 e planejar ações para o próximo ano.",
-      "titulo_carrossel": "Fórum debaterá prevenção e combate a incêndios florestais no DF - Agita Brasília",
-      "linha_fina_carrossel": "Para a governadora Celina Leão, o evento reforça o papel de cada cidadão na proteção do bioma local.",
-      "corpo": "A Secretaria do Meio Ambiente (Sema-DF) vai promover, entre os dias 23 e 24 de novembro, o Fórum Distrital de Prevenção e Combate aos Incêndios Florestais 2026. O encontro atende ao Decreto nº 37. As conclusões extraídas dos debates servem como alicerce para o plano de trabalho do Grupo Executivo do Sistema Distrital de Prevenção e Combate aos Incêndios Florestais no ano seguinte. “O Fórum é um espaço para ouvir, compartilhar informações e aprender com a experiência de cada instituição que atua na prevenção e no combate aos incêndios. Em seguida, o Módulo IV expõe as ações operacionais de prevenção e combate executadas no território brasiliense, contando com o Corpo de Bombeiros Militar (CBMDF), Brasília Ambiental, Jardim Botânico de Brasília (JBB), APA do Gama e Cabeça de Veado, além da Sema.",
-      "fonte_publicadora": "Agita Brasília",
-      "url_fonte": "https://agitabrasilia.com/forum-reune-sociedade-e-instituicoes-para-debater-prevencao-e-combate-a-incendios-florestais-no-df/",
-      "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/forum-reune-sociedade-e-instituicoes-para-debater-prevencao-e-combate-a-incendios-florestais-no-df-1794002069.jpg",
-      "titulo_fonte": "Fórum debaterá prevenção e combate a incêndios florestais no DF - Agita Brasília",
-      "publicado_em_fonte": "Fri, 06 Nov 2026 21:57:26 GMT",
-      "gerado_em": "2026-11-07T00:50:37+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-24"
     }
   ]
 }
