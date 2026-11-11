@@ -1,0 +1,16 @@
+<!-- 1. Inclua o CSS uma única vez no cabeçalho da página -->
+<link rel="stylesheet" href="/caminho/modulo/editorial.css">
+
+<!-- 2. Insira o módulo no ponto desejado do conteúdo -->
+<div data-gc-editorial data-feed="/caminho/data/materias-editoriais.json"></div>
+
+<!-- 3. Carregue o JavaScript uma única vez, preferencialmente antes de fechar o body -->
+<script src="/caminho/modulo/editorial.js" defer></script>
+
+<!--
+ASP Clássico:
+- Salve os arquivos em /includes/modulo/ ou em uma pasta pública equivalente.
+- O include ASP pode conter o elemento div e as referências CSS/JS.
+- O endereço em data-feed deve apontar para o JSON publicado no servidor.
+- O módulo não abre modal, não altera a página hospedeira e não exige Bootstrap.
+-->
