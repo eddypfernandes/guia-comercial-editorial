@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
 
-from coletar_fontes import collect, make_feed_url, parse_feed, sort_newest_first
+from coletar_fontes import collect, make_feed_url, parse_feed, sort_newest_first, rotate_queries
 
 SAMPLE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
@@ -22,6 +22,15 @@ SAMPLE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 
 
 class CollectorTests(unittest.TestCase):
+    def test_query_rotation_changes_starting_pillar_between_cycles(self):
+        queries = [{"pillar": pillar, "query": pillar} for pillar in ["pet", "lazer", "esportes", "saude", "fitness"]]
+        self.assertEqual([item["pillar"] for item in rotate_queries(queries, 0)], ["pet", "lazer", "esportes", "saude", "fitness"])
+        self.assertEqual([item["pillar"] for item in rotate_queries(queries, 2)], ["esportes", "saude", "fitness", "pet", "lazer"])
+        self.assertEqual([item["pillar"] for item in rotate_queries(queries, 5)], ["pet", "lazer", "esportes", "saude", "fitness"])
+
+    def test_empty_query_rotation_is_safe(self):
+        self.assertEqual(rotate_queries([], 3), [])
+
     def test_feed_url_uses_encoded_query(self):
         url = make_feed_url("saúde Brasília", "pt-BR", "BR", "BR:pt-419")
         self.assertIn("news.google.com/rss/search?", url)
@@ -60,6 +69,7 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(report["total_itens"], 0)
         self.assertEqual(report["feeds_com_sucesso"], 0)
         self.assertEqual(report["feeds"][0]["status"], "erro")
+        self.assertEqual(report["ordem_pilares"], ["pet"])
 
 
 if __name__ == "__main__":
