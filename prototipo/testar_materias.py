@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs, limpar_titulo_fonte, compactar_texto, compactar_titulo, article_is_current
+from gerar_materias import build_fallback_report, extract_json, validate_articles, merge_active_articles, format_body_paragraphs, limpar_titulo_fonte, compactar_texto, compactar_titulo, article_is_current, pilar_compativel
 
 
 class ArticleValidationTests(unittest.TestCase):
@@ -35,7 +35,7 @@ class ArticleValidationTests(unittest.TestCase):
             "pilar": "lazer",
             "fonte_publicadora": "Jornal Exemplo",
             "url_final": "https://example.org/noticia",
-            "titulo_pagina": "Notícia original",
+            "titulo_pagina": "Evento cultural: notícia original para o lazer local",
             "publicado_em_rss": "Tue, 27 Oct 2026 13:00:00 GMT",
             "texto_extraido": ("Texto da fonte apresenta informações relevantes para a comunidade. " * 50) + "A publicação encerra com os dados finais.",
             "imagem_url": "https://example.org/img/noticia.jpg",
@@ -118,6 +118,24 @@ class ArticleValidationTests(unittest.TestCase):
                 "Por que alguns produtos fitness viram hábito e outros acabam esquecidos? – R7 Entretenimento Ir para bluesky Ir para facebook"
             ),
             "Por que alguns produtos fitness viram hábito e outros acabam esquecidos?",
+        )
+
+    def test_rejects_misclassified_fitness_content_and_accepts_matching_topics(self):
+        self.assertFalse(pilar_compativel("fitness", "Globo e Obitel Brasil realizam seminário sobre os caminhos da ficção televisiva"))
+        self.assertTrue(pilar_compativel("lazer", "Globo e Obitel Brasil realizam seminário sobre os caminhos da ficção televisiva"))
+        self.assertTrue(pilar_compativel("fitness", "Academias ampliam aulas de musculação e treino funcional"))
+
+    def test_title_cleanup_removes_publisher_duplicate_and_template_noise(self):
+        self.assertEqual(
+            limpar_titulo_fonte(
+                "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB | Jornal de Brasília Brasília Basquete perde para o União Corinthians",
+                "Jornal de Brasília",
+            ),
+            "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB",
+        )
+        self.assertEqual(
+            limpar_titulo_fonte("FGA Journey planeja reunir empresários em Brasília novo template", "Portal Radar"),
+            "FGA Journey planeja reunir empresários em Brasília",
         )
 
     def test_summary_without_complete_sentence_is_rejected(self):
@@ -230,15 +248,15 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertNotIn("...", normalized["titulo_carrossel"])
         self.assertNotIn("…", normalized["linha_fina_carrossel"])
 
-    def test_generic_article_expires_after_24_hours(self):
+    def test_generic_article_expires_after_72_hours(self):
         article = {
             "status_editorial": "apto_para_publicacao",
             "publicado_em_fonte": "2026-11-01T12:00:00-03:00",
             "titulo": "Informação geral para a comunidade",
             "corpo": "Texto sem data contextual de evento ou programação.",
         }
-        self.assertTrue(article_is_current(article, datetime(2026, 11, 2, 14, 59, tzinfo=timezone.utc)))
-        self.assertFalse(article_is_current(article, datetime(2026, 11, 2, 15, 1, tzinfo=timezone.utc)))
+        self.assertTrue(article_is_current(article, datetime(2026, 11, 4, 14, 59, tzinfo=timezone.utc)))
+        self.assertFalse(article_is_current(article, datetime(2026, 11, 4, 15, 1, tzinfo=timezone.utc)))
 
     def test_contextual_date_expires_after_the_mentioned_day(self):
         article = {
