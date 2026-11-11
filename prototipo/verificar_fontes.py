@@ -6,6 +6,8 @@ paywalls ou conteúdo dependente de JavaScript ficam pendentes de revisão human
 from __future__ import annotations
 
 import http.client
+import hashlib
+import html as html_lib
 import ipaddress
 import json
 import re
@@ -270,6 +272,132 @@ def select_candidates(discovery: dict, triage: dict | None) -> list[dict]:
     return selected
 
 
+
+def commons_license_allowed(value: str) -> bool:
+    """Aceita somente licenças que permitem reutilização comercial."""
+    license_name = " ".join(str(value or "").split()).strip()
+    return bool(
+        re.match(r"(?i)^(?:CC0(?:\s|$)|Public domain(?:\s|$)|CC BY(?:-SA)?(?:\s|$))", license_name)
+    )
+
+
+def clean_metadata(value: str) -> str:
+    value = html_lib.unescape(str(value or ""))
+    value = re.sub(r"<[^>]+>", " ", value)
+    return " ".join(value.split())[:500]
+
+
+def placeholder_svg(pillar: str) -> str:
+    """Cria uma arte editorial simples, sem simular fotografia."""
+    themes = {
+        "saude": ("#e8f2ed", "#245648", "SAÚDE"),
+        "fitness": ("#edf0f7", "#344b78", "FITNESS"),
+        "esportes": ("#f3eee4", "#80602d", "ESPORTES"),
+        "lazer": ("#f2eaf3", "#704d75", "LAZER"),
+        "pet": ("#f5eee7", "#805b3e", "PET"),
+    }
+    background, foreground, label = themes.get(
+        str(pillar or "").lower(), ("#edf1ec", "#245648", "EDITORIAL")
+    )
+    return (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">'
+        f'<rect width="1200" height="800" fill="{background}"/>'
+        f'<circle cx="600" cy="330" r="150" fill="{foreground}" opacity=".10"/>'
+        f'<path d="M0 650 Q300 500 600 650 T1200 650 V800 H0Z" fill="{foreground}" opacity=".10"/>'
+        f'<text x="600" y="420" text-anchor="middle" font-family="Arial,sans-serif" '
+        f'font-size="54" font-weight="700" letter-spacing="8" fill="{foreground}">{label}</text>'
+        '<text x="600" y="485" text-anchor="middle" font-family="Arial,sans-serif" '
+        'font-size="24" fill="#68736c">GUIA COMERCIAL</text></svg>'
+    )
+
+
+def create_placeholder_image(pillar: str) -> dict:
+    folder = ROOT / "docs" / "images" / "editorial"
+    folder.mkdir(parents=True, exist_ok=True)
+    name = f"placeholder-{re.sub(r'[^a-z0-9-]', '', str(pillar or 'editorial').lower())}.svg"
+    (folder / name).write_text(placeholder_svg(pillar), encoding="utf-8")
+    return {
+        "imagem_url": f"../images/editorial/{name}",
+        "imagem_tipo": "placeholder",
+        "imagem_credito": "Arte gráfica gerada automaticamente pelo Guia Comercial",
+        "imagem_fonte": "Guia Comercial",
+        "imagem_licenca": "Produção própria",
+        "imagem_licenca_url": "",
+    }
+
+
+def find_commons_image(title: str, pillar: str) -> dict | None:
+    """Busca no Wikimedia Commons e baixa somente imagem com licença comercialmente reutilizável."""
+    terms = " ".join(str(title or "").split()[:12])
+    if not terms:
+        return None
+    params = urllib.parse.urlencode({
+        "action": "query",
+        "generator": "search",
+        "gsrsearch": f"filetype:bitmap {terms}",
+        "gsrnamespace": "6",
+        "gsrlimit": "8",
+        "prop": "imageinfo",
+        "iiprop": "url|extmetadata",
+        "iiurlwidth": "1200",
+        "format": "json",
+        "formatversion": "2",
+    })
+    opener = urllib.request.build_opener(SafeRedirectHandler())
+    request = urllib.request.Request(
+        "https://commons.wikimedia.org/w/api.php?" + params,
+        headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
+    )
+    with opener.open(request, timeout=TIMEOUT) as response:
+        payload = json.loads(response.read(1_000_000).decode("utf-8", errors="replace"))
+
+    pages = (payload.get("query") or {}).get("pages") or []
+    for page in pages:
+        info_rows = page.get("imageinfo") or []
+        if not info_rows:
+            continue
+        info = info_rows[0]
+        metadata = info.get("extmetadata") or {}
+        license_name = clean_metadata((metadata.get("LicenseShortName") or {}).get("value", ""))
+        if not commons_license_allowed(license_name):
+            continue
+        image_url = info.get("thumburl") or info.get("url") or ""
+        validate_public_url(image_url)
+        if urllib.parse.urlsplit(image_url).hostname != "upload.wikimedia.org":
+            continue
+        image_request = urllib.request.Request(
+            image_url, headers={"User-Agent": USER_AGENT, "Accept": "image/*"}
+        )
+        with opener.open(image_request, timeout=TIMEOUT) as response:
+            content_type = response.headers.get("Content-Type", "").split(";", 1)[0].lower()
+            image_data = response.read(4_000_001)
+        if not content_type.startswith("image/") or len(image_data) > 4_000_000:
+            continue
+        extension = {"image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp"}.get(content_type)
+        if not extension:
+            continue
+        digest = hashlib.sha256((image_url + str(page.get("title", ""))).encode("utf-8")).hexdigest()[:16]
+        filename = f"{digest}{extension}"
+        folder = ROOT / "docs" / "images" / "editorial"
+        folder.mkdir(parents=True, exist_ok=True)
+        (folder / filename).write_bytes(image_data)
+        file_title = str(page.get("title", "")).removeprefix("File:")
+        description_url = "https://commons.wikimedia.org/wiki/" + urllib.parse.quote(
+            str(page.get("title", "")), safe=":"
+        )
+        artist = clean_metadata((metadata.get("Artist") or {}).get("value", ""))
+        license_url = clean_metadata((metadata.get("LicenseUrl") or {}).get("value", ""))
+        return {
+            "imagem_url": f"../images/editorial/{filename}",
+            "imagem_tipo": "commons",
+            "imagem_credito": artist or "Autor não identificado na ficha da obra",
+            "imagem_fonte": description_url,
+            "imagem_licenca": license_name,
+            "imagem_licenca_url": license_url,
+            "imagem_titulo_arquivo": file_title[:300],
+        }
+    return None
+
 def verify_item(item: dict, opener=None) -> dict:
     started = time.monotonic()
     source_url = item.get("url_agregador") or item.get("url_fonte_publicadora", "")
@@ -300,6 +428,24 @@ def verify_item(item: dict, opener=None) -> dict:
             "texto_truncado": extracted["texto_truncado"],
             "duracao_segundos": round(time.monotonic() - started, 2),
         })
+        if extracted["imagem_url"]:
+            record.update({
+                "imagem_tipo": "fonte_original",
+                "imagem_credito": record["fonte_publicadora"] or "Fonte original",
+                "imagem_fonte": final_url,
+                "imagem_licenca": "Não informada pela fonte",
+                "imagem_licenca_url": "",
+            })
+        else:
+            try:
+                found_image = find_commons_image(
+                    extracted["titulo_pagina"] or record["titulo_pauta"],
+                    record["pilar"],
+                )
+                record.update(found_image or create_placeholder_image(record["pilar"]))
+            except (OSError, ValueError, urllib.error.URLError, TimeoutError, socket.gaierror, http.client.HTTPException, json.JSONDecodeError) as image_error:
+                print(f"Imagem complementar indisponível para '{record['titulo_pauta'][:80]}': {image_error}")
+                record.update(create_placeholder_image(record["pilar"]))
         if host_final == "news.google.com" or host_final.endswith(".news.google.com"):
             record["status_verificacao"] = "pendente_link_agregador"
             record["erro"] = "O agregador não revelou um link externo para a matéria original."
