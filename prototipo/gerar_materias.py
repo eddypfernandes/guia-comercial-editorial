@@ -45,6 +45,13 @@ def format_body_paragraphs(text: str) -> str:
     if not text:
         return ""
 
+    # Remove elementos de interface e assinaturas de template que escapam da extração.
+    text = re.sub(r"(?i)Pressione Enter para buscar\\s*[•·]\\s*Esc para fechar", "", text)
+    text = re.sub(r"(?i)Siga [^.!?]{0,100} no WhatsApp e receba [^.!?]{0,160}(?:primeira mão|em primeira mão)\\.?", "", text)
+    text = re.sub(r"(?i)Já tem uma conta no WordPress\\.?", "", text)
+    text = re.sub(r"(?i)Photo by [^)]{0,180}Getty Images via AFP\\)?", "", text)
+    text = re.sub(r"\\s+", " ", text).strip()
+
     abbreviations = (
         "Sr", "Sra", "Srta", "Dr", "Dra", "Prof", "Profa", "Profo",
         "Exmo", "Exma", "Ilmo", "Ilma", "etc", "p.ex", "aprox",
@@ -703,10 +710,14 @@ def build_fallback_report(source_items: list[dict], reason: str = "",
             rejected += 1
             continue
 
-        title_original = str(item.get("titulo_pagina") or item.get("titulo_pauta") or "").strip()
-        title = limpar_titulo_fonte(title_original, item.get("fonte_publicadora", ""))
-        if len(title) < 12:
-            title = limpar_titulo_fonte(str(item.get("titulo_pauta") or ""))
+        publisher = item.get("fonte_publicadora", "")
+        page_title = limpar_titulo_fonte(item.get("titulo_pagina", ""), publisher)
+        rss_title = limpar_titulo_fonte(item.get("titulo_pauta", ""), publisher)
+        titulo_generico = bool(re.search(
+            r"(?i)\\b(?:notícias? do|em tempo real|portal de notícias|últimas notícias|página inicial|site oficial)\\b",
+            page_title,
+        ))
+        title = rss_title if titulo_generico or len(page_title) < 12 else page_title
         if len(title) < 12:
             rejected += 1
             continue
@@ -728,6 +739,7 @@ def build_fallback_report(source_items: list[dict], reason: str = "",
             "id": f"nota-{len(articles) + 1:02d}",
             "pilar": item.get("pilar", ""),
             "titulo": title[:180],
+            "titulo_pauta": rss_title[:300],
             "linha_fina": summary,
             "titulo_carrossel": carousel_title,
             "linha_fina_carrossel": carousel_summary,
