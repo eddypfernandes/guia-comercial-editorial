@@ -1,12 +1,13 @@
 """Testes do coletor RSS usando XML local; não dependem da internet."""
 import sys
 import unittest
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
 
-from coletar_fontes import collect, make_feed_url, parse_feed, sort_newest_first, rotate_queries
+from coletar_fontes import collect, make_feed_url, parse_feed, sort_newest_first, rotate_queries, filter_seen_pautas
 
 SAMPLE_RSS = """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
@@ -30,6 +31,38 @@ class CollectorTests(unittest.TestCase):
 
     def test_empty_query_rotation_is_safe(self):
         self.assertEqual(rotate_queries([], 3), [])
+
+
+    def test_history_blocks_same_url_and_same_pillar_title(self):
+        now = datetime(2026, 11, 11, 12, tzinfo=timezone.utc)
+        history = {
+            "registros": [{
+                "registrado_em": (now - timedelta(days=2)).isoformat(),
+                "chaves": ["url:https://news.google.com/rss/articles/old", "title:pet:adocao responsavel"],
+            }]
+        }
+        items = [
+            {"pilar": "pet", "titulo": "Adoção responsável", "url_agregador": "https://news.google.com/rss/articles/new"},
+            {"pilar": "lazer", "titulo": "Adoção responsável", "url_agregador": "https://news.google.com/rss/articles/old"},
+            {"pilar": "saude", "titulo": "Nova campanha de vacinação", "url_agregador": "https://news.google.com/rss/articles/fresh"},
+        ]
+        fresh, updated = filter_seen_pautas(items, history, now)
+        self.assertEqual(len(fresh), 1)
+        self.assertEqual(fresh[0]["pilar"], "saude")
+        self.assertEqual(updated["total_registros"], 2)
+
+    def test_history_expires_after_30_days(self):
+        now = datetime(2026, 11, 11, 12, tzinfo=timezone.utc)
+        history = {
+            "registros": [{
+                "registrado_em": (now - timedelta(days=31)).isoformat(),
+                "chaves": ["title:pet:assunto antigo"],
+            }]
+        }
+        items = [{"pilar": "pet", "titulo": "Assunto antigo", "url_agregador": "https://news.google.com/rss/articles/again"}]
+        fresh, updated = filter_seen_pautas(items, history, now)
+        self.assertEqual(len(fresh), 1)
+        self.assertEqual(updated["retencao_dias"], 30)
 
     def test_feed_url_uses_encoded_query(self):
         url = make_feed_url("saúde Brasília", "pt-BR", "BR", "BR:pt-419")
