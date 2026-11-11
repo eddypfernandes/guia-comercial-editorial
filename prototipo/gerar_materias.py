@@ -637,6 +637,8 @@ def filter_recent_sources(source_items: list[dict], now: datetime | None = None)
             continue
         if now > published + timedelta(hours=72):
             continue
+        if not pilar_compativel(item.get("pilar", ""), " ".join(str(item.get(k, "")) for k in ("titulo_pauta", "titulo_pagina", "descricao_pagina"))):
+            continue
         key = source_key({"url_fonte": item.get("url_final", "")})
         if not key or key in seen:
             continue
