@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Página de validação do módulo editorial independente.">
+  <title>Teste do módulo editorial independente</title>
+  <link rel="stylesheet" href="./editorial.css">
+  <style>
+    body { margin: 0; background: #f4f6f3; color: #28352f; font-family: Arial, sans-serif; }
+    .pagina-teste { width: min(100% - 2rem, 820px); margin: 2rem auto; }
+    .pagina-teste__cabecalho { margin-bottom: 1.25rem; }
+    .pagina-teste__cabecalho h1 { margin: 0 0 .4rem; color: #173f35; font-size: 1.4rem; }
+    .pagina-teste__cabecalho p { margin: 0; color: #68736c; font-size: .9rem; }
+    .pagina-teste__contexto { margin-top: 1.5rem; padding: 1rem; border: 1px dashed #aebbb0; border-radius: .75rem; color: #68736c; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <main class="pagina-teste">
+    <header class="pagina-teste__cabecalho">
+      <h1>Conteúdo editorial</h1>
+      <p>Prévia isolada do componente em uma área de 820px, sem Bootstrap e sem modal.</p>
+    </header>
+
+    <div class="gc-editorial" data-gc-editorial data-feed="../data/materias-editoriais.json"></div>
+
+    <aside class="pagina-teste__contexto">
+      Área externa simulando o restante da página. O módulo deve permanecer contido no espaço disponível e adaptar sua composição em telas menores.
+    </aside>
+  </main>
+  <script src="./editorial.js" defer></script>
+</body>
+</html>
