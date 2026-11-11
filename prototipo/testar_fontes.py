@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from verificar_fontes import extract_html, select_candidates, validate_public_url
+from verificar_fontes import commons_license_allowed, extract_html, placeholder_svg, select_candidates, validate_public_url
 
 
 class SourceVerificationTests(unittest.TestCase):
@@ -97,6 +97,21 @@ class SourceVerificationTests(unittest.TestCase):
             [item["titulo"] for item in selected],
             ["Triagem 1", "Triagem 2"],
         )
+
+    def test_commons_license_filter_allows_commercial_reuse_only(self):
+        self.assertTrue(commons_license_allowed("CC BY 4.0"))
+        self.assertTrue(commons_license_allowed("CC BY-SA 4.0"))
+        self.assertTrue(commons_license_allowed("CC0 1.0"))
+        self.assertTrue(commons_license_allowed("Public domain"))
+        self.assertFalse(commons_license_allowed("CC BY-NC 4.0"))
+        self.assertFalse(commons_license_allowed("CC BY-ND 4.0"))
+        self.assertFalse(commons_license_allowed("All rights reserved"))
+
+    def test_placeholder_is_a_graphic_and_not_a_fake_photo(self):
+        svg = placeholder_svg("saude")
+        self.assertIn("<svg", svg)
+        self.assertIn("SAÚDE", svg)
+        self.assertIn("GUIA COMERCIAL", svg)
 
     def test_rejects_non_https_and_local_hosts(self):
         for url in (
