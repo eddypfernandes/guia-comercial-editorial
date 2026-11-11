@@ -6,6 +6,7 @@
 <title>Prévia — Editorial Guia Comercial</title>
 <link rel="stylesheet" href="./editorial.css">
 <style>
+.preview-status{font-size:12px;color:#6b786f;margin:0 0 14px}.preview-card{display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px;padding:16px 0;border-top:1px solid #e4e9e3}.preview-card>img,.preview-noimg{width:100%;height:145px;object-fit:cover;border-radius:8px;background:#edf1ec}.preview-noimg{display:grid;place-items:center;color:#718078;font-size:13px}.preview-body small{color:#245648;font-weight:700;letter-spacing:.05em}.preview-body h2,.preview-body h3{color:#173f35;margin:7px 0;font-size:20px;line-height:1.3}.preview-body h3{font-size:17px}.preview-body p{color:#68736c;font-size:14px;margin:7px 0}.preview-body a{font-size:13px;color:#245648}.preview-credit{font-size:11px!important}.preview-feature{background:#f8faf8;padding:16px;border-radius:10px;border:0;margin-bottom:12px}.preview-feature>img,.preview-feature .preview-noimg{height:230px}@media(max-width:600px){.preview-card{grid-template-columns:1fr;gap:10px}.preview-card>img,.preview-noimg{height:190px}.preview-feature>img,.preview-feature .preview-noimg{height:210px}}
 *{box-sizing:border-box}body{margin:0;background:#eef1ed;color:#26352d;font:16px/1.5 Arial,sans-serif}
 .topo{background:#173f35;color:#fff;padding:18px max(20px,calc((100% - 1100px)/2))}
 .topo strong{font-size:20px;letter-spacing:.4px}.topo span{display:block;color:#d7e5dc;font-size:12px;margin-top:3px}
@@ -24,10 +25,10 @@ h1{font-size:24px;margin:0 0 5px;color:#173f35}.sub{font-size:13px;color:#78847b
 <section class="pagina">
 <h1>Editorial</h1>
 <p class="sub">Informação, cultura, saúde, esporte e atualidades.</p>
-<div class="gc-editorial" data-gc-editorial data-feed="../data/materias-editoriais.json"></div>
+<div class="preview-feed" data-preview-editorial data-feed="../data/materias-editoriais.json"></div>
 <div class="credits">Créditos de imagem e fontes: consulte os links apresentados em cada matéria.</div>
 </section>
 </main>
-<script src="./editorial.js" defer></script>
+<script src="./preview.js" defer></script>
 </body>
 </html>
