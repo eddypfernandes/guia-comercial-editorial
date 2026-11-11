@@ -46,11 +46,11 @@ def format_body_paragraphs(text: str) -> str:
         return ""
 
     # Remove elementos de interface e assinaturas de template que escapam da extração.
-    text = re.sub(r"(?i)Pressione Enter para buscar\\s*[•·]\\s*Esc para fechar", "", text)
+    text = re.sub(r"(?i)Pressione Enter para buscar\s*[•·]\s*Esc para fechar", "", text)
     text = re.sub(r"(?i)Siga [^.!?]{0,100} no WhatsApp e receba [^.!?]{0,160}(?:primeira mão|em primeira mão)\\.?", "", text)
     text = re.sub(r"(?i)Já tem uma conta no WordPress\\.?", "", text)
     text = re.sub(r"(?i)Photo by [^)]{0,180}Getty Images via AFP\\)?", "", text)
-    text = re.sub(r"\\s+", " ", text).strip()
+    text = re.sub(r"\s+", " ", text).strip()
 
     abbreviations = (
         "Sr", "Sra", "Srta", "Dr", "Dra", "Prof", "Profa", "Profo",
@@ -714,7 +714,7 @@ def build_fallback_report(source_items: list[dict], reason: str = "",
         page_title = limpar_titulo_fonte(item.get("titulo_pagina", ""), publisher)
         rss_title = limpar_titulo_fonte(item.get("titulo_pauta", ""), publisher)
         titulo_generico = bool(re.search(
-            r"(?i)\\b(?:notícias? do|em tempo real|portal de notícias|últimas notícias|página inicial|site oficial)\\b",
+            r"(?i)\b(?:notícias? do|em tempo real|portal de notícias|últimas notícias|página inicial|site oficial)\b",
             page_title,
         ))
         title = rss_title if titulo_generico or len(page_title) < 12 else page_title
