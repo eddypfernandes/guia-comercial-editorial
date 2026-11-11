@@ -8,9 +8,14 @@
     return el;
   }
 
-  function linkSeguro(valor) {
+  function linkSeguro(valor, base) {
     try {
-      var url = new URL(valor);
+      var texto = String(valor || "");
+      if (/^(\\/|\\.\\/|\\.\\.\\/)/.test(texto)) {
+        var relativo = new URL(texto, base || document.baseURI);
+        return (relativo.protocol === "https:" || relativo.protocol === "http:") ? relativo.href : "";
+      }
+      var url = new URL(texto);
       return url.protocol === "https:" ? url.href : "";
     } catch (_) {
       return "";
@@ -33,10 +38,10 @@
     return link;
   }
 
-  function criarDestaque(materia) {
+  function criarDestaque(materia, feedUrl) {
     var destaque = criar("article", "gc-editorial__destaque");
     var areaImagem = criar("div", "gc-editorial__imagem");
-    var imagemUrl = linkSeguro(materia.imagem_url);
+    var imagemUrl = linkSeguro(materia.imagem_url, feedUrl);
 
     if (imagemUrl) {
       var imagem = document.createElement("img");
@@ -81,6 +86,7 @@
       var resposta = await fetch(feed, { headers: { Accept: "application/json" } });
       if (!resposta.ok) throw new Error("Feed indisponível.");
       var dados = await resposta.json();
+      var feedUrl = new URL(feed, document.baseURI).href;
       var materias = Array.isArray(dados.materias) ? dados.materias.filter(materiaValida) : [];
 
       raiz.replaceChildren();
@@ -89,7 +95,7 @@
         return;
       }
 
-      raiz.appendChild(criarDestaque(materias[0]));
+      raiz.appendChild(criarDestaque(materias[0], feedUrl));
       if (materias.length > 1) {
         var lista = criar("div", "gc-editorial__lista");
         materias.slice(1, 5).forEach(function (materia) {
