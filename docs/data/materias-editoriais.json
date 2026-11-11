@@ -1,11 +1,47 @@
 {
-  "gerado_em": "2026-11-11T01:11:34+00:00",
+  "gerado_em": "2026-11-11T16:07:28+00:00",
   "total_recebidas": 5,
-  "total_materias_validas": 9,
-  "respostas_rejeitadas": 1,
+  "total_materias_validas": 10,
+  "respostas_rejeitadas": 3,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-f88a0f7f111b",
+      "pilar": "saude",
+      "titulo": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas da Saúde",
+      "linha_fina": "A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender",
+      "titulo_carrossel": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas",
+      "linha_fina_carrossel": "A medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho.",
+      "corpo": "Pressione Enter para buscar • Esc para fechar Siga o ac24horas no WhatsApp e receba as principais notícias do Acre em primeira mão. A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender demandas essenciais fora do horário regular de expediente.\n\nA medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho. Durante o sobreaviso, o funcionário não precisa permanecer dentro de uma unidade de saúde, mas deverá ficar acessível pelos canais oficiais de comunicação e em condições de atender a uma eventual convocação, dentro do prazo que será estabelecido em regulamento.",
+      "fonte_publicadora": "ac24horas",
+      "url_fonte": "https://ac24horas.com/2026/11/11/assis-brasil-cria-regime-de-sobreaviso-para-medicos-enfermeiros-e-motoristas-da-saude/",
+      "imagem_url": "https://ac24horas.com/wp-content/uploads/2026/03/499913867_1006025145062622_1405811528698029044_n.jpg",
+      "titulo_fonte": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas da Saúde",
+      "publicado_em_fonte": "Wed, 11 Nov 2026 14:48:16 GMT",
+      "gerado_em": "2026-11-11T16:07:28+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-14"
+    },
+    {
+      "id": "materia-c65849d45289",
+      "pilar": "fitness",
+      "titulo": "Francês News | Notícias do Nordeste, Brasil e do mundo em Tempo Real",
+      "linha_fina": "Projeto esclarece que o profissional não terá vínculo de emprego nem societário com o espaço",
+      "titulo_carrossel": "Francês News | Notícias do Nordeste, Brasil e do mundo em Tempo Real",
+      "linha_fina_carrossel": "Fica proibida a cobrança por aluno atendido e o valor não poderá superar a média das mensalidades individuais cobradas pela academia.",
+      "corpo": "A Comissão de Desenvolvimento Econômico da Câmara dos Deputados aprovou projeto que regulamenta as parcerias entre academias e profissionais de educação física. A academia não será responsabilizada por exercícios mal prescritos pelo personal trainer externo, mas continuará responsável pela segurança dos equipamentos e das instalações.\n\nEsse projeto traz uma média, dá uma segurança jurídica, e dá a responsabilidade do que é papel do personal e do que são os equipamentos da academia, fazendo com que as academias possam continuar dentro do projeto de academias parceiras pagando uma menor tributação e vai propiciar a todos nós que podemos frequentar a academia ter o serviço do personal e cada vez com um preço mais justo e com mais barato para todos nós”, afirmou Luiz Gastão.",
+      "fonte_publicadora": "Francês News",
+      "url_fonte": "https://francesnews.com.br/post/2026/11/11/45416-comissao-da-camara-aprova-regras-para-parcerias-entre-academias-e-personal-trainers",
+      "imagem_url": "https://img.dhost.cloud/btKV9HX3fTyxF71TrTnl5eHBAP0=/1200x630/smart/https://fcomunic.s3.us-west-004.backblazeb2.com/images/71ac4/8394ca4bd5c474da70e1f865ada3bc4cff5.jpg?name=a-academia-nao-sera-responsabilizada-por-exercicios-mal-prescritos-pelo-personal-trainer-externo.jpg",
+      "titulo_fonte": "Francês News | Notícias do Nordeste, Brasil e do mundo em Tempo Real",
+      "publicado_em_fonte": "Wed, 11 Nov 2026 11:00:00 GMT",
+      "gerado_em": "2026-11-11T16:07:28+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-14"
+    },
     {
       "id": "materia-4439fd3990aa",
       "pilar": "saude",
@@ -13,7 +49,7 @@
       "linha_fina": "O médico e vereador Marcos Caseiro explica por que estratégias de redução de danos são fundamentais para a saúde pública e rebate críticas infundadas sobre o tema.",
       "titulo_carrossel": "Redução de danos: a ciência por trás da saúde pública que salva vidas",
       "linha_fina_carrossel": "O médico e vereador Marcos Caseiro explica por que estratégias de redução de danos são fundamentais para a saúde pública e rebate críticas infundadas sobre o tema.",
-      "corpo": "Foto: - (Photo by SPENCER PLATT / GETTY IMAGES NORTH AMERICA / Getty Images via AFP) · Original e licença A presença de um estande voltado à redução de danos em um festival de música recente trouxe à tona, mais uma vez, o debate sobre se oferecer suporte a usuários de substâncias psicoativas seria uma forma de estimular o consumo. Caseiro aponta que o argumento de que a redução de danos incentivaria o uso de drogas é uma falácia antiga.\n\nEmbora o uso de drogas injetáveis tenha perdido o peso epidemiológico que possuía no auge da epidemia de Aids, Caseiro reforça que a lógica da redução de danos continua sendo um pilar central para o cuidado humano. Em resumo: - A redução de danos é uma estratégia de saúde pública focada em minimizar riscos e salvar vidas, não em incentivar o consumo.",
+      "corpo": "Foto: - (Photo by SPENCER PLATT / GETTY IMAGES NORTH AMERICA / Getty Images via AFP) · Original e licença A presença de um estande voltado à redução de danos em um festival de música recente trouxe à tona, mais uma vez, o debate sobre se oferecer suporte a usuários de substâncias psicoativas seria uma forma de estimular o consumo. Caseiro aponta que o argumento de que a redução de danos incentivaria o uso de drogas é uma falácia antiga. Embora o uso de drogas injetáveis tenha perdido o peso epidemiológico que possuía no auge da epidemia de Aids, Caseiro reforça que a lógica da redução de danos continua sendo um pilar central para o cuidado humano. Em resumo: - A redução de danos é uma estratégia de saúde pública focada em minimizar riscos e salvar vidas, não em incentivar o consumo.",
       "fonte_publicadora": "Plantão Brasil",
       "url_fonte": "https://www.plantaobrasil.net/noticias/162865-reducao-de-danos-a-ciencia-por-tras-da-saude-publica-que-salva-vidas",
       "imagem_url": "https://www.plantaobrasil.net/social-photo/162865/36949705a9d076e9828d31c02cb17b89bcc5054df384e97068cf16c9d040fa21.jpg",
@@ -22,7 +58,7 @@
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-11"
+      "validade_ate": "2026-11-13"
     },
     {
       "id": "materia-6abc54bba90f",
@@ -31,7 +67,7 @@
       "linha_fina": "Encontro promovido pela Academia LED Globo reúne profissionais do mercado audiovisual e pesquisadores para discutir novos formatos, estratégias de exibição e as transformações da dramaturgia na era do streaming.",
       "titulo_carrossel": "Globo e Obitel Brasil realizam seminário sobre os caminhos da ficção televisiva",
       "linha_fina_carrossel": "As inscrições são realizadas pela plataforma Sympla: clique e garanta sua participação .",
-      "corpo": "10/11/2026 18h10 Atualizado 10/11/2026 A Globo e o Obitel Brasil - Rede Brasileira de Pesquisadores da Ficção Televisiva realizam, no dia 25 de novembro, na PUC-Rio, um seminário dedicado às transformações da ficção televisiva e aos novos caminhos da dramaturgia. Confira a programação: 10h45 | Novos Formatos: Microdramas e Novelas Verticais “O sucesso das novelas verticais autorais e remixadas a partir de produtos Globo.\"\n\nParticipantes: Rosane Svartman | Escritora e diretora Samantha Almeida | Diretora de Marketing da TV Globo Luiz Henrique Rios | Diretor de Talentos Artísticos Globo Maria Immacolata Vassallo de Lopes | Criadora e coordenadora da rede internacional de pesquisa Obitel Ana Paula Goulart Ribeiro | Professora titular da Escola de Comunicação da UFRJ e coordenadora da equipe Rio do Obitel Brasil Participe!",
+      "corpo": "10/11/2026 18h10 Atualizado 10/11/2026 A Globo e o Obitel Brasil - Rede Brasileira de Pesquisadores da Ficção Televisiva realizam, no dia 25 de novembro, na PUC-Rio, um seminário dedicado às transformações da ficção televisiva e aos novos caminhos da dramaturgia. Confira a programação: 10h45 | Novos Formatos: Microdramas e Novelas Verticais “O sucesso das novelas verticais autorais e remixadas a partir de produtos Globo.\" Participantes: Rosane Svartman | Escritora e diretora Samantha Almeida | Diretora de Marketing da TV Globo Luiz Henrique Rios | Diretor de Talentos Artísticos Globo Maria Immacolata Vassallo de Lopes | Criadora e coordenadora da rede internacional de pesquisa Obitel Ana Paula Goulart Ribeiro | Professora titular da Escola de Comunicação da UFRJ e coordenadora da equipe Rio do Obitel Brasil Participe!",
       "fonte_publicadora": "Globo",
       "url_fonte": "https://somos.globo.com/google/amp/movimento-led/academia-led/noticia/globo-e-obitel-brasil-realizam-seminario-sobre-os-caminhos-da-ficcao-televisiva.ghtml",
       "imagem_url": "https://s2-somos.glbimg.com/vX1iM1MKPsnf85CS4PVTQUfhZ6s=/6667x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_c9b45b93b8924e77bb94a46a405e1057/internal_photos/bs/2026/B/s/cg1yv3RIyfet3H7zNn3A/globo-led-academialed-seminarioobitel-sympla-capa-20261110-v02-af.png",
@@ -40,7 +76,7 @@
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-11"
+      "validade_ate": "2026-11-13"
     },
     {
       "id": "materia-7e80c3b4ccd3",
@@ -49,7 +85,7 @@
       "linha_fina": "Foto divulgação Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria…",
       "titulo_carrossel": "Biblioteca Demonstrativa oferece serviços gratuitos de leitura, estudo e cultura",
       "linha_fina_carrossel": "A estrutura atende públicos de diferentes idades e necessidades.",
-      "corpo": "Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria da Conceição Moreira Salles (BDB), do Ministério da Cultura (MinC), oferece gratuitamente serviços que incluem salas para estudo, internet via Wi-Fi, telecentro, empréstimo de livros e uma área infantil com Gibiteca.\n\nAlém dos serviços permanentes, a Biblioteca Demonstrativa mantém uma programação cultural gratuita, com atividades voltadas à literatura, leitura, formação e difusão cultural. Já tem uma conta no WordPress.",
+      "corpo": "Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria da Conceição Moreira Salles (BDB), do Ministério da Cultura (MinC), oferece gratuitamente serviços que incluem salas para estudo, internet via Wi-Fi, telecentro, empréstimo de livros e uma área infantil com Gibiteca. Além dos serviços permanentes, a Biblioteca Demonstrativa mantém uma programação cultural gratuita, com atividades voltadas à literatura, leitura, formação e difusão cultural. Já tem uma conta no WordPress.",
       "fonte_publicadora": "Blog Glau na Capital",
       "url_fonte": "https://glaunacapital.com/2026/11/10/biblioteca-demonstrativa-oferece-servicos-gratuitos-de-leitura-estudo-e-cultura-em-brasilia/",
       "imagem_url": "https://glaunacapital.com/wp-content/uploads/2026/11/biblioteca-demonstrativa_filipe-araujo_minc-edited-1.jpg",
@@ -58,7 +94,7 @@
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-11"
+      "validade_ate": "2026-11-13"
     },
     {
       "id": "materia-d6a330870e29",
@@ -76,7 +112,7 @@
       "gerado_em": "2026-11-10T17:40:18+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-13"
     },
     {
       "id": "materia-e57e70fa7c90",
@@ -85,7 +121,7 @@
       "linha_fina": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes",
       "titulo_carrossel": "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB",
       "linha_fina_carrossel": "O resultado representa a quarta derrota da equipe na competição.",
-      "corpo": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes João Victor Rodrigues 10/11/2026 6h47 Foto: Matheus Maranhão / CAIXA Brasília Basquete O Brasília Basquete não conseguiu reagir e foi derrotado pelo União Corinthians por 70 a 61, na noite desta segunda-feira (9/11), em partida válida pelo Novo Basquete Brasil (NBB). No segundo período, porém, o União Corinthians voltou a controlar as ações e venceu por 19 a 13, levando o placar de 40 a 33 para o intervalo.\n\nApós o compromisso, o Brasília Basquete viajará para disputar o Campeonato Sul-Americano. A equipe só volta à quadra pelo NBB em 22 de novembro, domingo, às 11h15, quando enfrentará o Pato Basquete no ginásio Nilson Nelson, em Brasília.",
+      "corpo": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes João Victor Rodrigues 10/11/2026 6h47 Foto: Matheus Maranhão / CAIXA Brasília Basquete O Brasília Basquete não conseguiu reagir e foi derrotado pelo União Corinthians por 70 a 61, na noite desta segunda-feira (9/11), em partida válida pelo Novo Basquete Brasil (NBB). No segundo período, porém, o União Corinthians voltou a controlar as ações e venceu por 19 a 13, levando o placar de 40 a 33 para o intervalo. Após o compromisso, o Brasília Basquete viajará para disputar o Campeonato Sul-Americano. A equipe só volta à quadra pelo NBB em 22 de novembro, domingo, às 11h15, quando enfrentará o Pato Basquete no ginásio Nilson Nelson, em Brasília.",
       "fonte_publicadora": "Jornal de Brasília",
       "url_fonte": "https://jornaldebrasilia.com.br/torcida/brasilia-basquete-perde-para-o-uniao-corinthians-e-chega-a-quarta-derrota-no-nbb/",
       "imagem_url": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2026/10/22065014/Captura-de-tela-2026-10-22-064950.png",
@@ -94,14 +130,14 @@
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-11"
+      "validade_ate": "2026-11-13"
     },
     {
       "id": "materia-697f9d2bb4a4",
       "pilar": "lazer",
       "titulo": "FGA Journey planeja reunir mais de 3 mil empresários em Brasília novo template · Portal Radar FGA Journey planeja reunir mais de 3 mil empresários em Brasília - Portal Radar",
       "linha_fina": "Brasília receberá, nos dias 22 e 23 de novembro, o FGA Journey 2026, evento que espera reunir mais de 3 mil empresários para discutir estra...",
-      "titulo_carrossel": "FGA Journey planeja reunir mais de 3 mil empresários em Brasília novo template ·",
+      "titulo_carrossel": "FGA Journey planeja reunir mais de 3 mil empresários em Brasília",
       "linha_fina_carrossel": "Para Gustavo de Oliveira, empresário e fundador da FGA Educação, a proposta é aproximar as estratégias apresentadas no palco dos desafios enfrentados diariamente por quem administra um negócio.",
       "corpo": "Brasília receberá, nos dias 22 e 23 de novembro, o FGA Journey 2026, evento que espera reunir mais de 3 mil empresários para discutir estratégias de marketing, vendas e gestão. Para Gustavo de Oliveira, empresário e fundador da FGA Educação, a proposta é aproximar as estratégias apresentadas no palco dos desafios enfrentados diariamente por quem administra um negócio. MÉTODO COMERCIAL SERÁ APRESENTADO AOS EMPRESÁRIOS Entre os principais assuntos do FGA Journey estão marketing e geração de demanda, estruturação de equipes de pré-vendas, conversão de oportunidades comerciais, gestão por indicadores e uso da inteligência artificial para melhorar a produtividade das empresas. com/evento-fga/ Jornalista formado pela PUC-SP, Editor do Portal Radar e da Radar Magazine.",
       "fonte_publicadora": "Portal Radar",
@@ -112,7 +148,7 @@
       "gerado_em": "2026-11-10T17:40:18+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-23"
+      "validade_ate": "2026-11-13"
     },
     {
       "id": "materia-0518da6f9331",
@@ -130,7 +166,7 @@
       "gerado_em": "2026-11-10T03:25:00+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-08"
+      "validade_ate": "2026-11-12"
     },
     {
       "id": "materia-7a8d79adc6b2",
@@ -146,24 +182,6 @@
       "titulo_fonte": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
       "publicado_em_fonte": "Tue, 10 Nov 2026 01:48:08 GMT",
       "gerado_em": "2026-11-10T03:25:00+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-20"
-    },
-    {
-      "id": "materia-c8aa355bef93",
-      "pilar": "lazer",
-      "titulo": "Gastronomia e cultura de Mato Grosso serão destaques em quatro espaços de Brasília | CenárioMT",
-      "linha_fina": "Senac-MT levará chefs, pratos típicos e apresentações culturais a quatro espaços gastronômicos de Brasília entre os dias 9 e 12 de novembro.",
-      "titulo_carrossel": "Gastronomia e cultura de Mato Grosso serão destaques em quatro espaços",
-      "linha_fina_carrossel": "A abertura será na segunda-feira (9), às 19h, no CEAG, com a aula-show Ceviche Pantaneiro .",
-      "corpo": "A culinária de Mato Grosso ocupará quatro espaços gastronômicos de Brasília entre segunda-feira (9) e quinta-feira (12), durante a Semana de Gastronomia e Cultura Regional. A representação mato-grossense ficará a cargo do Senac-MT , que mobilizará chefs para preparar receitas regionais no Centro de Aperfeiçoamento em Gastronomia (CEAG), no Restaurante-Escola Downtown, no Restaurante-Escola da Câmara dos Deputados e no Restaurante-Escola Senac no Senado Federal. O Senac-MT integra o Sistema Comércio de Mato Grosso, filiado à CNC, presidida por José Roberto Tadros. A participação das instituições estaduais se estenderá até quinta-feira (12), quando termina a programação dedicada à gastronomia e à cultura mato-grossense em Brasília.",
-      "fonte_publicadora": "CenárioMT",
-      "url_fonte": "https://cenariomt.com.br/mato-grosso/gastronomia-de-mato-grosso-tera-quatro-dias-de-destaque-em-brasilia/",
-      "imagem_url": "https://cenariomt.com.br/wp-content/uploads/2026/11/gastronomia.webp",
-      "titulo_fonte": "Gastronomia e cultura de Mato Grosso serão destaques em quatro espaços de Brasília | CenárioMT",
-      "publicado_em_fonte": "Sat, 07 Nov 2026 18:55:25 GMT",
-      "gerado_em": "2026-11-08T16:36:38+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-12"
