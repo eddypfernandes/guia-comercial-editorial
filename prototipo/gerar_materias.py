@@ -11,6 +11,7 @@ import os
 import re
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
@@ -593,6 +594,26 @@ def compactar_titulo(texto: str, limite: int = CAROUSEL_TITLE_MAX_CHARS) -> str:
     shortened = title[:limite + 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
     shortened = remover_final_incompleto(shortened)
     return shortened if len(shortened) >= 18 else ""
+
+def pilar_compativel(pilar: str, texto: str) -> bool:
+    """Evita publicar em um pilar pautas cujo título/descrição tratam de outro assunto."""
+    def normalizar(valor: str) -> str:
+        valor = unicodedata.normalize("NFKD", str(valor or "").casefold())
+        return "".join(char for char in valor if not unicodedata.combining(char))
+
+    taxonomia = {
+        "pet": ("pet", "cao", "caes", "cachorro", "cachorros", "gato", "gatos", "veterin", "animal domestico"),
+        "lazer": ("lazer", "cultura", "turismo", "evento", "passeio", "viagem", "entretenimento", "cinema", "teatro", "biblioteca", "festival", "exposicao", "show", "musica", "ficcao", "televisao", "literatura", "arte"),
+        "esportes": ("esporte", "futebol", "basquete", "volei", "atletismo", "campeonato", "partida", "time", "clube", "nbb", "corrida de rua", "competicao esportiva"),
+        "saude": ("saude", "vacina", "vacinacao", "prevencao", "hospital", "medico", "doenca", "tratamento", "sus", "saude publica", "saude mental"),
+        "fitness": ("fitness", "academia", "musculacao", "treino", "exercicio fisico", "atividade fisica", "ginastica", "aerobica", "crossfit", "pilates", "yoga"),
+    }
+    termos = taxonomia.get(str(pilar or "").strip().lower())
+    if not termos:
+        return False
+    texto_normalizado = normalizar(texto)
+    return any(termo in texto_normalizado for termo in termos)
+
 
 def filter_recent_sources(source_items: list[dict], now: datetime | None = None) -> list[dict]:
     """Aceita somente fontes verificadas, datadas e publicadas nos últimos sete dias."""
