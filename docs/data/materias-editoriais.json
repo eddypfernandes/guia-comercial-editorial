@@ -1,47 +1,11 @@
 {
-  "gerado_em": "2026-11-11T16:04:44+00:00",
+  "gerado_em": "2026-11-11T01:11:34+00:00",
   "total_recebidas": 5,
-  "total_materias_validas": 8,
-  "respostas_rejeitadas": 3,
+  "total_materias_validas": 9,
+  "respostas_rejeitadas": 1,
   "publicacao_oficial": false,
   "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
   "materias": [
-    {
-      "id": "materia-f88a0f7f111b",
-      "pilar": "saude",
-      "titulo": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas da Saúde",
-      "linha_fina": "A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender",
-      "titulo_carrossel": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas",
-      "linha_fina_carrossel": "A medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho.",
-      "corpo": "Pressione Enter para buscar • Esc para fechar Siga o ac24horas no WhatsApp e receba as principais notícias do Acre em primeira mão. A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender demandas essenciais fora do horário regular de expediente.\n\nA medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho. Durante o sobreaviso, o funcionário não precisa permanecer dentro de uma unidade de saúde, mas deverá ficar acessível pelos canais oficiais de comunicação e em condições de atender a uma eventual convocação, dentro do prazo que será estabelecido em regulamento.",
-      "fonte_publicadora": "ac24horas",
-      "url_fonte": "https://ac24horas.com/2026/11/11/assis-brasil-cria-regime-de-sobreaviso-para-medicos-enfermeiros-e-motoristas-da-saude/",
-      "imagem_url": "https://ac24horas.com/wp-content/uploads/2026/03/499913867_1006025145062622_1405811528698029044_n.jpg",
-      "titulo_fonte": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas da Saúde",
-      "publicado_em_fonte": "Wed, 11 Nov 2026 14:48:16 GMT",
-      "gerado_em": "2026-11-11T16:04:44+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-12"
-    },
-    {
-      "id": "materia-ef3005b62b94",
-      "pilar": "fitness",
-      "titulo": "Longe das telas: a infância ao ar livre entra na conta de quem procura segunda casa perto de Brasília",
-      "linha_fina": "Com 28% dos jovens que usam a internet conectados pela primeira vez até os 6 anos e um guia federal que recomenda adiar o celular próprio até os 12, o fim de semana ganhou outra função. No Lago Corumbá IV, a Fazenda do Lago, do Grupo CPR, desenha o território para que as crianças tenham o que fazer fora da tela",
-      "titulo_carrossel": "Longe das telas: a infância ao ar livre entra na conta de quem procura segunda",
-      "linha_fina_carrossel": "Com 28% dos jovens que usam a internet conectados pela primeira vez até os 6 anos e um guia federal que recomenda adiar o celular próprio até os 12, o fim de semana ganhou outra função.",
-      "corpo": "Navegue direto pelo app 11/11/2026 09h47 Atualizado 11/11/2026 09h47 Quase todo jovem brasileiro está conectado, e cada vez mais cedo. Em março do mesmo ano, o governo federal publicou o guia \"Crianças, Adolescentes e Telas\", que recomenda não usar telas com menores de 2 anos, salvo em videochamadas com a família, e não dar celular próprio às crianças antes dos 12.\n\nSe a escola passou a ter regra, o fim de semana virou terreno de negociação dentro de casa. É nesse terreno que alguns empreendimentos de alto padrão passaram a desenhar o território: a segunda residência deixa de ser só descanso dos adultos e vira o lugar em que as crianças trocam a tela por cavalo, trilha, lago e outras crianças.\n\n\"A gente desenhou o lugar pensando no que a criança faz no sábado de manhã.",
-      "fonte_publicadora": "O GLOBO",
-      "url_fonte": "https://oglobo.globo.com/patrocinado/pulse-brand/noticia/2026/11/11/longe-das-telas-a-infancia-ao-ar-livre-entra-na-conta-de-quem-procura-segunda-casa-perto-de-brasilia-1.ghtml",
-      "imagem_url": "https://ogcss.infoglobo.com.br/9876543210/img/oglobo.jpg",
-      "titulo_fonte": "Longe das telas: a infância ao ar livre entra na conta de quem procura segunda casa perto de Brasília",
-      "publicado_em_fonte": "Wed, 11 Nov 2026 12:47:10 GMT",
-      "gerado_em": "2026-11-11T16:04:44+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-12"
-    },
     {
       "id": "materia-4439fd3990aa",
       "pilar": "saude",
@@ -49,7 +13,7 @@
       "linha_fina": "O médico e vereador Marcos Caseiro explica por que estratégias de redução de danos são fundamentais para a saúde pública e rebate críticas infundadas sobre o tema.",
       "titulo_carrossel": "Redução de danos: a ciência por trás da saúde pública que salva vidas",
       "linha_fina_carrossel": "O médico e vereador Marcos Caseiro explica por que estratégias de redução de danos são fundamentais para a saúde pública e rebate críticas infundadas sobre o tema.",
-      "corpo": "Foto: - (Photo by SPENCER PLATT / GETTY IMAGES NORTH AMERICA / Getty Images via AFP) · Original e licença A presença de um estande voltado à redução de danos em um festival de música recente trouxe à tona, mais uma vez, o debate sobre se oferecer suporte a usuários de substâncias psicoativas seria uma forma de estimular o consumo. Caseiro aponta que o argumento de que a redução de danos incentivaria o uso de drogas é uma falácia antiga. Embora o uso de drogas injetáveis tenha perdido o peso epidemiológico que possuía no auge da epidemia de Aids, Caseiro reforça que a lógica da redução de danos continua sendo um pilar central para o cuidado humano. Em resumo: - A redução de danos é uma estratégia de saúde pública focada em minimizar riscos e salvar vidas, não em incentivar o consumo.",
+      "corpo": "Foto: - (Photo by SPENCER PLATT / GETTY IMAGES NORTH AMERICA / Getty Images via AFP) · Original e licença A presença de um estande voltado à redução de danos em um festival de música recente trouxe à tona, mais uma vez, o debate sobre se oferecer suporte a usuários de substâncias psicoativas seria uma forma de estimular o consumo. Caseiro aponta que o argumento de que a redução de danos incentivaria o uso de drogas é uma falácia antiga.\n\nEmbora o uso de drogas injetáveis tenha perdido o peso epidemiológico que possuía no auge da epidemia de Aids, Caseiro reforça que a lógica da redução de danos continua sendo um pilar central para o cuidado humano. Em resumo: - A redução de danos é uma estratégia de saúde pública focada em minimizar riscos e salvar vidas, não em incentivar o consumo.",
       "fonte_publicadora": "Plantão Brasil",
       "url_fonte": "https://www.plantaobrasil.net/noticias/162865-reducao-de-danos-a-ciencia-por-tras-da-saude-publica-que-salva-vidas",
       "imagem_url": "https://www.plantaobrasil.net/social-photo/162865/36949705a9d076e9828d31c02cb17b89bcc5054df384e97068cf16c9d040fa21.jpg",
@@ -58,7 +22,7 @@
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-11"
     },
     {
       "id": "materia-6abc54bba90f",
@@ -67,7 +31,7 @@
       "linha_fina": "Encontro promovido pela Academia LED Globo reúne profissionais do mercado audiovisual e pesquisadores para discutir novos formatos, estratégias de exibição e as transformações da dramaturgia na era do streaming.",
       "titulo_carrossel": "Globo e Obitel Brasil realizam seminário sobre os caminhos da ficção televisiva",
       "linha_fina_carrossel": "As inscrições são realizadas pela plataforma Sympla: clique e garanta sua participação .",
-      "corpo": "10/11/2026 18h10 Atualizado 10/11/2026 A Globo e o Obitel Brasil - Rede Brasileira de Pesquisadores da Ficção Televisiva realizam, no dia 25 de novembro, na PUC-Rio, um seminário dedicado às transformações da ficção televisiva e aos novos caminhos da dramaturgia. Confira a programação: 10h45 | Novos Formatos: Microdramas e Novelas Verticais “O sucesso das novelas verticais autorais e remixadas a partir de produtos Globo.\" Participantes: Rosane Svartman | Escritora e diretora Samantha Almeida | Diretora de Marketing da TV Globo Luiz Henrique Rios | Diretor de Talentos Artísticos Globo Maria Immacolata Vassallo de Lopes | Criadora e coordenadora da rede internacional de pesquisa Obitel Ana Paula Goulart Ribeiro | Professora titular da Escola de Comunicação da UFRJ e coordenadora da equipe Rio do Obitel Brasil Participe!",
+      "corpo": "10/11/2026 18h10 Atualizado 10/11/2026 A Globo e o Obitel Brasil - Rede Brasileira de Pesquisadores da Ficção Televisiva realizam, no dia 25 de novembro, na PUC-Rio, um seminário dedicado às transformações da ficção televisiva e aos novos caminhos da dramaturgia. Confira a programação: 10h45 | Novos Formatos: Microdramas e Novelas Verticais “O sucesso das novelas verticais autorais e remixadas a partir de produtos Globo.\"\n\nParticipantes: Rosane Svartman | Escritora e diretora Samantha Almeida | Diretora de Marketing da TV Globo Luiz Henrique Rios | Diretor de Talentos Artísticos Globo Maria Immacolata Vassallo de Lopes | Criadora e coordenadora da rede internacional de pesquisa Obitel Ana Paula Goulart Ribeiro | Professora titular da Escola de Comunicação da UFRJ e coordenadora da equipe Rio do Obitel Brasil Participe!",
       "fonte_publicadora": "Globo",
       "url_fonte": "https://somos.globo.com/google/amp/movimento-led/academia-led/noticia/globo-e-obitel-brasil-realizam-seminario-sobre-os-caminhos-da-ficcao-televisiva.ghtml",
       "imagem_url": "https://s2-somos.glbimg.com/vX1iM1MKPsnf85CS4PVTQUfhZ6s=/6667x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_c9b45b93b8924e77bb94a46a405e1057/internal_photos/bs/2026/B/s/cg1yv3RIyfet3H7zNn3A/globo-led-academialed-seminarioobitel-sympla-capa-20261110-v02-af.png",
@@ -76,7 +40,7 @@
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-11"
     },
     {
       "id": "materia-7e80c3b4ccd3",
@@ -85,7 +49,7 @@
       "linha_fina": "Foto divulgação Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria…",
       "titulo_carrossel": "Biblioteca Demonstrativa oferece serviços gratuitos de leitura, estudo e cultura",
       "linha_fina_carrossel": "A estrutura atende públicos de diferentes idades e necessidades.",
-      "corpo": "Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria da Conceição Moreira Salles (BDB), do Ministério da Cultura (MinC), oferece gratuitamente serviços que incluem salas para estudo, internet via Wi-Fi, telecentro, empréstimo de livros e uma área infantil com Gibiteca. Além dos serviços permanentes, a Biblioteca Demonstrativa mantém uma programação cultural gratuita, com atividades voltadas à literatura, leitura, formação e difusão cultural. Já tem uma conta no WordPress.",
+      "corpo": "Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria da Conceição Moreira Salles (BDB), do Ministério da Cultura (MinC), oferece gratuitamente serviços que incluem salas para estudo, internet via Wi-Fi, telecentro, empréstimo de livros e uma área infantil com Gibiteca.\n\nAlém dos serviços permanentes, a Biblioteca Demonstrativa mantém uma programação cultural gratuita, com atividades voltadas à literatura, leitura, formação e difusão cultural. Já tem uma conta no WordPress.",
       "fonte_publicadora": "Blog Glau na Capital",
       "url_fonte": "https://glaunacapital.com/2026/11/10/biblioteca-demonstrativa-oferece-servicos-gratuitos-de-leitura-estudo-e-cultura-em-brasilia/",
       "imagem_url": "https://glaunacapital.com/wp-content/uploads/2026/11/biblioteca-demonstrativa_filipe-araujo_minc-edited-1.jpg",
@@ -94,7 +58,7 @@
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-10"
+      "validade_ate": "2026-11-11"
     },
     {
       "id": "materia-d6a330870e29",
@@ -112,7 +76,25 @@
       "gerado_em": "2026-11-10T17:40:18+00:00",
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-09"
+      "validade_ate": "2026-11-10"
+    },
+    {
+      "id": "materia-e57e70fa7c90",
+      "pilar": "esportes",
+      "titulo": "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB | Jornal de Brasília Brasília Basquete perde para o União Corinthians e chega à quarta derrota no N",
+      "linha_fina": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes",
+      "titulo_carrossel": "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB",
+      "linha_fina_carrossel": "O resultado representa a quarta derrota da equipe na competição.",
+      "corpo": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes João Victor Rodrigues 10/11/2026 6h47 Foto: Matheus Maranhão / CAIXA Brasília Basquete O Brasília Basquete não conseguiu reagir e foi derrotado pelo União Corinthians por 70 a 61, na noite desta segunda-feira (9/11), em partida válida pelo Novo Basquete Brasil (NBB). No segundo período, porém, o União Corinthians voltou a controlar as ações e venceu por 19 a 13, levando o placar de 40 a 33 para o intervalo.\n\nApós o compromisso, o Brasília Basquete viajará para disputar o Campeonato Sul-Americano. A equipe só volta à quadra pelo NBB em 22 de novembro, domingo, às 11h15, quando enfrentará o Pato Basquete no ginásio Nilson Nelson, em Brasília.",
+      "fonte_publicadora": "Jornal de Brasília",
+      "url_fonte": "https://jornaldebrasilia.com.br/torcida/brasilia-basquete-perde-para-o-uniao-corinthians-e-chega-a-quarta-derrota-no-nbb/",
+      "imagem_url": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2026/10/22065014/Captura-de-tela-2026-10-22-064950.png",
+      "titulo_fonte": "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB | Jornal de Brasília Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB - Jornal de Brasília",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 09:47:06 GMT",
+      "gerado_em": "2026-11-11T01:11:34+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-11"
     },
     {
       "id": "materia-697f9d2bb4a4",
@@ -131,6 +113,42 @@
       "status_editorial": "apto_para_publicacao",
       "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-23"
+    },
+    {
+      "id": "materia-0518da6f9331",
+      "pilar": "esportes",
+      "titulo": "Brasília Basquete perde para União Corinthians em partida equilibrada",
+      "linha_fina": "Brasília Basquete foi derrotado pelo União Corinthians por 70 a 61, marcando sua quarta derrota no NBB.",
+      "titulo_carrossel": "Brasília Basquete perde para União Corinthians em partida equilibrada",
+      "linha_fina_carrossel": "Brasília Basquete foi derrotado pelo União Corinthians por 70 a 61, marcando sua quarta derrota no NBB.",
+      "corpo": "Na última segunda-feira (9/11), o Brasília Basquete enfrentou o União Corinthians em uma competição acirrada, mas acabou sendo derrotado por 70 a 61. O União Corinthians rapidamente abriu vantagem, com uma run de 10-0 nos primeiros minutos, situando o placar em 16 a 6. A equipe brasiliense continuou a se esforçar e, embora o quarto tenha terminado 19 a 13 a favor do União Corinthians, ainda era possível ver que o time mantinha-se próximo no placar, encerrando a primeira metade da partida com 40 a 33 para os visitantes. Após essa partida, o Brasília Basquete já se prepara para o próximo desafio na competição, que envolve uma viagem para o Sul-Americano. A jornada no NBB continua, e a torcida aposta na superação após essa derrota.",
+      "fonte_publicadora": "Diário do Estado",
+      "url_fonte": "https://diariodoestadogo.com.br/brasilia-basquete-perde-para-uniao-corinthians-em-partida-equilibrada/",
+      "imagem_url": "https://diariodoestadogo.com.br/wp-content/uploads/2026/11/brasilia-basquete-perde-para-uniao-corinthians-em-partida-equilibrada.webp",
+      "titulo_fonte": "Brasília Basquete perde para União Corinthians em partida equilibrada",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 02:04:46 GMT",
+      "gerado_em": "2026-11-10T03:25:00+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-08"
+    },
+    {
+      "id": "materia-7a8d79adc6b2",
+      "pilar": "lazer",
+      "titulo": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
+      "linha_fina": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital.",
+      "titulo_carrossel": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
+      "linha_fina_carrossel": "A proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop.",
+      "corpo": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital. A capital federal se prepara para sediar a terceira edição do Space Today Experience , um grande encontro que une ciência, tecnologia e entretenimento. A proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop. Abaixo estão listadas as principais informações práticas para quem deseja participar da programação oficial: Data: 19 a 22 de novembro de 2026 Local: Pavilhão do Parque da Cidade, Brasília (DF) Entrada: Gratuita, mediante retirada prévia pelo Sympla Condição de acesso: Apresentação do ingresso mais 1 kg de alimento não perecível ou um item de lixo eletrônico.",
+      "fonte_publicadora": "Agita Brasília",
+      "url_fonte": "https://agitabrasilia.com/evento-gratuito-em-brasilia-tera-concursos-de-cosplay-games-e-atracoes-interativas/",
+      "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/evento-gratuito-em-brasilia-tera-concursos-de-cosplay-games-e-atracoes-interativas-1794275283.jpg",
+      "titulo_fonte": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
+      "publicado_em_fonte": "Tue, 10 Nov 2026 01:48:08 GMT",
+      "gerado_em": "2026-11-10T03:25:00+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-20"
     },
     {
       "id": "materia-c8aa355bef93",
