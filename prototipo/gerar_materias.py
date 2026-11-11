@@ -457,24 +457,19 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
 
     raise RuntimeError(f"Gemini não respondeu após 3 tentativas. Último erro: {last_error}") from last_error
 
-def limpar_titulo_fonte(texto: str) -> str:
-    """Remove sufixos de identificação da fonte e menus de compartilhamento do título."""
+def limpar_titulo_fonte(texto: str, fonte_publicadora: str = "") -> str:
+    """Remove menus, sufixos de portal, repetições e resíduos conhecidos de template."""
     texto = " ".join(str(texto or "").split())
-    texto = re.split(
-        r"\s+Ir para\s+(?:bluesky|facebook|instagram|kwai|threads)\b",
-        texto,
-        maxsplit=1,
-        flags=re.IGNORECASE,
-    )[0]
-    texto = re.sub(
-        r"\s*(?:\||–|—|-)\s*(?:Agência Brasil|CNN Brasil|R7 Entretenimento|"
-        r"Niterói\s*\|\s*O Globo|Sport Club do Recife|Capital Política|RADAR DIGITAL)\b.*$",
-        "",
-        texto,
-        flags=re.IGNORECASE,
-    )
-    return texto.strip(" \t-|–—:")
-
+    texto = re.split(r"\\s+Ir para\\s+(?:bluesky|facebook|instagram|kwai|threads)\\b", texto, maxsplit=1, flags=re.IGNORECASE)[0]
+    texto = re.sub(r"(?i)\\s*[|–—-]\\s*(?:novo\\s+template|template\\s+novo).*$", "", texto)
+    if fonte_publicadora:
+        publisher = re.escape(" ".join(str(fonte_publicadora).split()))
+        texto = re.sub(r"(?i)\\s*[|–—-]\\s*" + publisher + r"\\s*$", "", texto)
+    texto = re.sub(r"\\s*(?:\\||–|—|-)\\s*(?:Agência Brasil|CNN Brasil|R7 Entretenimento|Niterói\\s*\\|\\s*O Globo|Sport Club do Recife|Capital Política|RADAR DIGITAL)\\b.*$", "", texto, flags=re.IGNORECASE)
+    partes = re.split(r"\\s+[|–—]\\s+", texto, maxsplit=1)
+    if len(partes) == 2 and len(partes[0]) >= 24 and partes[0][:min(48, len(partes[0]))].casefold() in partes[1].casefold():
+        texto = partes[0]
+    return texto.strip(" \\t-|–—:")
 
 def compactar_texto(texto: str, limite: int) -> str:
     """Seleciona uma frase completa e útil sem cortar o texto arbitrariamente."""
