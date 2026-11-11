@@ -6,7 +6,9 @@ matéria original e não é prova de que cada afirmação seja verdadeira.
 from __future__ import annotations
 
 import json
+import re
 import sys
+import unicodedata
 import time
 from email.utils import parsedate_to_datetime
 import urllib.error
@@ -19,6 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "config" / "fontes.json"
 OUTPUT_PATH = ROOT / "prototipo" / "saida" / "descoberta-fontes.json"
+HISTORY_PATH = ROOT / "prototipo" / "saida" / "historico-pautas.json"
+HISTORY_DAYS = 30
 USER_AGENT = "GuiaComercialEditorialPrototype/0.1 (+https://github.com/eddypfernandes/guia-comercial-editorial)"
 
 
@@ -113,6 +117,71 @@ def deduplicate(items: list[dict]) -> list[dict]:
     return result
 
 
+
+def normalize_title(value: str) -> str:
+    value = unicodedata.normalize("NFKD", str(value or "").casefold())
+    value = "".join(char for char in value if not unicodedata.combining(char))
+    return re.sub(r"[^a-z0-9]+", " ", value).strip()
+
+
+def history_keys(item: dict) -> set[str]:
+    pillar = str(item.get("pilar", "")).strip().casefold()
+    url = str(item.get("url_agregador", "")).strip().split("&", 1)[0].rstrip("/").casefold()
+    title = normalize_title(item.get("titulo", ""))
+    keys = set()
+    if url:
+        keys.add("url:" + url)
+    if pillar and title:
+        keys.add("title:" + pillar + ":" + title)
+    return keys
+
+
+def filter_seen_pautas(items: list[dict], history: dict,
+                        now: datetime | None = None) -> tuple[list[dict], dict]:
+    """Retira pautas já descobertas nos últimos 30 dias."""
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    now = now.astimezone(timezone.utc)
+    cutoff = now.timestamp() - HISTORY_DAYS * 86400
+    records = []
+    seen = set()
+    for record in history.get("registros", []):
+        if not isinstance(record, dict):
+            continue
+        try:
+            registered = datetime.fromisoformat(record.get("registrado_em", "").replace("Z", "+00:00"))
+            if registered.tzinfo is None:
+                registered = registered.replace(tzinfo=timezone.utc)
+        except (TypeError, ValueError):
+            continue
+        if registered.timestamp() < cutoff:
+            continue
+        records.append(record)
+        seen.update(record.get("chaves", []))
+
+    fresh = []
+    for item in items:
+        keys = history_keys(item)
+        if not keys or keys.intersection(seen):
+            continue
+        fresh.append(item)
+        seen.update(keys)
+        records.append({
+            "pilar": item.get("pilar", ""),
+            "titulo": item.get("titulo", "")[:300],
+            "url_agregador": item.get("url_agregador", ""),
+            "registrado_em": now.isoformat(timespec="seconds"),
+            "chaves": sorted(keys),
+        })
+    return fresh, {
+        "atualizado_em": now.isoformat(timespec="seconds"),
+        "retencao_dias": HISTORY_DAYS,
+        "total_registros": len(records),
+        "registros": records,
+    }
+
+
 def rotate_queries(queries: list[dict], cycle_number: int = 0) -> list[dict]:
     """Alterna o pilar inicial entre execuções sem alterar a configuração."""
     if not queries:
@@ -121,7 +190,7 @@ def rotate_queries(queries: list[dict], cycle_number: int = 0) -> list[dict]:
     return queries[offset:] + queries[:offset]
 
 
-def collect(config: dict, opener=fetch_feed, cycle_number: int = 0) -> dict:
+def collect(config: dict, opener=fetch_feed, cycle_number: int = 0, history: dict | None = None) -> dict:
     fetched_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
     all_items: list[dict] = []
     feed_status: list[dict] = []
@@ -160,18 +229,21 @@ def collect(config: dict, opener=fetch_feed, cycle_number: int = 0) -> dict:
             })
 
     all_items = deduplicate(all_items)
+    fresh_items, updated_history = filter_seen_pautas(all_items, history or {})
     return {
         "gerado_em": fetched_at,
         "modo": "descoberta por RSS; revisão editorial obrigatória",
         "provedor": config.get("provider", "RSS"),
-        "total_itens": len(all_items),
+        "total_itens": len(fresh_items),
+        "itens_repetidos_ignorados": len(all_items) - len(fresh_items),
+        "historico_pautas": updated_history,
         "total_feeds": len(feed_status),
         "ciclo_numero": max(0, int(cycle_number)),
         "ordem_pilares": [query.get("pillar", "") for query in ordered_queries],
         "feeds_com_sucesso": sum(1 for feed in feed_status if feed["status"] == "ok"),
         "aviso": "Os resultados são sugestões de pauta. Não representam verificação factual, aprovação editorial ou autorização de publicação.",
         "feeds": feed_status,
-        "itens": all_items
+        "itens": fresh_items
     }
 
 
@@ -184,7 +256,14 @@ def main() -> int:
 
     import os
     cycle_number = int(os.environ.get("EDITORIAL_CYCLE_NUMBER", "0"))
-    report = collect(config, cycle_number=cycle_number)
+    try:
+        history = json.loads(HISTORY_PATH.read_text(encoding="utf-8")) if HISTORY_PATH.exists() else {}
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"ERRO ao ler histórico de pautas: {exc}")
+        return 1
+    report = collect(config, cycle_number=cycle_number, history=history)
+    HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    HISTORY_PATH.write_text(json.dumps(report.pop("historico_pautas"), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Feeds consultados: {report['feeds_com_sucesso']}/{report['total_feeds']}")
