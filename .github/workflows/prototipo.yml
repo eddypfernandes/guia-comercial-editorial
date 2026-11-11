@@ -44,6 +44,8 @@ jobs:
           python -m unittest prototipo/testar_resumidor.py -v
 
       - name: Coletar sugestões de pauta por RSS
+        env:
+          EDITORIAL_CYCLE_NUMBER: ${{ github.run_number }}
         run: python prototipo/coletar_fontes.py
 
       - name: Verificar tecnicamente as fontes originais
