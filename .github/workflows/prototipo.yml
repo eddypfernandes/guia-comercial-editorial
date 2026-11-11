@@ -64,6 +64,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data/materias-editoriais.json prototipo/saida/historico-pautas.json
+          if [ -d docs/images/editorial ]; then git add docs/images/editorial; fi
           if git diff --cached --quiet; then
             echo "O feed editorial não teve alterações."
           else
