@@ -138,6 +138,38 @@ class ArticleValidationTests(unittest.TestCase):
             "FGA Journey planeja reunir empresários em Brasília",
         )
 
+    def test_body_formatter_removes_common_interface_and_template_noise(self):
+        body = (
+            "Pressione Enter para buscar • Esc para fechar "
+            "Siga o ac24horas no WhatsApp e receba as principais notícias em primeira mão. "
+            "A notícia principal apresenta os fatos e o contexto para o leitor. "
+            "Já tem uma conta no WordPress."
+        )
+        cleaned = format_body_paragraphs(body)
+        self.assertIn("A notícia principal apresenta os fatos", cleaned)
+        self.assertNotIn("Pressione Enter", cleaned)
+        self.assertNotIn("ac24horas no WhatsApp", cleaned)
+        self.assertNotIn("WordPress", cleaned)
+
+    def test_generic_site_title_falls_back_to_the_original_rss_headline(self):
+        source = dict(
+            self.source[0],
+            pilar="fitness",
+            fonte_publicadora="Francês News",
+            titulo_pagina="Francês News | Notícias do Nordeste, Brasil e do mundo em Tempo Real",
+            titulo_pauta="Comissão da Câmara aprova regras para parcerias entre academias e personal trainers - Francês News",
+            url_final="https://example.org/fitness",
+        )
+        result = build_fallback_report(
+            [source],
+            now=datetime(2026, 10, 28, 12, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(result["total_materias_validas"], 1)
+        self.assertEqual(
+            result["materias"][0]["titulo"],
+            "Comissão da Câmara aprova regras para parcerias entre academias e personal trainers",
+        )
+
     def test_summary_without_complete_sentence_is_rejected(self):
         result = compactar_texto(
             "Esta é uma chamada editorial longa que precisa caber no espaço disponível",
