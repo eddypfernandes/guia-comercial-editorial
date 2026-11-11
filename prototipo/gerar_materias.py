@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT_PATH = ROOT / "prototipo" / "saida" / "fontes-verificadas.json"
 OUTPUT_PATH = ROOT / "prototipo" / "saida" / "materias-editoriais.json"
 ACTIVE_FEED_PATH = ROOT / "docs" / "data" / "materias-editoriais.json"
-DEFAULT_VALIDITY_DAYS = 1
+DEFAULT_VALIDITY_DAYS = 3
 BRASILIA_TZ = ZoneInfo("America/Sao_Paulo")
 MAX_ACTIVE_PER_PILLAR = 4
 MAX_ACTIVE_ARTICLES = 20
@@ -280,21 +280,21 @@ def contextual_expiry_date(article: dict, now: datetime) -> date | None:
 
 
 def article_is_current(article: dict, now: datetime, validity_days: int = DEFAULT_VALIDITY_DAYS) -> bool:
-    """Usa a data contextual do acontecimento; sem ela, aplica retenção padrão de 24 horas."""
+    """Aplica retenção máxima de 72 horas e respeita prazos contextuais menores."""
     if article.get("status_editorial") != "apto_para_publicacao":
         return False
     published = parse_article_date(article.get("publicado_em_fonte"))
     if not published or published > now + timedelta(days=1):
         return False
+    default_expiry = published + timedelta(days=validity_days)
     contextual_expiry = contextual_expiry_date(article, now)
     if contextual_expiry:
-        expiry_date = contextual_expiry
-    else:
-        # Campos de validade antigos não prolongam matérias genéricas: 24 horas exatas.
-        return now <= published + timedelta(hours=24)
-    expiry_local = datetime.combine(expiry_date, datetime.max.time(), tzinfo=BRASILIA_TZ)
-    return now <= expiry_local.astimezone(timezone.utc)
-
+        contextual_expiry_local = datetime.combine(
+            contextual_expiry, datetime.max.time(), tzinfo=BRASILIA_TZ
+        )
+        contextual_expiry_utc = contextual_expiry_local.astimezone(timezone.utc)
+        return now <= min(default_expiry, contextual_expiry_utc)
+    return now <= default_expiry
 
 def load_previous_feed() -> dict:
     """Lê o feed publicado anteriormente; ausência/erro não interrompe a geração."""
@@ -374,15 +374,17 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         if not item["titulo_carrossel"] or not item["linha_fina_carrossel"]:
             continue
         contextual_expiry = contextual_expiry_date(item, now)
-        explicit_expiry = parse_article_date(item.get("validade_ate"))
-        if contextual_expiry:
-            item["validade_ate"] = contextual_expiry.isoformat()
-        elif explicit_expiry:
-            item["validade_ate"] = explicit_expiry.astimezone(BRASILIA_TZ).date().isoformat()
-        else:
-            item["validade_ate"] = (
-                parse_article_date(item.get("publicado_em_fonte")) + timedelta(hours=24)
-            ).astimezone(BRASILIA_TZ).date().isoformat()
+        published_at = parse_article_date(item.get("publicado_em_fonte"))
+        if published_at:
+            default_expiry = published_at + timedelta(days=validity_days)
+            if contextual_expiry:
+                contextual_expiry_local = datetime.combine(
+                    contextual_expiry, datetime.max.time(), tzinfo=BRASILIA_TZ
+                )
+                effective_expiry = min(default_expiry, contextual_expiry_local.astimezone(timezone.utc))
+            else:
+                effective_expiry = default_expiry
+            item["validade_ate"] = effective_expiry.astimezone(BRASILIA_TZ).date().isoformat()
         # IDs de entrada podem se repetir entre rascunhos e matérias antigas.
         # A URL normalizada gera um identificador estável e único por fonte.
         item["id"] = "materia-" + hashlib.sha256(key.encode("utf-8")).hexdigest()[:12]
@@ -616,7 +618,7 @@ def pilar_compativel(pilar: str, texto: str) -> bool:
 
 
 def filter_recent_sources(source_items: list[dict], now: datetime | None = None) -> list[dict]:
-    """Aceita somente fontes verificadas, datadas e publicadas nos últimos sete dias."""
+    """Aceita fontes verificadas, datadas e publicadas nas últimas 72 horas."""
     now = now or datetime.now(timezone.utc)
     if now.tzinfo is None:
         now = now.replace(tzinfo=timezone.utc)
@@ -633,7 +635,7 @@ def filter_recent_sources(source_items: list[dict], now: datetime | None = None)
         published = parse_article_date(item.get("publicado_em_rss"))
         if not published or published > now + timedelta(days=1):
             continue
-        if now > published + timedelta(days=DEFAULT_VALIDITY_DAYS):
+        if now > published + timedelta(hours=72):
             continue
         key = source_key({"url_fonte": item.get("url_final", "")})
         if not key or key in seen:
@@ -693,7 +695,7 @@ def build_fallback_report(source_items: list[dict], reason: str = "",
             continue
 
         title_original = str(item.get("titulo_pagina") or item.get("titulo_pauta") or "").strip()
-        title = limpar_titulo_fonte(title_original)
+        title = limpar_titulo_fonte(title_original, item.get("fonte_publicadora", ""))
         if len(title) < 12:
             title = limpar_titulo_fonte(str(item.get("titulo_pauta") or ""))
         if len(title) < 12:
