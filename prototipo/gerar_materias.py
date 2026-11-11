@@ -47,9 +47,9 @@ def format_body_paragraphs(text: str) -> str:
 
     # Remove elementos de interface e assinaturas de template que escapam da extração.
     text = re.sub(r"(?i)Pressione Enter para buscar\s*[•·]\s*Esc para fechar", "", text)
-    text = re.sub(r"(?i)Siga [^.!?]{0,100} no WhatsApp e receba [^.!?]{0,160}(?:primeira mão|em primeira mão)\\.?", "", text)
-    text = re.sub(r"(?i)Já tem uma conta no WordPress\\.?", "", text)
-    text = re.sub(r"(?i)Photo by [^)]{0,180}Getty Images via AFP\\)?", "", text)
+    text = re.sub(r"(?i)Siga [^.!?]{0,100} no WhatsApp e receba [^.!?]{0,160}(?:primeira mão|em primeira mão)\.?", "", text)
+    text = re.sub(r"(?i)Já tem uma conta no WordPress\.?", "", text)
+    text = re.sub(r"(?i)Photo by [^)]{0,180}Getty Images via AFP\)?", "", text)
     text = re.sub(r"\s+", " ", text).strip()
 
     abbreviations = (
