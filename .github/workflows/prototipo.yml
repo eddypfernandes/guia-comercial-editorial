@@ -63,7 +63,7 @@ jobs:
           cp prototipo/saida/materias-editoriais.json docs/data/materias-editoriais.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/materias-editoriais.json
+          git add docs/data/materias-editoriais.json prototipo/saida/historico-pautas.json
           if git diff --cached --quiet; then
             echo "O feed editorial não teve alterações."
           else
@@ -73,6 +73,14 @@ jobs:
             git rebase -X theirs origin/main
             git push origin HEAD:main
           fi
+
+      - name: Guardar histórico de pautas
+        uses: actions/upload-artifact@v4
+        with:
+          name: historico-pautas-editoriais
+          path: prototipo/saida/historico-pautas.json
+          if-no-files-found: error
+          retention-days: 90
 
       - name: Guardar relatório da descoberta
         uses: actions/upload-artifact@v4
