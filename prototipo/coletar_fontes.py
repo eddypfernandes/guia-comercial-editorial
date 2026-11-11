@@ -113,7 +113,15 @@ def deduplicate(items: list[dict]) -> list[dict]:
     return result
 
 
-def collect(config: dict, opener=fetch_feed) -> dict:
+def rotate_queries(queries: list[dict], cycle_number: int = 0) -> list[dict]:
+    """Alterna o pilar inicial entre execuções sem alterar a configuração."""
+    if not queries:
+        return []
+    offset = max(0, int(cycle_number)) % len(queries)
+    return queries[offset:] + queries[:offset]
+
+
+def collect(config: dict, opener=fetch_feed, cycle_number: int = 0) -> dict:
     fetched_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
     all_items: list[dict] = []
     feed_status: list[dict] = []
@@ -121,7 +129,8 @@ def collect(config: dict, opener=fetch_feed) -> dict:
     max_bytes = int(config.get("max_response_bytes", 2_000_000))
     limit = int(config.get("max_items_per_pillar", 12))
 
-    for query_config in config.get("queries", []):
+    ordered_queries = rotate_queries(config.get("queries", []), cycle_number)
+    for query_config in ordered_queries:
         pillar = query_config.get("pillar", "")
         query = query_config.get("query", "")
         if not pillar or not query:
@@ -157,6 +166,8 @@ def collect(config: dict, opener=fetch_feed) -> dict:
         "provedor": config.get("provider", "RSS"),
         "total_itens": len(all_items),
         "total_feeds": len(feed_status),
+        "ciclo_numero": max(0, int(cycle_number)),
+        "ordem_pilares": [query.get("pillar", "") for query in ordered_queries],
         "feeds_com_sucesso": sum(1 for feed in feed_status if feed["status"] == "ok"),
         "aviso": "Os resultados são sugestões de pauta. Não representam verificação factual, aprovação editorial ou autorização de publicação.",
         "feeds": feed_status,
@@ -171,7 +182,9 @@ def main() -> int:
         print(f"ERRO ao ler {CONFIG_PATH.relative_to(ROOT)}: {exc}")
         return 1
 
-    report = collect(config)
+    import os
+    cycle_number = int(os.environ.get("EDITORIAL_CYCLE_NUMBER", "0"))
+    report = collect(config, cycle_number=cycle_number)
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Feeds consultados: {report['feeds_com_sucesso']}/{report['total_feeds']}")
