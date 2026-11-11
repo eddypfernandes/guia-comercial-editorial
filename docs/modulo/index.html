@@ -1,33 +1,33 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Página de validação do módulo editorial independente.">
-  <title>Teste do módulo editorial independente</title>
-  <link rel="stylesheet" href="./editorial.css">
-  <style>
-    body { margin: 0; background: #f4f6f3; color: #28352f; font-family: Arial, sans-serif; }
-    .pagina-teste { width: min(100% - 2rem, 820px); margin: 2rem auto; }
-    .pagina-teste__cabecalho { margin-bottom: 1.25rem; }
-    .pagina-teste__cabecalho h1 { margin: 0 0 .4rem; color: #173f35; font-size: 1.4rem; }
-    .pagina-teste__cabecalho p { margin: 0; color: #68736c; font-size: .9rem; }
-    .pagina-teste__contexto { margin-top: 1.5rem; padding: 1rem; border: 1px dashed #aebbb0; border-radius: .75rem; color: #68736c; font-size: .85rem; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prévia — Editorial Guia Comercial</title>
+<link rel="stylesheet" href="./editorial.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef1ed;color:#26352d;font:16px/1.5 Arial,sans-serif}
+.topo{background:#173f35;color:#fff;padding:18px max(20px,calc((100% - 1100px)/2))}
+.topo strong{font-size:20px;letter-spacing:.4px}.topo span{display:block;color:#d7e5dc;font-size:12px;margin-top:3px}
+main{max-width:1100px;margin:28px auto;padding:0 18px}
+.aviso{background:#fff;border:1px solid #dce3dc;border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:#5d6b62}.aviso b{color:#245648}
+.pagina{background:#fff;border-radius:12px;padding:22px;box-shadow:0 5px 24px #193c2c0b}
+h1{font-size:24px;margin:0 0 5px;color:#173f35}.sub{font-size:13px;color:#78847b;margin:0 0 22px}
+.credits{border-top:1px solid #e1e7e1;margin-top:24px;padding-top:16px;color:#6c786f;font-size:12px}
+@media(max-width:600px){main{margin:14px auto;padding:0 10px}.pagina{padding:14px}.topo{padding:15px 18px}h1{font-size:21px}}
+</style>
 </head>
 <body>
-  <main class="pagina-teste">
-    <header class="pagina-teste__cabecalho">
-      <h1>Conteúdo editorial</h1>
-      <p>Prévia isolada do componente em uma área de 820px, sem Bootstrap e sem modal.</p>
-    </header>
-
-    <div class="gc-editorial" data-gc-editorial data-feed="../data/materias-editoriais.json"></div>
-
-    <aside class="pagina-teste__contexto">
-      Área externa simulando o restante da página. O módulo deve permanecer contido no espaço disponível e adaptar sua composição em telas menores.
-    </aside>
-  </main>
-  <script src="./editorial.js" defer></script>
+<header class="topo"><strong>GUIA COMERCIAL</strong><span>EDITORIAL • PRÉVIA DO MÓDULO</span></header>
+<main>
+<div class="aviso"><b>Ambiente de demonstração:</b> esta página carrega o feed editorial publicado. As imagens e créditos serão exibidos conforme os dados existentes no JSON.</div>
+<section class="pagina">
+<h1>Editorial</h1>
+<p class="sub">Informação, cultura, saúde, esporte e atualidades.</p>
+<div class="gc-editorial" data-gc-editorial data-feed="../data/materias-editoriais.json"></div>
+<div class="credits">Créditos de imagem e fontes: consulte os links apresentados em cada matéria.</div>
+</section>
+</main>
+<script src="./editorial.js" defer></script>
 </body>
 </html>
