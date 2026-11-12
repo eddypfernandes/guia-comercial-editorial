@@ -1,11 +1,36 @@
 {
-  "gerado_em": "2026-11-12T09:57:26+00:00",
-  "total_recebidas": 3,
+  "gerado_em": "2026-11-12T10:25:23+00:00",
+  "total_recebidas": 2,
   "total_materias_validas": 14,
   "respostas_rejeitadas": 1,
   "publicacao_oficial": false,
-  "aviso": "Prévia editorial: textos organizados localmente em até 440 palavras, preservando a sequência dos fatos e removendo chamadas de navegação. Títulos e subtítulos são preservados; publicação oficial permanece desativada.",
+  "aviso": "Prévia editorial: corpos organizados localmente em até 440 palavras, com a sequência e os parágrafos do material preservados e ruídos de navegação removidos. Títulos e subtítulos são preservados; publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-78df1a4912ec",
+      "pilar": "saude",
+      "titulo": "Covid-19: como funciona o calendário de vacinação no Brasil",
+      "titulo_pauta": "Covid-19: como funciona o calendário de vacinação no Brasil",
+      "linha_fina": "Estratégia prioriza faixas de risco contra formas graves da doença em meio ao aumento de diagnósticos em dezoito estados do país",
+      "titulo_carrossel": "Covid-19: como funciona o calendário de vacinação no Brasil",
+      "linha_fina_carrossel": "Este resumo foi útil?",
+      "corpo": "Este resumo foi útil? Resumo gerado por ferramenta de IA treinada pela redação da Editora Abril.\n\nO avanço dos diagnósticos de covid-19 em 18 estados brasileiros traz dúvidas sobre a necessidade de atualizar as doses de vacinação. A diretriz atual do Programa Nacional de Imunizações concentra as aplicações na população de maior risco para formas graves.\n\nSegundo Raquel Stucchi, infectologista e diretora da Sociedade Paulista de Infectologia (SPI), pessoas que jamais receberam nenhuma dose contra a doença também podem procurar os postos públicos. As orientações de reforço semestral aplicam-se a idosos com 60 anos ou mais e a indivíduos imunossuprimidos.\n\nEsse público apresenta maior vulnerabilidade a desfechos graves decorrentes da infecção pelo coronavírus. Para esse segmento, a proteção periódica busca manter níveis adequados de defesa contra complicações hospitalares.\n\nDe acordo com os parâmetros vigentes no Programa Nacional de Imunizações, a manutenção desse intervalo de seis meses entre as aplicações é fundamental para evitar a evolução do quadro clínico grave nos indivíduos que possuem a imunidade comprometida. A vacinação anual contempla pessoas com comorbidades, como obesidade, diabetes, hipertensão, doenças cardíacas, doença pulmonar obstrutiva crônica, transtornos mentais, demência e doenças vasculares.\n\nA indicação de dose anual também abrange gestantes, a cada gravidez, trabalhadores da saúde de diferentes áreas, residentes e funcionários de instituições de longa permanência, trabalhadores dos correios, populações indígenas, ribeirinhas e quilombolas. O calendário inclui ainda pessoas em situação de rua, indivíduos privados de liberdade, funcionários do sistema prisional e jovens em medidas socioeducativas, garantindo a proteção contra formas severas da infecção por coronavírus nesses grupos prioritários.\n\nNa avaliação da infectologista Raquel Stucchi, diretora da Sociedade Paulista de Infectologia (SPI), indivíduos com menos de 60 anos, sem comorbidades e fora dos grupos especiais que já tomaram a vacina não necessitam de nova dose, segundo as diretrizes vigentes. Contudo, Stucchi ressalta que pessoas dessa faixa etária que jamais foram imunizadas podem receber uma dose no posto de saúde, mesmo sem integrar os grupos com recomendação periódica.\n\nPara as crianças de seis meses a cinco anos, o esquema de rotina prevê três aplicações distribuídas aos seis, sete e nove meses de vida. VEJA+IA: Este conteúdo de pesquisa foi produzido com auxílio de inteligência artificial e supervisão humana.\n\nOFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 BLACK FRIDAY OFERTA RELÂMPAGO OFERTA RELÂMPAGO OFERTA 11. Faça seu login Este usuário não possui direito de acesso neste conteúdo.",
+      "fonte_publicadora": "VEJA",
+      "url_fonte": "https://veja.abril.com.br/saude/covid-19-como-funciona-o-calendario-de-vacinacao-no-brasil/",
+      "imagem_url": "https://veja.abril.com.br/wp-content/uploads/2026/11/GettyImages-2297654255.jpg?quality=70&strip=info&resize=1200,630&crop=1",
+      "imagem_tipo": "fonte_original",
+      "imagem_credito": "VEJA",
+      "imagem_fonte": "https://veja.abril.com.br/saude/covid-19-como-funciona-o-calendario-de-vacinacao-no-brasil/",
+      "imagem_licenca": "Não informada pela fonte",
+      "imagem_licenca_url": "",
+      "imagem_titulo_arquivo": "",
+      "titulo_fonte": "Covid-19: como funciona o calendário de vacinação no Brasil | VEJA",
+      "publicado_em_fonte": "Thu, 12 Nov 2026 10:04:37 GMT",
+      "gerado_em": "2026-11-12T10:25:23+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-15"
+    },
     {
       "id": "materia-ad3ebb6c9ded",
       "pilar": "saude",
@@ -13,7 +38,7 @@
       "titulo_pauta": "Heleno recusa visitas diante de quadro de saúde “muito preocupante”",
       "linha_fina": "STF acolheu pedido da defesa para suspender temporariamente as visitas solicitadas por Damares Alves e Magno Malta, por recomendação médica.",
       "titulo_carrossel": "Heleno recusa visitas diante de quadro de saúde “muito preocupante”",
-      "linha_fina_carrossel": "A defesa pediu a suspensão temporária das visitas por recomendação médica; novos encontros poderão ser solicitados quando Heleno estiver em melhores condições.",
+      "linha_fina_carrossel": "Fontes ouvidas pelo Poder360 classificaram o estado de saúde do general, de 79 anos, como “muito preocupante”, física e emocionalmente, e disseram que a prioridade é mantê-lo próximo à família.",
       "corpo": "O Supremo Tribunal Federal (STF) negou os pedidos dos senadores Damares Alves (Republicanos-DF) e Magno Malta (PL-ES) para visitar o general Augusto Heleno. A decisão acolheu a manifestação da defesa, que pediu a suspensão temporária dos encontros por recomendação médica. A defesa também procurou os parlamentares para explicar a situação e evitar que a recusa fosse interpretada como falta de consideração. Heleno poderá solicitar novas visitas quando estiver em melhores condições.\n\nDamares protocolou o pedido em 28 de outubro. Magno Malta solicitou autorização em 4 de novembro para prestar assistência espiritual. Fontes ouvidas pelo Poder360 classificaram o estado de saúde do general, de 79 anos, como “muito preocupante”, física e emocionalmente, e disseram que a prioridade é mantê-lo próximo à família.\n\nHeleno foi ministro-chefe do Gabinete de Segurança Institucional (GSI) durante o governo de Jair Bolsonaro. Ele foi condenado a 21 anos de prisão por participação na trama golpista e começou a cumprir a pena em novembro de 2025, no Comando Militar do Planalto, em Brasília.\n\nEm dezembro de 2025, o ministro Alexandre de Moraes, do STF, autorizou a prisão domiciliar humanitária. A decisão levou em conta a idade do general, o diagnóstico de demência associada ao Alzheimer e a impossibilidade de oferecer tratamento adequado no ambiente prisional.",
       "fonte_publicadora": "Poder360",
       "url_fonte": "https://www.poder360.com.br/poder-brasil/heleno-recusa-visitas-diante-de-quadro-de-saude-muito-preocupante/",
@@ -28,7 +53,7 @@
       "publicado_em_fonte": "Thu, 12 Nov 2026 02:58:07 GMT",
       "gerado_em": "2026-11-12T09:57:26+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Texto revisado para clareza e contexto com base na matéria original; consulte a fonte para o conteúdo completo.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -53,7 +78,7 @@
       "publicado_em_fonte": "Thu, 12 Nov 2026 01:11:53 GMT",
       "gerado_em": "2026-11-12T09:57:26+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -78,7 +103,7 @@
       "publicado_em_fonte": "Thu, 12 Nov 2026 01:00:35 GMT",
       "gerado_em": "2026-11-12T02:12:53+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -103,7 +128,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 22:45:00 GMT",
       "gerado_em": "2026-11-12T02:12:53+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -128,7 +153,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 22:09:33 GMT",
       "gerado_em": "2026-11-12T02:12:53+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -139,7 +164,7 @@
       "linha_fina": "Nova normativa substitui regulamentação de 2017 e divide os estabelecimentos de saúde em três níveis de complexidade diferentes",
       "titulo_carrossel": "Saúde do Distrito Federal atualiza regras para cirurgias fora de hospitais",
       "linha_fina_carrossel": "Os locais devem manter arquivados documentos como mapas cirúrgicos, prontuários, fichas de anestesia e registros detalhados de ocorrências adversas.",
-      "corpo": "Nova normativa substitui regulamentação de 2017 e divide os estabelecimentos de saúde em três níveis de complexidade diferentes A Secretaria de Saúde do Distrito Federal (SES-DF) estabeleceu novas diretrizes e exigências sanitárias para o funcionamento de locais voltados a serviços de cirurgia fora da rede hospitalar . A medida foi oficializada com a publicação da Instrução Normativa 6/2026 no Diário Oficial do Distrito Federal (DODF), substituindo a antiga norma que vigorava desde maio de 2017.\n\nNo entanto, para cirurgias plásticas de médio porte, torna-se obrigatória a disponibilização de um dormitório para o médico plantonista durante todo o período de internação, cujo limite máximo é de 60 horas. Receba novidades, eventos e benefícios selecionados do Distrito Federal.",
+      "corpo": "Nova normativa substitui regulamentação de 2017 e divide os estabelecimentos de saúde em três níveis de complexidade diferentes A Secretaria de Saúde do Distrito Federal (SES-DF) estabeleceu novas diretrizes e exigências sanitárias para o funcionamento de locais voltados a serviços de cirurgia fora da rede hospitalar . A medida foi oficializada com a publicação da Instrução Normativa 6/2026 no Diário Oficial do Distrito Federal (DODF), substituindo a antiga norma que vigorava desde maio de 2017.\n\nNo entanto, para cirurgias plásticas de médio porte, torna-se obrigatória a disponibilização de um dormitório para o médico plantonista durante todo o período de internação, cujo limite máximo é de 60 horas.",
       "fonte_publicadora": "Agita Brasília",
       "url_fonte": "https://agitabrasilia.com/saude-atualiza-requisitos-sanitarios-minimos-para-servicos-de-cirurgia-em-ambiente-nao-hospitalar-no-df/",
       "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/saude-atualiza-requisitos-sanitarios-minimos-para-servicos-de-cirurgia-em-ambiente-nao-hospitalar-no-df-1794418767.jpg",
@@ -153,26 +178,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 17:40:23 GMT",
       "gerado_em": "2026-11-11T17:50:27+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-14"
-    },
-    {
-      "id": "materia-f88a0f7f111b",
-      "pilar": "saude",
-      "titulo": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas da Saúde",
-      "titulo_pauta": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas da Saúde",
-      "linha_fina": "A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender",
-      "titulo_carrossel": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas",
-      "linha_fina_carrossel": "A medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho.",
-      "corpo": "A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender demandas essenciais fora do horário regular de expediente. A medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho.\n\nPela legislação, os servidores deverão ser incluídos em escalas formais, elaboradas e aprovadas pela Secretaria Municipal de Saúde. Durante o sobreaviso, o funcionário não precisa permanecer dentro de uma unidade de saúde, mas deverá ficar acessível pelos canais oficiais de comunicação e em condições de atender a uma eventual convocação, dentro do prazo que será estabelecido em regulamento.",
-      "fonte_publicadora": "ac24horas",
-      "url_fonte": "https://ac24horas.com/2026/11/11/assis-brasil-cria-regime-de-sobreaviso-para-medicos-enfermeiros-e-motoristas-da-saude/",
-      "imagem_url": "https://ac24horas.com/wp-content/uploads/2026/03/499913867_1006025145062622_1405811528698029044_n.jpg",
-      "titulo_fonte": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas da Saúde",
-      "publicado_em_fonte": "Wed, 11 Nov 2026 14:48:16 GMT",
-      "gerado_em": "2026-11-11T16:28:37+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -191,7 +197,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 11:00:00 GMT",
       "gerado_em": "2026-11-11T16:28:37+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -209,7 +215,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 21:10:47 GMT",
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-13"
     },
     {
@@ -227,7 +233,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 20:41:06 GMT",
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-13"
     },
     {
@@ -245,7 +251,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 09:47:06 GMT",
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-13"
     },
     {
@@ -263,7 +269,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 08:00:15 GMT",
       "gerado_em": "2026-11-10T17:40:18+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-13"
     },
     {
@@ -281,7 +287,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 02:04:46 GMT",
       "gerado_em": "2026-11-10T03:25:00+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-12"
     },
     {
@@ -299,7 +305,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 01:48:08 GMT",
       "gerado_em": "2026-11-10T03:25:00+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Texto organizado localmente em até 440 palavras, preservando a sequência e os parágrafos do material extraído; chamadas de navegação são removidas. Não há reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-12"
     }
   ]

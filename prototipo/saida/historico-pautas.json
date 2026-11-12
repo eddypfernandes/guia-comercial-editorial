@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "2026-11-12T09:57:20+00:00",
+  "atualizado_em": "2026-11-12T10:25:21+00:00",
   "retencao_dias": 30,
-  "total_registros": 103,
+  "total_registros": 105,
   "registros": [
     {
       "pilar": "pet",
@@ -1031,6 +1031,26 @@
       "chaves": [
         "title:esportes:marta mostrou o que era possivel a mulheres no futebol diz lenda suica cnn brasil",
         "url:https://news.google.com/rss/articles/cbmiuafbvv95cuxnbflmcmjkm0nnogrwx0s1cxnkdmhtdwpjogdsbtdouhpmtllkcmitovrkmxa2zetyvgj6wgxhm3jisu01y1jxzs1jquxcy2twelldbfbfcvrses02nwfmbldub1beqzrhuzltr1rtrnaxoedazc0xn0vhz1hit2puue5sm2gxxzzpdelvlupvatlrbk1ob2jlcwmyqlpzbuxhug1bcwx3wjvoyurtrnlic2lluglqrk4w?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Em cuidados paliativos, cacique Raoni está internado com infecção pulmonar - CNN Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZnJ2X1poWHNJYkIzWWNuejVEaXVWRzB4SExKZC1UbHRSZ3VYaEFEV1BqcnRzZVppenE3eGY1T3F3SzdlT1lKenhReGZ2c2ZXQ0NNNnkxZndHVlRwNkNHbjZPZTh4dTg0RjZrUFVIZko2NnpFZzZieDNqRXI1LUNCS1RKZHlGWVYxQU8wTWpZT3c5STN1TTdvTEJfOXFNOFBuX2xTRkJFZmY5WUx0UmtqZWp6cERwNjdOT1F3Sw?oc=5",
+      "registrado_em": "2026-11-12T10:25:21+00:00",
+      "chaves": [
+        "title:saude:em cuidados paliativos cacique raoni esta internado com infeccao pulmonar cnn brasil",
+        "url:https://news.google.com/rss/articles/cbmivafbvv95cuxpznj2x1powhnjykizwwnuejveaxvwrzb4sexkzc1ubhrsz3vyaefev1bqcnrzzvppene3egy1t3f3szdlt1lkenhregz2c2zxq0nnnnkxzndhvlrwnknhbjzpzth4dtg0rjzrufvizko2nnpfzzziednqrxi1luncs1rkzhlgwvyxqu8wtwpzt3c5stn1ttdvtejfoxfnofbux2xtrkjfzmy5wux0umtqzwp6cerwnjdot1f3sw?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Covid-19: como funciona o calendário de vacinação no Brasil - VEJA",
+      "url_agregador": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNRFMyLUNoWlF2TlYyZWotb2loMlI2MDcxdUVlamd6NUZFNll1NlROcHFqRG5QN2JUckljSTRXWE5rYWpuZ0dTZHhHZVV5OVN6TFJFYVkwN2VqM2VIY040SUNWRmZYZ0ZXM0dFeWtDSHB4UkJEVDl1NDZPTVhxN3hvT3JnbFJEMk1LSDhvNllFbU9IeF8ycGc?oc=5",
+      "registrado_em": "2026-11-12T10:25:21+00:00",
+      "chaves": [
+        "title:saude:covid 19 como funciona o calendario de vacinacao no brasil veja",
+        "url:https://news.google.com/rss/articles/cbmilgfbvv95cuxnrfmylunowlf2tlyyzwotb2lomli2mdcxduvlamd6nuzfnll1nlrochfqrg5qn2juckljstrxwe5rywpuz0dtzhhhzvv5ovn6tfjfyvkwn2vqm2viy040sunwrmzyz0zxm0dfewtdshb4ukjevdl1ndzptvhxn3hvt3jnbfjemk1lsdhvnllfbu9ief8ycgc?oc=5"
       ]
     }
   ]
