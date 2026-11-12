@@ -372,9 +372,11 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
         if not isinstance(article, dict) or not article_is_current(article, now, validity_days):
             continue
         clean_article = dict(article)
-        clean_article["corpo"] = format_body_paragraphs(clean_article.get("corpo", ""))
-        if not texto_tem_encerramento(clean_article.get("corpo", ""), minimo=1):
+        body_original = str(clean_article.get("corpo", "") or "").strip()
+        body_limpo = format_body_paragraphs(body_original)
+        if body_original and not texto_tem_encerramento(body_limpo, minimo=1):
             continue
+        clean_article["corpo"] = body_limpo
         key = source_key(clean_article)
         if key and key not in by_source:
             # Mantém a primeira versão recebida por fonte, já sem resíduos da página.
