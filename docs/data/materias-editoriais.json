@@ -1,11 +1,61 @@
 {
-  "gerado_em": "2026-11-12T02:12:53+00:00",
-  "total_recebidas": 5,
-  "total_materias_validas": 13,
-  "respostas_rejeitadas": 2,
+  "gerado_em": "2026-11-12T09:57:26+00:00",
+  "total_recebidas": 3,
+  "total_materias_validas": 14,
+  "respostas_rejeitadas": 1,
   "publicacao_oficial": false,
-  "aviso": "Prévia editorial: textos resumidos localmente em até 25 linhas aproximadas, com frases extraídas do conteúdo original. Publicação oficial permanece desativada.",
+  "aviso": "Prévia editorial: o corpo das matérias é resumido localmente em até 120 palavras e três parágrafos, com frases extraídas do conteúdo original. Títulos e subtítulos são preservados; publicação oficial permanece desativada.",
   "materias": [
+    {
+      "id": "materia-ad3ebb6c9ded",
+      "pilar": "saude",
+      "titulo": "Heleno recusa visitas diante de quadro de saúde “muito preocupante” Heleno recusa visitas diante de quadro de saúde “muito preocupante”",
+      "titulo_pauta": "Heleno recusa visitas diante de quadro de saúde “muito preocupante”",
+      "linha_fina": "STF acolheu uma manifestação da defesa e negou pedidos de visitas de congressistas ao ex-ministro. Leia no Poder360.",
+      "titulo_carrossel": "Heleno recusa visitas diante de quadro de saúde “muito preocupante” Heleno",
+      "linha_fina_carrossel": "O estado do ex-ministro foi relatado ao Poder360 depois que o Supremo Tribunal Federal negou os pedidos dos senadores Magno Malta (PL-ES) e Damares Alves (Republicanos-DF) para visitar o ex-ministro.",
+      "corpo": "STF acolheu uma manifestação da defesa e negou pedidos de visitas de congressistas ao ex-ministro O general Augusto Heleno , de 79 anos, apresenta um quadro de saúde delicado, “ física e emocionalmente ”. Fontes ouvidas pelo Poder360 classificaram o estado de saúde do general como “ muito preocupante ” e afirmaram que, no momento, a “ prioridade é permanecer próximo à família ”.\n\nEx-ministro do GSI (Gabinete de Segurança Institucional) durante o governo de Jair Bolsonaro (PL), Heleno foi condenado a 21 anos de prisão pela participação na trama golpista. Em dezembro do mesmo ano, o ministro Alexandre de Moraes, do STF, autorizou a prisão domiciliar humanitária em razão da idade avançada do general e de um quadro de demência associado ao Alzheimer.\n\nNão chegou ainda?",
+      "fonte_publicadora": "Poder360",
+      "url_fonte": "https://www.poder360.com.br/poder-brasil/heleno-recusa-visitas-diante-de-quadro-de-saude-muito-preocupante/",
+      "imagem_url": "https://static.poder360.com.br/uploads/2019/01/General-Heleno.jpg",
+      "imagem_tipo": "fonte_original",
+      "imagem_credito": "Poder360",
+      "imagem_fonte": "https://www.poder360.com.br/poder-brasil/heleno-recusa-visitas-diante-de-quadro-de-saude-muito-preocupante/",
+      "imagem_licenca": "Não informada pela fonte",
+      "imagem_licenca_url": "",
+      "imagem_titulo_arquivo": "",
+      "titulo_fonte": "Heleno recusa visitas diante de quadro de saúde “muito preocupante” Heleno recusa visitas diante de quadro de saúde “muito preocupante”",
+      "publicado_em_fonte": "Thu, 12 Nov 2026 02:58:07 GMT",
+      "gerado_em": "2026-11-12T09:57:26+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-14"
+    },
+    {
+      "id": "materia-6c03730fd8d5",
+      "pilar": "esportes",
+      "titulo": "Marta mostrou “o que era possível a mulheres no futebol”, diz lenda suíça",
+      "titulo_pauta": "Marta mostrou “o que era possível a mulheres no futebol”, diz lenda suíça",
+      "linha_fina": "Lara Dickenmann, ex-jogadora marcante da seleção suíça e atual diretora do Wolfsburg, avaliou o legado da Rainha do futebol feminino",
+      "titulo_carrossel": "Marta mostrou “o que era possível a mulheres no futebol”, diz lenda suíça",
+      "linha_fina_carrossel": "A história da alagoana que foi eleita seis vezes melhor jogadora do mundo inspirou outras lendas do esporte e é reverenciada até mesmo pelas rivais (ou fãs).",
+      "corpo": "Quando citamos Marta, estamos falando de pioneirismo e de um legado que transcende gerações e fronteiras. Em entrevista exclusiva à CNN Brasil, Lara Dickenmann , ex-jogadora profissional e hoje diretora de formação do futebol feminino do Wolfsburg, na Alemanha, revelou que a brasileira foi a sua inspiração.\n\nAo encerrar sua carreira em 2021, ela levou sua experiência à gestão esportiva e atua como diretora de formação em um dos clubes mais vencedores da história do futebol feminino na Europa — o Wolfsburg, que vê a base e a formação das atletas como principal atrativo do clube. Como meio-campista e lateral, ela conquistou campeonatos expressivos no futebol europeu.\n\n“Marta, para nós no mundo inteiro, é uma das primeiras lendas do futebol.",
+      "fonte_publicadora": "CNN Brasil",
+      "url_fonte": "https://www.cnnbrasil.com.br/esportes/futebol/marta-mostrou-o-que-era-possivel-a-mulheres-no-futebol-diz-lenda-suica/",
+      "imagem_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/11/Lara_Wolfs-e1794440656368.jpeg?w=1200&h=630&crop=1",
+      "imagem_tipo": "fonte_original",
+      "imagem_credito": "CNN Brasil",
+      "imagem_fonte": "https://www.cnnbrasil.com.br/esportes/futebol/marta-mostrou-o-que-era-possivel-a-mulheres-no-futebol-diz-lenda-suica/",
+      "imagem_licenca": "Não informada pela fonte",
+      "imagem_licenca_url": "",
+      "imagem_titulo_arquivo": "",
+      "titulo_fonte": "Marta mostrou “o que era possível a mulheres no futebol”, diz lenda suíça | CNN Brasil",
+      "publicado_em_fonte": "Thu, 12 Nov 2026 01:11:53 GMT",
+      "gerado_em": "2026-11-12T09:57:26+00:00",
+      "status_editorial": "apto_para_publicacao",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "validade_ate": "2026-11-14"
+    },
     {
       "id": "materia-84ec6a2cc8cb",
       "pilar": "saude",
@@ -28,7 +78,7 @@
       "publicado_em_fonte": "Thu, 12 Nov 2026 01:00:35 GMT",
       "gerado_em": "2026-11-12T02:12:53+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -53,7 +103,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 22:45:00 GMT",
       "gerado_em": "2026-11-12T02:12:53+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -64,7 +114,7 @@
       "linha_fina": "Leia o conteúdo completo extraído da publicação original e consulte a fonte ao final.",
       "titulo_carrossel": "Iogo Queiroz vai com Samanda a Brasília e confirma Ministério do Turismo",
       "linha_fina_carrossel": "O prefeito de Jucurutu, Iogo Queiroz, anunciou, diretamente de Brasília, que o Ministério do Turismo estará presente no Maior Natal do Rio Grande do Norte, realizado no município.",
-      "corpo": "O prefeito de Jucurutu, Iogo Queiroz, anunciou, diretamente de Brasília, que o Ministério do Turismo estará presente no Maior Natal do Rio Grande do Norte, realizado no município. Segundo ele, durante agenda no ministério, foi possível garantir recursos para custear algumas das atrações que irão integrar a programação natalina. Iogo também antecipou que o evento terá uma semana de atividades, contemplando crianças, idosos e adultos, com o objetivo de atrair turistas e movimentar a economia local. A programação completa, incluindo as atrações musicais, será anunciada nesta sexta-feira. Iogo nem precisou perigrinar por tantos gabinetes no Palácio do Planalto, o gestor teve uma mãozinha da senadora eleita Samanda Alves. Um post compartilhado por Blog Jair Sampaio (@blogjairsampaio_) O seu endereço de e-mail não será publicado.",
+      "corpo": "O prefeito de Jucurutu, Iogo Queiroz, anunciou, diretamente de Brasília, que o Ministério do Turismo estará presente no Maior Natal do Rio Grande do Norte, realizado no município. Segundo ele, durante agenda no ministério, foi possível garantir recursos para custear algumas das atrações que irão integrar a programação natalina.\n\nIogo também antecipou que o evento terá uma semana de atividades, contemplando crianças, idosos e adultos, com o objetivo de atrair turistas e movimentar a economia local. A programação completa, incluindo as atrações musicais, será anunciada nesta sexta-feira.\n\nIogo nem precisou perigrinar por tantos gabinetes no Palácio do Planalto, o gestor teve uma mãozinha da senadora eleita Samanda Alves.",
       "fonte_publicadora": "Blog Jair Sampaio",
       "url_fonte": "https://www.jairsampaio.com/iogo-queiroz-vai-com-samanda-a-brasilia-e-confirma-ministerio-do-turismo-no-natal-de-jucurutu-o-maior-do-rn/",
       "imagem_url": "https://www.jairsampaio.com/wp-content/uploads/2026/11/IMG_4453.jpeg",
@@ -78,7 +128,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 22:09:33 GMT",
       "gerado_em": "2026-11-12T02:12:53+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -89,7 +139,7 @@
       "linha_fina": "Nova normativa substitui regulamentação de 2017 e divide os estabelecimentos de saúde em três níveis de complexidade diferentes",
       "titulo_carrossel": "Saúde do Distrito Federal atualiza regras para cirurgias fora de hospitais",
       "linha_fina_carrossel": "Os locais devem manter arquivados documentos como mapas cirúrgicos, prontuários, fichas de anestesia e registros detalhados de ocorrências adversas.",
-      "corpo": "Nova normativa substitui regulamentação de 2017 e divide os estabelecimentos de saúde em três níveis de complexidade diferentes A Secretaria de Saúde do Distrito Federal (SES-DF) estabeleceu novas diretrizes e exigências sanitárias para o funcionamento de locais voltados a serviços de cirurgia fora da rede hospitalar . A medida foi oficializada com a publicação da Instrução Normativa 6/2026 no Diário Oficial do Distrito Federal (DODF), substituindo a antiga norma que vigorava desde maio de 2017. No entanto, para cirurgias plásticas de médio porte, torna-se obrigatória a disponibilização de um dormitório para o médico plantonista durante todo o período de internação, cujo limite máximo é de 60 horas. Receba novidades, eventos e benefícios selecionados do Distrito Federal.",
+      "corpo": "Nova normativa substitui regulamentação de 2017 e divide os estabelecimentos de saúde em três níveis de complexidade diferentes A Secretaria de Saúde do Distrito Federal (SES-DF) estabeleceu novas diretrizes e exigências sanitárias para o funcionamento de locais voltados a serviços de cirurgia fora da rede hospitalar . A medida foi oficializada com a publicação da Instrução Normativa 6/2026 no Diário Oficial do Distrito Federal (DODF), substituindo a antiga norma que vigorava desde maio de 2017.\n\nNo entanto, para cirurgias plásticas de médio porte, torna-se obrigatória a disponibilização de um dormitório para o médico plantonista durante todo o período de internação, cujo limite máximo é de 60 horas. Receba novidades, eventos e benefícios selecionados do Distrito Federal.",
       "fonte_publicadora": "Agita Brasília",
       "url_fonte": "https://agitabrasilia.com/saude-atualiza-requisitos-sanitarios-minimos-para-servicos-de-cirurgia-em-ambiente-nao-hospitalar-no-df/",
       "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/saude-atualiza-requisitos-sanitarios-minimos-para-servicos-de-cirurgia-em-ambiente-nao-hospitalar-no-df-1794418767.jpg",
@@ -103,7 +153,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 17:40:23 GMT",
       "gerado_em": "2026-11-11T17:50:27+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -114,7 +164,7 @@
       "linha_fina": "A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender",
       "titulo_carrossel": "Assis Brasil cria regime de sobreaviso para médicos, enfermeiros e motoristas",
       "linha_fina_carrossel": "A medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho.",
-      "corpo": "A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender demandas essenciais fora do horário regular de expediente. A medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho. Pela legislação, os servidores deverão ser incluídos em escalas formais, elaboradas e aprovadas pela Secretaria Municipal de Saúde. Durante o sobreaviso, o funcionário não precisa permanecer dentro de uma unidade de saúde, mas deverá ficar acessível pelos canais oficiais de comunicação e em condições de atender a uma eventual convocação, dentro do prazo que será estabelecido em regulamento.",
+      "corpo": "A Prefeitura de Assis Brasil instituiu o regime de sobreaviso para servidores da Secretaria Municipal de Saúde que precisam ficar disponíveis para atender demandas essenciais fora do horário regular de expediente. A medida contempla motoristas, técnicos em enfermagem, enfermeiros e médicos e prevê o pagamento de um adicional equivalente a um terço do valor da hora normal de trabalho.\n\nPela legislação, os servidores deverão ser incluídos em escalas formais, elaboradas e aprovadas pela Secretaria Municipal de Saúde. Durante o sobreaviso, o funcionário não precisa permanecer dentro de uma unidade de saúde, mas deverá ficar acessível pelos canais oficiais de comunicação e em condições de atender a uma eventual convocação, dentro do prazo que será estabelecido em regulamento.",
       "fonte_publicadora": "ac24horas",
       "url_fonte": "https://ac24horas.com/2026/11/11/assis-brasil-cria-regime-de-sobreaviso-para-medicos-enfermeiros-e-motoristas-da-saude/",
       "imagem_url": "https://ac24horas.com/wp-content/uploads/2026/03/499913867_1006025145062622_1405811528698029044_n.jpg",
@@ -122,26 +172,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 14:48:16 GMT",
       "gerado_em": "2026-11-11T16:28:37+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
-      "validade_ate": "2026-11-14"
-    },
-    {
-      "id": "materia-7b559f8960c5",
-      "pilar": "saude",
-      "titulo": "Quais são os sintomas da variante de covid-19 que está em alta no Brasil",
-      "titulo_pauta": "Quais são os sintomas da variante de covid-19 que está em alta no Brasil",
-      "linha_fina": "Segundo o Ministério da Saúde, a variante XFG do coronavírus, também conhecida como Stratus, predominou entre as linhagens identificadas no país em 2026",
-      "titulo_carrossel": "Quais são os sintomas da variante de covid-19 que está em alta no Brasil",
-      "linha_fina_carrossel": "Até o momento, não há evidências de que ela cause casos mais graves da doença, maior taxa de hospitalização ou aumento de óbitos.",
-      "corpo": "A variante XFG do coronavírus, também conhecida como Stratus , predominou entre as linhagens do Sars-CoV-2 identificadas no Brasil em 2026. A variante é classificada pela Organização Mundial da Saúde (OMS) como uma Variante Sob Monitoramento (VUM) , categoria que inclui linhagens do vírus com alterações genéticas que podem modificar suas características, mas cujos impactos ainda não são completamente conhecidos. O boletim epidemiológico aponta para uma tendência de aumento dos casos de covid-19 em 18 estados brasileiros , incluindo São Paulo, Bahia, Minas Gerais, Distrito Federal e Rio Grande do Sul. O boletim aponta ainda que, apesar da alta de infecções, os casos graves de covid-19 “permanecem baixos” no país. Os sintomas da XFG são muito parecidos com os de outras subvariantes da Ômicron.",
-      "fonte_publicadora": "VEJA",
-      "url_fonte": "https://veja.abril.com.br/saude/quais-sao-os-sintomas-da-variante-de-covid-19-que-esta-em-alta-no-brasil/",
-      "imagem_url": "https://veja.abril.com.br/wp-content/uploads/2026/11/GettyImages-2265742873.jpg?quality=70&strip=info&resize=1200,630&crop=1",
-      "titulo_fonte": "Quais são os sintomas da variante de covid-19 que está em alta no Brasil | VEJA",
-      "publicado_em_fonte": "Wed, 11 Nov 2026 12:24:48 GMT",
-      "gerado_em": "2026-11-11T16:57:40+00:00",
-      "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -152,7 +183,7 @@
       "linha_fina": "Projeto esclarece que o profissional não terá vínculo de emprego nem societário com o espaço",
       "titulo_carrossel": "Comissão da Câmara aprova regras para parcerias entre academias e personal",
       "linha_fina_carrossel": "Fica proibida a cobrança por aluno atendido e o valor não poderá superar a média das mensalidades individuais cobradas pela academia.",
-      "corpo": "A Comissão de Desenvolvimento Econômico da Câmara dos Deputados aprovou projeto que regulamenta as parcerias entre academias e profissionais de educação física. A proposta também garante o acesso dos personal trainers às dependências desses espaços para o acompanhamento dos alunos. “O projeto vai trazer segurança jurídica para as academias, para os alunos e para os profissionais. Esse projeto traz uma média, dá uma segurança jurídica, e dá a responsabilidade do que é papel do personal e do que são os equipamentos da academia, fazendo com que as academias possam continuar dentro do projeto de academias parceiras pagando uma menor tributação e vai propiciar a todos nós que podemos frequentar a academia ter o serviço do personal e cada vez com um preço mais justo e com mais barato para todos nós”, afirmou Luiz Gastão.",
+      "corpo": "A Comissão de Desenvolvimento Econômico da Câmara dos Deputados aprovou projeto que regulamenta as parcerias entre academias e profissionais de educação física. A proposta também garante o acesso dos personal trainers às dependências desses espaços para o acompanhamento dos alunos.\n\nEsse projeto traz uma média, dá uma segurança jurídica, e dá a responsabilidade do que é papel do personal e do que são os equipamentos da academia, fazendo com que as academias possam continuar dentro do projeto de academias parceiras pagando uma menor tributação e vai propiciar a todos nós que podemos frequentar a academia ter o serviço do personal e cada vez com um preço mais justo e com mais barato para todos nós”, afirmou Luiz Gastão.",
       "fonte_publicadora": "Francês News",
       "url_fonte": "https://francesnews.com.br/post/2026/11/11/45416-comissao-da-camara-aprova-regras-para-parcerias-entre-academias-e-personal-trainers",
       "imagem_url": "https://img.dhost.cloud/btKV9HX3fTyxF71TrTnl5eHBAP0=/1200x630/smart/https://fcomunic.s3.us-west-004.backblazeb2.com/images/71ac4/8394ca4bd5c474da70e1f865ada3bc4cff5.jpg?name=a-academia-nao-sera-responsabilizada-por-exercicios-mal-prescritos-pelo-personal-trainer-externo.jpg",
@@ -160,7 +191,7 @@
       "publicado_em_fonte": "Wed, 11 Nov 2026 11:00:00 GMT",
       "gerado_em": "2026-11-11T16:28:37+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-14"
     },
     {
@@ -170,7 +201,7 @@
       "linha_fina": "Encontro promovido pela Academia LED Globo reúne profissionais do mercado audiovisual e pesquisadores para discutir novos formatos, estratégias de exibição e as transformações da dramaturgia na era do streaming.",
       "titulo_carrossel": "Globo e Obitel Brasil realizam seminário sobre os caminhos da ficção televisiva",
       "linha_fina_carrossel": "As inscrições são realizadas pela plataforma Sympla: clique e garanta sua participação .",
-      "corpo": "10/11/2026 18h10 Atualizado 10/11/2026 A Globo e o Obitel Brasil - Rede Brasileira de Pesquisadores da Ficção Televisiva realizam, no dia 25 de novembro, na PUC-Rio, um seminário dedicado às transformações da ficção televisiva e aos novos caminhos da dramaturgia. Confira a programação: 10h45 | Novos Formatos: Microdramas e Novelas Verticais “O sucesso das novelas verticais autorais e remixadas a partir de produtos Globo.\" Participantes: Rosane Svartman | Escritora e diretora Samantha Almeida | Diretora de Marketing da TV Globo Luiz Henrique Rios | Diretor de Talentos Artísticos Globo Maria Immacolata Vassallo de Lopes | Criadora e coordenadora da rede internacional de pesquisa Obitel Ana Paula Goulart Ribeiro | Professora titular da Escola de Comunicação da UFRJ e coordenadora da equipe Rio do Obitel Brasil Participe!",
+      "corpo": "10/11/2026 18h10 Atualizado 10/11/2026 A Globo e o Obitel Brasil - Rede Brasileira de Pesquisadores da Ficção Televisiva realizam, no dia 25 de novembro, na PUC-Rio, um seminário dedicado às transformações da ficção televisiva e aos novos caminhos da dramaturgia. Participantes: Rosane Svartman | Escritora e diretora Samantha Almeida | Diretora de Marketing da TV Globo Luiz Henrique Rios | Diretor de Talentos Artísticos Globo Maria Immacolata Vassallo de Lopes | Criadora e coordenadora da rede internacional de pesquisa Obitel Ana Paula Goulart Ribeiro | Professora titular da Escola de Comunicação da UFRJ e coordenadora da equipe Rio do Obitel Brasil Participe!",
       "fonte_publicadora": "Globo",
       "url_fonte": "https://somos.globo.com/google/amp/movimento-led/academia-led/noticia/globo-e-obitel-brasil-realizam-seminario-sobre-os-caminhos-da-ficcao-televisiva.ghtml",
       "imagem_url": "https://s2-somos.glbimg.com/vX1iM1MKPsnf85CS4PVTQUfhZ6s=/6667x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_c9b45b93b8924e77bb94a46a405e1057/internal_photos/bs/2026/B/s/cg1yv3RIyfet3H7zNn3A/globo-led-academialed-seminarioobitel-sympla-capa-20261110-v02-af.png",
@@ -178,7 +209,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 21:10:47 GMT",
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-13"
     },
     {
@@ -188,7 +219,7 @@
       "linha_fina": "Foto divulgação Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria…",
       "titulo_carrossel": "Biblioteca Demonstrativa oferece serviços gratuitos de leitura, estudo e cultura",
       "linha_fina_carrossel": "A estrutura atende públicos de diferentes idades e necessidades.",
-      "corpo": "Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria da Conceição Moreira Salles (BDB), do Ministério da Cultura (MinC), oferece gratuitamente serviços que incluem salas para estudo, internet via Wi-Fi, telecentro, empréstimo de livros e uma área infantil com Gibiteca. Além dos serviços permanentes, a Biblioteca Demonstrativa mantém uma programação cultural gratuita, com atividades voltadas à literatura, leitura, formação e difusão cultural. Já tem uma conta no WordPress.",
+      "corpo": "Espaço possui ambientes para estudo, acesso à internet, empréstimo de livros, área infantil e programação cultural gratuita Estudantes, pesquisadores, leitores e toda a comunidade do Distrito Federal podem contar com um espaço público dedicado ao acesso à leitura, ao conhecimento e à cultura. Localizada na Asa Sul, em Brasília, a Biblioteca Demonstrativa Maria da Conceição Moreira Salles (BDB), do Ministério da Cultura (MinC), oferece gratuitamente serviços que incluem salas para estudo, internet via Wi-Fi, telecentro, empréstimo de livros e uma área infantil com Gibiteca.\n\nAlém dos serviços permanentes, a Biblioteca Demonstrativa mantém uma programação cultural gratuita, com atividades voltadas à literatura, leitura, formação e difusão cultural. Já tem uma conta no WordPress.",
       "fonte_publicadora": "Blog Glau na Capital",
       "url_fonte": "https://glaunacapital.com/2026/11/10/biblioteca-demonstrativa-oferece-servicos-gratuitos-de-leitura-estudo-e-cultura-em-brasilia/",
       "imagem_url": "https://glaunacapital.com/wp-content/uploads/2026/11/biblioteca-demonstrativa_filipe-araujo_minc-edited-1.jpg",
@@ -196,7 +227,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 20:41:06 GMT",
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-13"
     },
     {
@@ -206,7 +237,7 @@
       "linha_fina": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes",
       "titulo_carrossel": "Brasília Basquete perde para o União Corinthians e chega à quarta derrota no NBB",
       "linha_fina_carrossel": "O resultado representa a quarta derrota da equipe na competição.",
-      "corpo": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes João Victor Rodrigues 10/11/2026 6h47 Foto: Matheus Maranhão / CAIXA Brasília Basquete O Brasília Basquete não conseguiu reagir e foi derrotado pelo União Corinthians por 70 a 61, na noite desta segunda-feira (9/11), em partida válida pelo Novo Basquete Brasil (NBB). No segundo período, porém, o União Corinthians voltou a controlar as ações e venceu por 19 a 13, levando o placar de 40 a 33 para o intervalo. Após o compromisso, o Brasília Basquete viajará para disputar o Campeonato Sul-Americano. A equipe só volta à quadra pelo NBB em 22 de novembro, domingo, às 11h15, quando enfrentará o Pato Basquete no ginásio Nilson Nelson, em Brasília.",
+      "corpo": "Equipe brasiliense foi superada por 70 a 61 nesta segunda-feira; Kauan Raymundo terminou como principal destaque, com 11 pontos e nove rebotes João Victor Rodrigues 10/11/2026 6h47 Foto: Matheus Maranhão / CAIXA Brasília Basquete O Brasília Basquete não conseguiu reagir e foi derrotado pelo União Corinthians por 70 a 61, na noite desta segunda-feira (9/11), em partida válida pelo Novo Basquete Brasil (NBB). Após o compromisso, o Brasília Basquete viajará para disputar o Campeonato Sul-Americano.\n\nA equipe só volta à quadra pelo NBB em 22 de novembro, domingo, às 11h15, quando enfrentará o Pato Basquete no ginásio Nilson Nelson, em Brasília.",
       "fonte_publicadora": "Jornal de Brasília",
       "url_fonte": "https://jornaldebrasilia.com.br/torcida/brasilia-basquete-perde-para-o-uniao-corinthians-e-chega-a-quarta-derrota-no-nbb/",
       "imagem_url": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2026/10/22065014/Captura-de-tela-2026-10-22-064950.png",
@@ -214,7 +245,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 09:47:06 GMT",
       "gerado_em": "2026-11-11T01:11:34+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-13"
     },
     {
@@ -224,7 +255,7 @@
       "linha_fina": "Brasília receberá, nos dias 22 e 23 de novembro, o FGA Journey 2026, evento que espera reunir mais de 3 mil empresários para discutir estra...",
       "titulo_carrossel": "FGA Journey planeja reunir mais de 3 mil empresários em Brasília",
       "linha_fina_carrossel": "Para Gustavo de Oliveira, empresário e fundador da FGA Educação, a proposta é aproximar as estratégias apresentadas no palco dos desafios enfrentados diariamente por quem administra um negócio.",
-      "corpo": "Brasília receberá, nos dias 22 e 23 de novembro, o FGA Journey 2026, evento que espera reunir mais de 3 mil empresários para discutir estratégias de marketing, vendas e gestão. Para Gustavo de Oliveira, empresário e fundador da FGA Educação, a proposta é aproximar as estratégias apresentadas no palco dos desafios enfrentados diariamente por quem administra um negócio. MÉTODO COMERCIAL SERÁ APRESENTADO AOS EMPRESÁRIOS Entre os principais assuntos do FGA Journey estão marketing e geração de demanda, estruturação de equipes de pré-vendas, conversão de oportunidades comerciais, gestão por indicadores e uso da inteligência artificial para melhorar a produtividade das empresas. com/evento-fga/ Jornalista formado pela PUC-SP, Editor do Portal Radar e da Radar Magazine.",
+      "corpo": "Brasília receberá, nos dias 22 e 23 de novembro, o FGA Journey 2026, evento que espera reunir mais de 3 mil empresários para discutir estratégias de marketing, vendas e gestão. Para Gustavo de Oliveira, empresário e fundador da FGA Educação, a proposta é aproximar as estratégias apresentadas no palco dos desafios enfrentados diariamente por quem administra um negócio.\n\nMÉTODO COMERCIAL SERÁ APRESENTADO AOS EMPRESÁRIOS Entre os principais assuntos do FGA Journey estão marketing e geração de demanda, estruturação de equipes de pré-vendas, conversão de oportunidades comerciais, gestão por indicadores e uso da inteligência artificial para melhorar a produtividade das empresas. com/evento-fga/ Jornalista formado pela PUC-SP, Editor do Portal Radar e da Radar Magazine.",
       "fonte_publicadora": "Portal Radar",
       "url_fonte": "https://portalradar.com.br/fga-journey-planeja-reunir-mais-de-3-mil-empresarios-em-brasilia/",
       "imagem_url": "https://portalradar.com.br/wp-content/uploads/2026/11/Samuel-FGA.jpg",
@@ -232,7 +263,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 08:00:15 GMT",
       "gerado_em": "2026-11-10T17:40:18+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-13"
     },
     {
@@ -242,7 +273,7 @@
       "linha_fina": "Brasília Basquete foi derrotado pelo União Corinthians por 70 a 61, marcando sua quarta derrota no NBB.",
       "titulo_carrossel": "Brasília Basquete perde para União Corinthians em partida equilibrada",
       "linha_fina_carrossel": "Brasília Basquete foi derrotado pelo União Corinthians por 70 a 61, marcando sua quarta derrota no NBB.",
-      "corpo": "Na última segunda-feira (9/11), o Brasília Basquete enfrentou o União Corinthians em uma competição acirrada, mas acabou sendo derrotado por 70 a 61. O União Corinthians rapidamente abriu vantagem, com uma run de 10-0 nos primeiros minutos, situando o placar em 16 a 6. A equipe brasiliense continuou a se esforçar e, embora o quarto tenha terminado 19 a 13 a favor do União Corinthians, ainda era possível ver que o time mantinha-se próximo no placar, encerrando a primeira metade da partida com 40 a 33 para os visitantes. Após essa partida, o Brasília Basquete já se prepara para o próximo desafio na competição, que envolve uma viagem para o Sul-Americano. A jornada no NBB continua, e a torcida aposta na superação após essa derrota.",
+      "corpo": "Na última segunda-feira (9/11), o Brasília Basquete enfrentou o União Corinthians em uma competição acirrada, mas acabou sendo derrotado por 70 a 61. O União Corinthians rapidamente abriu vantagem, com uma run de 10-0 nos primeiros minutos, situando o placar em 16 a 6.\n\nA equipe brasiliense continuou a se esforçar e, embora o quarto tenha terminado 19 a 13 a favor do União Corinthians, ainda era possível ver que o time mantinha-se próximo no placar, encerrando a primeira metade da partida com 40 a 33 para os visitantes. Após essa partida, o Brasília Basquete já se prepara para o próximo desafio na competição, que envolve uma viagem para o Sul-Americano.",
       "fonte_publicadora": "Diário do Estado",
       "url_fonte": "https://diariodoestadogo.com.br/brasilia-basquete-perde-para-uniao-corinthians-em-partida-equilibrada/",
       "imagem_url": "https://diariodoestadogo.com.br/wp-content/uploads/2026/11/brasilia-basquete-perde-para-uniao-corinthians-em-partida-equilibrada.webp",
@@ -250,7 +281,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 02:04:46 GMT",
       "gerado_em": "2026-11-10T03:25:00+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-12"
     },
     {
@@ -260,7 +291,7 @@
       "linha_fina": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital.",
       "titulo_carrossel": "Space Today Experience traz cultura geek e games para Brasília - Agita Brasília",
       "linha_fina_carrossel": "A proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop.",
-      "corpo": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital. A capital federal se prepara para sediar a terceira edição do Space Today Experience , um grande encontro que une ciência, tecnologia e entretenimento. A proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop. Abaixo estão listadas as principais informações práticas para quem deseja participar da programação oficial: Data: 19 a 22 de novembro de 2026 Local: Pavilhão do Parque da Cidade, Brasília (DF) Entrada: Gratuita, mediante retirada prévia pelo Sympla Condição de acesso: Apresentação do ingresso mais 1 kg de alimento não perecível ou um item de lixo eletrônico.",
+      "corpo": "O Pavilhão do Parque da Cidade abriga a terceira edição do evento voltado à tecnologia, ciência e entretenimento na capital. A capital federal se prepara para sediar a terceira edição do Space Today Experience , um grande encontro que une ciência, tecnologia e entretenimento.\n\nA proposta é oferecer um ambiente dinâmico para os entusiastas da inovação e da cultura pop. Abaixo estão listadas as principais informações práticas para quem deseja participar da programação oficial: Data: 19 a 22 de novembro de 2026 Local: Pavilhão do Parque da Cidade, Brasília (DF) Entrada: Gratuita, mediante retirada prévia pelo Sympla Condição de acesso: Apresentação do ingresso mais 1 kg de alimento não perecível ou um item de lixo eletrônico.",
       "fonte_publicadora": "Agita Brasília",
       "url_fonte": "https://agitabrasilia.com/evento-gratuito-em-brasilia-tera-concursos-de-cosplay-games-e-atracoes-interativas/",
       "imagem_url": "https://agitabrasilia.com/wp-content/uploads/2026/11/evento-gratuito-em-brasilia-tera-concursos-de-cosplay-games-e-atracoes-interativas-1794275283.jpg",
@@ -268,7 +299,7 @@
       "publicado_em_fonte": "Tue, 10 Nov 2026 01:48:08 GMT",
       "gerado_em": "2026-11-10T03:25:00+00:00",
       "status_editorial": "apto_para_publicacao",
-      "aviso_editorial": "Resumo automático por seleção de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
+      "aviso_editorial": "Resumo local de até 120 palavras, organizado em até três parágrafos a partir de frases completas do texto extraído; não houve reescrita por IA nem checagem factual independente. Consulte a fonte original.",
       "validade_ate": "2026-11-12"
     }
   ]
