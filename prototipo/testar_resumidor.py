@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "prototipo"))
-from resumir_materias import resumir_corpo, wrapped_line_count
+from resumir_materias import MAX_SUMMARY_WORDS, contar_palavras, resumir_corpo
 
 
 class ResumidorLocalTests(unittest.TestCase):
@@ -12,7 +12,7 @@ class ResumidorLocalTests(unittest.TestCase):
         text = "A primeira informação apresenta o fato principal. A segunda explica o contexto."
         self.assertEqual(resumir_corpo(text, "Fato principal"), text)
 
-    def test_long_text_is_reduced_to_at_most_25_lines(self):
+    def test_long_text_is_reduced_to_at_most_120_words_and_three_paragraphs(self):
         sentences = [
             "O projeto anunciado reúne medidas para ampliar o atendimento e melhorar os serviços oferecidos à população.",
             "A iniciativa prevê investimentos em espaços públicos e ações voltadas à comunidade.",
@@ -23,7 +23,14 @@ class ResumidorLocalTests(unittest.TestCase):
         text = " ".join(sentences * 12)
         summary = resumir_corpo(text, "Projeto amplia atendimento e serviços")
         self.assertLess(len(summary), len(text))
-        self.assertLessEqual(wrapped_line_count(summary), 25)
+        self.assertLessEqual(contar_palavras(summary), MAX_SUMMARY_WORDS)
+        self.assertLessEqual(len(summary.split("\n\n")), 3)
+
+    def test_oversized_single_sentence_is_cut_at_the_word_limit(self):
+        text = " ".join(["conteúdo"] * 160)
+        summary = resumir_corpo(text, "Conteúdo da matéria")
+        self.assertEqual(contar_palavras(summary), MAX_SUMMARY_WORDS)
+        self.assertTrue(summary.endswith("…"))
 
     def test_summary_uses_only_complete_sentences_from_original(self):
         sentences = [
@@ -35,6 +42,7 @@ class ResumidorLocalTests(unittest.TestCase):
         ]
         text = " ".join(sentences * 10)
         summary = resumir_corpo(text, "Prefeitura anuncia reforma de espaços públicos")
+        self.assertLessEqual(contar_palavras(summary), MAX_SUMMARY_WORDS)
         for sentence in [part.strip() for part in summary.replace("\n\n", " ").split(".") if part.strip()]:
             self.assertTrue(any(sentence in original for original in sentences), sentence)
         self.assertTrue(summary.endswith("."))
@@ -51,3 +59,4 @@ class ResumidorLocalTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
