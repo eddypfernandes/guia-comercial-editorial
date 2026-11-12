@@ -39,9 +39,45 @@ PARAGRAPH_BREAK_AFTER = 2
 _ABBREVIATION_MARK = "\uE000"
 
 
+ARTICLE_BODY_TAIL_MARKER = re.compile(
+    r"(?i)(?:^|\s)(?:"
+    r"VEJA\+IA\s*:?"
+    r"|OFERTA\s+RELÂMPAGO\b"
+    r"|Faça\s+seu\s+login\b"
+    r"|Este\s+usuário\s+não\s+possui\s+direito\s+de\s+acesso\b"
+    r"|Não\s+chegou\s+ainda[?!]?"
+    r"|Leia\s+no\s+Poder360\b"
+    r"|Já\s+tem\s+uma\s+conta\s+no\s+WordPress\b"
+    r"|(?:Leia|Veja)\s+também\s*:"
+    r")"
+)
+NUMBERED_OFFER_MARKER = re.compile(r"(?i)\bOFERTA\s+\d{1,3}\b")
+
+
+def remover_ruido_fora_da_materia(text: str) -> str:
+    """Remove avisos de interface e corta blocos de anúncio/acesso anexados à matéria."""
+    text = str(text or "").strip()
+    if not text:
+        return ""
+
+    # Alguns portais inserem uma avaliação do resumo e uma assinatura editorial antes do texto.
+    text = re.sub(r"(?is)^\s*Este resumo foi útil\?\s*", "", text)
+    text = re.sub(r"(?is)^\s*Resumo gerado por[^.!?]{0,300}[.!?]\s*", "", text)
+
+    markers = [match.start() for match in (ARTICLE_BODY_TAIL_MARKER.search(text),) if match]
+    numbered_offers = list(NUMBERED_OFFER_MARKER.finditer(text))
+    # Só considera anúncios numéricos quando o rótulo se repete como bloco de publicidade.
+    if len(numbered_offers) >= 3:
+        markers.append(numbered_offers[0].start())
+
+    if markers:
+        text = text[:min(markers)].rstrip()
+    return text.strip()
+
+
 def format_body_paragraphs(text: str) -> str:
     """Organiza somente o corpo em parágrafos de até duas frases, preservando abreviações."""
-    text = str(text or "").strip()
+    text = remover_ruido_fora_da_materia(text)
     if not text:
         return ""
 
@@ -333,18 +369,27 @@ def merge_active_articles(new_report: dict, previous_feed: dict | None = None,
     # Primeiro indexa as novas matérias; uma URL repetida não substitui a versão recém-gerada.
     by_source = {}
     for article in new_report.get("materias", []):
-        if isinstance(article, dict) and article_is_current(article, now, validity_days):
-            key = source_key(article)
-            if key and key not in by_source:
-                # Mantém a primeira versão recebida para cada fonte no relatório novo.
-                by_source[key] = article
+        if not isinstance(article, dict) or not article_is_current(article, now, validity_days):
+            continue
+        clean_article = dict(article)
+        clean_article["corpo"] = format_body_paragraphs(clean_article.get("corpo", ""))
+        if not texto_tem_encerramento(clean_article.get("corpo", ""), minimo=1):
+            continue
+        key = source_key(clean_article)
+        if key and key not in by_source:
+            # Mantém a primeira versão recebida por fonte, já sem resíduos da página.
+            by_source[key] = clean_article
     for article in previous_feed.get("materias", []):
-        if (isinstance(article, dict)
-                and article_is_current(article, now, validity_days)
-                and texto_tem_encerramento(article.get("corpo", ""), minimo=1)):
-            key = source_key(article)
-            if key and key not in by_source:
-                by_source[key] = article
+        if not isinstance(article, dict) or not article_is_current(article, now, validity_days):
+            continue
+        clean_article = dict(article)
+        clean_article["corpo"] = format_body_paragraphs(clean_article.get("corpo", ""))
+        if not texto_tem_encerramento(clean_article.get("corpo", ""), minimo=1):
+            continue
+        key = source_key(clean_article)
+        if key and key not in by_source:
+            # Corrige ruídos do feed anterior sem exigir uma nova coleta da fonte.
+            by_source[key] = clean_article
 
     candidates = sorted(
         by_source.values(),
