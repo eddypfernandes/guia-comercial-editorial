@@ -158,6 +158,23 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertNotIn("Não chegou ainda", cleaned)
         self.assertNotIn("Leia no Poder360", cleaned)
 
+    def test_body_formatter_removes_editorial_disclosures_ads_and_access_wall(self):
+        body = (
+            "Este resumo foi útil? Resumo gerado por ferramenta de IA treinada pela redação da Editora Abril. "
+            "O avanço dos diagnósticos de covid-19 traz dúvidas sobre a vacinação. "
+            "Para as crianças de seis meses a cinco anos, o esquema prevê aplicações aos seis, sete e nove meses de vida. "
+            "VEJA+IA: Este conteúdo foi produzido com auxílio de inteligência artificial e supervisão humana. "
+            "OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. 11 "
+            "BLACK FRIDAY OFERTA RELÂMPAGO. Faça seu login. "
+            "Este usuário não possui direito de acesso neste conteúdo."
+        )
+        cleaned = format_body_paragraphs(body)
+        self.assertTrue(cleaned.startswith("O avanço dos diagnósticos"))
+        self.assertTrue(cleaned.endswith("nove meses de vida."))
+        for noise in ("Este resumo foi útil", "VEJA+IA", "OFERTA", "BLACK FRIDAY",
+                      "Faça seu login", "não possui direito de acesso"):
+            self.assertNotIn(noise, cleaned)
+
     def test_generic_site_title_falls_back_to_the_original_rss_headline(self):
         source = dict(
             self.source[0],
@@ -286,6 +303,34 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertNotIn("…", normalized["titulo_carrossel"])
         self.assertNotIn("...", normalized["titulo_carrossel"])
         self.assertNotIn("…", normalized["linha_fina_carrossel"])
+
+    def test_merge_cleans_noise_from_an_existing_feed_article(self):
+        now = datetime(2026, 11, 12, 12, 0, tzinfo=timezone.utc)
+        previous = {"materias": [{
+            "id": "materia-recente",
+            "pilar": "saude",
+            "titulo": "Calendário de vacinação contra covid-19",
+            "linha_fina": "Orientações atuais para grupos prioritários.",
+            "linha_fina_carrossel": "A vacinação prioriza pessoas com maior risco.",
+            "corpo": (
+                "Este resumo foi útil? Resumo gerado por ferramenta de IA da redação. "
+                "A vacinação prioriza pessoas com maior risco de complicações. "
+                "Para as crianças, o esquema prevê três aplicações aos seis, sete e nove meses de vida. "
+                "VEJA+IA: aviso editorial alheio ao conteúdo. "
+                "OFERTA 11. 11 OFERTA 11. 11 OFERTA 11. Faça seu login."
+            ),
+            "url_fonte": "https://example.org/vacinacao",
+            "publicado_em_fonte": "Thu, 12 Nov 2026 10:00:00 GMT",
+            "status_editorial": "apto_para_publicacao",
+        }]}
+        result = merge_active_articles({"materias": []}, previous, now=now)
+        self.assertEqual(len(result["materias"]), 1)
+        body = result["materias"][0]["corpo"]
+        self.assertTrue(body.endswith("nove meses de vida."))
+        self.assertNotIn("VEJA+IA", body)
+        self.assertNotIn("OFERTA", body)
+        self.assertNotIn("Faça seu login", body)
+        self.assertNotIn("Este resumo foi útil", body)
 
     def test_generic_article_expires_after_72_hours(self):
         article = {
