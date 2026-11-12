@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "2026-11-12T10:47:17+00:00",
+  "atualizado_em": "2026-11-12T18:08:23+00:00",
   "retencao_dias": 30,
-  "total_registros": 107,
+  "total_registros": 132,
   "registros": [
     {
       "pilar": "pet",
@@ -1071,6 +1071,256 @@
       "chaves": [
         "title:saude:alta de covid 19 no brasil variante xfg predomina e vacinacao e reforcada em 18 estados sao joaquim online",
         "url:https://news.google.com/rss/articles/cbmi1wfbvv95cuxqqllrdgewc2xedlrxvkvhlujszvhfndr5cmhjownubgtdzfftlur3q19ad2viexj3vdh0chlswkzdbnexujjjtlvov0rkn0dlzvjfrfzkx0i1axjva3recjfuq2gxnta3bwpiz2xnv3llce5vnel3mwc4lwvozmxjskvxqnfnskdcdgg5v01zmthzvu4tog5qthoxtvrpam1yowxqtklzuxr4r3bytgdwc3uyngzozwzirhdwrmxqykjnnms3mjbkmmhbqtvzrla4uxpstc1ssq?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Cacique Raoni está internado em Mato Grosso; quadro de saúde é estável - Agência Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOZGNMdmdQa2wycTJ6VnBSVEdWZlpwVzhNck1aWUhxdUhpUmZNendyWElCNm1BTm5HTk1Bd0xIYTRqemRDMUd5eW1fVU9Gc3hyOHcxRExaRDEwUFZETDRMQ19leDFPeVBUWUU2OGJ6eFF0LS0wMkpFRWo2ZEFxTS1HRWh4S1ZfUzg2a2l2UVBiVzgyZWxvVndpb21wVnhkMklUNjJzZnctWGE0N0NKcVBRNEh3bTN1b0RpWDJSNUhIWWt4THlZZzlEXzJLczNYYUN6?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:cacique raoni esta internado em mato grosso quadro de saude e estavel agencia brasil",
+        "url:https://news.google.com/rss/articles/cbmi0afbvv95cuxozgnmdmdqa2wyctj6vnbsvedwzlpwvzhnck1awuhxduhpumznendywelcnm1btm5htk1bd0xiytrqemrdmud5ew1fvu9gc3hyohcxrexardewufzetdrmq19ledfpevbuwuu2ogj6eff0ls0wmkpfrwo2zefxts1hrwh4s1zfuzg2a2l2uvbivzgyzwxvvndpb21wvnhkmklunjjzznctwge0n0nkcvbrneh3btn1b0rpwdjsnuhiwwt4thlzzzlexzjlcznyyun6?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Fiocruz: aumentam casos de síndrome respiratória aguda por covid-19 - Agência Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZy1seFVIRUdYeHNfbWg3SjVleXhPZEp0MWxxeUdzV3FFRV9SSDdSOFR1Q0l6bWtvd3pneEJHbk9Wa3hwTFZ3TVB1UmVPMEw2MlVYMEEtbVVsd05EM0lGdDZLVThqTjU0V29oUkM4a3B5U1VpWkpQVjlfUkFrR0Z5a1JBdTJla1NSTU5acDRoN1lvSEkzSC01ZGU2UjF6SDJrNjBGWFZHWmprVERBYW1idFd5MWxGS1hidlkwYkp3?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:fiocruz aumentam casos de sindrome respiratoria aguda por covid 19 agencia brasil",
+        "url:https://news.google.com/rss/articles/cbmivgfbvv95cuxnzy1sefvirudyehnfbwg3sjvlexhpzep0mwxxeudzv3ffrv9ssddsofr1q0l6bwtvd3pneejhbk9wa3hwtfz3tvb1umvpmew2mlvymeetbvvsd05em0lgddzlvthqtju0v29oukm4a3b5u1vpwkpqvjlfukfrr0z5a1jbdtjla1nstu5acdron1lvsekzsc01zgu2ujf6sdjrnjbgwfzhwmprverbyw1idfd5mwxgs1hidlkwykp3?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Auditores tributários garantem reembolso com saúde - Jornal de Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPYkt4QWFWLUpaTk9TMGxhU1phNzd6cWJSY2ZyWHh3WTkzLTc1bzdCWWxYb2gySTM0WkRZNzFUbDItSzhkLW9WcTdlMHhpdGhINGJTUXlKeDBIMkNQZFhmSmZGT3h1N28wd2U4amRybWZXVURuUlZZSjZhYW93NVZqYWJHYXRreFduRTJUdEZlZEd5QVphbGk0?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:auditores tributarios garantem reembolso com saude jornal de brasilia",
+        "url:https://news.google.com/rss/articles/cbmilwfbvv95cuxpykt4qwfwlupatk9tmgxhu1phnzd6cwjsy2zywhh3wtkzltc1bzdcwwxyb2gystm0wkrznzfubditszhklw9wctdlmhhpdghingjtuxlkedbimknqzfhmsmzgt3h1n28wd2u4amrybwzxvuruulzzsjzhyw93nvzqywjhyxrrefdurtjudezlzed5qvphbgk0?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "CTA da Cidade leva testagem e prevenção gratuitas à Praça Brasil nesta quinta-feira (12) - Prefeitura de São Paulo",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPc1c5QjdkWmtlcFdZU3F4LUpOZUxKdEFIRDVveUxQeU8zdUdrcFZLc1EwRWEzTVRDek9tTUN0eW16RmphVnI0ZV84Qm9nVjRJLUw1aXVPaFF1ak1GTHhWeWxLQXN2ZG9nS3Fvb2RjdEkwUFBsXy1UQWQ5S0hwVzZpREVHZE9oM285R2FRbG1SSG5XTzNlcUV4UER1dEkwM1BfMGN4NktHdmlXQWNtUUFNT0VkMDNxeVBhbUhHZkRBV1dVQ0dEUUVLTUxNZTBJaGZzdzVhVEd2SU1sTGd4NG04ZTNn?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:cta da cidade leva testagem e prevencao gratuitas a praca brasil nesta quinta feira 12 prefeitura de sao paulo",
+        "url:https://news.google.com/rss/articles/cbmi4gfbvv95cuxpc1c5qjdkwmtlcfdzu3f4lupozuxkdefirdvveuxqeu8zdudrcfzlc1ewrweztvrdek9ttun0ew16rmphvni0zv84qm9nvjrjluw1axvpaff1ak1gthhwewxlqxn2zg9ns3fvb2rjdekwufbsxy1uqwq5s0hwvzzprevhze9om285r2frbg1ssg5xtznlcuv4uer1dekwm1bfmgn4nkthdmlxqwntuufnt0vkmdnxevbhbuhhzkrbv1dvq0deuuvltuxnztbjagzzdzvhved2su1stgd4ng04ztnn?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Anastácio amplia orientações sobre câncer de próstata e saúde do homem - O Pantaneiro",
+      "url_agregador": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQT2FPR1lpdEFibEE3WmpweUxNZ18wcG5OcW80c0QyRmFvbVpwUS0zVnl5d0txamJZZUxXVEFWSWtYUFREaEp0ejdHdVJkZngzUWJzYmRzc0xPcVFtUjBOWTUzdmNrcHVFNjM4bHgtSWhUcTlMRzMxS3pHZFMtQUJXNUpfRGVndTdqZHoyM2Rmc3Fid1lveXhQZW5Kd1duOTdKZURtc0V0QU15S1pLVVRwb0J2b1hiYVhCaHhfVDFndVJpSHJBVFE?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:anastacio amplia orientacoes sobre cancer de prostata e saude do homem o pantaneiro",
+        "url:https://news.google.com/rss/articles/cbmixgfbvv95cuxqt2fpr1lpdefibee3wmpweuxnz18wcg5ocw80c0qyrmfvbvpwus0zvnl5d0txamjzzuxxvefwswtyufreaep0ejdhdvjkzngzuwjzymrzc0xpcvftujbowtuzdmnrchvfnjm4bhgtswhuctlmrzmxs3phzfmtqujxnupfrgvndtdqzhoym2rmc3fid1lvexhqzw5kd1duotdkzurtc0v0qu15s1plvvrwb0j2b1hiyvhcahhfvdfndvjpshjbvfe?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Brasil cobra financiamento e ações concretas para proteger a saúde dos efeitos da crise climática na COP31 - Noticia Preta",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOMFdSMzFnenR6QVFPTmVndWFjaXMwSzlkb3g5WEZWSThKY1V3cXd2Q2JIZ1BDSUJrcjlQYXdDam8zdTR6UDBRb0x3bElCNnY0d2xMc2RTQ1BVNTdFZHN5c000ZDM5RVdCSkVYeE1HbVRMYk56dUZEZjEyRE1MWlA2N3VWS0QzNS02VXoxanoxaFpENDJOUEtGOVhNMjdfWUNwa21raVR3UHJJZFpGckRpSnNFZ3FKcnRPZ2diNjBGQW9wS0xFSV9FZFdoZVJtekh0?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:brasil cobra financiamento e acoes concretas para proteger a saude dos efeitos da crise climatica na cop31 noticia preta",
+        "url:https://news.google.com/rss/articles/cbmi0afbvv95cuxomfdsmzfnenr6qvfptmvndwfjaxmwszlkb3g5wezwsthky1v3cxd2q2jiz1bdsujrcjlqyxddam8zdtr6udbrb0x3belcnny0d2xmc2rtq1bvntdfzhn5c000zdm5rvdcskvyee1hbvrmyk56duzezjeyre1mwla2n3vws0qzns02vxoxanoxafpendjouetgovhnmjdfwunwa21ravr3uhjjzfpgckrpsnnfz3fkcnrpz2dinjbgqw9ws0xfsv9fzfdozvjtekh0?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Divórcios no Brasil: cinco cuidados ajudam a evitar prejuízos financeiros e anos de disputas judiciais - Diário do Rio",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOajM1LUlFN0N1SllTZlJGRGI4WFhvQTQ2eGhLdG5BdE5YZkNGcG8tY2JVZEhFN0w4RXpwek5iTFRXY0ptQU54MVZhUTdWWHY3ejdJNVZ4MmVmUDY2TVdrMDRjbGlsT1gwY0x4Z3o1bWVCQkhtTktEN0syd3NsWTN6N0dnMzVCeHgyWlhhTmtvWlJ1V0pmQ3JFLVFRanMyQVNpRVJDM2UtWHdnUktiUWZJNTV5Z1d0aXhFampwMG93QlMzb3JHZ3BubFlldGJtV0FueUtzLUtQeHY0YXozUnVUdDgxa3Y?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:divorcios no brasil cinco cuidados ajudam a evitar prejuizos financeiros e anos de disputas judiciais diario do rio",
+        "url:https://news.google.com/rss/articles/cbmi5afbvv95cuxoajm1lulfn0n1slltzljgrgi4wfhvqtq2eghldg5bde5yzkngcg8ty2jvzehfn0w4rxpwek5itfrxy0ptqu54mvzhutdwwhy3ejdjnvz4mmvmudy2tvdrmdrjbglst1gwy0x4z3o1bwvcqkhttkten0syd3nswtn6n0dnmzvcehgywlhhtmtvwlj1v0pmq3jflvfranmyqvnprvjdm2utwhdnuktiuwzjntv5z1d0axhfampwmg93qlmzb3jhz3bubflldgjtv0fueutzlutqehy0yxozunvuddgxa3y?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Novembro Azul completa 15 anos no Brasil e mobiliza unidades de saúde em Nossa Senhora do Livramento - Prefeitura de Nossa Senhora do Livramento - MT",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOVEhGckFiWXMyeThHcERUZy1mc2d0QWdNNGhBNW54MXQyZkpESER2VUJJcm9BcDlTamxSS01MWEtSNDB2ZVpoUkpZVDBQOUZObkNxNHVfMWFESFRaZllNSlVPWkJ4U2NtN2hiRmFnTDBfUUV5T2JwZVRkbUNTcExpdnc0dTZIQVEzUnJQWHloZFZtSzg2dVoyWHBjLW9nOXF5OHJ5S1FHQkx0bm1YZTgtb2M5VU9kUXBUZkJlSnVjaDlIR3R2NUxCVXFTZDhJbmVlRVVvVjBycUF3ZGwtZ2dpTWNRTk5zOF9UV3doZG04aWMwUnc?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:novembro azul completa 15 anos no brasil e mobiliza unidades de saude em nossa senhora do livramento prefeitura de nossa senhora do livramento mt",
+        "url:https://news.google.com/rss/articles/cbmi8wfbvv95cuxovehgckfiwxmyethhceruzy1mc2d0qwdnnghbnw54mxqyzkpeser2vujjcm9bcdltamxss01mwetsndb2zvpoukpzvdbqouzobknxnhvfmwfesfrazllnslvpwkj4u2ntn2hirmfntdbfuuv5t2jwzvrkbuntcexpdnc0dtziqvezunjqwhlozfztszg2dvoywhbjlw9noxf5ohj5s1fhqkx0bm1yztgtb2m5vu9kuxbuzkjlsnvjadlir3r2nuxcvxftzdhjbmvlrvvvvjbycuf3zgwtz2dptwnrtk5zof9uv3dozg04awmwunc?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Vacinação no DF: veja calendário, caderneta e doses especiais - Agita Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNZnkyN2FaNFZFSXJHeENqaVVuS2N5b2pCWVJoOC03QlJxdXBuODhLQU1FX1BuU0w3YWdOWmxPRWdnU0hLeUhoalU2YTZCZE1qbnBMX3o0eUkzMXlhelpNN09JeDRFNlhFWEx3LTJ3aHR1UHp5SFZDUVVCd1h3Zm1HMnFBQjdpd3JJRHd3SDVFaTNBeGtZYV9OVU1lM1EtZDlzaGI4cWxfcWN3bVJj?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:vacinacao no df veja calendario caderneta e doses especiais agita brasilia",
+        "url:https://news.google.com/rss/articles/cbmirafbvv95cuxnznkyn2fanfzfsxjheenqavvus2n5b2pcwvjooc03qljxdxbuodhlqu1fx1buu0w3ywdowmxprwdnu0hleuhoalu2ytzcze1qbnbmx3o0eukzmxlhelpnn09jedrfnlhfwex3ltj3ahr1uhp5sfzduvvcd1h3zm1hmnfbqjdpd3jjrhd3sdvfatnbegtzyv9ovu1lm1etzdlzagi4cwxfcwn3bvjj?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Estocar comida no Brasil? Kit da Defesa Civil é prevenção, não aviso de crise - Tribuna do Planalto",
+      "url_agregador": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbjhoXzFQNFpYSTZVUkptQ0laVGd6cmVRUkpraEhCNWozTGRqYnVOdDR4LTdHenhEd3ozS3ZXLWNNVFZTUk9RZ084MC1DY2oxRmJzMm5uZnhfRnZ2bnh6d2tZUW5HcDg3RHR0S05ZQXpGQWEybkk4LVdsZmxjNGYyNXR6WlF3bkxNTzdkcjVjU1phQWxLclYwZm9ILTlVbDBJa1RWNnlBcnF5dVk0QlE?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:saude:estocar comida no brasil kit da defesa civil e prevencao nao aviso de crise tribuna do planalto",
+        "url:https://news.google.com/rss/articles/cbmirgfbvv95cuxqbjhoxzfqnfpystzvukptq0lavgd6cmvrukpraehcnwoztgrqynvoddr4ltdhenhed3ozs3zxlwnnvfztuk9rz084mc1dy2oxrmjzmm5uznhfrnz2bnh6d2tzuw5hcdg3rhr0s05zqxpgqweybkk4lvdszmxjngyynxr6wlf3bkxntzdkcjvju1phqwxlclywzm9iltlvbdbja1rwnnlbcnf5dvk0qle?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Tiroteio perto da Casa Branca começou em academia, diz polícia - CNN Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWHR6aml0ODhZNXktVEN3cS1weEFCazJVN3lhZHhjUTM0bnBEcUt5cnE2SXhFcmVBaG10Mk1KQ05NVWdJZGU5dXNzTlY3TlE3eUJEaTlDWEVmRmlCMDV3ZXRQQWNJVWhEajBQMTdxYkJCWnNpeWNWSVpUQ1VPUnhiWlFTWW9tM1ZfbHA3NVFaZ2FPYWlFcDlEWTFHcHVkV2VIbjFIYmMzMHc?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:fitness:tiroteio perto da casa branca comecou em academia diz policia cnn brasil",
+        "url:https://news.google.com/rss/articles/cbmiqafbvv95cuxnwhr6aml0odhznxktven3cs1weefcazjvn3lhzhhjutm0bnbecut5cne2sxhfcmvbag10mk1kq05nvwdjzgu5dxnztly3tle3eujeatldwevmrmlcmdv3zxrqqwnjvwheajbqmtdxykjcwnnpewnwsvpuq1vpunhiwlftww9tm1zfbha3nvfaz2fpywlfcdlewtfhchvkv2vibjfiymmzmhc?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Cinema ao ar livre movimenta o Shopping TOTAL neste sábado - Terra",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPYm9WTVFxRjNFdFhSUGJDTHJrYTBLWjFfbE8wMnBScmxJc280OXo1SGx2Q0o1SHE4Y09xeFB2cEd2VEctUGJXQWpERUI5bm44RGpRbXhSQ0lyT2N0elc3WGhnUTdPa3BmMW5wMHV5RGxDeW12OG0wRFJYRzZ1R1NPS0pTbmk5eVVoNHpBdXhtai1IVFJDYXFxeGljWWdzMlc0bWNfNThtV1VKaWRNcGRpbW0yZGNrM1JCZ040a2lEeVNTLXRKN2tYaHZBT1F2TWhJb2p1VDhfeDBPckpHMWc?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:fitness:cinema ao ar livre movimenta o shopping total neste sabado terra",
+        "url:https://news.google.com/rss/articles/cbmi3gfbvv95cuxpym9wtvfxrjnfdfhsugjdthjrytblwjffbe8wmnbscmxjc280oxo1sgx2q0o1she4y09xefb2ced2vectugjxqwperui5bm44rgprbxhsq0lyt2n0elc3wghnutdpa3bmmw5wmhv5rgxdew12og0wrfjyrzz1r1nps0ptbmk5evvonhpbdxhtai1ivfjdyxfxegljwwdzmlc0bwnfnthtv1vkawrncgrpbw0yzgnrm1jcz040a2leevntlxrkn2tyahzbt1f2twhjb2p1vdhfedbpckphmwc?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Mulher é agredida a socos por homem após discussão em academia na China; veja o vídeo - Terra MT Digital",
+      "url_agregador": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZ2J2dkVNX1RDaENsdndkb2dWUHppbFB4WkdpRnRadE1kTEpXYkZLbUlJdVc5YWtlelhKeWJGemUxblhIQ1ZMdDNwenc2MWxra21tZjk4dm1xdzg4TU5qeVByUjgzNk5pNzJJTHlubDdSRW15Z0JRNXQxbmUtSkVhazN1eUdHUnQ4WVcwV08wV3EtZDJxMGctQ2lPRmRzc3ZvaVhRV3NyQ1JlQVlCZ20wQ1paLTN0UFZSS0RZLWt1TQ?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:fitness:mulher e agredida a socos por homem apos discussao em academia na china veja o video terra mt digital",
+        "url:https://news.google.com/rss/articles/cbmivwfbvv95cuxpz2j2dkvnx1rdaensdndkb2dwuhppbfb4wkdprnrade1ktepxykzlbuljdvc5ywtlelhkewjgemuxblhiq1zmddnwenc2mwxra21tzjk4dm1xdzg4tu5qevbyujgznk5pnzjjthlubddsrw15z0jrnxqxbmutskvhazn1eudhunq4wvcwv08wv3etzdjxmgctq2lprmrzc3zvavhrv3nyq1jlqvlcz20wq1paltn0ufzss0rzlwt1tq?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Rede Windsor aposta em programação para crianças e atividades ao ar livre nas férias de verão - Visite Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPVjJpZV9fOEFNdk1PVDlPYjJJRUk4YmF6Z0tTdUxTZXdZMzlfb08xVFVZZk9XeGs3WDA0OElUUTdTaTRoSUN1NlNtajMwQ2RKNmZlWEdNM1ZxUkJMbnoyeFlvdUJpVUFxYUM3aXhqV3JlbTN2YmJmYkRpQ2Q1ZXF0N3RlZzNucElSNlJNRXRXc2dxcHljUi11VzF1MWE4YW5FdHpDcUJSWmZHdmF5MWdQNklDOHdQc3dFVGg2TUpTWmZOenVnMC1VTEh2TW8?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:fitness:rede windsor aposta em programacao para criancas e atividades ao ar livre nas ferias de verao visite brasilia",
+        "url:https://news.google.com/rss/articles/cbmizafbvv95cuxpvjjpzv9foefndk1pvdlpyjjjruk4ymf6z0ttduxtzxdzmzlfb08xvfvzzk9xegs3wda0oeluutdtatrosun1nlntajmwq2rknmzlwednm1zxukjmbnoyeflvdujpvufxyum3axhqv3jlbtn2ymjmykrpq2q1zxf0n3rlzznucelsnljnrxrxc2dxchljui11vzf1mwe4yw5fdhpdcujswmzhdmf5mwdqnkldohdqc3dfvgg2tuptwmzoenvnmc1vteh2tw8?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Pesquisa sobre turismo em Brasília surpreende com predominância de moradores locais - Agita Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUDdwZVhGNUlNZXA5VzBSVVVhREtxZE5QdnZaTHhUbm0wVURkVU1ZcUpQN3JveTIzM3dEZEszZDVsdTVQRWhlWlhlLTVFbWRseFBtN2d1dkFVSUZ5Mjg0MEd2MTB4bTJkVlFkWmVvMDVrNnhPVzgxelA5QWh2ZmVqM2Z1S09XQVFULUx0U1doWnJkTzc0Sm9STjJJbG44dFQwZmxlbzJIYUtJalRNc2RfdC1MOTluY2hJaWlKOFdSNjk?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:lazer:pesquisa sobre turismo em brasilia surpreende com predominancia de moradores locais agita brasilia",
+        "url:https://news.google.com/rss/articles/cbmiwafbvv95cuxnuddwzvhgnulnzxa5vzbsvvvhretxze5qdnzathhubm0wvurkvu1zcupqn3jvetizm3dezeszzdvsdtvqrwhlwlhlltvfbwrsefbtn2d1dkfvsuz5mjg0med2mtb4btjkvlfkwmvvmdvrnnhpvzgxela5qwh2zmvqm2z1s09xqvfulux0u1downjktzc0sm9stjjjbg44dfqwzmxlbzjiyutjalrnc2rfdc1motluy2hjawlkofdsnjk?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Ceilândia é o coração do hip hop no DF, afirma Jean da cultura - Tudo ok Notícias",
+      "url_agregador": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQNHg0T0JDV01vbW9BdVlROVpxYm4zUWlfRFpFd3NZRGhQZ3ljY0pJQXBWb1lEWmZ1akl3ZU5XX3J2aXM0Y3M0cGlFM1YyVldHZ19PODFGWXAzLWY4YlBKZ2t4RFNCckNobnkwckpUQk4zbU8xb3hXX0htM2FDc2RKaFNZTHMyenJoTmRkQnZJcHJXdGpVQnRPVFRUeWRpTlhkd0oxMy1SMlZDWmZXM2c?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:lazer:ceilandia e o coracao do hip hop no df afirma jean da cultura tudo ok noticias",
+        "url:https://news.google.com/rss/articles/cbmirgfbvv95cuxqnhg0t0jdv01vbw9bdvlrovpxym4zuwlfrfpfd3nzrghqz3ljy0pjqxbwb1lewmz1akl3zu5xx3j2axm0y3m0cglfm1yyvldhz19podfgwxazlwy4ylbkz2t4rfnccknobnkwckpuqk4zbu8xb3hxx0htm2fdc2rkafnzthmyenjotmrkqnzjchjxdgpvqnrpvfruewrptlhkd0oxmy1smlzdwmzxm2c?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Goiânia terá trem até Brasília com viagens que devem durar até 2h; previsão de início é de quatro anos - Portal GO 020",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZklDZk1TbGhPV3FVYUo1b3lJZ0ZjMk1uYTZsa0hISC01QmJkVmNJQWtudlg1bmRURWtQa1hrVV9BMmJ3MGdVRGVOMnFENWpYOGRveGJDMzNJNUoyM1ZLMWZGVU9ndDlyTlJWVC1XSjlrZGFKcEhCUDhqVmt6cGhkMUZrY3RadjBfcmpnemJCRnZsQ3hjUlhsSkhHLUUyRkJQUlBRcVRGaEhqNU1XTnNiZnEydE0tNVV1Wm1xT0I1cXlaRE0?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:lazer:goiania tera trem ate brasilia com viagens que devem durar ate 2h previsao de inicio e de quatro anos portal go 020",
+        "url:https://news.google.com/rss/articles/cbmiwwfbvv95cuxnzkldzk1tbghpv3fvyuo1b3ljz0zjmk1uytzsa0hisc01qmjkvmnjqwtudlg1bmrurwtqa1hrvv9bmmj3mgdvrgvomnfenwpyogrvegjdmznjnuoym1zlmwzgvu9nddlytljwvc1xsjlrzgfkcehcudhqvmt6cghkmuzry3radjbfcmpnemjcrnzsq3hjulhsskhhluuyrkjqulbrcvrgaehqnu1xtnnizneyde0tnvv1wm1xt0i1cxlare0?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Quem paga as viagens de Samanda Alves a Brasília antes de assumir o Senado? - Blog do Robson Pires",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPSndIMWlDUmRWcExTU1pkWFVnLVBCSTcwOTNCNmdJemZVd1hIOVZMdEFYY09TZVJZanliSnVJMnZXY0VWRUhFalNTYmZseTVfa19VeGlTT2tPbFI0Y1NEbHhLUFpNcVphTGJYMjB6OUpMREpfOUJENGwyRkxaOGFuS1MzVk15Rkpicl9DX2tfam5sMDBBeWZCZzkzZHYwaFVxdFhwQk54ams?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:lazer:quem paga as viagens de samanda alves a brasilia antes de assumir o senado blog do robson pires",
+        "url:https://news.google.com/rss/articles/cbmiqafbvv95cuxpsndimwldumrwcextu1pkwfvnlvbcstcwotncnmdjemzvd1hiovzmdefyy09tzvjzanlisnvjmnzxy0vwruhfalntymzsetvfa19vegltt2tpbfi0y1nebhhlufpncvphtgjymjb6oupmrepfoujengwyrkxaogfus1mzvk15rkpicl9dx2tfam5smdbbewzczzkzzhywafvxdfhwqk54ams?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Brasília não tem mar, mas tem um lago gigante; descubra como o Paranoá surgiu - Jornal Correio",
+      "url_agregador": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSVgtNjI0WWd1elVBQThKQ0tXdDJlMUpENnZXcVpMV1MxSnR4X0tTbGNDSThScWc5TWd3bEV0b3NCRm5BRGtYZVcwRFpzU1ZwNEU4aVNaTU5jUXBNYTR3MGl5dWtZVUJIaDV6NFh1STk1RHExLW50TXBaVWotSUZoaExmM3FaYUdaTlktRWNRSjRNZGRTUGV0V182aXFLM0pHQkhvdkhkU3JXRFViaTRBa3R4d0FGbzRIQ1NSZlF5aw?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:lazer:brasilia nao tem mar mas tem um lago gigante descubra como o paranoa surgiu jornal correio",
+        "url:https://news.google.com/rss/articles/cbmivwfbvv95cuxqsvgtnji0wwd1elvbqthkq0txddjlmupennzxcvpmv1mxsnr4x0ttbgndsthscwc5twd3bev0b3ncrm5brgtyzvcwrfpzu1zwneu4avnatu5juxbnytr3mgl5dwtzvujiadv6nfh1stk1rhexlw50txbavwotsuzoaexmm3fayudatlktrwnrsjrnzgrtugv0v182axflm0phqkhvdkhku3jxrfviatrba3r4d0fgbzriq1nszlf5aw?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Apartamento invadido por homem vestido de mulher em Brasília é de ex-secretário de Turismo do DF - G1",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPbGRhX3Z4NUcyNU1kVTE2Rlk4ckt3VDNsZ3Z3NjU4aWlmeE5nWXFWdGpxNUVkcWFuZmJuVk9mbE5wbERMUnotd1o5VW9fdFcwMzQtYWktVDJlcG5XNUhpUnVzTGJvQTBlQ1Z2NFpwRXAtMUNTQTJaMzJHNEQyR00taGpOR1hJRVBMNjBoYVdEOGtXYW80cFZCaHdYY2xOaklUbllER0FzUUdjX3FBVHc3TVFWUGJqb2xYMXdrdW4wd0h1SS03MXJ2SjFvOG1NUTRmVTNzVlRIcVJZNl9FSVAzc2x0YUdEN0tlQjBOdnhicDd0X1Nq0gGDAkFVX3lxTE1zcWRocHlDZlFUUTFXVmRBZGREejRxdkdnZjQ0b3pFd0tQSnk5MWxvc1lVZEgyVmVqWTA0QkRXZ1hsb1NEUkRIdmF5U1dPekdkUEFNVFo5SkJDUDhUV3poQnRWQTJmWjAwdzVoUzJmSExGYllQUVpBN2FnMjhGdTVoTkFOVzBvbUdYX2dPNUFITEE4U2hCLWxzbl9fX3FsanhZQVVyMmtuMEhMT2ZRU3EtZnRjTkx0aVJyRm51cnc2U2dEc1U0QjVDaVRpbVBUV2JUTlJNN0ZXQng3RDFLRVZSN05iU09Ua2txdmVuVGpIQjg3TjRMZHBJeHFzMkJKYWMzbnM?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:lazer:apartamento invadido por homem vestido de mulher em brasilia e de ex secretario de turismo do df g1",
+        "url:https://news.google.com/rss/articles/cbmi9afbvv95cuxpbgrhx3z4nucynu1kvte2rlk4ckt3vdnsz3z3nju4awlmee5nwxfwdgpxnuvkcwfuzmjuvk9mbe5wbermunotd1o5vw9fdfcwmzqtywktvdjlcg5xnuhpunvztgjvqtblq1z2nfpwrxatmuntqtjamzjhneqyr00tagpor1hjrvbmnjboyvdeogtxyw80cfzcahdyy2xoaklubller0fzuudjx3fbvhc3tvfwugjqb2xymxdrdw4wd0h1ss03mxj2sjfvog1nutrmvtnzvlricvjznl9fsvazc2x0yuden0tlqjbodnhicdd0x1nq0ggdakfvx3lxte1zcwrochldzlfuutfxvmrbzgreejrxdkdnzjq0b3pfd0tqsnk5mwxvc1lvzegyvmvqwta0qkrxz1hsb1neukridmf5u1dpekdkuefnvfo5skjdudhuv3poqnrwqtjmwjawdzvouzjmsexgyllquvpbn2fnmjhgdtvotkfovzbvbudyx2dpnufitee4u2hclwxzbl9fx3fsanhzqvvymmtumehmt2zru3etznrjtkx0avjyrm51cnc2u2dec1u0qjvdavrpbvbuv2jutljnn0zxqng3rdflrvzsn05iu09ua2txdmvuvgpiqjg3tjrmzhbjehfzmkjkywmzbnm?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Biblioteca Demonstrativa oferece serviços gratuitos de leitura, estudo e cultura em Brasília - Blog Glau na Capital",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNYWpGZWVFLTBnaHhOTm1zbTFSUTIxanNxaE5CWWVYcVZIa05YR3o1NGpwVmZ0c0xWbDJmZXNBcU5YUGJ6TGxTY0toVDUwNlp1X0tQVGt1NVhBZWo2eUNNR1h5ckRjZ1VxWXZlOU14UWxYeWhreElFdnZVZFY3YjNwSF94cEJnVFR3WHA5QnBTVGhyY3hQNE9WdFR3V0ZYZUNsb2o1SDY3YTdYc1M3S3hHODZMVmVKRUFCaTJHRFVBS2hMNnFDT3FlVg?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:lazer:biblioteca demonstrativa oferece servicos gratuitos de leitura estudo e cultura em brasilia blog glau na capital",
+        "url:https://news.google.com/rss/articles/cbmiyafbvv95cuxnywpgzwvfltbnahhotm1zbtfsutixannxae5cwwvycvzia05yr3o1ngpwvmz0c0xwbdjmzxnbcu5yugj6tgxty0tovduwnlp1x0tqvgt1nvhbzwo2eunnr1h5ckrjz1vxwxzlou14uwxyewhreelfdnzvzfy3yjnwsf94cejnvfr3wha5qnbtvghyy3hqne9wdfr3v0zyzunsb2o1sdy3ytdyc1m3s3hhodzmvmvkrufcatjhrfvbs2hmnnfdt3flvg?oc=5"
+      ]
+    },
+    {
+      "pilar": "esportes",
+      "titulo": "Congresso muda orçamento em favor da Copa do Mundo de futebol feminino - Agência Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSzl3aWxmOXJNVGROaVNEN2RCTXc5S0Zmbjh4TWJ2RFpQdDk2UFUtUW11MEtzc1BuUm1zM1BXTHB1RFR2a3lPR3QxSDZrbEZ4Wk9mTkE1Wlc0SW5CZlZnRFZDNUJuMEJESHR2cXdtekVKTU1QVHY0bXMyZWZRNzV5UG9QMG85ckRrU3ZaSHlnMWFNZzRzeWlhOWtxb1RuMTF5V21TSDlQYzVZQ1UtSDdTVTJKcGRxcHlfcEFTSklHbnBjMDg?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:esportes:congresso muda orcamento em favor da copa do mundo de futebol feminino agencia brasil",
+        "url:https://news.google.com/rss/articles/cbmiwwfbvv95cuxqszl3awxmoxjnvgroavnen2rctxc5s0zmbjh4twj2rfpqddk2ufutuw11metzc1buum1zm1bxthb1rfr2a3lpr3qxsdzrbez4wk9mtke1wlc0sw5czlznrfzdnujumejeshr2cxdtekvktu1qvhy0bxmyzwzrnzv5ug9qmg85ckrru3zashlnmwfnzzrzewlhowtxb1rumtf5v21tsdlqyzvzq1utsddtvtjkcgrxchlfceftsklhbnbjmdg?oc=5"
+      ]
+    },
+    {
+      "pilar": "esportes",
+      "titulo": "Ídolos do futebol: atletas de todas as idades viraram figurinhas em álbum - G1",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPbFRaNzNLSWxNMEVkbTg0Z0UxY05pYTY3ZUJocnhSQmZoT0h5UFdGdk1oeHhNSFNZWFZFS1gwWGpBSTFPZzg5Q3ZCYkIzQTcwdjRLb2FMWmFvODU5VGN1NU5JTktscHl4VVM4bTg0NmJybnJlV2JSdVVGY0FJeGM0Y2M5UC01eDNHQXdvZnJUbVllZnB1ejNGdC0wUF9EU2t2QWNJUVlscXlEYWdUTEpBSDh0RzdmYU5ncmxzanpsZmUzMGpLNW1vUjl5Zm5vQncxc0NwN9IB4wFBVV95cUxOMHdIVlJwVjFpRFVvYldiTDNyRG42Zk5HYWlVZi1zTWtRM3phXy1kU1BSM2h2T2RjVzY4dUpzVHhIUWgtVGJ3bTlkNDVoaHNUN2gxYnVZeUVSdGRxNHd1eUhEa1NpNUxkTkY5aEJGNGN1VW9WQTEzTTdNTE1NanRfTm96OHJPVkEzMERKWENscTNlYUZBbF9sUm1mV2V6aC0yRm10SWxlT3EyVGZsVFc3WlhQNm9QTlJkZHB2dWpiRUdRZ3QwOFMweW9jQnd3M19FaXdqUU1wOWVtNjNyUklVakZZbw?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:esportes:idolos do futebol atletas de todas as idades viraram figurinhas em album g1",
+        "url:https://news.google.com/rss/articles/cbmi1afbvv95cuxpbfranznlswxnmevkbtg0z0uxy05pyty3zujocnhsqmzot0h5ufdgdk1oehhnsfnzwfzfs1gwwgpbstfpzzg5q3zcykizqtcwdjrlb2fmwmfvodu5vgn1nu5jtktschl4vvm4btg0nmjybnjlv2jsdvvgy0fjegm0y2m5uc01ednhqxdvznjubvllznb1ejngdc0wuf9eu2t2qwnjuvlscxleywdutepbsdh0rzdmyu5ncmxzanpszmuzmgplnw1vujl5zm5vqncxc0nwn9ib4wfbvv95cuxomhdivljwvjfprfvvylditdnyrg42zk5hywlvzi1ztwtrm3phxy1ku1bsm2h2t2rjvzy4dupzvhhiuwgtvgj3btlkndvoahnun2gxynvzeuvsdgrxnhd1euhea1npnuxktky5aejgngn1vw9wqtezttdnte1nanrftm96ohjpvkezmerkwensctnlyuzbbf9sum1mv2v6ac0yrm10swxlt3eyvgzsvfc3wlhqnm9qtljkzhb2dwpirudrz3qwofmwew9jqnd3m19faxdquu1wowvtnjnyuklvakzzbw?oc=5"
+      ]
+    },
+    {
+      "pilar": "esportes",
+      "titulo": "Turquia x Bélgica: horário e onde assistir ao jogo da Nations League - CNN Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPekkyMWtVTE9pZzZLR0R4TEg3NUd4TlhwUV9aSkRCOU1weWZ4djB6YTk0WUVsUUNWTENtVl9jdU81cXdzNUtxS1dBUnZFOHloNXJ5Yy1Rc3VfZUZqUmtOT0Z5TWJtQlR2R093cDRtcENFajVUVDZSeElVbDg4d1lNXzJFRGVDMHRrdG9ETXFmTHhKRF9fMXJZRTVycXdoNzNVQTltZUhiSXNVYWYwZGNjWk1jMmFHMFhzTmdXWVpVTjF6UVlPRHE1MXcwVDlBRUpxaXc?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:esportes:turquia x belgica horario e onde assistir ao jogo da nations league cnn brasil",
+        "url:https://news.google.com/rss/articles/cbmi0gfbvv95cuxpekkymwtvte9pzzzlr0r4teg3nud4tlhwuv9askrcou1wewz4djb6ytk0wuvsuunwtentvl9jdu81cxdznutxs1dbunzfohlonxj5yy1rc3vfzuzqumtot0z5twjtqlr2r093cdrtcenfajvuvdzseelvbdg4d1lnxzjfrgvdmhrrdg9etxfmthhkrf9fmxjzrtvycxdonznvqtltzuhisxnvywywzgnjwk1jmmfhmfhztmdxwvpvtjf6uvlprhe1mxcwvdlbrupxaxc?oc=5"
+      ]
+    },
+    {
+      "pilar": "esportes",
+      "titulo": "Famoso ex-zagueiro planejou casa em Brasília para aposentadoria e fez mudanças; descubra - CARAS Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPR0ZQbklCbmRYWUhkT3BSVS04OC02aU5HNnRpR0pUOFVqVDhvbWdNai1LWVdWcUh0dTBXN080U2ZlNlM2LTkxSnJlTmpXdVAxakxjYTZ2ZnA0X1dBYy02Qi1jYXZ0ZXlvQWZwN2ZYcXItaUc5aGlpNXJ2d296RWhPdEdKYVhLWHFTN3VWZVRKRnZYUTFjMG1QeEtPZmNTSXo1TWw4bERob1NSQ20tLTZ5YXZsYUs0WWVSS01OcXNLSlF2djhaRnJCZlF2SQ?oc=5",
+      "registrado_em": "2026-11-12T18:08:23+00:00",
+      "chaves": [
+        "title:esportes:famoso ex zagueiro planejou casa em brasilia para aposentadoria e fez mudancas descubra caras brasil",
+        "url:https://news.google.com/rss/articles/cbmiywfbvv95cuxpr0zqbklcbmrywuhkt3bsvs04oc02au5hnnrpr0puofvqvdhvbwdnai1lwvdwcuh0dtbxn080u2zlnlm2ltkxsnjltmpxdvaxakxjytz2zna0x1dbyy02qi1jyxz0zxlvqwzwn2zycxitauc5aglpnxj2d296rwhpdedkyvhlwhftn3vwzvrkrnzyutfjmg1qeetpzmntsxo1tww4berob1nsq20tltz5yxzsyus0wwvss01ocxnlslf2djharnjczlf2sq?oc=5"
       ]
     }
   ]
