@@ -8,55 +8,51 @@ from resumir_materias import MAX_SUMMARY_WORDS, contar_palavras, resumir_corpo
 
 
 class ResumidorLocalTests(unittest.TestCase):
-    def test_short_text_is_preserved(self):
-        text = "A primeira informação apresenta o fato principal. A segunda explica o contexto."
+    def test_limit_is_440_words(self):
+        self.assertEqual(MAX_SUMMARY_WORDS, 440)
+
+    def test_short_text_and_source_paragraphs_are_preserved(self):
+        text = (
+            "A primeira informação apresenta o fato principal. A segunda explica o contexto.\n\n"
+            "O terceiro ponto detalha a decisão. A matéria termina com o resultado."
+        )
         self.assertEqual(resumir_corpo(text, "Fato principal"), text)
 
-    def test_long_text_is_reduced_to_at_most_120_words_and_three_paragraphs(self):
+    def test_navigation_question_is_removed_without_losing_context(self):
+        text = (
+            "O STF acolheu o pedido da defesa para suspender temporariamente as visitas. "
+            "A decisão considerou a recomendação médica.\n\n"
+            "A defesa poderá solicitar novos encontros quando houver melhora. Não chegou ainda?"
+        )
+        summary = resumir_corpo(text, "STF suspende visitas")
+        self.assertNotIn("Não chegou ainda", summary)
+        self.assertIn("A decisão considerou a recomendação médica.", summary)
+        self.assertIn("novos encontros quando houver melhora.", summary)
+        self.assertTrue(summary.endswith("melhora."))
+
+    def test_over_limit_text_keeps_consecutive_sentences_in_source_order(self):
         sentences = [
-            "O projeto anunciado reúne medidas para ampliar o atendimento e melhorar os serviços oferecidos à população.",
-            "A iniciativa prevê investimentos em espaços públicos e ações voltadas à comunidade.",
-            "Segundo os organizadores, o cronograma será divulgado nos próximos dias.",
-            "O programa também inclui atividades gratuitas para diferentes faixas etárias.",
-            "A medida foi apresentada durante evento realizado nesta semana.",
+            "Abertura " + ("contexto " * 99) + ".",
+            "Segundo " + ("informação " * 99) + ".",
+            "Terceiro " + ("detalhe " * 99) + ".",
+            "Quarto " + ("resultado " * 99) + ".",
+            "Quinto " + ("desdobramento " * 99) + ".",
         ]
-        text = " ".join(sentences * 12)
-        summary = resumir_corpo(text, "Projeto amplia atendimento e serviços")
-        self.assertLess(len(summary), len(text))
+        text = " ".join(sentences)
+        summary = resumir_corpo(text, "Notícia contextualizada")
+        self.assertEqual(contar_palavras(summary), 400)
         self.assertLessEqual(contar_palavras(summary), MAX_SUMMARY_WORDS)
-        self.assertLessEqual(len(summary.split("\n\n")), 3)
+        self.assertTrue(summary.startswith("Abertura"))
+        self.assertIn("Quarto", summary)
+        self.assertNotIn("Quinto", summary)
+        self.assertTrue(summary.endswith("."))
 
     def test_oversized_single_sentence_is_cut_at_the_word_limit(self):
-        text = " ".join(["conteúdo"] * 160)
+        text = " ".join(["conteúdo"] * 500)
         summary = resumir_corpo(text, "Conteúdo da matéria")
         self.assertEqual(contar_palavras(summary), MAX_SUMMARY_WORDS)
         self.assertTrue(summary.endswith("…"))
 
-    def test_summary_uses_only_complete_sentences_from_original(self):
-        sentences = [
-            "A prefeitura anunciou a reforma de três espaços públicos nesta terça-feira.",
-            "As obras incluem melhorias de acessibilidade, iluminação e áreas de convivência.",
-            "O investimento total informado é de R$ 2 milhões.",
-            "Os trabalhos devem começar no próximo mês, segundo o comunicado oficial.",
-            "A conclusão está prevista para o segundo semestre."
-        ]
-        text = " ".join(sentences * 10)
-        summary = resumir_corpo(text, "Prefeitura anuncia reforma de espaços públicos")
-        self.assertLessEqual(contar_palavras(summary), MAX_SUMMARY_WORDS)
-        for sentence in [part.strip() for part in summary.replace("\n\n", " ").split(".") if part.strip()]:
-            self.assertTrue(any(sentence in original for original in sentences), sentence)
-        self.assertTrue(summary.endswith("."))
-
-    def test_title_relevance_changes_sentence_selection(self):
-        text = (
-            "A programação cultural terá apresentações gratuitas durante o fim de semana. "
-            "O evento também contará com oficinas para crianças e adultos. "
-            "A organização informou que haverá mudanças no trânsito nas ruas próximas. "
-        ) * 12
-        summary = resumir_corpo(text, "Programação cultural e oficinas gratuitas")
-        self.assertIn("programação cultural", summary.casefold())
-
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
-

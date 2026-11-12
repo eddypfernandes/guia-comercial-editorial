@@ -1,4 +1,4 @@
-"""Resumo extrativo local para matérias editoriais, sem serviços externos."""
+"""Resumo local com continuidade textual e limpeza de ruído editorial."""
 from __future__ import annotations
 
 import json
@@ -7,19 +7,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED_PATH = ROOT / "prototipo" / "saida" / "materias-editoriais.json"
-MAX_SUMMARY_WORDS = 120
-MAX_SUMMARY_PARAGRAPHS = 3
+MAX_SUMMARY_WORDS = 440
 WORD_PATTERN = re.compile(r"(?u)\b[^\W_]+(?:[-’'][^\W_]+)*\b")
-
-STOP_WORDS = set("""
-a à ao aos as até com como da das de dela dele deles delas do dos e é ela elas ele eles em entre era eram essa esse essas esses esta este estas estes eu foi foram há isso isto já lhe lhes mais mas me mesmo minha minhas meu meus na nas não nem no nos nós nossa nossas nosso nossos num numa o os ou para pela pelas pelo pelos por qual quando que quem se sem ser seu seus sua suas são só também tem têm ter um uma umas uns vai vão você vocês sobre após antes durante segundo conforme ainda então onde muito muita muitos muitas cada todo toda todos todas
-""".split())
 
 NOISE = re.compile(
     r"(?i)(aceite os cookies|política de privacidade|termos de uso|"
     r"compartilhe esta notícia|siga nossas redes|assine nossa newsletter|"
     r"publicidade|anúncio|leia também|mais lidas|todos os direitos reservados|"
-    r"carregando\.\.\.|clique aqui|cadastre-se para receber)"
+    r"carregando\.{3}|clique aqui|cadastre-se para receber|"
+    r"não chegou ainda|leia no poder360|"
+    r"pressione enter para buscar|esc para fechar|"
+    r"receba novidades, eventos e benefícios)"
 )
 
 ABBREVIATIONS = (
@@ -45,25 +43,6 @@ def contar_palavras(text: str) -> int:
     return len(WORD_PATTERN.findall(str(text or "")))
 
 
-def formatar_paragrafos(sentences: list[str]) -> str:
-    if not sentences:
-        return ""
-
-    paragraph_count = min(MAX_SUMMARY_PARAGRAPHS, max(1, (len(sentences) + 1) // 2))
-    base_size, remainder = divmod(len(sentences), paragraph_count)
-    paragraphs = []
-    offset = 0
-
-    for index in range(paragraph_count):
-        size = base_size + (1 if index < remainder else 0)
-        paragraph = " ".join(sentences[offset:offset + size]).strip()
-        if paragraph:
-            paragraphs.append(paragraph)
-        offset += size
-
-    return "\n\n".join(paragraphs)
-
-
 def truncar_no_limite_de_palavras(text: str, max_palavras: int) -> str:
     matches = list(WORD_PATTERN.finditer(text))
     if len(matches) <= max_palavras:
@@ -75,91 +54,48 @@ def truncar_no_limite_de_palavras(text: str, max_palavras: int) -> str:
     return result
 
 
-def sentence_score(sentence: str, index: int, total: int, frequencies: dict[str, int], title_terms: set[str]) -> float:
-    words = re.findall(r"[a-záàâãéêíóôõúüç]{3,}", sentence.casefold())
-    terms = [word for word in words if word not in STOP_WORDS]
-    if not terms or NOISE.search(sentence):
-        return -100.0
-    distinct = set(terms)
-    frequency_score = sum(min(frequencies.get(word, 1), 3) for word in distinct) / (len(distinct) ** 0.5)
-    title_score = 2.5 * len(distinct & title_terms)
-    position_score = max(0.0, 1.25 - (index / max(total, 1)) * 0.9)
-    length_score = 0.7 if 70 <= len(sentence) <= 280 else (-0.8 if len(sentence) < 45 else -0.2)
-    return frequency_score + title_score + position_score + length_score
-
-
 def resumir_corpo(text: str, titulo: str = "", max_palavras: int = MAX_SUMMARY_WORDS) -> str:
-    """Seleciona frases completas do corpo, limitando palavras e parágrafos."""
+    """Preserva parágrafos e sequência, removendo ruído e limitando a 440 palavras."""
     raw_text = str(text or "").strip()
     if not raw_text or max_palavras <= 0:
         return ""
 
-    sentences = []
+    paragraphs = []
     for paragraph in re.split(r"\n\s*\n", raw_text):
-        sentences.extend(split_sentences(paragraph))
-    sentences = [sentence for sentence in sentences if sentence]
+        sentences = [
+            sentence
+            for sentence in split_sentences(paragraph)
+            if sentence and not NOISE.search(sentence)
+        ]
+        if sentences:
+            paragraphs.append(sentences)
 
-    if not sentences:
-        return truncar_no_limite_de_palavras(raw_text, max_palavras)
+    total_words = sum(contar_palavras(sentence) for group in paragraphs for sentence in group)
+    if total_words <= max_palavras:
+        return "\n\n".join(" ".join(group) for group in paragraphs)
 
-    if contar_palavras(" ".join(sentences)) <= max_palavras:
-        return formatar_paragrafos(sentences)
-
-    frequencies: dict[str, int] = {}
-    for sentence in sentences:
-        for word in set(re.findall(r"[a-záàâãéêíóôõúüç]{3,}", sentence.casefold())):
-            if word not in STOP_WORDS:
-                frequencies[word] = frequencies.get(word, 0) + 1
-
-    title_terms = {
-        word for word in re.findall(r"[a-záàâãéêíóôõúüç]{3,}", str(titulo).casefold())
-        if word not in STOP_WORDS
-    }
-    ranked = sorted(
-        range(len(sentences)),
-        key=lambda index: sentence_score(sentences[index], index, len(sentences), frequencies, title_terms),
-        reverse=True,
-    )
-
-    chosen: set[int] = set()
+    selected_paragraphs = []
     used_words = 0
 
-    # A abertura é preservada sempre que não for texto de navegação ou publicidade.
-    first = next(
-        (
-            i for i, sentence in enumerate(sentences)
-            if not NOISE.search(sentence) and contar_palavras(sentence) <= max_palavras
-        ),
-        None,
-    )
-    if first is not None:
-        chosen.add(first)
-        used_words = contar_palavras(sentences[first])
-
-    for index in ranked:
-        if index in chosen or sentence_score(sentences[index], index, len(sentences), frequencies, title_terms) < 0:
-            continue
-        sentence_words = contar_palavras(sentences[index])
-        if sentence_words and used_words + sentence_words <= max_palavras:
-            chosen.add(index)
+    # Se exceder o limite, mantém um trecho contínuo em ordem de origem.
+    for group in paragraphs:
+        selected = []
+        for sentence in group:
+            sentence_words = contar_palavras(sentence)
+            if not sentence_words:
+                continue
+            if used_words + sentence_words > max_palavras:
+                if not selected_paragraphs and not selected:
+                    return truncar_no_limite_de_palavras(sentence, max_palavras)
+                if selected:
+                    selected_paragraphs.append(" ".join(selected))
+                return "\n\n".join(selected_paragraphs)
+            selected.append(sentence)
             used_words += sentence_words
+        if selected:
+            selected_paragraphs.append(" ".join(selected))
 
-    if not chosen:
-        fallback = next((sentence for sentence in sentences if not NOISE.search(sentence)), sentences[0])
-        return truncar_no_limite_de_palavras(fallback, max_palavras)
-
-    selected = [sentences[index] for index in sorted(chosen)]
-    result = formatar_paragrafos(selected)
-
-    # Proteção final: nunca ultrapassar o orçamento configurado.
-    while contar_palavras(result) > max_palavras and len(selected) > 1:
-        selected.pop()
-        result = formatar_paragrafos(selected)
-
-    if contar_palavras(result) > max_palavras:
-        result = truncar_no_limite_de_palavras(result, max_palavras)
-
-    return result
+    return "\n\n".join(selected_paragraphs)
 
 
 def main() -> int:
@@ -176,14 +112,14 @@ def main() -> int:
             if summary:
                 article["corpo"] = summary
                 article["aviso_editorial"] = (
-                    "Resumo local de até 120 palavras, organizado em até três parágrafos "
-                    "a partir de frases completas do texto extraído; não houve reescrita por IA "
-                    "nem checagem factual independente. Consulte a fonte original."
+                    "Texto organizado localmente em até 440 palavras, preservando a sequência "
+                    "e os parágrafos do material extraído; chamadas de navegação são removidas. "
+                    "Não há reescrita por IA nem checagem factual independente. Consulte a fonte original."
                 )
                 total += 1
         data["aviso"] = (
-            "Prévia editorial: o corpo das matérias é resumido localmente em até 120 palavras "
-            "e três parágrafos, com frases extraídas do conteúdo original. "
+            "Prévia editorial: corpos organizados localmente em até 440 palavras, com a sequência "
+            "e os parágrafos do material preservados e ruídos de navegação removidos. "
             "Títulos e subtítulos são preservados; publicação oficial permanece desativada."
         )
         FEED_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -196,4 +132,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

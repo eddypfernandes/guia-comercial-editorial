@@ -125,6 +125,10 @@ class ArticleValidationTests(unittest.TestCase):
         self.assertTrue(pilar_compativel("lazer", "Globo e Obitel Brasil realizam seminário sobre os caminhos da ficção televisiva"))
         self.assertTrue(pilar_compativel("fitness", "Academias ampliam aulas de musculação e treino funcional"))
 
+    def test_collapses_an_exactly_repeated_headline(self):
+        headline = "Heleno recusa visitas diante de quadro de saúde “muito preocupante”"
+        self.assertEqual(limpar_titulo_fonte(f"{headline} {headline}"), headline)
+
     def test_title_cleanup_removes_publisher_duplicate_and_template_noise(self):
         self.assertEqual(
             limpar_titulo_fonte(
@@ -143,13 +147,16 @@ class ArticleValidationTests(unittest.TestCase):
             "Pressione Enter para buscar • Esc para fechar "
             "Siga o ac24horas no WhatsApp e receba as principais notícias em primeira mão. "
             "A notícia principal apresenta os fatos e o contexto para o leitor. "
-            "Já tem uma conta no WordPress."
+            "Já tem uma conta no WordPress. "
+            "Não chegou ainda? Leia no Poder360."
         )
         cleaned = format_body_paragraphs(body)
         self.assertIn("A notícia principal apresenta os fatos", cleaned)
         self.assertNotIn("Pressione Enter", cleaned)
         self.assertNotIn("ac24horas no WhatsApp", cleaned)
         self.assertNotIn("WordPress", cleaned)
+        self.assertNotIn("Não chegou ainda", cleaned)
+        self.assertNotIn("Leia no Poder360", cleaned)
 
     def test_generic_site_title_falls_back_to_the_original_rss_headline(self):
         source = dict(

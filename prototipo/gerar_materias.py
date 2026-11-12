@@ -49,6 +49,8 @@ def format_body_paragraphs(text: str) -> str:
     text = re.sub(r"(?i)Pressione Enter para buscar\s*[•·]\s*Esc para fechar", "", text)
     text = re.sub(r"(?i)Siga [^.!?]{0,100} no WhatsApp e receba [^.!?]{0,160}(?:primeira mão|em primeira mão)\.?", "", text)
     text = re.sub(r"(?i)Já tem uma conta no WordPress\.?", "", text)
+    text = re.sub(r"(?i)\bNão chegou ainda[?!\.]*", "", text)
+    text = re.sub(r"(?i)\bLeia no Poder360[?!\.]*", "", text)
     text = re.sub(r"(?i)Photo by [^)]{0,180}Getty Images via AFP\)?", "", text)
     text = re.sub(r"\s+", " ", text).strip()
 
@@ -470,6 +472,24 @@ def call_gemini(api_key: str, model: str, prompt: str) -> dict:
 
     raise RuntimeError(f"Gemini não respondeu após 3 tentativas. Último erro: {last_error}") from last_error
 
+def remover_titulo_duplicado(texto: str) -> str:
+    """Remove duas cópias consecutivas do mesmo título, mesmo com variação de caixa ou acento."""
+    palavras = str(texto or "").split()
+    if len(palavras) < 4:
+        return str(texto or "")
+
+    def normalizar(valor: str) -> str:
+        decomposed = unicodedata.normalize("NFD", valor.casefold())
+        sem_acentos = "".join(char for char in decomposed if not unicodedata.combining(char))
+        return "".join(char for char in sem_acentos if char.isalnum())
+
+    for corte in range(1, len(palavras)):
+        esquerda = " ".join(palavras[:corte]).strip(" -|–—:")
+        direita = " ".join(palavras[corte:]).strip(" -|–—:")
+        canonico = normalizar(esquerda)
+        if len(canonico) >= 20 and canonico == normalizar(direita):
+            return esquerda
+    return str(texto or "")
 def limpar_titulo_fonte(texto: str, fonte_publicadora: str = "") -> str:
     """Remove menus, sufixos de portal, repetições e resíduos conhecidos de template."""
     texto = " ".join(str(texto or "").split())
@@ -494,6 +514,7 @@ def limpar_titulo_fonte(texto: str, fonte_publicadora: str = "") -> str:
         trecho_repetido = re.escape(partes[0][:min(48, len(partes[0]))])
         if re.search(trecho_repetido, partes[1], flags=re.IGNORECASE):
             texto = partes[0]
+    texto = remover_titulo_duplicado(texto)
     return texto.strip(" \t-|–—:")
 
 def compactar_texto(texto: str, limite: int) -> str:
