@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "2026-11-12T10:25:21+00:00",
+  "atualizado_em": "2026-11-12T10:47:17+00:00",
   "retencao_dias": 30,
-  "total_registros": 105,
+  "total_registros": 107,
   "registros": [
     {
       "pilar": "pet",
@@ -1051,6 +1051,26 @@
       "chaves": [
         "title:saude:covid 19 como funciona o calendario de vacinacao no brasil veja",
         "url:https://news.google.com/rss/articles/cbmilgfbvv95cuxnrfmylunowlf2tlyyzwotb2lomli2mdcxduvlamd6nuzfnll1nlrochfqrg5qn2juckljstrxwe5rywpuz0dtzhhhzvv5ovn6tfjfyvkwn2vqm2viy040sunwrmzyz0zxm0dfewtdshb4ukjevdl1ndzptvhxn3hvt3jnbfjemk1lsdhvnllfbu9ief8ycgc?oc=5"
+      ]
+    },
+    {
+      "pilar": "esportes",
+      "titulo": "New York Knicks x Cleveland Cavaliers: horário e onde assistir à NBA - CNN Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNFZ6VVYtRWpfTng2eUVPUTl3azR3QmxzWG5OaUFYN3JlSzd3anZsQmtQRWhkc1RlYXQ0MFhxRXY3WW9NYXh2VjNnQlR4Tnh4N3JCWmhnSURyWDIyLW15UlV5NjRZbGJDN3VBdVpndzFwNHJ5WnFzVTlYa3UyaVI4aVlsOGEyaEV4VXAxbm05ZFRsc0dwU3NhY2xJa0REbGRDNzJ4ZTJRUUVzek5uT3l6WjFDQlNoZw?oc=5",
+      "registrado_em": "2026-11-12T10:47:17+00:00",
+      "chaves": [
+        "title:esportes:new york knicks x cleveland cavaliers horario e onde assistir a nba cnn brasil",
+        "url:https://news.google.com/rss/articles/cbmitgfbvv95cuxqnfz6vvytrwpftng2euvputl3azr3qmxzwg5oaufyn3jlszd3anzsqmtqrwhkc1rlyxq0mfhxrxy3ww9nyxh2vjnnqlr4tnh4n3jcwmhnsurywdiylw15ulv5njrzbgjdn3vbdvpndzfwnhj5wnfzvtlya3uyavi4avlsogeyaev4vxaxbm05zfrsc0dwu3nhy2xja0rebgrdnzj4ztjruuvzek5ut3l6wjfdqlnozw?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Alta de covid-19 no Brasil: variante XFG predomina e vacinação é reforçada em 18 estados - São Joaquim Online",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQllrdGEwc2xEdlRxVkVHLUJSZVhfNDR5cmhjOWNubGtDZFFtLUR3Q19ad2VIeXJ3VDh0cHlsWkZDbnExUjJjTlVoV0RkN0dlZVJfRFZkX0I1aXJVa3REcjFUQ2gxNTA3bWpiZ2xnV3lLcE5VNEl3MWc4LWVoZmxjSkVxQnFNSkdCdGg5V01ZMThzVU4tOG5qTHoxTVRPam1YOWxqTklZUXR4R3BYTGdwc3UyNGZoZWZiRHdwRmxqYkJNNms3MjBkMmhBQTVZRlA4UXpsTC1SSQ?oc=5",
+      "registrado_em": "2026-11-12T10:47:17+00:00",
+      "chaves": [
+        "title:saude:alta de covid 19 no brasil variante xfg predomina e vacinacao e reforcada em 18 estados sao joaquim online",
+        "url:https://news.google.com/rss/articles/cbmi1wfbvv95cuxqqllrdgewc2xedlrxvkvhlujszvhfndr5cmhjownubgtdzfftlur3q19ad2viexj3vdh0chlswkzdbnexujjjtlvov0rkn0dlzvjfrfzkx0i1axjva3recjfuq2gxnta3bwpiz2xnv3llce5vnel3mwc4lwvozmxjskvxqnfnskdcdgg5v01zmthzvu4tog5qthoxtvrpam1yowxqtklzuxr4r3bytgdwc3uyngzozwzirhdwrmxqykjnnms3mjbkmmhbqtvzrla4uxpstc1ssq?oc=5"
       ]
     }
   ]
