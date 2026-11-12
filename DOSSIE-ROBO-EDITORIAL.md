@@ -9,7 +9,7 @@ Este é o registro técnico contínuo do robô editorial. A partir desta versão
 - O robô existente continua executando o ciclo editorial no workflow `.github/workflows/prototipo.yml`: valida configuração, executa testes, coleta sugestões, verifica fontes, gera matérias, resume os corpos e atualiza o feed da prévia.
 - O feed consumido pela prévia está em `docs/data/materias-editoriais.json`. O arquivo de geração local é `prototipo/saida/materias-editoriais.json`.
 - A publicação oficial permanece desativada.
-- Na execução #239 do workflow, o feed foi atualizado e conferido: havia 14 matérias, todas com até 440 palavras no campo `corpo`; o maior texto tinha 413 palavras. A matéria mais recente de Heleno passou a ter 208 palavras.
+- Na execução #242 do workflow, o feed foi atualizado e conferido: havia 14 matérias, todas dentro do limite de 440 palavras; o maior corpo tem 334 palavras. A matéria de vacinação contra covid-19 termina no último parágrafo factual, sem aviso editorial, bloco de ofertas ou tela de acesso.
 
 ## Comportamento do resumo
 
@@ -20,6 +20,7 @@ O estágio está em `prototipo/resumir_materias.py` e é executado antes da cóp
 - Remove ruídos de navegação e chamadas de página, incluindo `Não chegou ainda?` e `Leia no Poder360`, sem descartar o parágrafo factual ao redor.
 - Se uma frase isolada exceder o limite, aplica o limite na fronteira de uma palavra e acrescenta reticências.
 - A geração remove repetições consecutivas exatas do título, mesmo com diferença de caixa ou acentos. Preserva o esquema do feed e não substitui título, subtítulo ou campos do carrossel por um resumo do corpo.
+- Antes de formatar o corpo, remove avisos de avaliação e assinatura editorial que aparecem antes da matéria; corta chamadas `VEJA+IA`, telas de acesso e blocos de publicidade anexados ao final. Ofertas numeradas só são tratadas como anúncio quando aparecem em sequência repetida. O merge aplica a mesma limpeza às matérias novas e às que já estavam no feed.
 - O aviso informa que o resumidor não faz reescrita por IA nem checagem factual independente. A verificação de fontes é uma etapa separada do workflow.
 
 ## Fluxo de dados
@@ -31,6 +32,18 @@ O estágio está em `prototipo/resumir_materias.py` e é executado antes da cóp
 5. Copia o feed para `docs/data/materias-editoriais.json` e versiona as saídas previstas pelo próprio workflow.
 
 ## Histórico de alterações
+
+### 2026-11-12 — Remove avisos, anúncios e bloqueios anexados ao corpo
+
+**Motivo:** a matéria de vacinação aparecia com um aviso de resumo gerado por IA antes do texto e terminava com chamadas promocionais repetidas e uma mensagem de acesso restrito. Esses trechos não pertenciam ao conteúdo editorial.
+
+**Arquivos:** `prototipo/gerar_materias.py` e `prototipo/testar_materias.py`. O workflow existente não teve seu formato ou etapas alterados; os commits de código acionaram o fluxo configurado em `.github/workflows/prototipo.yml`.
+
+**Resultado:** a limpeza remove a avaliação e a assinatura editorial no início, e encerra o corpo antes de chamadas editoriais, publicidade repetida e telas de acesso. O merge também limpa as matérias preservadas do feed anterior, então a correção não depende de a fonte ser coletada novamente. O esquema JSON, título, subtítulo e campos do carrossel permanecem preservados.
+
+**Validação:** os 59 testes da suíte passaram na [execução #242](https://github.com/eddypfernandes/guia-comercial-editorial/actions/runs/43203404832). O feed ficou com 14 matérias; o maior corpo tem 334 palavras. A matéria de vacinação termina em “...aos seis, sete e nove meses de vida.” sem os trechos indevidos. No IIS local, índice e leitura responderam HTTP 200, mas a resposta ainda continha a versão antiga do feed durante a verificação; a atualização do conteúdo exibido localmente ainda precisa ser confirmada após a renovação do cache.
+
+**Referências:** [commit de limpeza](https://github.com/eddypfernandes/guia-comercial-editorial/commit/3b9f930389faaed17d51e0f8dd716ccd32aa9073) · [commit dos testes](https://github.com/eddypfernandes/guia-comercial-editorial/commit/6a2e9f4353ce1ad16d6bb55b592feaca7b36ec86) · [correção de compatibilidade do merge](https://github.com/eddypfernandes/guia-comercial-editorial/commit/f730b42c5b89811875b6989c8e8ac699cc62abc3) · [commit automático do feed](https://github.com/eddypfernandes/guia-comercial-editorial/commit/735b2ca054c4ab39ebc1faf23f5cffd64061c63e).
 
 ### 2026-11-12 — Resumos coerentes de até 440 palavras e correção de título duplicado
 
