@@ -1,7 +1,7 @@
 {
-  "atualizado_em": "2026-11-27T19:25:14+00:00",
+  "atualizado_em": "2026-11-28T03:13:10+00:00",
   "retencao_dias": 30,
-  "total_registros": 863,
+  "total_registros": 890,
   "registros": [
     {
       "pilar": "pet",
@@ -8631,6 +8631,276 @@
       "chaves": [
         "title:lazer:brasilia ganha vila natalina com fabrica de brinquedos no pontao agita brasilia",
         "url:https://news.google.com/rss/articles/cbmiiafbvv95cuxoru8yotfevtvux0hwsvpssfnirzjolutlmmnolu0tt2n6mdrzq1boq3y0d2q3wtzqzwvhq0o2nzvheedtt3rwy0tpbjr1m0g1enlyzv9pmmgtajjlowxhskixmec3vgjswkn3y3jut240x3rxuvl3wfrymuhsdtdbb1vvq0tvqjr0?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Leitura Notícias - Fiocruz Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQeTl5Y3VaNE9KZjlFeWo3dHF1SHVLcXNJMU5ETTdYbmRDeTZKdlk1VjFXaGFGUk9WZWtPeC1kazRHN1V6S3RwbWxpRU44c2l5R2k4WUNUSVJxNXNMVl9mTlJBQXB2V0otRE54VlM1V2hHNWhuN3ZabkloNHhRbFRGYkxDZ2w4QQ?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:leitura noticias fiocruz brasilia",
+        "url:https://news.google.com/rss/articles/cbmihgfbvv95cuxqetl5y3vane9kzjlfewo3dhf1shvlcxnjmu5ettdybmrdetzkdlk1vjfxagfguk9wzwtpec1kazrhn1v6s3rwbwxpru44c2l5r2k4wunusvjxnxnmvl9mtljbqxb2v0otre54vlm1v2hhnwhun3zabklonhhrbfrgykxdz2w4qq?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Em meio à alta de casos de Covid, Brasil aplica só um terço das vacinas distribuídas pelo SUS - Folha de S.Paulo",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQaUNvajBWU3NVdTZkYXlDeDNBcTFSZ1lvbmlwWVZ6QXFwelg2MEFIY0h5WXZFdkNFeThENmRZWUloTDNpQW1OSWthajVrLUQtb3pxMkxwbG40QjJUSV9ac2RMWHVYQ1IxSkdUcUwzaWNNNWFsNWljRlo4TXZwTW1JaG51NG5qNnhaR3RSYXZCNjVqbllpYlNvNEE3dVpkTDFwSkRUNnJoUng1cldDX2pGRjdMOS1ibHIyUzI5cEd0aEpqY1RjQzdJSk9HWW1QcU1oRUowakRfVXpQOHJTNmxTTlR4VXIwTWhW?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:em meio a alta de casos de covid brasil aplica so um terco das vacinas distribuidas pelo sus folha de s paulo",
+        "url:https://news.google.com/rss/articles/cbmi6afbvv95cuxqaunvajbwu3nvdtzkyxldednbctfsz1lvbmlwwvz6qxfwelg2mefiy0h5wxzfdknfethenmrzwulotdnpqw1oswthajvrluqtb3pxmkxwbg40qjjusv9ac2rmwhvyq1ixskducuwzawnnnwfsnwljrlo4txzwtw1jag51ng5qnnhar3rsyxzcnjvqbllpylnvnee3dvpktdfwskrunnjoung1clddx2pgrjdmos1ibhiyuzi5ced0aepqy1rjqzdjsk9hww1qcu1oruowakrfvxpqohjtnmxttlr4vxiwtwhw?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Ministério da Saúde enviará alertas para atualizar vacina contra covid - TV Brasil |",
+      "url_agregador": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPRWhnWUVTVmpQMkViVWM1WTFkU3ZZNG9VRmlhdktuWWVkZ1E0aE1iOGc5S3pLWFRCUjBrVUdEd1FTVEc0dDFrdHg3OWRXSXJfR3JfMXh2bUR4a210czdkekhXOE5IV3JtT1hLa3JZQXZrWVF6elVETUVBYWFTNjhsQVFEY1JpVy1tMEFnempVVURubUNyRjhGYTNqNU5GU3d3emZhUzFWYktESUtlaXZUR1RYeTJyTEN2X19BTDFvMA?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:ministerio da saude enviara alertas para atualizar vacina contra covid tv brasil",
+        "url:https://news.google.com/rss/articles/cbmivwfbvv95cuxprwhnwuvtvmpqmkvivwm1wtfku3zzng9vrmlhdktuwwvkz1e0ae1iogc5s3plwfrcujbrvuded1ftvec0ddfrdhg3owrxsxjfr3jfmxh2bur4a210czdkekhxoe5iv3jtt1hla3jzqxzrwvf6elvetuvbywftnjhsqvfey1jpvy1tmefnempvvurubunyrjhgytnqnu5gu3d3emzhuzfwyktesutlaxzur1ryetjyten2x19btdfvma?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Cada R$ 1 investido em saúde materna gera retorno de R$ 3,32, diz ONU - TV Brasil |",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQejUxa2o0ZERlYVFkeEFqWHZ4WmpoOWdIb21sajJhSTg5MmZkR0JORVZOYXJxTU1DdENSQXJDT0t5b0IyRE1IRko2YUFINi1Rd0JmWUdyNC1mTENsMXBDNWZGRkZDbGdtc0k5S0xhS2tmTkNnLThQaUNrS2lYZmJFaHN1YVd4ZlZIUUdJWnNjbjg1cWlqTTNKY1RFNzFnU3ZicUowU09hU1FDUVdPMDhIeEJYRU41RFRN?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:cada r 1 investido em saude materna gera retorno de r 3 32 diz onu tv brasil",
+        "url:https://news.google.com/rss/articles/cbmiuafbvv95cuxqejuxa2o0zerlyvfkeefqwhz4wmpoowdib21sajjhstg5mmzkr0jorvzoyxjxtu1ddensqxjdt0t5b0iyre1irko2yufini1rd0jmwudync1mtensmxbdnwzgrkzdbgdtc0k5s0xhs2tmtknnlthqaunrs2lyzmjfahn1yvd4zlziuudjwnnjbjg1cwlqttnky1rfnzfnu3zicuowu09hu1fduvdpmdhieejyru41rfrn?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Governo do Brasil leva carreta de saúde para diagnóstico precoce de doenças no SUS a Guarapuava - Correio do Cidadão",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNSG1nOHAzbjNnMWE3UkhiUFM2VnZZUjV6R1Z5YS1tN0FIdzFDYkZTejFhYklIcjdKZzZSSFlIeG1GUWk2My0xT1JITVZqV0pUMXF3YmJ4YVJGMDJGenI4QVNHeXFfUlFfdWE0UmdLTWdiTHk5ZFdNaDNqN0tKVTdOOTlESll5cGFCUm8teXVndFQ0YlBGdFhGbkgzdzBjRThyWDAyQ0V6VF9PNUNlTkt1MVhDaVNyUHNXNGxOUkxZYW1DSlBKTlBNNVlrRTdCZWY4aE01MEZtSHQyUGxSanM4aExIcw?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:governo do brasil leva carreta de saude para diagnostico precoce de doencas no sus a guarapuava correio do cidadao",
+        "url:https://news.google.com/rss/articles/cbmi4wfbvv95cuxnsg1nohazbjnnmwe3ukhiufm2vnzzujv6r1z5ys1tn0fidzfdykztejfhyklicjdkzzzssflieg1guwk2my0xt1jitvzqv0pumxf3ymj4yvjgmdjgeni4qvnhexffulffdwe0umdltwdithk5zfdnadnqn0tkvtdootlesll5cgfcum8texvndfq0ylbgdfhgbkgzdzbjrthywdayq0v6vf9pnunltkt1mvhdavnyuhnxngxoukxzyw1dslbktlbnnvlrrtdczwy4ae01meztshqyugxsanm4aexicw?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "UNA-SUS, Fiocruz e Ministério da Saúde lançam livro sobre formação em Saúde Digital no Brasil - UNA-SUS",
+      "url_agregador": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcTFGSHpDX2w4dzF0a0RNX09jbkg4NzlvODVkYldQLWZfb3RjdE42ajVCbWJzazJtNlVPZGpxc2daMHozQWd0ZWVxbzVYVDNlRnk3MHRNWDRwU0tsOGJkWUtKazl0WG12aldmTW1wN1RyT0hma2VSU2VfRDB4NnRCWDFIVkppd0hYazJ5Z192SDVGMFdnSVRQZVlFNUs4TlU2NUt1WTZaQnFselJTaHRaT0pJUGFaRk4yc2lFclFoWlNtdDVS?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:una sus fiocruz e ministerio da saude lancam livro sobre formacao em saude digital no brasil una sus",
+        "url:https://news.google.com/rss/articles/cbmixafbvv95cuxnctfgshpdx2w4dzf0a0rnx09jbkg4nzlvodvkyldqlwzfb3rjde42ajvcbwjzazjtnlvpzgpxc2damhozqwd0zwvxbzvyvdnlrnk3mhrnwdrwu0tsogjkwutkazl0wg12aldmtw1wn1ryt0hma2vsu2vfrdb4nnrcwdfivkppd0hyazj5z192sdvgmfdnsvrqzvlfnus4tlu2nut1wtzaqnfseljtahrat0pjugfark4yc2lfclfowlntddvs?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Jornada Científica de Análises Clínicas promove integração entre ensino, diagnóstico e cuidado - EG NEWS",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMjdMYXRXMDRSRkhTLUVvc0FXQkFDVEdjZG5NdWJ6Rmx2YXVPRmpQazVxRk9YdG1lZ19uZ0FoRmxIUVo3X0dlbHNaSksyQXZmS0U5bDJCVlFwTEkyYUhfaE9pUEh3M25udHNNaUhHRERqdlJPb0tSTVc4dFFCa1BrMlVLa0xVZTBKM2lvUkdDZ1U3S3k5a1lacnBRZGcwVU5jSzBKUl81bVR5c2s?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:jornada cientifica de analises clinicas promove integracao entre ensino diagnostico e cuidado eg news",
+        "url:https://news.google.com/rss/articles/cbmiqwfbvv95cuxpmjdmyxrxmdrsrkhtluvvc0fxqkfdvedjzg5ndwj6rmx2yxvprmpqazvxrk9ydg1lz19uz0formxiuvo3x0dlbhnasksyqxzms0u5bdjcvlfwtekyyuhfae9pueh3m25udhnnauhhrerqdljpb0tstvc4dffca1brmlvla0xvztbkm2lvukddz1u3s3k5a1lacnbrzgcwvu5jszbkul81bvr5c2s?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Mpox dispara e novembro tem mais casos do que todos os outros meses juntos - CNN Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcnd2VDVqenFmWU04TWVhbHVrSGk0MXIwNGZjXzdkdXVkaEUyMDdvR01UOUNKb2pzaElpcTlwZUFDNjhaUVNBUlVvRnhxcmx3cmNMM09jQ0ZJeVZrZGRqNmE1cGJfbGNRam95eE9TZm1leDJKVXkyajE2UVBqN0pEREp3bjgtM0ltR1ZRS01QQ2w5bnJmbXJ6YUxrU092eEtPd1NhYnVFUUtVejJwcGZv?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:mpox dispara e novembro tem mais casos do que todos os outros meses juntos cnn brasil",
+        "url:https://news.google.com/rss/articles/cbmirwfbvv95cuxqcnd2vdvqenfmwu04twvhbhvrsgk0mxiwngzjxzdkdxvkaeuymddvr01uounkb2pzaelpctlwzufdnjhauvnbulvvrnhxcmx3cmnmm09jq0zjevzrzgrqnme1cgjfbgnram95ee9tzm1ledjkvxkyaje2uvbqn0perep3bjgtm0ltr1zrs01qq2w5bnjmbxj6yuxru092eetpd1nhynvfuutvejjwcgzv?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Lula firma compromisso para ampliar cuidado à população idosa e fortalecer envelhecimento saudável no Brasil - Governo Federal",
+      "url_agregador": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPWjJoLWRKSURtTWJ6bUhmWnpuQTY3R0d4VTZ2VzdPOVJpTDY2TzJJaUtsZ3diY0FueEUtRjlJMnUwdGJjOEJ4S0o2aVV0T1RheEZnZmxRY3NiRU42VWJOUFRxbnB2c0NhdDJacTNZRTI3RGlUazM2dnBOYkhaTG9aZlZhZGJrYVpEOGFsQS1kczBqOTVRcmZ6bDM4TWJyTjdDSlRPdnlPMUpvR0V2WlRBdVhkbW9zcHk3aGVlcG1wYnB5RTc4V3dmVUthQnBqVmxYaFJ0MHJ6SjQzRXRwYlRCN2tQY0NUckxHNVZxeGlEbm80VUQ0ay1FdWNmci1CZjhD?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:lula firma compromisso para ampliar cuidado a populacao idosa e fortalecer envelhecimento saudavel no brasil governo federal",
+        "url:https://news.google.com/rss/articles/cbmigajbvv95cuxpwjjolwrksurttwj6buhmwnpuqty3r0d4vtz2vzdpovjptdy2tzjjautsz3diy0fueeutrjljmnuwdgjjoej4s0o2avv0t1rheeznzmxry3niru42vwjoufrxbnb2c0nhddjactnzrti3rgluazm2dnboykhatg9azlzhzgjryvpeogfsqs1kczbqotvrcmz6bdm4twjytjddslrpdnlpmupvr0v2wlrbdvhkbw9zchk3agvlcg1wynb5rtc4v3dmvuthqnbqvmxyafj0mhj6sjqzrxrwylrcn2tqy0nuckxhnvzxeglebm80vuq0ay1fdwnmci1czjhd?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "Saúde digital é desafiada pela falta de conectividade nas regiões remotas e pelo armazenamento de dados concentrado em São Paulo - ConvergenciaDigital",
+      "url_agregador": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNenFrVGxsQlp5SlBaOWFpeGt0MjBlOHQzaUxiWUJjaFU3SjhtV1ZpSEstTllCNHBHSldjNzZ3S09lV05MaWk4V091dHNzUjBBVGcxMjBxcmJ2RlNneDRsVU9YT19BWld0Z3lXZWlwSmZfU2NhU3I2VENFRXZPMjBJNGNBYkRCakVPSzAyZXFCc0xuTmdiV3FXNm42UXpmNEFSVXFGQWtibVQzMm1fZlpVeko0LU9vd1lWUFA3OFRzdWxEMVdLV01weGVyQW05ZGFiWm54X205b3ZGS3YtNU04SFRVNHJwRkRhR1VRT0NnSjNkWWJNbXNZM0hrekdqQV9LZlJz?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:saude digital e desafiada pela falta de conectividade nas regioes remotas e pelo armazenamento de dados concentrado em sao paulo convergenciadigital",
+        "url:https://news.google.com/rss/articles/cbmigwjbvv95cuxnenfrvgxsqlp5slbaowfpegt0mjblohqzauxiwujjafu3sjhtv1zpsesttllcnhbhsldjnzz3s09lv05mawk4v091dhnzujbbvgcxmjbxcmj2rlnnedrsvu9yt19bwld0z3lxzwlwsmzfu2nhu3i2venfrxzpmjbjngnbykrcakvpszayzxfcc0xutmdiv3fxnm42uxpmnefsvxfgqwtibvqzmm1fzlpveko0lu9vd1lwufa3ofrzdwxemvdlv01wegvyqw05zgfiwm54x205b3zgs3ytnu04sfrvnhjwrkrhr1vrt0nnsjnkwwjnbxnzm0hrekdqqv9lzljz?oc=5"
+      ]
+    },
+    {
+      "pilar": "saude",
+      "titulo": "O que se sabe sobre a nova variante da Covid-19 que circula no Brasil - CNN Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZXM3b1c0UllNOEQtUDFxdEtGdkZCZmcydHZSdS1Walc5ZDlreXNXRGZaNVpWMUFSdV9sVXRrV3BlRnNXNHR3ejE0S2xldzVrVVZHb2dUcnZHU1Y4Yk9VaUhKMFNrRklfWXpfVlBqclNnY1V6NmNOOTFvaHljMm9vZmdzM1lTMXRPeDdzbURUb1pCMHRrZHkyWEdZT3A5TlBuYVd1RU5tWVc?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:saude:o que se sabe sobre a nova variante da covid 19 que circula no brasil cnn brasil",
+        "url:https://news.google.com/rss/articles/cbmiqafbvv95cuxnzxm3b1c0ullnoeqtudfxdetgdkzczmcydhzsds1walc5zdlrexnxrgzanvpwmufsdv9svxrrv3blrnnxnhr3eje0s2xldzvrvvzhb2ducnzhu1y4yk9vauhkmfnrrklfwxpfvlbqclnny1v6nmnootfvahljmm9vzmdzm1ltmxrpeddzburub1pcmhrrzhkywedzt3a5tlbuyvd1ru5twvc?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Alunos da Academia Buriti celebram conquistas em cerimônias de graduação de jiu-jítsu e karatê - EG NEWS",
+      "url_agregador": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNckxQVlBteEZxaE1YRDhpa01TcXhnUDc0aVJPU1F6NUM2Vk9IaF9US2ZTZkh5UlJqQjNpQVZEb3NfdWZ5MDhIN05hTlk4M294Qnd0U3l6eW9HUU5YTXY1aW4zSThYZzdlbnp3M1FIWVI5cEFoR0Q1ZDY5cE5iZy11dGZZd0R4WWxjUUFQS2xMSU9TdUJ6WDAzb2tPZTV2ZlVJd0ZfUnFKb2JTVTJ6Yms1YUh4WmgtUQ?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:fitness:alunos da academia buriti celebram conquistas em cerimonias de graduacao de jiu jitsu e karate eg news",
+        "url:https://news.google.com/rss/articles/cbmitgfbvv95cuxnckxqvlbteezxae1yrdhpa01tcxhnudc0avjpu1f6num2vk9iaf9us2ztzkh5uljqqjnpqvzeb3nfdwz5mdhin05htlk4m294qnd0u3l6ew9huu5ytxy1aw4zsthyzzdlbnp3m1fiwvi5cefor0q1zdy5ce5izy11dgzzd0r4wwxjuufqs2xmsu9tduj6wdazb2tpztv2zlvjd0zfunfkb2jtvtj6yms1yuh4wmgtuq?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Exercício físico e câncer ganha 1º congresso no Brasil - Portal ABC do ABC",
+      "url_agregador": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5HYWp3ZlRnOVZ6V1pKbll3S0Y2eFZFd1ktTlBmR3czSWY1bEJ4bFFxZmJkeWlQR1Fma2p0TVFxSFRxQUJWY09JdTB1eDBsWjBkZUZuaHdQOU43b202aFhnT2FZQ1hkUzdUVFlxWjhrdmJWRUR5Z1VVV05mU2tQLTQ?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:fitness:exercicio fisico e cancer ganha 1o congresso no brasil portal abc do abc",
+        "url:https://news.google.com/rss/articles/cbmif0fvx3lxte5hywp3zlrnovz6v1pkbll3s0y2efzfd1kttlbmr3czswy1bej4bffxzmjkewlqr1fma2p0tvfxsfrxqujwy09jdtb1edbswjbkzuzuahdqou43b202afhnt2fzq1hkuzduvflxwjhrdmjwrur5z1vvv05mu2tqltq?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Alunos da Academia Buriti celebram conquistas em cerimônias de graduação de jiu-jítsu e karatê - Agência Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNcWNxUUNKYXFBenhYMDNSSXVQbHBCZlRqUVlGb3JteVNKNEt0OWJCUWZSZW9OR0swc1RQOHN0akNac2JIa3RZTGU5QjFibWpya2J4bzFnTjBGYlpKVExFWVBlVmRMUGNrSWxCU2lvazduZHpfNUxYRTVSbFRkaFpsUTRvTS11Wld0T280ZjRTU0t6N01BcHVvTTBBd05YQmZfWG0xVkpvbzJmREVHa3E2ZGdIeEg4d0g0Yk5zOE9kcWNYOFkydWtlNU8wVlViWUpWbC1yLWJ1M3Y2WERLeUE1WnkzMjYyaW5uempRQVZUdw?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:fitness:alunos da academia buriti celebram conquistas em cerimonias de graduacao de jiu jitsu e karate agencia brasilia",
+        "url:https://news.google.com/rss/articles/cbmi7wfbvv95cuxncwnxuunkyxfbenhymdnssxvqbhbczlrquvlgb3jtevnknet0owjcuwzszw9or0swc1rqohn0aknac2jia3rztgu5qjfibwpya2j4bzfntjbgylpkvexfwvblvmrmugnrswxcu2lvazduzhpfnuxyrtvsbfrkafpsutrvts11wld0t280zjrtu0t6n01bchvvttbbd05yqmzfwg0xvkpvbzjmrevha3e2zgdieeg4d0g0yk5zoe9kcwnyofkydwtlnu8wvlviwupwbc1ylwj1m3y2werleue1wnkzmjyyaw5uemprqvzudw?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Manaus suspende atividades ao ar livre por causa da fumaça; entenda - Portal Tela",
+      "url_agregador": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZ3JEZndRZlBsV1V1SEt5Qzd2X3pZWEwtekpmWXpFTVRZa3VQM0IxeG9ZaGFxcG9EZTZDSXRRMUtpdG5WWFdfclBNWDRGY0V6N2dMRlNQd1NwS2J2TTNBOGFEQVFCQVRNSEExN0FDQXkwMTJER1BrODdPLWJ4eWhhRnFnZDZKMDZ6TGFyYXZFUFB5aE1CQ0FQUlBmRmk4ZFY1NUxWT1NHSXpJM2hoYnRBUVNn?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:fitness:manaus suspende atividades ao ar livre por causa da fumaca entenda portal tela",
+        "url:https://news.google.com/rss/articles/cbmisgfbvv95cuxpz3jezndrzlbsv1v1set5qzd2x3pzwewtekpmwxpftvrza3vqm0ixeg9zagfxcg9eztzdsxrrmutpdg5wwfdfclbnwdrgy0v6n2dmrlnqd1nws2j2ttnbogfeqvfcqvrnseexn0fdqxkwmtjer1broddplwj4ewhhrnfnzdzkmdz6tgfyyxzfufb5ae1cq0fqulbmrmk4zfy1nuxwt1nhsxpjm2hoynrbuvnn?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Globo e Obitel discutem transformações da dramaturgia brasileira - Globo",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUkdhRDdxUmFQTjJObldDT1MtbXpRa1Fib0c4cGVIWVc0dElBRGZNanVLNmE1UTU2cmdFYUxzbkVCZnZhX3dob0xXbWNqYTdtbU1zaXpRUFBZeGZFdUEwY2d3Wlg4RlA2S2ZudXVhODZKRW9BSFAxSDY5SWI1ZXh1VUdFNkZPelBCanNieU1lWGxZYWpWNmNyX0ZVaG1fVzZXT2tmZnBnS0kxY0xsdVg5Y2p2SmM4MUdjZW5RU3EwQnjSAcABQVVfeXFMT1JHYUQ3cVJhUE4yTm5XQ09TLW16UWtRYm9HOHBlSFlXNHRJQURmTWp1SzZhNVE1NnJnRWFMc25FQmZ2YV93aG9MV21jamE3bW1Nc2l6UVBQWXhmRXVBMGNnd1pYOEZQNktmbnV1YTg2SkVvQUhQMUg2OUliNWV4dVVHRTZGT3pQQmpzYnlNZVhsWWFqVjZjcl9GVWhtX1c2V09rZmZwZ0tJMWNMbHVYOWNqdkpjODFHY2VuUVNxMEJ4?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:fitness:globo e obitel discutem transformacoes da dramaturgia brasileira globo",
+        "url:https://news.google.com/rss/articles/cbmiwafbvv95cuxpukdhrddxumfqtjjoblddt1mtbxpra1fib0c4cgviwvc0delbrgznanvlnme1utu2cmdfyuxzbkvcznzhx3dob0xxbwnqytdtbu1zaxprufbzegzfduewy2d3wlg4rla2s2zudxvhodzkrw9bsfaxsdy5swi1zxh1vudfnkzpelbcannieu1lwgxzywpwnmnyx0zvag1fvzzxt2tmznbns0kxy0xsdvg5y2p2smm4mudjzw5ru3ewqnjsacabqvvfexfmt1jhyuq3cvjhue4ytm5xq09tlw16uwtrym9hohblsflxnhrjqurmtwp1szzhnve1nnjnrwfmc25fqmz2yv93ag9mv21jame3bw1nc2l6uvbqwxhmrxvbmgnnd1pyoezqnktmbnv1ytg2skvvquhqmug2oulinwv4dvvhrtzgt3pqqmpzynlnzvhswwfqvjzjcl9gvwhtx1c2v09rzmzwz0tjmwnmbhvyownqdkpjodfhy2vuuvnxmej4?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Jogador do Vasco teria indicado academia frequentada por ex-assessor em plano de execução, diz polícia - Gazeta Brasil",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNZjJIcjFLamJ2cWlOQVZLRi1JME1EX09SVmw5RVZhQVhPUDhSNmpMLXFxcHhVaF96SFQwRlFSXzlGcFFBWlQ5UEVfTmp3VHp0MjN0eWJtYllZNW5aRTVwMHRsV0ZxbTRUOFF2ODFtU1dEcjhTb2dqaUJMXzVfbG5jbmxOY2loeVdaejZhMm9IQnlsSGNOSUV0MC04VGxkVzJqQ1NYclpMNDFEZFMtN3JSNWpFMkVvMktybllPRFFaVEdvaGc2cFVicl95QUR5dFU1YmFZS0xNQzlteHR1UzlwbzA1Q0TSAewBQVVfeXFMUE5hSW1Gb3F5N2YwcHd5WUxMMnZPSWxiaGdXUnVFVUFWSlNITXJORTg2V3M0SjRBU2U3b0ZMc1N3clZ2d1pLbERZXzc1cG9kWURpbG1Wbkg3TVlrWTZ0b3Z1N2NzU25ETFlmbE12UlBhZkFONUlPTTBtRjJFV2FzU3hSUGZtTDZJSFlqaUNjV3NyWEpfVEtYa1puaHpRanQ0OEU1eTRwU2VyUGktVlZVWkJWMlZmYzJvM1YxMjI5Y291VWpvRGZZa0pQVlIzeUtybFpRaVIxWFlsRG95dHhTbk8zclktZFlRaHk2WlU?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:fitness:jogador do vasco teria indicado academia frequentada por ex assessor em plano de execucao diz policia gazeta brasil",
+        "url:https://news.google.com/rss/articles/cbmi5afbvv95cuxnzjjicjflamj2cwloqvzlri1jme1ex09svmw5rvzhqvhpudhsnmpmlxfxchhvaf96sfqwrlfsxzlgcffbwlq5uevftmp3vhp0mjn0ewjtyllznw5artvwmhrsv0zxbtruoff2odftu1decjhtb2dqaujmxzvfbg5jbmxoy2loevdaejzhmm9iqnlssgnosuv0mc04vgxkvzjqq1nyclpmndfezfmtn3jsnwpfmkvvmktybllprffavedvagc2cfvicl95qur5dfu1ymfzs0xnqzltehr1uzlwbza1q0tsaewbqvvfexfmue5hsw1gb3f5n2ywchd5wuxmmnzpswxiagdxunvfvufwslnitxjortg2v3m0sjrbu2u3b0zmc1n3clz2d1plberzxzc1cg9kwurpbg1wbkg3tvlrwtz0b3z1n2nzu25etflmbe12ulbhzkfonulpttbtrjjfv2fzu3hsugzttdzjsflqaunjv3nywepfvetya1puahpranq0oeu1etrwu2vyugktvlzvwkjwmlzmyzjvm1yxmji5y291vwpvrgzza0pqvlizeutybfpravixwflsrg95dhhtbk8zclktzflrahk2wlu?oc=5"
+      ]
+    },
+    {
+      "pilar": "fitness",
+      "titulo": "Comikey começa a publicar “Um Assassino Genial Recomeçou na Academia” - Biblioteca Brasileira de Mangás",
+      "url_agregador": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdFNRSUY1YTB4LUtoYnZBQjZIbDBDa2plaTJsM2NVcEhVeTUtWU1nRV9RX1U4QWI3Q25ZNmVXamdBRUk4NU1iYk5QY0ZxTGVDclMyeFY1b3NLcEFGS3p2YmtkX0taX0NRMXhfVVVLR21sa2dJT2ZJa2VaYlVING9DcnhwOXdES0xPNmdkNThBdTZJcFBWU2g5cTdtekpSX2lp0gGmAUFVX3lxTE5DNVpNLWM4amphbk8tWUFGcDFTc21RSFEwYTAwUnBJTURSaVVsUlFDNTNab3A3cWtaMEdfSlo5ei0yOWJ4ODdLOFNmam5yenMyWlVPTk9PU2U1Y25QWDZaTXYydWpFTEZlU0hqRGtpaVZwNXhnQjFJMVJCMWp5cC1aVUJ0WS0xcVJ6a3VuY2VfS19WaVlXMXR5UmhnektxbTZkVlJPRlE?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:fitness:comikey comeca a publicar um assassino genial recomecou na academia biblioteca brasileira de mangas",
+        "url:https://news.google.com/rss/articles/cbmioafbvv95cuxpdfnrsuy1ytb4lutoynzbqjzibdbda2platjsm2nvcehvetutwu1nrv9rx1u4qwi3q25znmvxamdbruk4nu1iyk5qy0zxtgvdclmyefy1b3nlcefgs3p2ymtkx0tax0nrmxhfvvvlr21sa2djt2zja2vaylving9dcnhwoxdes0xpnmdknthbdtzjcfbwu2g5ctdtekpsx2lp0ggmaufvx3lxte5dnvpnlwm4amphbk8twufgcdftc21rsfewytawunbjtursavvsulfdntnab3a3cwtamedfslo5ei0yowj4oddlofnmam5yenmywlvptk9pu2u1y25qwdzatxyydwpftezlu0hqrgtpavzwnxhnqjfjmvjcmwp5cc1avuj0ws0xcvj6a3vuy2vfs19wavlxmxr5umhnektxbtzkvljprle?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Adasa define novos preços para serviços de limpeza urbana no Distrito Federal - Agita Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVjl3REotRWs5OGVRdzF3a2E2TVd6dVUtTnRLbjluTWhJVGFjN01ka29sV2hYbFRTeTlCTENocTE1Ym1DRkptN2ktZHVfS18yNzBubXBZejFtekMzaHNVMVVOQUo5NG5XaEJUTEJ0VG9oXzJST3Z3MlhVRTh0Vmo1Y3FYYjhvb0x1Y1YyLUM2NlYtdnhxX1NQeWxOeE1aU1FzSmo5ekE2QXBCSlJzdlJhcTJ4R1V5VWNjWXBoMDllUQ?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:lazer:adasa define novos precos para servicos de limpeza urbana no distrito federal agita brasilia",
+        "url:https://news.google.com/rss/articles/cbmivwfbvv95cuxovjl3reotrws5ogvrdzf3a2e2tvd6dvuttnrlbjlutwhjvgfjn01ka29sv2hybfrtetlctenocte1ym1drkptn2ktzhvfs18ynzbubxbzejftekmzahnvmvvoquo5ng5xaejutej0vg9oxzjst3z3mlhvrth0vmo1y3fyyjhvb0x1y1yylum2nlytdnhxx1nqewxoee1au1fzsmo5eke2qxbcsljzdljhctj4r1v5vwnjwxbomdlluq?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Posse presidencial aquece transporte rodoviário e aumenta procura por viagens a Brasília - Ponta Porã - Ponta Porã Informa",
+      "url_agregador": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5MbjlCMDEtNmw0NzZXUTZkNmpvbldmMnRWV2JXTkNhYU9QNmwzUjNhSmRHSmNlSmtBWjJrZUkySzA3a0w4LU1SVC1mMGRhRWUwR1EtTE1WWjhtV014cWhtT2lTbndMOTVwLVFsa1FPd2Z4VzR1U216anFOeXZ1Z9IBgwFBVV95cUxQSGNxQUhCMEVHSkwzOFNCbFdHSXE2SmdBS2lVVEs2NWo1Rkx3M0k1ZExiWkxQS3hrRjJid3ZndnRJSUxhRkxTV1ZyT29ia3FQN1E4cGpVTGYtLWE1cXBaeGV3WDI4MFdEVFhfQkJ2T0pETWNzSWR2d3c5bE5HZ1hGaWhOYw?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:lazer:posse presidencial aquece transporte rodoviario e aumenta procura por viagens a brasilia ponta pora ponta pora informa",
+        "url:https://news.google.com/rss/articles/cbmifkfvx3lxte5mbjlcmdetnmw0nzzxutzknmpvbldmmnrwv2jxtknhyu9qnmwzujnhsmrhsmnlsmtbwjjrzukysza3a0w4lu1svc1mmgrhrwuwr1ette1wwjhtv014cwhtt2ltbndmotvwlvfsa1fpd2z4vzr1u216anfoexz1z9ibgwfbvv95cuxqsgnxquhcmevhskwzofncbfdhsxe2smdbs2lvves2nwo1rkx3m0k1zexiwkxqs3hrrjjid3zndnrjsuxhrkxtv1zyt29ia3fqn1e4cgpvtgytlwe1cxbaegv3wdi4mfdevfhfqkj2t0petwnzswr2d3c5be5hz1hgawhoyw?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Brasília amplia opções de esportes sobre rodas com aulas de patinação e hockey - EldoGomes.com.br",
+      "url_agregador": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUy1FekpmdXpVRGtWdTFVbm9CT1U0NGQwWVlfNzdwUUpWLWRXX0pPc2dpa3NNcTdKaGZ2ZHVJRElwM2pPLWdjdzRvcUpaTlh2eTNMRTZSUXFwLW1DRUxVWGl6ZjYteVFtMzRCUHJiUk9BcWtsVnB4R2g5anc0cEF4LUFobERBVTluNy0zNWVPNF9vdzEyNzJ4eFNSV2JsYUZQMlAtR2s3MA?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:lazer:brasilia amplia opcoes de esportes sobre rodas com aulas de patinacao e hockey eldogomes com br",
+        "url:https://news.google.com/rss/articles/cbmipwfbvv95cuxquy1fekpmdxpvrgtwdtfvbm9ct1u0ngqwwvlfnzdwuupwlwrxx0ppc2dpa3nnctdkagz2zhvjrelwm2pplwdjdzrvcupatlh2etnmrtzsuxfwlw1druxvwgl6zjytevftmzrcuhjiuk9bcwtsvnb4r2g5anc0cef4lufoberbvtluny0znwvpnf9vdzeynzj4efnsv2jsyuzqmlatr2s3ma?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Cultura ocupa Brasília com feira de empreendedorismo negro, cinema e shows gratuitos no fim de semana - Brasil de Fato",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOLUNmeXRhYVplaVNxM01lVFBwUWRZcjlFR1pvWm1oWHFhcDBsWURJZ0x0MjRPMHAzZU0xR3AyNFNtUU1rc1Jaakt1MF95TlpiQjVxWUlUQmpBUklXWGxaT0w2bTFUeFp2Q18tb2pYeTIzSjQ5LTgtV1VkRlJkMml6aDRVUXd0eXY2a3lVdGVrN2FWNzhqNUVjV2RLWmpLc2Y3ZkhZcHZ6bEdqTTB0cjdQek5Wa3kwU3plMEI5eTVwOTJTRFJHN2J3QmkwZHUxQjJRbjBTUFBSQUYyeHlU?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:lazer:cultura ocupa brasilia com feira de empreendedorismo negro cinema e shows gratuitos no fim de semana brasil de fato",
+        "url:https://news.google.com/rss/articles/cbmi3afbvv95cuxolunmexrhyvplavnxm01lvfbwuwrzcjlfr1pvwm1owhfhcdbswurjz0x0mjrpmhazzu0xr3aynfntuu1rc1jaakt1mf95tlpiqjvxwuluqmpbuklxwgxat0w2btfuefp2q18tb2pyetizsjq5ltgtv1vkrljkmml6adrvuxd0exy2a3lvdgvrn2fwnzhqnuvjv2rlwmplc2y3zkhzchz6bedqttb0cjdqek5wa3kwu3plmei5etvwotjtrfjhn2j3qmkwzhuxqjjrbjbtufbsquyyehlu?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Alok e família estrelam campanha do Partage Lago Sul Shopping inspirada na conexão do artista com Brasília - Portal Lago Sul",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPbjAzOGtKaVdsZ1JBal83aFJKWW85bzQybjZ1UU5TbnhFM21fNUY3TmVyME1wUUN5SmwzZjRJWU84bWNFeXFORHp0dXdtRXp6RXItNHFSMFBYSzA3QlBTSE1hUFpLLVpPbkE0M0Rrbjlwd0FFX29kUU9NTVdQUXdkeEE3MnUxVko0SDFTMEdUUG5aUllLZkVkUmpxQXZWRU9KNGlTU2lpQUo1QzgwUHN3aTlHcGdCdXNpTkJYZWg2dWRhYkJUSXYtQXhB?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:lazer:alok e familia estrelam campanha do partage lago sul shopping inspirada na conexao do artista com brasilia portal lago sul",
+        "url:https://news.google.com/rss/articles/cbmiygfbvv95cuxpbjazogtkavdsz1jbal83afjkww85bzqybjz1uu5tbnhfm21fnuy3tmvyme1wuun5smwzzjrjwu84bwnfexforhp0dxdtrxp6rxitnhfsmfbysza3qlbtse1hufpllvppbke0m0rrbjlwd0ffx29kuu9ntvdquxdkeee3mnuxvko0sdftmeduug5aulllzkvkumpxqxzwru9kngltu2lpquo1qzgwuhn3atlhcgdcdxnptkjyzwg2dwrhykjusxytqxhb?oc=5"
+      ]
+    },
+    {
+      "pilar": "lazer",
+      "titulo": "Série original Meu Pedaço do Brasil faz turismo cívico em Brasília neste domingo (29/11) - EBC - Empresa Brasil de Comunicação",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMmJNQWk4TWhsclB3SnNxdVNZVm5rRlJsdDNac3J4NXU1OXoxVHNIYWhwX2duNUFRU2xIazM1QW5JLUdUU3VjOGl1M0xvTklreG9VaGt3Z2tCM0xha09MeGRyNUxab1hsbjNUdGF2bzIzUTlPWUk4S2s0SS1oTVpMRlplQ2JFWjMyNWJWV3lVa3RFbkR5QkdfNFNnY1JUZENEd0RDRXFJZHRHTnFEMzVoVWFXR1JmaWptZ2pn?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:lazer:serie original meu pedaco do brasil faz turismo civico em brasilia neste domingo 29 11 ebc empresa brasil de comunicacao",
+        "url:https://news.google.com/rss/articles/cbmiuwfbvv95cuxnmmjnqwk4twhsclb3snnxdvnzvm5rrljsddnac3j4nxu1oxoxvhniywhwx2dunufru2xiazm1qw5jluduu3vjogl1m0xvtklreg9vagt3z2tcm0xha09megrynuxab1hsbjnudgf2bzizutlpwuk4s2s0ss1otvpmrlplq2jfwjmynwjwv3lva3rfbkr5qkdfnfnny1juzened0rdrxfjzhrhtnfemzvovwfxr1jmawptz2pn?oc=5"
+      ]
+    },
+    {
+      "pilar": "esportes",
+      "titulo": "Corrida em Brasília promove inclusão social no Distrito Federal - Agita Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQc1ZSSl9tQ2tnQV82X0Nsb0NtQXFva2t1QnV2TGNaS0Q2QUFZa3pFbWhaLWlNeHNzZXRQbWt0bXFnTDI4a0h5azBIUU51WTZCMTBOMk1WRl9IbnpxRWFKd3ZYcEJ1THp1cm5XUlIya0F5YVk3VmthdHl1NUNYTElGeGt1TUx4MzR2eHVXWGtCYTJudThpQThMcS1hMGM5T2czWUJXcGNDYTY1aHZseWV3akFrZWVmQ1RTTUw0?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:esportes:corrida em brasilia promove inclusao social no distrito federal agita brasilia",
+        "url:https://news.google.com/rss/articles/cbmiuwfbvv95cuxqc1zssl9tq2tnqv82x0nsb0ntqxfva2t1qnv2tgnas0q2qufza3pfbwhalwlnehnzzxrqbwt0bxfntdi4a0h5azbiuu51wtzcmtbomk1wrl9ibnpxrwfkd3zycej1thp1cm5xuliya0f5yvk3vmthdhl1nunytelgegt1tux4mzr2ehvxwgtcytjudthpqthmcs1hmgm5t2czwujxcgndyty1ahzsewv3akfrzwvmq1rttuw0?oc=5"
+      ]
+    },
+    {
+      "pilar": "esportes",
+      "titulo": "Dia Internacional das Pessoas com Deficiência: corrida mobiliza Brasília pela inclusão social - Curta Mais - Goiânia",
+      "url_agregador": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNMXZtVVZwZHpDSkNLdndvYkhQZnVzVXpxM3laMUxoX1FYNWp1NVFLMzlwamlsSzdFR0tUYm92WGUxU3hkV2xMNmk3cl9LQ3BxaUl4M0VRbEhZaXZiQXktVHNDSDNDdE5JdTlUUUNYUVRwYmxJbk9QcFdIdXBnRDdMdi12cTduajNNMjRJUFl2dzJPTDZadU42NTdmUTdOVllrQWJOUnVXeGotQlJKZmY5VlFCdV9XWURSWkgwdVN3dF83UlFjeHYweXN0Y25RNlJTMFVvag?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:esportes:dia internacional das pessoas com deficiencia corrida mobiliza brasilia pela inclusao social curta mais goiania",
+        "url:https://news.google.com/rss/articles/cbmi1afbvv95cuxnmxztvvzwzhpdsknldndvykhqznvzvxpxm3lamuxox1fynwp1nvflmzlwamlsszdfr0tuym92wguxu3hkv2xmnmk3cl9lq3bxaul4m0vrbehzaxziqxktvhndsdndde5jdtluuunyuvrwymxjbk9qcfdidxbnrddmdi12ctduajnnmjrjufl2dzjptdzadu42ntdmutdovllrqwjounvxegotqljkzmy5vlfcdv9xwurswkgwdvn3df83ulfjehywexn0y25rnljtmfvvag?oc=5"
+      ]
+    },
+    {
+      "pilar": "esportes",
+      "titulo": "Time de Rondônia fará amistosos com candangos de olho na Copinha - Esportes Brasília",
+      "url_agregador": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPR0NheXhGa0s0YjhueUpNamR3Tnh2QklKMWtET3I0VzB1RUFXd3NxTTZfaWpvd3JySWtpeExYWlk3YnQ4MEZ2MnVlNXR6SndJX1YwVzFRUWpIbGN0azBJeGtuTkF2Y1dUV3VuMmxHMTFFLUl0YWpWNUd6SE9fd3FIZndYZlB1c1Rrc2JQRjhlTjZvaml1MmFDS1E3ZjluVVB6czEyWlZWQTJva0tKMGZIOVJzWQ?oc=5",
+      "registrado_em": "2026-11-28T03:13:10+00:00",
+      "chaves": [
+        "title:esportes:time de rondonia fara amistosos com candangos de olho na copinha esportes brasilia",
+        "url:https://news.google.com/rss/articles/cbmiswfbvv95cuxpr0nhexhga0s0yjhueupnamr3tnh2qklkmwtet3i0vzb1rufxd3nxttzfawpvd3jyswtpeexywlk3ynq4mez2mnvlnxr6sndjx1ywvzfruwpibgn0azbjegtutkf2y1duv3vummxhmtfflul0ywpwnud6se9fd3fizndyzlb1c1rrc2jqrjhltjzvaml1mmfds1e3zjluvvb6czeywlzwqtjva0tkmgziovjzwq?oc=5"
       ]
     }
   ]
